@@ -1,1 +1,2 @@
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\bin\Debug\Obligatorio.exe.config
+C:\Users\Mauricio\Documents\180080-144425-PaolinoRodriguez\Obligatorio\Obligatorio\bin\Debug\Obligatorio.exe.config
