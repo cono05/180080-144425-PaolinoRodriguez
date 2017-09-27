@@ -4,11 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Pruebas
 {
     [TestClass]
-    public class UnitTest1
+    public class PersonaTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CrearPersonaVaciaTest()
         {
+            Persona persona = new Persona();
         }
     }
 }
