@@ -1,4 +1,5 @@
 ﻿using System;
+using Dominio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Pruebas
@@ -10,6 +11,7 @@ namespace Pruebas
         public void CrearMateriaVaciaTest()
         {
             Materia materia = new Materia();
+            Assert.IsTrue(string.IsNullOrEmpty(materia.Nombre));
         }
     }
 }
