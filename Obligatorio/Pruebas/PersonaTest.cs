@@ -1,4 +1,5 @@
 ﻿using System;
+using Dominio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Pruebas
@@ -7,9 +8,10 @@ namespace Pruebas
     public class PersonaTest
     {
         [TestMethod]
-        public void CrearPersonaVaciaTest()
+        public void CrearPersonaNombreVacioTest()
         {
-            Persona persona = new Persona();
+            Persona persona = new Alumno();
+            Assert.IsTrue(string.IsNullOrEmpty(persona.Nombre));
         }
     }
 }
