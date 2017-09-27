@@ -1,1 +1,8 @@
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\bin\Debug\Obligatorio.exe.config
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\bin\Debug\Obligatorio.exe
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\bin\Debug\Obligatorio.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.csprojResolveAssemblyReference.cache
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.Properties.Resources.resources
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.csproj.GenerateResource.Cache
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.exe
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.pdb
