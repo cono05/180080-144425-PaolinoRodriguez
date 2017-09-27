@@ -13,5 +13,12 @@ namespace Pruebas
             Persona persona = new Alumno();
             Assert.IsTrue(string.IsNullOrEmpty(persona.Nombre));
         }
+
+        [TestMethod]
+        public void CrearPersonaApellidoVacioTest()
+        {
+            Persona persona = new Alumno();
+            Assert.IsTrue(string.IsNullOrEmpty(persona.Apellido));
+        }
     }
 }
