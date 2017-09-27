@@ -5,8 +5,9 @@ namespace Dominio
     public class Materia
     {
         public ICollection<Alumno> Alumnos { get; set; }
-        public string Nombre { get; set; }
         public ICollection<Docente> Docentes { get; set; }
+        public string Nombre { get; set; }
+        
 
         public Materia()
         {
