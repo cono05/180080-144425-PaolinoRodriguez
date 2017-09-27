@@ -10,14 +10,14 @@ namespace Pruebas
         [TestMethod]
         public void CrearPersonaNombreVacioTest()
         {
-            Persona persona = new Alumno();
+            Persona persona = new AlumnoTest();
             Assert.IsTrue(string.IsNullOrEmpty(persona.Nombre));
         }
 
         [TestMethod]
         public void CrearPersonaApellidoVacioTest()
         {
-            Persona persona = new Alumno();
+            Persona persona = new AlumnoTest();
             Assert.IsTrue(string.IsNullOrEmpty(persona.Apellido));
         }
     }
