@@ -20,5 +20,12 @@ namespace Pruebas
             Materia materia = new Materia();
             Assert.IsTrue(materia.Alumnos.Count == 0);
         }
+
+        [TestMethod]
+        public void CrearMateriaVaciaSinDocentesTest()
+        {
+            Materia materia = new Materia();
+            Assert.IsTrue(materia.Docentes.Count == 0);
+        }
     }
 }
