@@ -1,0 +1,7 @@
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Pruebas.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Pruebas.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Dominio.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Dominio.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.csprojResolveAssemblyReference.cache
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.pdb

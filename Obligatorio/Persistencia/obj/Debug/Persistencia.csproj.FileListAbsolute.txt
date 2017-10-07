@@ -1,0 +1,4 @@
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\obj\Debug\Persistencia.pdb
