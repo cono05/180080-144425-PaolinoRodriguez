@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class Class1
+    public interface IModulo
     {
+        void Alta(Object o);
+        void Baja(Object o);
+        void Modificar();
     }
 }
