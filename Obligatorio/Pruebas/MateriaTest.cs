@@ -10,7 +10,7 @@ namespace Pruebas
         [TestMethod]
         public void CrearMateriaVaciaTest()
         {
-            Materia materia = new Materia();
+            Materia materia = Materia.CrearMateria();
             Assert.IsTrue(string.IsNullOrEmpty(materia.Nombre));
         }
 

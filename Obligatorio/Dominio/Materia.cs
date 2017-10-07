@@ -15,5 +15,11 @@ namespace Dominio
             this.Alumnos = new List<Alumno>();
             this.Docentes = new List<Docente>();
         }
+
+        public static Materia CrearMateria()
+        {
+            Materia materia = new Materia();
+            return materia;
+        }
     }
 }
