@@ -17,14 +17,14 @@ namespace Pruebas
         [TestMethod]
         public void CrearMateriaVaciaSinAlumnosTest()
         {
-            Materia materia = new Materia();
+            Materia materia = Materia.CrearMateria();
             Assert.IsTrue(materia.Alumnos.Count == 0);
         }
 
         [TestMethod]
         public void CrearMateriaVaciaSinDocentesTest()
         {
-            Materia materia = new Materia();
+            Materia materia = Materia.CrearMateria();
             Assert.IsTrue(materia.Docentes.Count == 0);
         }
     }
