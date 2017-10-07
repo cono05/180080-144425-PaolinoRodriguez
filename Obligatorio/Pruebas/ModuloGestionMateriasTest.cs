@@ -12,8 +12,7 @@ namespace Pruebas
         [TestMethod]
         public void AgregarMateriaTest()
         {
-            Materia materia = Materia.CrearMateria();
-            materia.Nombre = "Diseño";
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño");
             RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionMaterias modulo = new ModuloGestionMaterias(repositorio);
             modulo.Alta(materia);
