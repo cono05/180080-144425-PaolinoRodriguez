@@ -3,3 +3,7 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Logica.p
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Dominio.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Persistencia.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Dominio.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Persistencia.pdb

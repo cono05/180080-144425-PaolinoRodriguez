@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dominio;
 using Persistencia;
+using Logica;
+
 namespace Pruebas
 {
     [TestClass]
@@ -12,7 +14,9 @@ namespace Pruebas
         {
             Materia materia = Materia.CrearMateria();
             materia.Nombre = "Diseño";
-            ModuloGestionMaterias modulo = new ModuloGestionMaterias(IRepositorio repositorio);
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionMaterias modulo = new ModuloGestionMaterias(repositorio);
+            Assert.IsTrue(repositorio.Materias.Count == 1);
         }
     }
 }

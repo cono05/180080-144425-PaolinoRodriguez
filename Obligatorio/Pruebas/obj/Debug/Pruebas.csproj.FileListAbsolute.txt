@@ -5,3 +5,7 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Dominio
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Logica.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Persistencia.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Logica.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Persistencia.pdb
