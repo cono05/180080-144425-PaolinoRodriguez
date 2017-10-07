@@ -14,7 +14,7 @@ namespace Logica
         
         public void Alta(object o)
         {
-            throw new NotImplementedException();
+            this.repositorio.AgregarMateria((Materia)o);
         }
 
         public void Baja(object o)

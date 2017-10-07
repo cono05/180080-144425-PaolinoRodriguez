@@ -8,6 +8,11 @@ namespace Persistencia
     {
         public ICollection<Materia> Materias { get; set; }
 
+        public RepositorioRam()
+        {
+            this.Materias = new List<Materia>();
+        }
+
         public void AgregarAlumno(Alumno alumno)
         {
             throw new NotImplementedException();
@@ -20,7 +25,7 @@ namespace Persistencia
 
         public void AgregarMateria(Materia materia)
         {
-            throw new NotImplementedException();
+            this.Materias.Add((Materia)materia);
         }
 
         public void EliminarAlumno(Alumno alumno)

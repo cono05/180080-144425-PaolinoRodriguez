@@ -16,6 +16,7 @@ namespace Pruebas
             materia.Nombre = "Diseño";
             RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionMaterias modulo = new ModuloGestionMaterias(repositorio);
+            modulo.Alta(materia);
             Assert.IsTrue(repositorio.Materias.Count == 1);
         }
     }
