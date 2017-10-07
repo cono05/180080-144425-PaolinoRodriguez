@@ -2,3 +2,4 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Logica.d
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Logica.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache

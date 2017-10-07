@@ -2,3 +2,6 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\bin\Debug\Pe
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\bin\Debug\Persistencia.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\bin\Debug\Dominio.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\bin\Debug\Dominio.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
