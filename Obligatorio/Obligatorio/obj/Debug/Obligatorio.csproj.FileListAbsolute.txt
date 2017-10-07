@@ -1,12 +1,7 @@
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\bin\Debug\Obligatorio.exe.config
-<<<<<<< HEAD
-C:\Users\Mauricio\Documents\180080-144425-PaolinoRodriguez\Obligatorio\Obligatorio\bin\Debug\Obligatorio.exe.config
-=======
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\bin\Debug\Obligatorio.exe
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\bin\Debug\Obligatorio.pdb
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.csprojResolveAssemblyReference.cache
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.Properties.Resources.resources
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.csproj.GenerateResource.Cache
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.exe
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.pdb
->>>>>>> f6dcfc3a2446e935dfeede78b3ba0f891a5cab2b
