@@ -135,6 +135,10 @@ namespace Pruebas
             modulo.AgregarAlumnoEnMateria(materia, alumno);
             Assert.IsTrue(ExisteElAlumnoEnLaMateria(materia , alumno));
         }
-        
+
+        private bool ExisteElAlumnoEnLaMateria(Materia materia, Alumno alumno)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
