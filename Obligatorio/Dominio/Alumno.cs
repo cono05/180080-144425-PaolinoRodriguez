@@ -26,7 +26,7 @@ namespace Dominio
             if (obj != null && this.GetType() == obj.GetType())
             {
                 Alumno alumno = (Alumno)obj;
-                equals = alumno.Cedula.Equals(Cedula) || alumno.Mail.Equals(Mail);
+                equals = alumno.Cedula.Equals(Cedula);
             }
             return equals;
         }
