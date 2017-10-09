@@ -5,7 +5,7 @@ namespace Logica
 {
     public class ModuloGestionMaterias: IModulo
     {
-        public IRepositorio repositorio;
+        public IRepositorio repositorio { get; set; }
 
         public ModuloGestionMaterias(IRepositorio repositorio)
         {
@@ -29,7 +29,13 @@ namespace Logica
 
         public bool ExisteMateriaConMismoNombre(Materia materia)
         {
-            return true;
+            bool retorno = false;
+            foreach (Materia mat in repositorio.ObtenerMaterias())
+            {
+                if (mat.Equals(materia))
+                    return true;
+            }
+            return retorno;
         }
     }
 }

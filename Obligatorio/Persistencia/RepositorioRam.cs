@@ -42,5 +42,9 @@ namespace Persistencia
         {
             throw new NotImplementedException();
         }
+
+        public ICollection<Materia> ObtenerMaterias() {
+            return this.Materias;
+        }
     }
 }
