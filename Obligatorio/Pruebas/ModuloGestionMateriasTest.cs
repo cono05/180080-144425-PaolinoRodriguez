@@ -46,7 +46,7 @@ namespace Pruebas
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1");
             modulo.ValidarMateria(materia);
             modulo.Alta(materia);
-            Assert.IsTrue(modulo.ExisteMateriaConMismoNombre(materia1));
+            Assert.IsTrue(modulo.ExisteMateriaConMismoNombre(materia));
         }
     }
 }

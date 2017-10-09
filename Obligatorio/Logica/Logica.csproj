@@ -49,6 +49,10 @@
       <Project>{c28722ae-d60a-4e77-8f05-bebb34badd64}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj">
+      <Project>{395dd12b-590c-4bf7-8c17-a52bfaae10a8}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Persistencia\Persistencia.csproj">
       <Project>{1e9e1369-e2f3-4953-8d65-0609d40087ab}</Project>
       <Name>Persistencia</Name>
