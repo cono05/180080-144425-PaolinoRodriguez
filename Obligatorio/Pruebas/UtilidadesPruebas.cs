@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
+using Logica;
+using Persistencia;
 namespace Pruebas
 {
     class UtilidadesPruebas
@@ -32,6 +34,13 @@ namespace Pruebas
             docente.Nombre = nombre;
             docente.Apellido = apellido;
             return docente;
+        }
+
+        public static ModuloGestionMaterias CrearModuloGestionMateriasDePrueba()
+        {
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionMaterias moduloGestionMaterias = new ModuloGestionMaterias(repositorio);
+            return moduloGestionMaterias;
         }
 
 
