@@ -102,6 +102,17 @@ namespace Pruebas
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ExisteMateriaConMismoCodigo(materia2));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionMateriaCodigoRepetido))]
+        public void ValidarMateriaCodigoRepetidoErrorTest()
+        {
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", "an15");
+            modulo.Alta(materia);
+            modulo.ValidarMateria(materia2);
+        }
         
     }
 }
