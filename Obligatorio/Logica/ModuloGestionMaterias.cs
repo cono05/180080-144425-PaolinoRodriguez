@@ -64,5 +64,10 @@ namespace Logica
             }
             return retorno;
         }
+
+        public void AgregarAlumnoEnMateria(Materia materia, Alumno alumno)
+        {
+            materia.Alumnos.Add(alumno); 
+        }
     }
 }
