@@ -15,6 +15,7 @@ namespace Logica
         
         public void Alta(object o)
         {
+            ValidarMateria((Materia)o);
             this.repositorio.AgregarMateria((Materia)o);
         }
 
@@ -39,16 +40,7 @@ namespace Logica
             return retorno;
         }
 
-        public void ValidarMateria(Materia materia)
-        {
-            if (ExisteMateriaConMismoNombre(materia))
-                throw new ExcepcionExisteMateriaConMismoNombre();
-            if (EsMateriaSinNombre(materia))
-                throw new ExcepcionMateriaSinNombre();
-            if (ExisteMateriaConMismoCodigo(materia))
-                throw new ExcepcionMateriaCodigoRepetido();
-        }
-
+        
         public bool EsMateriaSinNombre(Materia materia)
         {
             return string.IsNullOrEmpty(materia.Nombre);
@@ -63,6 +55,21 @@ namespace Logica
                     return true;
             }
             return retorno;
+        }
+
+        public void AgregarAlumnoEnMateria(Materia materia, Alumno alumno)
+        {
+            materia.Alumnos.Add(alumno); 
+        }
+
+        public void ValidarMateria(Materia materia)
+        {
+            if (ExisteMateriaConMismoNombre(materia))
+                throw new ExcepcionExisteMateriaConMismoNombre();
+            if (EsMateriaSinNombre(materia))
+                throw new ExcepcionMateriaSinNombre();
+            if (ExisteMateriaConMismoCodigo(materia))
+                throw new ExcepcionMateriaCodigoRepetido();
         }
     }
 }
