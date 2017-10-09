@@ -6,7 +6,7 @@ namespace Logica
 {
     public class ModuloGestionMaterias: IModulo
     {
-        public IRepositorio repositorio { get; set; }
+        private IRepositorio repositorio { get; set; }
 
         public ModuloGestionMaterias(IRepositorio repositorio)
         {

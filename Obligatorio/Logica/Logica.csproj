@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IModulo.cs" />
-    <Compile Include="ModuloGestionMaterias.cs" />
+    <Compile Include="ModuloMaterias\ModuloGestionMaterias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
