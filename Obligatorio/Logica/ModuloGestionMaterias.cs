@@ -71,5 +71,16 @@ namespace Logica
             if (ExisteMateriaConMismoCodigo(materia))
                 throw new ExcepcionMateriaCodigoRepetido();
         }
+
+        public bool ExisteElAlumnoEnLaMateria(Materia materia, Alumno alumno)
+        {
+            bool retorno = false;
+            foreach (Alumno a in materia.Alumnos)
+            {
+                if (a.NumeroDeEstudiante.Equals(alumno.NumeroDeEstudiante))
+                    return true;
+            }
+            return retorno;
+        }
     }
 }
