@@ -35,7 +35,7 @@ namespace Pruebas
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
-            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an16");
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", "an16");
             modulo.Alta(materia1);
             Assert.IsFalse(modulo.ExisteMateriaConMismoNombre(materia2));
         }

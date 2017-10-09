@@ -51,5 +51,10 @@ namespace Logica
         {
             return string.IsNullOrEmpty(materia.Nombre);
         }
+
+        public bool ExisteMateriaConMismoCodigo(Materia materia)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
