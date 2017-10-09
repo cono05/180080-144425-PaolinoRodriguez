@@ -26,6 +26,14 @@ namespace Pruebas
             return alumno;
         }
 
+        public static Docente CrearDocente(string nombre, string apellido)
+        {
+            Docente docente = Docente.CrearDocente();
+            docente.Nombre = nombre;
+            docente.Apellido = apellido;
+            return docente;
+        }
+
 
     }
 }
