@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dominio;
 using Persistencia;
 using Logica;
+using Excepciones;
 
 namespace Pruebas
 {
@@ -48,5 +49,16 @@ namespace Pruebas
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ExisteMateriaConMismoNombre(materia));
         }
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionExisteMateriaConMismoNombre))]
+        public void ValidarMateriaErrorNombreRepetidoTest()
+        {
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1");
+            modulo.ValidarMateria(materia);
+            modulo.Alta(materia);
+            modulo.ValidarMateria(materia);
+        }
+        
     }
 }
