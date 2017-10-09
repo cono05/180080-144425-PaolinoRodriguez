@@ -9,3 +9,5 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Logica.
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Persistencia.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Logica.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Persistencia.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Excepciones.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Excepciones.pdb

@@ -7,3 +7,5 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Dominio.
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Persistencia.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Dominio.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Persistencia.pdb
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Excepciones.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Excepciones.pdb

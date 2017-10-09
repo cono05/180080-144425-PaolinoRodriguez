@@ -1,6 +1,7 @@
 ﻿using System;
 using Dominio;
 using Persistencia;
+using Excepciones;
 namespace Logica
 {
     public class ModuloGestionMaterias: IModulo
@@ -36,6 +37,12 @@ namespace Logica
                     return true;
             }
             return retorno;
+        }
+
+        public void ValidarMateria(Materia materia)
+        {
+            if (ExisteMateriaConMismoNombre(materia))
+                throw new ExcepcionExisteMateriaConMismoNombre();
         }
     }
 }

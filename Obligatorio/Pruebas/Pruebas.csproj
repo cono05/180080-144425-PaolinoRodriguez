@@ -66,6 +66,10 @@
       <Project>{C28722AE-D60A-4E77-8F05-BEBB34BADD64}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj">
+      <Project>{395dd12b-590c-4bf7-8c17-a52bfaae10a8}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.csproj">
       <Project>{EE31ABDB-8689-4601-A92B-0F70B0194368}</Project>
       <Name>Logica</Name>
