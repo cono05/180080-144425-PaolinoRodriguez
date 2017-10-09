@@ -29,7 +29,7 @@ namespace Logica
 
         public bool ExisteMateriaConMismoNombre(Materia materia)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
