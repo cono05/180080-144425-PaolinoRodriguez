@@ -6,6 +6,7 @@ namespace Dominio
     {
         public int NumeroDeEstudiante { get; set; }
         public string Cedula { get; set; }
+        public string Mail { get; set; }
         public ICollection<Materia> MateriasInscripto { get; set; }
 
         public Alumno()

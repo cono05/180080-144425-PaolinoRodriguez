@@ -15,6 +15,17 @@ namespace Pruebas
             return materia;
         }
 
+        public static Alumno CrearAlumnoDePrueba(string nombre, string apellido, string cedula, string mail, int numeroDeEstudiante)
+        {
+            Alumno alumno = Alumno.CrearAlumno();
+            alumno.Nombre = nombre;
+            alumno.Apellido = apellido;
+            alumno.Cedula = cedula;
+            alumno.Mail = mail;
+            alumno.NumeroDeEstudiante = numeroDeEstudiante;
+            return alumno;
+        }
+
 
     }
 }
