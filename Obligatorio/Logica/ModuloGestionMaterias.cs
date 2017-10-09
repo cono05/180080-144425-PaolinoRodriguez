@@ -44,5 +44,10 @@ namespace Logica
             if (ExisteMateriaConMismoNombre(materia))
                 throw new ExcepcionExisteMateriaConMismoNombre();
         }
+
+        public bool EsMateriaSinNombre(Materia materia)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
