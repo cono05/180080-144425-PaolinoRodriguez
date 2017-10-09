@@ -28,11 +28,21 @@ namespace Pruebas
             Assert.IsTrue(materia.Docentes.Count == 0);
         }
         [TestMethod]
-        public void EqualsTest()
+        public void EqualsOkTest()
         {
-           Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1");
-           Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2");
+            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1");
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1");
             Assert.IsTrue(materia1.Equals(materia2));
         }
+
+        [TestMethod]
+        public void EqualsFalseTest()
+        {
+            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1");
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2");
+            Assert.IsFalse(materia1.Equals(materia2));
+        }
+
+        
     }
 }

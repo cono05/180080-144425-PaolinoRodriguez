@@ -21,5 +21,16 @@ namespace Dominio
             Materia materia = new Materia();
             return materia;
         }
+
+        public override bool Equals(object obj)
+        {
+            bool equals = false;
+            if (obj != null && this.GetType() == obj.GetType())
+            {
+                Materia materia = (Materia)obj;
+                equals = materia.Nombre.Equals(Nombre);
+            }
+            return equals;
+        }
     }
 }
