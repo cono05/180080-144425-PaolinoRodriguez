@@ -10,9 +10,17 @@ namespace Pruebas
         [TestMethod]
         public void CrearAlumnoVacioTest()
         {
-            Alumno alumno = new Alumno();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("" , "" , "" , "" , 0);
             Assert.IsTrue(string.IsNullOrEmpty(alumno.Apellido));
             
+        }
+
+        [TestMethod]
+        public void EqualsOkTest()
+        {
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Perez", "12345678", "j@gmail.com",111111);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Perez", "12345679", "j@gmail.com", 111111);
+            Assert.IsTrue(alumno.Equals(alumno2));
         }
 
 

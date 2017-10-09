@@ -19,5 +19,16 @@ namespace Dominio
             Alumno alumno = new Alumno();
             return alumno;
         }
+
+        public override bool Equals(object obj)
+        {
+            bool equals = false;
+            if (obj != null && this.GetType() == obj.GetType())
+            {
+                Alumno alumno = (Alumno)obj;
+                equals = alumno.Cedula.Equals(Cedula) || alumno.Mail.Equals(Mail);
+            }
+            return equals;
+        }
     }
 }
