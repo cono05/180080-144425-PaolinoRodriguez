@@ -45,6 +45,8 @@ namespace Logica
                 throw new ExcepcionExisteMateriaConMismoNombre();
             if (EsMateriaSinNombre(materia))
                 throw new ExcepcionMateriaSinNombre();
+            if (ExisteMateriaConMismoCodigo(materia))
+                throw new ExcepcionMateriaCodigoRepetido();
         }
 
         public bool EsMateriaSinNombre(Materia materia)
