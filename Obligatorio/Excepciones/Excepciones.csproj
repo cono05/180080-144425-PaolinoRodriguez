@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExcepcionExisteMateriaConMismoNombre.cs" />
+    <Compile Include="ExcepcionMateriaCodigoRepetido.cs" />
     <Compile Include="ExcepcionMateriaSinNombre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
