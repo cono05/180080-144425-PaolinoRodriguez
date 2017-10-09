@@ -54,7 +54,13 @@ namespace Logica
 
         public bool ExisteMateriaConMismoCodigo(Materia materia)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            foreach (Materia m in repositorio.ObtenerMaterias())
+            {                
+                if (materia.Codigo.Equals(materia.Codigo))
+                    return true;
+            }
+            return retorno;
         }
     }
 }
