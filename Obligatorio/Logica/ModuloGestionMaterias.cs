@@ -43,6 +43,8 @@ namespace Logica
         {
             if (ExisteMateriaConMismoNombre(materia))
                 throw new ExcepcionExisteMateriaConMismoNombre();
+            if (EsMateriaSinNombre(materia))
+                throw new ExcepcionMateriaSinNombre();
         }
 
         public bool EsMateriaSinNombre(Materia materia)
