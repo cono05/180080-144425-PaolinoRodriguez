@@ -59,6 +59,16 @@ namespace Pruebas
             modulo.Alta(materia);
             modulo.ValidarMateria(materia);
         }
+
+        [TestMethod]
+        public void EsMateriaSinNombreTest()
+        {
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1");
+            modulo.ValidarMateria(materia);
+            modulo.Alta(materia);
+            Assert.IsFalse(modulo.EsMateriaSinNombre(materia));
+        }
         
     }
 }
