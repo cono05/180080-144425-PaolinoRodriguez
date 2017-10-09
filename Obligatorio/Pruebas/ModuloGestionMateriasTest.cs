@@ -38,5 +38,15 @@ namespace Pruebas
             modulo.Alta(materia1);
             Assert.IsFalse(modulo.ExisteMateriaConMismoNombre(materia2));
         }
+
+        [TestMethod]
+        public void ValidarMateriaOKTest()
+        {
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1");
+            modulo.ValidarMateria(materia);
+            modulo.Alta(materia);
+            Assert.IsTrue(modulo.ExisteMateriaConMismoNombre(materia1));
+        }
     }
 }
