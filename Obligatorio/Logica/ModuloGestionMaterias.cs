@@ -47,7 +47,7 @@ namespace Logica
 
         public bool EsMateriaSinNombre(Materia materia)
         {
-            throw new NotImplementedException();
+            return string.IsNullOrEmpty(materia.Nombre);
         }
     }
 }
