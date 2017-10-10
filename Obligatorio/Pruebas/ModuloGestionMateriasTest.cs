@@ -148,6 +148,18 @@ namespace Pruebas
             Assert.IsFalse(modulo.ExisteElAlumnoEnLaMateria(materia, alumno2));
         }
 
+        [TestMethod]
+        public void EstaInscriptoEnLaMateriaTrueTest()
+        {
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 222222);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
+            modulo.Alta(materia);
+            modulo.AgregarAlumnoEnMateria(materia, alumno);
+            Assert.IsTrue(modulo.EstaInscriptoEnLaMateria(alumno));
+        }
+
        
     }
 }
