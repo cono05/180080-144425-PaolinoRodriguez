@@ -88,10 +88,15 @@ namespace Logica
             bool retorno = false;
             foreach (Alumno a in materia.Alumnos)
             {
-                if (a.NumeroDeEstudiante.Equals(alumno.NumeroDeEstudiante))
+                if (TienenMismoNumeroEstudiante(a, alumno))
                     return true;
             }
             return retorno;
+        }
+
+        public bool TienenMismoNumeroEstudiante(Alumno alumno, Alumno alumno2)
+        {
+            return alumno.NumeroDeEstudiante == alumno2.NumeroDeEstudiante;
         }
     }
 }
