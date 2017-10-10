@@ -100,7 +100,7 @@ namespace Pruebas
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", "an19");
             modulo.Alta(materia);
-            Assert.IsTrue(modulo.ExisteMateriaConMismoCodigo(materia2));
+            Assert.IsFalse(modulo.ExisteMateriaConMismoCodigo(materia2));
         }
 
         [TestMethod]
@@ -160,13 +160,23 @@ namespace Pruebas
             Assert.IsTrue(modulo.EstaInscriptoEnLaMateria(materia, alumno));
         }
 
+
         [TestMethod]
-        public void TienenMismoNumeroEstudianteTest()
+        public void TienenMismoNumeroEstudianteFalseTest()
         {
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 222222);
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Assert.IsFalse(modulo.TienenMismoNumeroEstudiante(alumno, alumno2));
+        }
+
+        [TestMethod]
+        public void TienenMismoNumeroEstudianteTrueTest()
+        {
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 111222);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Assert.IsTrue(modulo.TienenMismoNumeroEstudiante(alumno, alumno2));
         }
 
        
