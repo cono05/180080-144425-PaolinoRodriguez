@@ -157,7 +157,16 @@ namespace Pruebas
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
             modulo.Alta(materia);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
-            Assert.IsTrue(modulo.EstaInscriptoEnLaMateria(alumno));
+            Assert.IsTrue(modulo.EstaInscriptoEnLaMateria(materia, alumno));
+        }
+
+        [TestMethod]
+        public void TienenMismoNumeroEstudianteTest()
+        {
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 222222);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Assert.IsFalse(modulo.TienenMismoNumeroEstudiante(alumno, alumno2));
         }
 
        
