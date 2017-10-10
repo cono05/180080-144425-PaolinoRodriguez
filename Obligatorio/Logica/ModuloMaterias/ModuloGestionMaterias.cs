@@ -72,17 +72,6 @@ namespace Logica
                 throw new ExcepcionMateriaCodigoRepetido();
         }
 
-        public bool ExisteElAlumnoEnLaMateria(Materia materia, Alumno alumno)
-        {
-            bool retorno = false;
-            foreach (Alumno a in materia.Alumnos)
-            {
-                if (a.NumeroDeEstudiante.Equals(alumno.NumeroDeEstudiante))
-                    return true;
-            }
-            return retorno;
-        }
-
         public bool EstaInscriptoEnLaMateria(Materia materia, Alumno alumno)
         {
             bool retorno = false;
