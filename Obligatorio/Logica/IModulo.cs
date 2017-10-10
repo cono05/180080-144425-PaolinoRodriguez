@@ -8,8 +8,8 @@ namespace Logica
 {
     public interface IModulo
     {
-        void Alta(Object o);
-        void Baja(Object o);
+        void Alta(Object obj);
+        void Baja(Object obj);
         void Modificar();
     }
 }

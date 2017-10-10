@@ -6,20 +6,20 @@ namespace Logica
 {
     public class ModuloGestionMaterias: IModulo
     {
-        private IRepositorio repositorio { get; set; }
+        private IRepositorio repositorio;
 
         public ModuloGestionMaterias(IRepositorio repositorio)
         {
             this.repositorio = repositorio;
         }
         
-        public void Alta(object o)
+        public void Alta(object obj)
         {
-            ValidarMateria((Materia)o);
-            this.repositorio.AgregarMateria((Materia)o);
+            ValidarMateria((Materia)obj);
+            this.repositorio.AgregarMateria((Materia)obj);
         }
 
-        public void Baja(object o)
+        public void Baja(object obj)
         {
             throw new NotImplementedException();
         }
