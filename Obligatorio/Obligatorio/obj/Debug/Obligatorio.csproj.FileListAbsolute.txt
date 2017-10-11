@@ -5,3 +5,6 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obl
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.csproj.GenerateResource.Cache
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.exe
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Obligatorio\obj\Debug\Obligatorio.pdb
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Obligatorio\bin\Debug\Obligatorio.exe.config
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Obligatorio\obj\Debug\Obligatorio.exe
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Obligatorio\obj\Debug\Obligatorio.pdb

@@ -44,6 +44,13 @@ namespace Pruebas
             return moduloGestionMaterias;
         }
 
+        public static ModuloGestionAlumno CrearModuloGestionAlumnosDePrueba()
+        {
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionAlumno moduloGestionAlumnos = new ModuloGestionAlumno(repositorio);
+            return moduloGestionAlumnos;
+        }
+
 
     }
 }
