@@ -15,10 +15,12 @@ namespace Pruebas
         {
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionMaterias modulo = new ModuloGestionMaterias(repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            //ModuloGestionMaterias modulo = ModuloGestionMaterias.ObtenerInstancia(repositorio);
             modulo.Alta(materia);
             Assert.IsTrue(repositorio.Materias.Count == 1);
         }
+
 
         [TestMethod]
         public void ExisteMateriaConMismoNombreTest()

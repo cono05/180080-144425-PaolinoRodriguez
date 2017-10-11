@@ -7,11 +7,20 @@ namespace Logica
     public class ModuloGestionMaterias: IModulo
     {
         private IRepositorio repositorio;
-
+        //private static ModuloGestionMaterias instancia;
         public ModuloGestionMaterias(IRepositorio repositorio)
         {
             this.repositorio = repositorio;
         }
+
+        //public static ModuloGestionMaterias ObtenerInstancia(IRepositorio repositorio)
+        //{
+        //    if (instancia == null)
+        //    {
+        //        instancia = new ModuloGestionMaterias(repositorio); 
+        //    }
+        //    return instancia;
+        //}
         
         public void Alta(object obj)
         {
