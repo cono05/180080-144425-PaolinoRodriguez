@@ -41,6 +41,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionMaterias moduloGestionMaterias = new ModuloGestionMaterias(repositorio);
+            //ModuloGestionMaterias moduloGestionMaterias = ModuloGestionMaterias.ObtenerInstancia(repositorio);
             return moduloGestionMaterias;
         }
 

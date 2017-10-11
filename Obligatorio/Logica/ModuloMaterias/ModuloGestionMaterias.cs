@@ -2,16 +2,27 @@
 using Dominio;
 using Persistencia;
 using Excepciones;
+using System.Collections.Generic;
+
 namespace Logica
 {
     public class ModuloGestionMaterias: IModulo
     {
         private IRepositorio repositorio;
-
+        //private static ModuloGestionMaterias instancia;
         public ModuloGestionMaterias(IRepositorio repositorio)
         {
             this.repositorio = repositorio;
         }
+
+        //public static ModuloGestionMaterias ObtenerInstancia(IRepositorio repositorio)
+        //{
+        //    if (instancia == null)
+        //    {
+        //        instancia = new ModuloGestionMaterias(repositorio); 
+        //    }
+        //    return instancia;
+        //}
         
         public void Alta(object obj)
         {
@@ -40,7 +51,11 @@ namespace Logica
             return retorno;
         }
 
-        
+        public ICollection<Materia> ObtenerMaterias()
+        {
+            return repositorio.ObtenerMaterias();
+        }
+
         public bool EsMateriaSinNombre(Materia materia)
         {
             return string.IsNullOrEmpty(materia.Nombre);
