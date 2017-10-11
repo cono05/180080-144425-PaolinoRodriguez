@@ -48,5 +48,10 @@ namespace Persistencia
         public ICollection<Materia> ObtenerMaterias() {
             return this.Materias;
         }
+
+        public ICollection<Alumno> ObtenerAlumnos()
+        {
+            return Alumnos;
+        }
     }
 }

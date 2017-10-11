@@ -27,5 +27,18 @@ namespace Logica
         {
             throw new NotImplementedException();
         }
+
+        public bool ExisteAlumnoConMismoNumeroEstudiante(Alumno alumno1)
+        {
+            bool ret = false;
+            foreach (Alumno a in repositorio.ObtenerAlumnos())
+            {
+                if(a.NumeroDeEstudiante == alumno1.NumeroDeEstudiante)
+                {
+                    ret = true;
+                }
+            }
+            return ret;
+        }
     }
 }
