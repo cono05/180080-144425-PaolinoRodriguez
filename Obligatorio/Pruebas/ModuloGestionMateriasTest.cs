@@ -18,7 +18,18 @@ namespace Pruebas
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             //ModuloGestionMaterias modulo = ModuloGestionMaterias.ObtenerInstancia(repositorio);
             modulo.Alta(materia);
-            Assert.IsTrue(repositorio.Materias.Count == 1);
+            Assert.IsTrue(modulo.ObtenerMaterias().Count == 1);
+        }
+
+        [TestMethod]
+        public void ObtenerMateriasTest()
+        {
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            //ModuloGestionMaterias modulo = ModuloGestionMaterias.ObtenerInstancia(repositorio);
+            modulo.Alta(materia);
+            Assert.IsTrue(modulo.ObtenerMaterias().Count == 1);
         }
 
 

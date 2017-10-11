@@ -2,6 +2,8 @@
 using Dominio;
 using Persistencia;
 using Excepciones;
+using System.Collections.Generic;
+
 namespace Logica
 {
     public class ModuloGestionMaterias: IModulo
@@ -49,7 +51,11 @@ namespace Logica
             return retorno;
         }
 
-        
+        public ICollection<Materia> ObtenerMaterias()
+        {
+            return repositorio.ObtenerMaterias();
+        }
+
         public bool EsMateriaSinNombre(Materia materia)
         {
             return string.IsNullOrEmpty(materia.Nombre);
