@@ -7,6 +7,7 @@ namespace Persistencia
     public class RepositorioRam : IRepositorio
     {
         public ICollection<Materia> Materias { get; set; }
+        public ICollection<Alumno> Alumnos { get; set; }
 
         public RepositorioRam()
         {

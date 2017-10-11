@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dominio;
 using Persistencia;
+using Logica;
 
 namespace Pruebas
 {
