@@ -1,5 +1,6 @@
 ﻿using System;
 using Persistencia;
+using Dominio;
 
 namespace Logica
 {
@@ -14,7 +15,7 @@ namespace Logica
 
         public void Alta(object obj)
         {
-            throw new NotImplementedException();
+            repositorio.AgregarAlumno((Alumno)obj);
         }
 
         public void Baja(object obj)

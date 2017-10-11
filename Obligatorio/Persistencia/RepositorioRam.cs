@@ -12,11 +12,12 @@ namespace Persistencia
         public RepositorioRam()
         {
             this.Materias = new List<Materia>();
+            this.Alumnos = new List<Alumno>();
         }
 
         public void AgregarAlumno(Alumno alumno)
         {
-            throw new NotImplementedException();
+            this.Alumnos.Add(alumno);
         }
 
         public void AgregarDocente(Docente docente)
@@ -26,7 +27,7 @@ namespace Persistencia
 
         public void AgregarMateria(Materia materia)
         {
-            this.Materias.Add((Materia)materia);
+            this.Materias.Add(materia);
         }
 
         public void EliminarAlumno(Alumno alumno)
