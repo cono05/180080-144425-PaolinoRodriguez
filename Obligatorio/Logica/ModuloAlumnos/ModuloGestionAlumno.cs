@@ -68,6 +68,18 @@ namespace Logica
             {
                 throw new ExcepcionAlumnoSinNombre();
             }
+            if (EsAlumnoSinApellido(alumno))
+            {
+                throw new ExcepcionAlumnoSinApellido();
+            }
+            if(EsAlumnoSinCedula(alumno))
+            {
+                throw new ExcepcionAlumnoSinCedula();
+            }
+            if (EsAlumnoSinEmail(alumno))
+            {
+                throw new ExcepcionAlumnoSinEmail();
+            }
         }
     }
 }

@@ -112,5 +112,28 @@ namespace Pruebas
             modulo.ValidarAlumno(alumno);
         }
 
+        [TestMethod]
+        public void ValidarAlumnoSinApellidoErrorTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
+
+        [TestMethod]
+        public void ValidarAlumnoSinCedulaErrorTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
+
+        [TestMethod]
+        public void ValidarAlumnoSinEmailErrorTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
     }
 }
