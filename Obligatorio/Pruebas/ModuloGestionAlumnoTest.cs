@@ -38,5 +38,21 @@ namespace Pruebas
             modulo.Alta(alumno1);
             Assert.IsFalse(modulo.ExisteAlumnoConMismoNumeroEstudiante(alumno2));
         }
+
+        [TestMethod]
+        public void EsAlumnoSinNombreTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Assert.IsFalse(modulo.EsAlumnoSinNombre(alumno));
+        }
+
+        [TestMethod]
+        public void EsAlumnoSinNombreFalseTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Assert.IsTrue(modulo.EsAlumnoSinNombre(alumno));
+        }
     }
 }

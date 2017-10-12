@@ -40,5 +40,10 @@ namespace Logica
             }
             return ret;
         }
+
+        public bool EsAlumnoSinNombre(Alumno alumno)
+        {
+            return string.IsNullOrEmpty(alumno.Nombre);
+        }
     }
 }
