@@ -45,5 +45,20 @@ namespace Logica
         {
             return string.IsNullOrEmpty(alumno.Nombre);
         }
+
+        public bool EsAlumnoSinApellido(Alumno alumno)
+        {
+            return string.IsNullOrEmpty(alumno.Apellido);
+        }
+
+        public bool EsAlumnoSinCedula(Alumno alumno)
+        {
+            return string.IsNullOrEmpty(alumno.Cedula);
+        }
+
+        public bool EsAlumnoSinEmail(Alumno alumno)
+        {
+            return string.IsNullOrEmpty(alumno.Mail);
+        }
     }
 }
