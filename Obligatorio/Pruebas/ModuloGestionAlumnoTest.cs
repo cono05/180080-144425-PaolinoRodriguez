@@ -104,5 +104,13 @@ namespace Pruebas
             Assert.IsFalse(modulo.EsAlumnoSinEmail(alumno));
         }
 
+        [TestMethod]
+        public void ValidarAlumnoSinNombreErrorTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
+
     }
 }

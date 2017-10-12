@@ -1,6 +1,7 @@
 ﻿using System;
 using Persistencia;
 using Dominio;
+using Excepciones;
 
 namespace Logica
 {
@@ -59,6 +60,14 @@ namespace Logica
         public bool EsAlumnoSinEmail(Alumno alumno)
         {
             return string.IsNullOrEmpty(alumno.Mail);
+        }
+
+        public void ValidarAlumno(Alumno alumno)
+        {
+            if (EsAlumnoSinNombre(alumno))
+            {
+                throw new ExcepcionAlumnoSinNombre();
+            }
         }
     }
 }
