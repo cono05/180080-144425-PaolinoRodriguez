@@ -53,6 +53,13 @@ namespace Pruebas
             return moduloGestionAlumnos;
         }
 
+        public static ModuloGestionDocente CrearModuloGestionDocentesDePrueba()
+        {
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionDocente moduloGestionDocentes = new ModuloGestionDocente(repositorio);
+            return moduloGestionDocentes;
+        }
+
 
     }
 }

@@ -27,5 +27,34 @@ namespace Logica
         {
             throw new NotImplementedException();
         }
+
+        public bool ExisteDocenteConMismaCedula(Docente docente)
+        {
+            bool ret = false;
+            foreach(Docente d in repositorio.ObtenerDocentes())
+            {
+                if(d.Cedula == docente.Cedula)
+                {
+                    ret = true;
+                    break;
+                }
+            }
+            return ret;
+        }
+
+        public bool EsDocenteSinNombre(Docente docente)
+        {
+            return string.IsNullOrEmpty(docente.Nombre);
+        }
+
+        public bool EsDocenteSinApellido(Docente docente)
+        {
+            return string.IsNullOrEmpty(docente.Apellido);
+        }
+
+        public bool EsDocenteSinCedula(Docente docente)
+        {
+            return string.IsNullOrEmpty(docente.Cedula);
+        }
     }
 }
