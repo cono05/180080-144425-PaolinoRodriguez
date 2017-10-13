@@ -17,7 +17,7 @@ namespace Pruebas
         [TestMethod]
         public void AgregarDocenteTest()
         {
-            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido");
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionDocente modulo = new ModuloGestionDocente(repositorio);
             modulo.Alta(docente);
