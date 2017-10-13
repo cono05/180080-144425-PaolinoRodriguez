@@ -8,11 +8,13 @@ namespace Persistencia
     {
         public ICollection<Materia> Materias { get; set; }
         public ICollection<Alumno> Alumnos { get; set; }
+        public ICollection<Docente> Docentes { get; set; }
 
         public RepositorioRam()
         {
-            this.Materias = new List<Materia>();
-            this.Alumnos = new List<Alumno>();
+            Materias = new List<Materia>();
+            Alumnos = new List<Alumno>();
+            Docentes = new List<Docente>();
         }
 
         public void AgregarAlumno(Alumno alumno)
@@ -22,7 +24,7 @@ namespace Persistencia
 
         public void AgregarDocente(Docente docente)
         {
-            throw new NotImplementedException();
+            this.Docentes.Add(docente);
         }
 
         public void AgregarMateria(Materia materia)
@@ -46,12 +48,17 @@ namespace Persistencia
         }
 
         public ICollection<Materia> ObtenerMaterias() {
-            return this.Materias;
+            return Materias;
         }
 
         public ICollection<Alumno> ObtenerAlumnos()
         {
             return Alumnos;
+        }
+
+        public ICollection<Docente> ObtenerDocentes()
+        {
+            return Docentes;
         }
     }
 }

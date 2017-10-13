@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IModulo.cs" />
     <Compile Include="ModuloAlumnos\ModuloGestionAlumno.cs" />
+    <Compile Include="ModuloDocentes\ModuloGestionDocente.cs" />
     <Compile Include="ModuloMaterias\ModuloGestionMaterias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
