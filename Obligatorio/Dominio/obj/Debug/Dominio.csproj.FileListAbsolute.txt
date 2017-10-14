@@ -2,4 +2,3 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\bin\Debug\Dominio
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\bin\Debug\Dominio.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\obj\Debug\Dominio.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\obj\Debug\Dominio.pdb
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
