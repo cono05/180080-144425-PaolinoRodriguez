@@ -63,7 +63,7 @@ namespace Pruebas
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
-            modulo.ValidarMateria(materia);
+            modulo.ValidarAltaMateria(materia);
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ExisteMateriaConMismoNombre(materia));
         }
@@ -74,7 +74,7 @@ namespace Pruebas
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
             modulo.Alta(materia);
-            modulo.ValidarMateria(materia);
+            modulo.ValidarAltaMateria(materia);
         }
 
         [TestMethod]
@@ -99,7 +99,7 @@ namespace Pruebas
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("" , "an15");
-            modulo.ValidarMateria(materia);
+            modulo.ValidarAltaMateria(materia);
         }
 
         [TestMethod]
@@ -129,7 +129,7 @@ namespace Pruebas
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", "an15");
             modulo.Alta(materia);
-            modulo.ValidarMateria(materia2);
+            modulo.ValidarAltaMateria(materia2);
         }
 
         [TestMethod]
@@ -187,6 +187,17 @@ namespace Pruebas
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Assert.IsTrue(modulo.TienenMismoNumeroEstudiante(alumno, alumno2));
         }
-           
+
+        [TestMethod]
+        public void BajaTest()
+        {
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an10");
+            modulo.Alta(materia);
+            modulo.Baja(materia);
+            Assert.IsTrue(modulo.ObtenerMaterias().Count == 0);            
+        }
+
+        
     }
 }
