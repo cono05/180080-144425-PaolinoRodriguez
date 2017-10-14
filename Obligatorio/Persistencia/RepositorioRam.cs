@@ -44,7 +44,7 @@ namespace Persistencia
 
         public void EliminarMateria(Materia materia)
         {
-            throw new NotImplementedException();
+            Materias.Remove(materia);
         }
 
         public ICollection<Materia> ObtenerMaterias() {

@@ -26,13 +26,14 @@ namespace Logica
 
         public void Alta(object obj)
         {
-            ValidarMateria((Materia)obj);
-            this.repositorio.AgregarMateria((Materia)obj);
+            ValidarAltaMateria((Materia)obj);
+            repositorio.AgregarMateria((Materia)obj);
         }
 
         public void Baja(object obj)
         {
-            this.repositorio.ObtenerMaterias().Remove((Materia)obj);
+            ValidarBajaMateria((Materia)obj);
+            repositorio.EliminarMateria((Materia)obj);
         }
 
         public void Modificar()
@@ -77,7 +78,7 @@ namespace Logica
             materia.Alumnos.Add(alumno); 
         }
 
-        public void ValidarMateria(Materia materia)
+        public void ValidarAltaMateria(Materia materia)
         {
             if (ExisteMateriaConMismoNombre(materia))
                 throw new ExcepcionExisteMateriaConMismoNombre();
@@ -101,6 +102,12 @@ namespace Logica
         public bool TienenMismoNumeroEstudiante(Alumno alumno, Alumno alumno2)
         {
             return alumno.NumeroDeEstudiante == alumno2.NumeroDeEstudiante;
+        }
+
+        private void ValidarBajaMateria(Materia materia)
+        {
+            if (!ExisteMateriaConMismoCodigo(materia))
+                throw new ExcepcionNoExisteMateriaConEseCodigo();
         }
     }
 }
