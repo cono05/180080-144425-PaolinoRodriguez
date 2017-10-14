@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+>>>>>>> parent of a08c9bc... no message
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Logica.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Logica.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Dominio.dll
@@ -6,6 +10,22 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Persiste
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Dominio.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Excepciones.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\bin\Debug\Persistencia.pdb
+<<<<<<< HEAD
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.pdb
+=======
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.dll
+C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Logica\obj\Debug\Logica.pdb
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\bin\Debug\Logica.dll
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\bin\Debug\Logica.pdb
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\bin\Debug\Dominio.dll
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\bin\Debug\Excepciones.dll
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\bin\Debug\Persistencia.dll
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\bin\Debug\Dominio.pdb
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\bin\Debug\Excepciones.pdb
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\bin\Debug\Persistencia.pdb
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\obj\Debug\Logica.dll
+C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Logica\obj\Debug\Logica.pdb
+>>>>>>> parent of a08c9bc... no message
