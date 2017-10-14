@@ -82,6 +82,10 @@ namespace Logica
             {
                 throw new ExcepcionAlumnoSinEmail();
             }
+            if (!EsFormatoCedulaAlumnoCorrecto(alumno))
+            {
+                throw new ExcepcionFormatoCedulaIncorrecto();
+            }
         }
 
         public bool EsFormatoCedulaAlumnoCorrecto(Alumno alumno)
