@@ -3,11 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-<<<<<<< HEAD
-=======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obligatorio", "Obligatorio\Obligatorio.csproj", "{87C3B8F8-4A30-41CB-9AAC-0235D6F83104}"
 EndProject
->>>>>>> parent of a08c9bc... no message
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{C28722AE-D60A-4E77-8F05-BEBB34BADD64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{EE31ABDB-8689-4601-A92B-0F70B0194368}"
@@ -24,6 +21,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87C3B8F8-4A30-41CB-9AAC-0235D6F83104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C3B8F8-4A30-41CB-9AAC-0235D6F83104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C3B8F8-4A30-41CB-9AAC-0235D6F83104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C3B8F8-4A30-41CB-9AAC-0235D6F83104}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C28722AE-D60A-4E77-8F05-BEBB34BADD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C28722AE-D60A-4E77-8F05-BEBB34BADD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C28722AE-D60A-4E77-8F05-BEBB34BADD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
