@@ -9,6 +9,8 @@ namespace Logica
     public class ModuloGestionMaterias: IModulo
     {
         private IRepositorio repositorio;
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
         //private static ModuloGestionMaterias instancia;
         public ModuloGestionMaterias(ref RepositorioRam repositorio)
         {
@@ -108,6 +110,12 @@ namespace Logica
         {
             if (!ExisteMateriaConMismoCodigo(materia))
                 throw new ExcepcionNoExisteMateriaConEseCodigo();
+        }
+
+        public void EliminarAlumnoDeUnaMateria(Materia materia, Alumno alumno)
+        {
+            materia.Alumnos.Remove(alumno);
+            alumno.MateriasInscripto.Remove(materia);
         }
     }
 }
