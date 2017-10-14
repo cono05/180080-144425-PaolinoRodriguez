@@ -195,8 +195,7 @@ namespace Pruebas
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an10");
             modulo.Alta(materia);
             modulo.Baja(materia);
-            Assert.IsTrue(modulo.ObtenerMaterias().Count == 0);
-            
+            Assert.IsTrue(modulo.ObtenerMaterias().Count == 0);            
         }
     }
 }

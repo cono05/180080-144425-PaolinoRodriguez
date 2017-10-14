@@ -32,7 +32,7 @@ namespace Logica
 
         public void Baja(object obj)
         {
-            throw new NotImplementedException();
+            this.repositorio.ObtenerMaterias().Remove((Materia)obj);
         }
 
         public void Modificar()
