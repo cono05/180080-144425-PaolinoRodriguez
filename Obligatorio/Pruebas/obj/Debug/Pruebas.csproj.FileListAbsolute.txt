@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Pruebas\bin\Debug\Pruebas.dll
 C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Pruebas\bin\Debug\Pruebas.pdb
 C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Pruebas\bin\Debug\Dominio.dll
@@ -11,6 +12,8 @@ C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Prue
 C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Pruebas\obj\Debug\Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Pruebas\obj\Debug\Pruebas.dll
 C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Pruebas\obj\Debug\Pruebas.pdb
+=======
+>>>>>>> develop
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Pruebas.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Pruebas.pdb
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Dominio.dll
