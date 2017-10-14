@@ -29,11 +29,12 @@ namespace Pruebas
             return alumno;
         }
 
-        public static Docente CrearDocenteDePrueba(string nombre, string apellido)
+        public static Docente CrearDocenteDePrueba(string nombre, string apellido, string cedula)
         {
             Docente docente = Docente.CrearDocente();
             docente.Nombre = nombre;
             docente.Apellido = apellido;
+            docente.Cedula = cedula;
             return docente;
         }
 
@@ -50,6 +51,13 @@ namespace Pruebas
             RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionAlumno moduloGestionAlumnos = new ModuloGestionAlumno(repositorio);
             return moduloGestionAlumnos;
+        }
+
+        public static ModuloGestionDocente CrearModuloGestionDocentesDePrueba()
+        {
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionDocente moduloGestionDocentes = new ModuloGestionDocente(repositorio);
+            return moduloGestionDocentes;
         }
 
 

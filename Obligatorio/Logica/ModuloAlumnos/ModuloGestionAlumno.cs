@@ -1,6 +1,7 @@
 ﻿using System;
 using Persistencia;
 using Dominio;
+using Excepciones;
 
 namespace Logica
 {
@@ -39,6 +40,46 @@ namespace Logica
                 }
             }
             return ret;
+        }
+
+        public bool EsAlumnoSinNombre(Alumno alumno)
+        {
+            return string.IsNullOrEmpty(alumno.Nombre);
+        }
+
+        public bool EsAlumnoSinApellido(Alumno alumno)
+        {
+            return string.IsNullOrEmpty(alumno.Apellido);
+        }
+
+        public bool EsAlumnoSinCedula(Alumno alumno)
+        {
+            return string.IsNullOrEmpty(alumno.Cedula);
+        }
+
+        public bool EsAlumnoSinEmail(Alumno alumno)
+        {
+            return string.IsNullOrEmpty(alumno.Mail);
+        }
+
+        public void ValidarAlumno(Alumno alumno)
+        {
+            if (EsAlumnoSinNombre(alumno))
+            {
+                throw new ExcepcionAlumnoSinNombre();
+            }
+            if (EsAlumnoSinApellido(alumno))
+            {
+                throw new ExcepcionAlumnoSinApellido();
+            }
+            if(EsAlumnoSinCedula(alumno))
+            {
+                throw new ExcepcionAlumnoSinCedula();
+            }
+            if (EsAlumnoSinEmail(alumno))
+            {
+                throw new ExcepcionAlumnoSinEmail();
+            }
         }
     }
 }

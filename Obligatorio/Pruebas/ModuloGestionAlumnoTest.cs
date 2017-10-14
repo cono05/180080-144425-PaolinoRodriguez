@@ -38,5 +38,102 @@ namespace Pruebas
             modulo.Alta(alumno1);
             Assert.IsFalse(modulo.ExisteAlumnoConMismoNumeroEstudiante(alumno2));
         }
+
+        [TestMethod]
+        public void EsAlumnoSinNombreTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Assert.IsTrue(modulo.EsAlumnoSinNombre(alumno));
+        }
+
+        [TestMethod]
+        public void EsAlumnoSinNombreFalseTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Assert.IsFalse(modulo.EsAlumnoSinNombre(alumno));
+        }
+
+
+        [TestMethod]
+        public void EsAlumnoSinApellidoTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "", "0000000-3", "apellido@gmail.com", 1);
+            Assert.IsTrue(modulo.EsAlumnoSinApellido(alumno));
+        }
+
+        [TestMethod]
+        public void EsAlumnoSinApellidoFalseTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Assert.IsFalse(modulo.EsAlumnoSinApellido(alumno));
+        }
+
+        [TestMethod]
+        public void EsAlumnoSinCedulaTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "", "apellido@gmail.com", 1);
+            Assert.IsTrue(modulo.EsAlumnoSinCedula(alumno));
+        }
+
+        [TestMethod]
+        public void EsAlumnoSinCedulaFalseTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Assert.IsFalse(modulo.EsAlumnoSinCedula(alumno));
+        }
+
+        [TestMethod]
+        public void EsAlumnoSinEmailTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "", "", 1);
+            Assert.IsTrue(modulo.EsAlumnoSinEmail(alumno));
+        }
+
+        [TestMethod]
+        public void EsAlumnoSinEmailFalseTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Assert.IsFalse(modulo.EsAlumnoSinEmail(alumno));
+        }
+
+        [TestMethod]
+        public void ValidarAlumnoSinNombreErrorTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
+
+        [TestMethod]
+        public void ValidarAlumnoSinApellidoErrorTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
+
+        [TestMethod]
+        public void ValidarAlumnoSinCedulaErrorTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
+
+        [TestMethod]
+        public void ValidarAlumnoSinEmailErrorTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
     }
 }

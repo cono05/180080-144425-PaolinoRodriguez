@@ -55,6 +55,7 @@
     <Compile Include="AlumnoTest.cs" />
     <Compile Include="DocenteTest.cs" />
     <Compile Include="MateriaTest.cs" />
+    <Compile Include="ModuloGestionDocenteTest.cs" />
     <Compile Include="PersonaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ModuloGestionMateriasTest.cs" />

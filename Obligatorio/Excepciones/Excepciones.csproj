@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcepcionAlumnoSinApellido.cs" />
+    <Compile Include="ExcepcionAlumnoSinCedula.cs" />
+    <Compile Include="ExcepcionAlumnoSinEmail.cs" />
+    <Compile Include="ExcepcionAlumnoSinNombre.cs" />
     <Compile Include="ExcepcionExisteMateriaConMismoNombre.cs" />
     <Compile Include="ExcepcionMateriaCodigoRepetido.cs" />
     <Compile Include="ExcepcionMateriaSinNombre.cs" />
