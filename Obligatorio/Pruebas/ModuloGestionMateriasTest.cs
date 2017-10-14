@@ -198,6 +198,16 @@ namespace Pruebas
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 0);            
         }
 
-        
+        [TestMethod]
+        public void EliminarAlumnoDeMateriaTest()
+        {
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an10");
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            modulo.Alta(materia);
+            modulo.AgregarAlumnoEnMateria(materia, alumno);
+            modulo.EliminarAlumnoDeMateria(materia, alumno);
+            Assert.IsTrue(materia.Alumnos.Count == 0);
+        }
     }
 }

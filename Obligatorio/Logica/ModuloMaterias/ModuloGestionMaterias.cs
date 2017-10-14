@@ -109,5 +109,10 @@ namespace Logica
             if (!ExisteMateriaConMismoCodigo(materia))
                 throw new ExcepcionNoExisteMateriaConEseCodigo();
         }
+
+        public void EliminarAlumnoDeMateria(Materia materia, Alumno alumno)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
