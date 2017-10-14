@@ -7,6 +7,8 @@ namespace Logica
     public class ModuloGestionDocente : IModulo
     {
         private RepositorioRam repositorio;
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
 
         public ModuloGestionDocente(RepositorioRam repositorio)
         {

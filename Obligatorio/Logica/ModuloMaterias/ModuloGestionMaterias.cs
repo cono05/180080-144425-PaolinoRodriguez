@@ -9,6 +9,8 @@ namespace Logica
     public class ModuloGestionMaterias: IModulo
     {
         private IRepositorio repositorio;
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
         //private static ModuloGestionMaterias instancia;
         public ModuloGestionMaterias(ref RepositorioRam repositorio)
         {
