@@ -10,6 +10,9 @@ namespace Pruebas
     [TestClass]
     public class ModuloGestionMateriasTest
     {
+       
+
+      
         [TestMethod]
         public void AgregarMateriaTest()
         {
@@ -31,6 +34,8 @@ namespace Pruebas
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 1);
         }
+
+
 
 
         [TestMethod]
@@ -182,7 +187,6 @@ namespace Pruebas
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Assert.IsTrue(modulo.TienenMismoNumeroEstudiante(alumno, alumno2));
         }
-
-       
+           
     }
 }

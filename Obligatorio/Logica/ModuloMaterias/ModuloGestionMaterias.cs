@@ -10,20 +10,20 @@ namespace Logica
     {
         private IRepositorio repositorio;
         //private static ModuloGestionMaterias instancia;
-        public ModuloGestionMaterias(IRepositorio repositorio)
+        public ModuloGestionMaterias(ref RepositorioRam repositorio)
         {
             this.repositorio = repositorio;
         }
 
-        //public static ModuloGestionMaterias ObtenerInstancia(IRepositorio repositorio)
+        //public static ModuloGestionMaterias ObtenerInstancia(ref RepositorioRam repositorio)
         //{
         //    if (instancia == null)
         //    {
-        //        instancia = new ModuloGestionMaterias(repositorio); 
+        //        instancia = new ModuloGestionMaterias(ref repositorio);
         //    }
         //    return instancia;
         //}
-        
+
         public void Alta(object obj)
         {
             ValidarMateria((Materia)obj);
