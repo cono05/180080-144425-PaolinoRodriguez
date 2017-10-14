@@ -135,5 +135,21 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
             modulo.ValidarAlumno(alumno);
         }
+
+        [TestMethod]
+        public void EsFormatoCedulaAlumnoCorrectoTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-8", "na@gmail.com", 4);
+            Assert.IsTrue(modulo.EsFormatoCedulaAlumnoCorrecto(alumno));
+        }
+
+        [TestMethod]
+        public void EsFormatoCedulaAlumnoCorrectoFalseTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "12345-8", "na@gmail.com", 5);
+            Assert.IsFalse(modulo.EsFormatoCedulaAlumnoCorrecto(alumno));
+        }
     }
 }
