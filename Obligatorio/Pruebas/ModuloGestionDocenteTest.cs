@@ -92,5 +92,20 @@ namespace Pruebas
             Assert.IsFalse(modulo.EsDocenteSinCedula(docente));
         }
 
+        [TestMethod]
+        public void EsFormatoCedulaDocenteCorrectoTest()
+        {
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            Assert.IsTrue(modulo.EsFormatoCedulaDocenteCorrecto(docente));
+        }
+
+        [TestMethod]
+        public void EsFormatoCedulaDocenteCorrectoFalseTest()
+        {
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234-67-8");
+            Assert.IsFalse(modulo.EsFormatoCedulaDocenteCorrecto(docente));
+        }
     }
 }

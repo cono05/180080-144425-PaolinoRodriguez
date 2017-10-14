@@ -58,5 +58,32 @@ namespace Logica
         {
             return string.IsNullOrEmpty(docente.Cedula);
         }
+
+        public bool EsFormatoCedulaDocenteCorrecto(Docente docente)
+        {
+            bool ret = false;
+            if (docente.Cedula.Length == 9)
+            {
+                string subOne   = docente.Cedula.Substring(0, 7);
+                string subTwo   = docente.Cedula.Substring(7, 1);
+                string subTree  = docente.Cedula.Substring(8, 1);
+
+                int n;
+                var isNumericSubOne = int.TryParse(subOne, out n);
+                if (isNumericSubOne)
+                {
+                    if (subTwo == "-")
+                    {
+                        int m;
+                        var isNumericSubTree = int.TryParse(subTree, out m);
+                        if (isNumericSubTree)
+                        {
+                            ret = true;
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
     }
 }
