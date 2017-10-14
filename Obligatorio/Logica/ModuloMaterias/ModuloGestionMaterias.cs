@@ -48,7 +48,7 @@ namespace Logica
             bool retorno = false;
             foreach (Materia mat in repositorio.ObtenerMaterias())
             {
-                if (mat.Equals(materia))
+                if (mat.Nombre.Equals(materia.Nombre))
                     return true;
             }
             return retorno;

@@ -16,7 +16,7 @@ namespace Pruebas
         [TestMethod]
         public void AgregarMateriaTest()
         {
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15 );
             RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             //ModuloGestionMaterias modulo = ModuloGestionMaterias.ObtenerInstancia(repositorio);
@@ -27,7 +27,7 @@ namespace Pruebas
         [TestMethod]
         public void ObtenerMateriasTest()
         {
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             //ModuloGestionMaterias modulo = ModuloGestionMaterias.ObtenerInstancia(repositorio);
@@ -42,8 +42,8 @@ namespace Pruebas
         public void ExisteMateriaConMismoNombreTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
-            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an16");
+            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 16);
             modulo.Alta(materia1);
             Assert.IsTrue(modulo.ExisteMateriaConMismoNombre(materia1));
         }
@@ -52,8 +52,8 @@ namespace Pruebas
         public void ExisteMateriaConMismoNombreFalseTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
-            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", "an16");
+            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15 );
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 16 );
             modulo.Alta(materia1);
             Assert.IsFalse(modulo.ExisteMateriaConMismoNombre(materia2));
         }
@@ -62,7 +62,7 @@ namespace Pruebas
         public void ValidarMateriaOKTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15 );
             modulo.ValidarAltaMateria(materia);
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ExisteMateriaConMismoNombre(materia));
@@ -72,7 +72,7 @@ namespace Pruebas
         public void ValidarMateriaErrorNombreRepetidoTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             modulo.Alta(materia);
             modulo.ValidarAltaMateria(materia);
         }
@@ -81,7 +81,7 @@ namespace Pruebas
         public void EsMateriaSinNombreTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , 15 );
             Assert.IsFalse(modulo.EsMateriaSinNombre(materia));
         }
 
@@ -89,7 +89,7 @@ namespace Pruebas
         public void EsMateriaSinNombreTrueTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("" , "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("" , 15 );
             Assert.IsTrue(modulo.EsMateriaSinNombre(materia));
         }
 
@@ -98,7 +98,7 @@ namespace Pruebas
         public void ValidarMateriaSinNombreErrorTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("" , "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("" , 15 );
             modulo.ValidarAltaMateria(materia);
         }
 
@@ -106,7 +106,7 @@ namespace Pruebas
         public void ExisteMateriaConMismoCodigoTrueTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15 );
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ExisteMateriaConMismoCodigo(materia));
         }
@@ -115,8 +115,8 @@ namespace Pruebas
         public void ExisteMateriaConMismoCodigoFalseTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
-            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", "an19");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15 );
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 16 );
             modulo.Alta(materia);
             Assert.IsFalse(modulo.ExisteMateriaConMismoCodigo(materia2));
         }
@@ -126,8 +126,8 @@ namespace Pruebas
         public void ValidarMateriaCodigoRepetidoErrorTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
-            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 15);
             modulo.Alta(materia);
             modulo.ValidarAltaMateria(materia2);
         }
@@ -137,7 +137,7 @@ namespace Pruebas
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             modulo.Alta(materia);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
             Assert.IsTrue(materia.Alumnos.Count == 1);
@@ -151,7 +151,7 @@ namespace Pruebas
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 222222);
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             modulo.Alta(materia);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
             Assert.IsTrue(modulo.EstaInscriptoEnLaMateria(materia, alumno));
@@ -163,7 +163,7 @@ namespace Pruebas
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 222222);
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an15");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             modulo.Alta(materia);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
             Assert.IsFalse(modulo.EstaInscriptoEnLaMateria(materia, alumno2));
@@ -192,7 +192,7 @@ namespace Pruebas
         public void BajaTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an10");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
             modulo.Alta(materia);
             modulo.Baja(materia);
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 0);            
@@ -203,7 +203,7 @@ namespace Pruebas
         public void BajaMateriaErrorTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an10");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
             modulo.Baja(materia);
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 0);
         }
@@ -212,7 +212,7 @@ namespace Pruebas
         public void EliminarAlumnoDeUnaMateriaTest()
         {
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
-            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an10");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             modulo.Alta(materia);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
