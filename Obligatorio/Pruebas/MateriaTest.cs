@@ -30,16 +30,16 @@ namespace Pruebas
         [TestMethod]
         public void EqualsOkTest()
         {
-            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , "AN15");
-            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , "AN16");
+            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , 10);
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , 10);
             Assert.IsTrue(materia1.Equals(materia2));
         }
 
         [TestMethod]
         public void EqualsFalseTest()
         {
-            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , "AN15");
-            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2" , "AN16");
+            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , 15);
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2" , 16);
             Assert.IsFalse(materia1.Equals(materia2));
         }
 

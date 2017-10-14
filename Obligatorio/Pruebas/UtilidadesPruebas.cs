@@ -10,7 +10,7 @@ namespace Pruebas
 {
     class UtilidadesPruebas
     {
-        public static Materia CrearMateriaDePueba(string nombre, string codigo)
+        public static Materia CrearMateriaDePueba(string nombre, int codigo)
         {
             Materia materia = Materia.CrearMateria();
             materia.Nombre = nombre;
