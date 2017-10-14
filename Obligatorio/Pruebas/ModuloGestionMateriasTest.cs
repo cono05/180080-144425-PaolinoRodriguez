@@ -187,6 +187,16 @@ namespace Pruebas
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
             Assert.IsTrue(modulo.TienenMismoNumeroEstudiante(alumno, alumno2));
         }
-           
+
+        [TestMethod]
+        public void BajaTest()
+        {
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", "an10");
+            modulo.Alta(materia);
+            modulo.Baja(materia);
+            Assert.IsTrue(modulo.ObtenerMaterias().Count == 0);
+            
+        }
     }
 }
