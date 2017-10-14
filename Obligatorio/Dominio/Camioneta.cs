@@ -8,6 +8,6 @@ namespace Dominio
 {
     public class Camioneta
     {
-
+        public string chapa { get; set; }
     }
 }
