@@ -32,12 +32,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.MateriasListBox = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.AlumnosNoCursanListBox = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.AlumnosInscriptosListBox = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -54,12 +53,11 @@
             // 
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.listBox3);
+            this.panel2.Controls.Add(this.AlumnosInscriptosListBox);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.listBox2);
+            this.panel2.Controls.Add(this.AlumnosNoCursanListBox);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.MateriasListBox);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -87,22 +85,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Listado de Materias:";
             // 
-            // listBox1
+            // MateriasListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(36, 81);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(207, 212);
-            this.listBox1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(97, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Seleccionar Materia";
-            this.button1.UseVisualStyleBackColor = true;
+            this.MateriasListBox.FormattingEnabled = true;
+            this.MateriasListBox.Location = new System.Drawing.Point(36, 81);
+            this.MateriasListBox.Name = "MateriasListBox";
+            this.MateriasListBox.Size = new System.Drawing.Size(207, 212);
+            this.MateriasListBox.TabIndex = 2;
+            this.MateriasListBox.SelectedIndexChanged += new System.EventHandler(this.MateriasListBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -113,13 +103,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Listado de Alumnos que no cursan la materia:";
             // 
-            // listBox2
+            // AlumnosNoCursanListBox
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(322, 81);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(207, 212);
-            this.listBox2.TabIndex = 5;
+            this.AlumnosNoCursanListBox.FormattingEnabled = true;
+            this.AlumnosNoCursanListBox.Location = new System.Drawing.Point(322, 81);
+            this.AlumnosNoCursanListBox.Name = "AlumnosNoCursanListBox";
+            this.AlumnosNoCursanListBox.Size = new System.Drawing.Size(207, 212);
+            this.AlumnosNoCursanListBox.TabIndex = 5;
             // 
             // label4
             // 
@@ -130,13 +120,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Alumnos inscriptos en la materia:";
             // 
-            // listBox3
+            // AlumnosInscriptosListBox
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(615, 81);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(207, 212);
-            this.listBox3.TabIndex = 7;
+            this.AlumnosInscriptosListBox.FormattingEnabled = true;
+            this.AlumnosInscriptosListBox.Location = new System.Drawing.Point(615, 81);
+            this.AlumnosInscriptosListBox.Name = "AlumnosInscriptosListBox";
+            this.AlumnosInscriptosListBox.Size = new System.Drawing.Size(207, 212);
+            this.AlumnosInscriptosListBox.TabIndex = 7;
             // 
             // button2
             // 
@@ -174,15 +164,14 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox MateriasListBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox AlumnosInscriptosListBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox AlumnosNoCursanListBox;
         private System.Windows.Forms.Label label3;
     }
 }

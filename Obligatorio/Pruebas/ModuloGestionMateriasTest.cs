@@ -299,6 +299,17 @@ namespace Pruebas
             modulo.AgregarAlumnoEnMateria(materia, alumno);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
         }
+
+        [TestMethod]
+        public void ObtenerAlumnosTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            moduloAlumnos.Alta(alumno);
+            Assert.IsTrue(modulo.ObtenerAlumnos().Count == 1);
+        }
         
     }
 }

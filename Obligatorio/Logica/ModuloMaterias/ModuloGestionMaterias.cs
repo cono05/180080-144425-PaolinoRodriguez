@@ -142,5 +142,10 @@ namespace Logica
             if (EstaInscriptoEnLaMateria(materia, alumno))
                 throw new ExcepcionAlumnoYaCursaLaMateria();
         }
+
+        public ICollection<Alumno> ObtenerAlumnos()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
