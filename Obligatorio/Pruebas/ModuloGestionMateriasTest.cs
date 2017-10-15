@@ -151,6 +151,7 @@ namespace Pruebas
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 15);
             modulo.Alta(materia);
+            materia2.Codigo = materia.Codigo;
             modulo.ValidarAltaMateria(materia2);
         }
         

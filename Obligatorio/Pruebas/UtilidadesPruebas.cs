@@ -19,7 +19,7 @@ namespace Pruebas
         {
             Materia materia = Materia.CrearMateria();
             materia.Nombre = nombre;
-            materia.Codigo = codigo;
+            //materia.Codigo = codigo;
             return materia;
         }
 

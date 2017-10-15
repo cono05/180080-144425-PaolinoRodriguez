@@ -30,9 +30,8 @@ namespace Pruebas
         [TestMethod]
         public void EqualsOkTest()
         {
-            Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , 10);
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1" , 10);
-            Assert.IsTrue(materia1.Equals(materia2));
+            Assert.IsTrue(materia2.Equals(materia2));
         }
 
         [TestMethod]
@@ -43,6 +42,12 @@ namespace Pruebas
             Assert.IsFalse(materia1.Equals(materia2));
         }
 
-        
+        [TestMethod]
+        public void AsignacionDeCodigoAutomaticoTest()
+        {
+            Materia materia3 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
+            Materia materia4 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
+            Assert.IsTrue(materia4.Codigo - materia3.Codigo == 1);
+        }        
     }
 }

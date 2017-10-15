@@ -35,6 +35,7 @@ namespace Logica
         public void Baja(object obj)
         {
             ValidarBajaMateria((Materia)obj);
+            EliminarMateriaEncadaAlumnoInscripto((Materia)obj);
             repositorio.EliminarMateria((Materia)obj);
         }
 
