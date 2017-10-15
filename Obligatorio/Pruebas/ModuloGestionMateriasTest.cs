@@ -33,7 +33,33 @@ namespace Pruebas
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 1);
         }
-        
+
+        [TestMethod]
+        public void ModificarMateriaTest()
+        {
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
+            modulo.Alta(materia);
+            string nombreViejo = materia.Nombre;
+            string datos = materia.Nombre;
+            modulo.ModificarMateria(materia, datos);
+            Assert.IsTrue(nombreViejo.Equals(materia.Nombre));
+        }
+
+        [TestMethod]
+        public void ModificarMateriaFalseTest()
+        {
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
+            modulo.Alta(materia);
+            string nombreViejo = materia.Nombre;
+            string datos = "Ingenieria de Software 2";
+            modulo.ModificarMateria(materia, datos);
+            Assert.IsFalse(nombreViejo.Equals(materia.Nombre));
+        }
+
         [TestMethod]
         public void ExisteMateriaConMismoNombreTest()
         {
