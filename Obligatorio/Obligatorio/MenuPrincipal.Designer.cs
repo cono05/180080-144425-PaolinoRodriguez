@@ -93,6 +93,7 @@
             this.Controls.Add(this.GestionarAlumnosBtn);
             this.Name = "MenuPrincipal";
             this.Size = new System.Drawing.Size(875, 406);
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
