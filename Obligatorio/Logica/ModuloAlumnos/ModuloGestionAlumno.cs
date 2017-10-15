@@ -102,6 +102,10 @@ namespace Logica
             {
                 throw new ExcepcionFormatoCedulaIncorrecto();
             }
+            if (ExisteAlumnoConMismaCedula(alumno))
+            {
+                throw new ExcepcionExisteAlumnoConMismaCedula();
+            }
         }
 
         public bool EsFormatoCedulaAlumnoCorrecto(Alumno alumno)
@@ -133,8 +137,38 @@ namespace Logica
 
         public void InscribirAlumnoEnMateria(Alumno alumno, Materia materia)
         {
-            alumno.MateriasInscripto.Add(materia);
-            materia.Alumnos.Add(alumno);
+            if(!EstaAlumnoInscritoEnMateria(alumno, materia))
+            {
+                alumno.MateriasInscripto.Add(materia);
+                materia.Alumnos.Add(alumno);
+            }
+        }
+
+        public bool ExisteAlumnoConMismaCedula(Alumno alumno1)
+        {
+            bool ret = false;
+            foreach(Alumno a in repositorio.Alumnos)
+            {
+                if(alumno1.Cedula == a.Cedula)
+                {
+                    ret = true;
+                }
+            }
+            return ret;
+        }
+
+        public void DesincribirAlumnoEnMateria(Alumno alumno, Materia materia)
+        {
+            if(EstaAlumnoInscritoEnMateria(alumno, materia))
+            {
+                alumno.MateriasInscripto.Remove(materia);
+                materia.Alumnos.Remove(alumno);
+            }
+        }
+
+        public bool EstaAlumnoInscritoEnMateria(Alumno alumno, Materia materia)
+        {
+            return alumno.MateriasInscripto.Contains(materia);
         }
     }
 }
