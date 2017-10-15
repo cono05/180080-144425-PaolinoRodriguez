@@ -30,7 +30,12 @@ namespace Obligatorio
         {
             Materia materia = (Materia)MateriasListBox.SelectedItem;
             AlumnosNoCursanListBox.DataSource = null;
-            
+            AlumnosInscriptosListBox.DataSource = null;
+            ICollection<Alumno> listaQueNoCursan = CargarListBoxAlumnosNoInscriptos(materia);
+            if (listaQueNoCursan.Count > 0)
+            {
+                AlumnosNoCursanListBox.DataSource = listaQueNoCursan;
+            }
             
             //List<Materia> lista = CargarComboUsuarios(equipo);
             //listUsuarios.DataSource = listaAuxiliar;
@@ -48,6 +53,8 @@ namespace Obligatorio
             }
             return lista;
         }
+
+        
 
         public ICollection<Materia> CargarListBoxMaterias()
         {

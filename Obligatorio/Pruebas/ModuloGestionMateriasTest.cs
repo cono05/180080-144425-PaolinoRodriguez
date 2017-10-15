@@ -293,7 +293,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1234567-9", "m@g.com", 111222);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             modulo.Alta(materia);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
@@ -306,9 +306,21 @@ namespace Pruebas
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
             ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1234567-9", "m@g.com", 111222);
             moduloAlumnos.Alta(alumno);
             Assert.IsTrue(modulo.ObtenerAlumnos().Count == 1);
+        }
+
+        [TestMethod]
+        public void ObtenerAlumnosInscriptosEnMateriaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio); Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1234567-9", "m@g.com", 111222);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            moduloAlumnos.Alta(alumno);
+            moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
+            Assert.IsTrue(moduloMaterias.ObtenerAlumnosInscriptosEnMateria(materia).Count == 1);            
         }
         
     }

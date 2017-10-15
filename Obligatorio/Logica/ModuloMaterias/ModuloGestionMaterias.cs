@@ -145,6 +145,11 @@ namespace Logica
 
         public ICollection<Alumno> ObtenerAlumnos()
         {
+            return repositorio.ObtenerAlumnos();
+        }
+
+        public ICollection<Alumno> ObtenerAlumnosInscriptosEnMateria(Materia materia)
+        {
             throw new NotImplementedException();
         }
     }
