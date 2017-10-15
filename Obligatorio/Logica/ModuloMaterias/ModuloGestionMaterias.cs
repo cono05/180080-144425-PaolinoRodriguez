@@ -112,7 +112,7 @@ namespace Logica
                 throw new ExcepcionNoExisteMateriaConEseCodigo();
         }
 
-        public void EliminarAlumnoDeUnaMateria(Materia materia, Alumno alumno)
+        public static void EliminarAlumnoDeUnaMateria(Materia materia, Alumno alumno)
         {
             materia.Alumnos.Remove(alumno);
             alumno.MateriasInscripto.Remove(materia);
