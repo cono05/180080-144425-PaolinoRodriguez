@@ -271,9 +271,9 @@ namespace Pruebas
             moduloAlumnos.Alta(alumno);
             moduloAlumnos.Alta(alumno2);
             moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
-            moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
+            moduloMaterias.AgregarAlumnoEnMateria(materia, alumno2);
             moduloMaterias.EliminarMateriaEncadaAlumnoInscripto(materia);
-            Assert.IsTrue(alumno.MateriasInscripto.Count == 0);
+            Assert.IsTrue(alumno.MateriasInscripto.Count == 0 && alumno2.MateriasInscripto.Count == 0);
         }
 
         [TestMethod]
@@ -298,7 +298,13 @@ namespace Pruebas
         [ExpectedException(typeof(ExcepcionAlumnoYaCursaLaMateria))]
         public void ValidarInscripcionDeAlumnoEnMateriaTest()
         {
-            
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            modulo.Alta(materia);
+            modulo.AgregarAlumnoEnMateria(materia, alumno);
+            modulo.AgregarAlumnoEnMateria(materia, alumno);
         }
         
     }
