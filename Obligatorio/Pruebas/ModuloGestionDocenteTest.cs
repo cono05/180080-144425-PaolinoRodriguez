@@ -22,6 +22,19 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void EliminarDocenteTest()
+        {
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionDocente modulo = new ModuloGestionDocente(repositorio);
+            modulo.Alta(docente);
+            int antesEliminar = repositorio.Docentes.Count;
+            modulo.Baja(docente);
+            int despuesEliminar = repositorio.Docentes.Count;
+            Assert.IsTrue(antesEliminar == despuesEliminar + 1);
+        }
+
+        [TestMethod]
         public void ExisteDocenteConMismaCedulaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();

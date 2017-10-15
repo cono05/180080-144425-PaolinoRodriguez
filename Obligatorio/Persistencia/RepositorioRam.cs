@@ -39,7 +39,7 @@ namespace Persistencia
 
         public void EliminarDocente(Docente docente)
         {
-            throw new NotImplementedException();
+            this.Docentes.Remove(docente);
         }
 
         public void EliminarMateria(Materia materia)

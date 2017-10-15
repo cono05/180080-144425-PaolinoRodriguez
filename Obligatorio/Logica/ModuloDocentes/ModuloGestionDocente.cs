@@ -18,17 +18,31 @@ namespace Logica
 
         public void Alta(object obj)
         {
+            ValidarAlta((Docente)obj);
             repositorio.AgregarDocente((Docente)obj);
         }
 
         public void Baja(object obj)
         {
-            throw new NotImplementedException();
+            ValidarBaja((Docente)obj);
+            repositorio.EliminarDocente((Docente)obj);
         }
 
         public void Modificar()
         {
             throw new NotImplementedException();
+        }
+
+        public void ValidarAlta(Docente docente)
+        {
+            if (ExisteDocenteConMismaCedula(docente.Cedula))
+                throw new ExcepcionExisteDocenteConMismaCedula(); 
+        }
+
+        public void ValidarBaja(Docente docente)
+        {
+            if (!ExisteDocenteConMismaCedula(docente.Cedula))
+                throw new ExcepcionNoExisteDocente();
         }
 
         public bool ExisteDocenteConMismaCedula(string cedula)
