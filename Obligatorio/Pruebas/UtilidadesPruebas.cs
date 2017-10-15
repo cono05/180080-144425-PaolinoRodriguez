@@ -58,7 +58,7 @@ namespace Pruebas
 
         public static ModuloGestionDocente CrearModuloGestionDocentesDePrueba(ref RepositorioRam repositorio)
         {
-            ModuloGestionDocente moduloGestionDocentes = new ModuloGestionDocente(repositorio);
+            ModuloGestionDocente moduloGestionDocentes = new ModuloGestionDocente(ref repositorio);
             return moduloGestionDocentes;
         }
 

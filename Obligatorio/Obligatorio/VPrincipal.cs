@@ -12,7 +12,7 @@ namespace Obligatorio
             InitializeComponent();
             RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionAlumno moduloAlumnos = new ModuloGestionAlumno(ref repositorio);
-            ModuloGestionDocente moduloDocentes = new ModuloGestionDocente(repositorio);
+            ModuloGestionDocente moduloDocentes = new ModuloGestionDocente(ref repositorio);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(ref repositorio);
             CargarPanelPrincipal(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);
         }

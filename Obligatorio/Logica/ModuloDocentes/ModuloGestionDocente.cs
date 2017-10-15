@@ -11,7 +11,7 @@ namespace Logica
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
-        public ModuloGestionDocente(RepositorioRam repositorio)
+        public ModuloGestionDocente(ref RepositorioRam repositorio)
         {
             this.repositorio = repositorio;
         }
@@ -74,6 +74,20 @@ namespace Logica
             return string.IsNullOrEmpty(docente.Cedula);
         }
 
+        public bool EstaInscritoEnLaMateria(Docente docente, Materia materia)
+        {
+            return docente.MateriasQueDicta.Contains(materia);
+        }
+
+        public void InscribirDocenteEnMateria(Docente docente, Materia materia)
+        {
+            if (!EstaInscritoEnLaMateria(docente, materia))
+            {
+                docente.MateriasQueDicta.Add(materia);
+                materia.Docentes.Add(docente);
+            }
+        }
+
         public bool EsFormatoCedulaDocenteCorrecto(string cedula)
         {
             bool ret = false;
@@ -99,6 +113,15 @@ namespace Logica
                 }
             }
             return ret;
+        }
+
+        public void DesinscribirDocenteEnMateria(Docente docente, Materia materia)
+        {
+            if (!EstaInscritoEnLaMateria(docente, materia))
+            {
+                docente.MateriasQueDicta.Remove(materia);
+                materia.Docentes.Remove(docente);
+            }
         }
 
         public void ValidarDocente(Docente docente)
