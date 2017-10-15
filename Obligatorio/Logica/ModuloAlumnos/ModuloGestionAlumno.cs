@@ -25,9 +25,16 @@ namespace Logica
 
         public void Baja(object obj)
         {
-            // Antes de eliminar alumno, lo doy de baja en las materias que esta inscrito
+            ValidarBajaAlumno((Alumno)obj);
             BajaDeAlumnoEnMaterias((Alumno)obj);
             repositorio.EliminarAlumno((Alumno)obj);
+            
+        }
+
+        public void ValidarBajaAlumno(Alumno alumno)
+        {
+            if (!ExisteAlumnoConMismaCedula(alumno.Cedula))
+                throw new ExcepcionNoExisteAlumno();
         }
 
         public void BajaDeAlumnoEnMaterias(Alumno alumno)
@@ -37,9 +44,7 @@ namespace Logica
                 if (alumno.MateriasInscripto.Contains(m))
                 {
                     ModuloGestionMaterias.EliminarAlumnoDeUnaMateria(m, alumno);
-                    //alumno.MateriasInscripto.Remove(m);
                 }
-                
             }
         }
 

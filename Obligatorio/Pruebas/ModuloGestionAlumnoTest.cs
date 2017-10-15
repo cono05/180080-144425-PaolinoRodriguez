@@ -263,7 +263,7 @@ namespace Pruebas
 
         [TestMethod]
         [ExpectedException(typeof(ExcepcionExisteAlumnoConMismaCedula))]
-        public void ValidarAlumnoExisteAlumnoConMismaCedulaTest()
+        public void ValidarExisteAlumnoConMismaCedulaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
@@ -271,6 +271,16 @@ namespace Pruebas
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 2);
             modulo.Alta(alumno1);
             modulo.ValidarAlumno(alumno2);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionNoExisteAlumno))]
+        public void ValidarNoExisteAlumno()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0004h00-3", "apellido@gmail.com", 1);
+            modulo.ValidarBajaAlumno(alumno);
         }
         #endregion Validaciones test
 
