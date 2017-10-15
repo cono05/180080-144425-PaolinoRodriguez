@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(236, 85);
+            this.label2.Location = new System.Drawing.Point(350, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 13);
             this.label2.TabIndex = 1;
@@ -72,14 +72,14 @@
             // MateriasListBox
             // 
             this.MateriasListBox.FormattingEnabled = true;
-            this.MateriasListBox.Location = new System.Drawing.Point(239, 101);
+            this.MateriasListBox.Location = new System.Drawing.Point(353, 101);
             this.MateriasListBox.Name = "MateriasListBox";
-            this.MateriasListBox.Size = new System.Drawing.Size(172, 251);
+            this.MateriasListBox.Size = new System.Drawing.Size(172, 199);
             this.MateriasListBox.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(460, 293);
+            this.button1.Location = new System.Drawing.Point(323, 321);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 40);
             this.button1.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(594, 293);
+            this.button2.Location = new System.Drawing.Point(456, 321);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 40);
             this.button2.TabIndex = 4;
