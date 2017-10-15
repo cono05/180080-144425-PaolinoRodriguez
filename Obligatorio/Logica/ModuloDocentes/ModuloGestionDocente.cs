@@ -1,6 +1,7 @@
 ﻿using System;
 using Persistencia;
 using Dominio;
+using Excepciones;
 
 namespace Logica
 {
@@ -30,12 +31,12 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public bool ExisteDocenteConMismaCedula(Docente docente)
+        public bool ExisteDocenteConMismaCedula(string cedula)
         {
             bool ret = false;
             foreach(Docente d in repositorio.ObtenerDocentes())
             {
-                if(d.Cedula == docente.Cedula)
+                if(d.Cedula == cedula)
                 {
                     ret = true;
                     break;
@@ -59,14 +60,14 @@ namespace Logica
             return string.IsNullOrEmpty(docente.Cedula);
         }
 
-        public bool EsFormatoCedulaDocenteCorrecto(Docente docente)
+        public bool EsFormatoCedulaDocenteCorrecto(string cedula)
         {
             bool ret = false;
-            if (docente.Cedula.Length == 9)
+            if (cedula.Length == 9)
             {
-                string subOne   = docente.Cedula.Substring(0, 7);
-                string subTwo   = docente.Cedula.Substring(7, 1);
-                string subTree  = docente.Cedula.Substring(8, 1);
+                string subOne   = cedula.Substring(0, 7);
+                string subTwo   = cedula.Substring(7, 1);
+                string subTree  = cedula.Substring(8, 1);
 
                 int n;
                 var isNumericSubOne = int.TryParse(subOne, out n);
@@ -85,5 +86,31 @@ namespace Logica
             }
             return ret;
         }
+
+        public void ValidarDocente(Docente docente)
+        {
+            if (EsDocenteSinNombre(docente))
+            {
+                throw new ExcepcionDocenteSinNombre();
+            }
+            if (EsDocenteSinApellido(docente))
+            {
+                throw new ExcepcionDocenteSinApellido();
+            }
+            if (EsDocenteSinCedula(docente))
+            {
+                throw new ExcepcionDocenteSinCedula();
+            }
+            if (!EsFormatoCedulaDocenteCorrecto(docente.Cedula))
+            {
+                throw new ExcepcionFormatoCedulaIncorrecto();
+            }
+            if (ExisteDocenteConMismaCedula(docente.Cedula))
+            {
+                throw new ExcepcionExisteDocenteConMismaCedula();
+            }
+            
+        }
+        /*TODO: Docente y Alumno pueden tener la misma cedula. Cambiar */
     }
 }
