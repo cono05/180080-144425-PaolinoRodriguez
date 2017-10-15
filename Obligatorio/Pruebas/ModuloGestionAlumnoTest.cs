@@ -90,7 +90,6 @@ namespace Pruebas
             Assert.IsFalse(modulo.EsAlumnoSinNombre(alumno));
         }
 
-
         [TestMethod]
         public void EsAlumnoSinApellidoTest()
         {
@@ -144,7 +143,8 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
             Assert.IsFalse(modulo.EsAlumnoSinEmail(alumno));
         }
-
+       
+        #region ValidacionesTest
         [TestMethod]
         [ExpectedException(typeof(ExcepcionAlumnoSinNombre))]
         public void ValidarAlumnoSinNombreErrorTest()
@@ -186,16 +186,28 @@ namespace Pruebas
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ExcepcionFormatoCedulaIncorrecto))]
+        public void ValidarFormatoCedulaIncorrecto()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0004h00-3", "apellido@gmail.com", 1);
+            modulo.ValidarAlumno(alumno);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ExcepcionExisteAlumnoConMismaCedula))]
         public void ValidarAlumnoExisteAlumnoConMismaCedulaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
             Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
-            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 2);
             modulo.Alta(alumno1);
             modulo.ValidarAlumno(alumno2);
         }
+        #endregion Validaciones test
+
 
         [TestMethod]
         public void EsFormatoCedulaAlumnoCorrectoTest()
