@@ -44,6 +44,14 @@ namespace Logica
             throw new NotImplementedException();
         }
 
+        public void ModificarMateria(Materia materia, string datos)
+        {
+            // Por ahora solo modificamos nombre
+            ValidarBajaMateria(materia);
+            string nuevoNombre = datos;
+            materia.Nombre = nuevoNombre;
+        }
+
         public bool ExisteMateriaConMismoNombre(Materia materia)
         {
             bool retorno = false;
