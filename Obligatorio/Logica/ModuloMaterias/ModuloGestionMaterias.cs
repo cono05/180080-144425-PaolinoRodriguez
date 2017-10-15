@@ -129,5 +129,10 @@ namespace Logica
                 }
             }
         }
+
+        public bool HayMateriasRegistradas()
+        {
+            return ObtenerMaterias().Count > 0;
+        }
     }
 }

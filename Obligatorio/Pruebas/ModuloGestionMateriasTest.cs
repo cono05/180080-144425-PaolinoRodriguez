@@ -285,6 +285,14 @@ namespace Pruebas
             moduloMaterias.Alta(materia);
             Assert.IsTrue(moduloMaterias.HayMateriasRegistradas());
         }
+
+        [TestMethod]
+        public void HayMateriasRegistradasFalseTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Assert.IsFalse(moduloMaterias.HayMateriasRegistradas());
+        }
         
     }
 }
