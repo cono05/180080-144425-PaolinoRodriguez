@@ -31,9 +31,14 @@ namespace Logica
 
         public void BajaDeAlumnoEnMaterias(Alumno alumno)
         {
-            foreach (Materia m in alumno.MateriasInscripto)
+            foreach (Materia m in repositorio.ObtenerMaterias())
             {
-                ModuloGestionMaterias.EliminarAlumnoDeUnaMateria(m, alumno);
+                if (alumno.MateriasInscripto.Contains(m))
+                {
+                    ModuloGestionMaterias.EliminarAlumnoDeUnaMateria(m, alumno);
+                    //alumno.MateriasInscripto.Remove(m);
+                }
+                
             }
         }
 
@@ -124,6 +129,12 @@ namespace Logica
                 }
             }
             return ret;
+        }
+
+        public void InscribirAlumnoEnMateria(Alumno alumno, Materia materia)
+        {
+            alumno.MateriasInscripto.Add(materia);
+            materia.Alumnos.Add(alumno);
         }
     }
 }
