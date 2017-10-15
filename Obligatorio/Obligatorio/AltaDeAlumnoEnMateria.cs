@@ -24,6 +24,8 @@ namespace Obligatorio
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
+            MateriasListBox.DataSource = null;
+            MateriasListBox.DataSource = CargarListBoxMaterias();
         }
 
         private void MateriasListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace Obligatorio
         public ICollection<Alumno> CargarListBoxAlumnosNoInscriptos(Materia materia)
         {
             ICollection<Alumno> lista = new List<Alumno>();
-            foreach (Alumno a in materia.Alumnos)
+            foreach (Alumno a in moduloMaterias.ObtenerAlumnos())
             {
                 if (!moduloMaterias.EstaInscriptoEnLaMateria(materia, a))
                 {
@@ -66,6 +68,11 @@ namespace Obligatorio
                 lista.Add(materia);
             }
             return lista;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

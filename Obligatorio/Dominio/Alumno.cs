@@ -8,9 +8,11 @@ namespace Dominio
         public string Mail { get; set; }
         public ICollection<Materia> MateriasInscripto { get; set; }
 
+        private static int numero = 1111;
         public Alumno()
         {
-            this.MateriasInscripto = new List<Materia>();
+            MateriasInscripto = new List<Materia>();
+            NumeroDeEstudiante = ++numero;
         }
         public static Alumno CrearAlumno()
         {
