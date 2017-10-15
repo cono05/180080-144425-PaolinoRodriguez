@@ -11,9 +11,6 @@ namespace Pruebas
     public class ModuloGestionMateriasTest
     {
 
-        
-
-
         [TestMethod]
         public void AgregarMateriaTest()
         {
@@ -26,7 +23,6 @@ namespace Pruebas
 
         }
         
-
         [TestMethod]
         public void ObtenerMateriasTest()
         {
@@ -38,9 +34,6 @@ namespace Pruebas
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 1);
         }
         
-
-
-
         [TestMethod]
         public void ExisteMateriaConMismoNombreTest()
         {
