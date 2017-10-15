@@ -30,5 +30,10 @@ namespace Dominio
             }
             return equals;
         }
+
+        public override string ToString()
+        {
+            return Nombre + " " + Apellido + " (" + NumeroDeEstudiante + ")";
+        }
     }
 }
