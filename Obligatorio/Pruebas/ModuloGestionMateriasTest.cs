@@ -298,7 +298,13 @@ namespace Pruebas
         [ExpectedException(typeof(ExcepcionAlumnoYaCursaLaMateria))]
         public void ValidarInscripcionDeAlumnoEnMateriaTest()
         {
-            
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            modulo.Alta(materia);
+            modulo.AgregarAlumnoEnMateria(materia, alumno);
+            modulo.AgregarAlumnoEnMateria(materia, alumno);
         }
         
     }
