@@ -33,6 +33,23 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void EliminarAlumnoInscritoEnMateriasTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Maxi", "Ramirez", "3234256-7", "mr@mail.com", 9);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño Aplicaciones 1", 1);
+            ModuloGestionAlumno moduloAlumno    = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            moduloAlumno.Alta(alumno);
+            moduloMateria.Alta(materia);
+            moduloAlumno.InscribirAlumnoEnMateria(alumno, materia);
+            int antesEliminar = moduloAlumno.repositorio.Alumnos.Count;
+            moduloAlumno.Baja(alumno);
+            int despuesEliminar = moduloAlumno.repositorio.Alumnos.Count;
+            Assert.IsTrue(antesEliminar == despuesEliminar + 1);
+        }
+
+        [TestMethod]
         public void ExisteAlumnoConMismoNumeroEstudianteTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
@@ -180,5 +197,19 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "12345-8", "na@gmail.com", 5);
             Assert.IsFalse(modulo.EsFormatoCedulaAlumnoCorrecto(alumno));
         }
+
+        [TestMethod]
+        public void InscribirAlumnoEnMateriaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno moduloAlumno = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño de Aplicaciones 1", 030);
+            moduloAlumno.InscribirAlumnoEnMateria(alumno, materia);
+            Assert.IsTrue(moduloMateria.EstaInscriptoEnLaMateria(materia, alumno));
+        }
+
     }
 }
+
