@@ -150,7 +150,7 @@ namespace Logica
 
         public ICollection<Alumno> ObtenerAlumnosInscriptosEnMateria(Materia materia)
         {
-            throw new NotImplementedException();
+            return materia.Alumnos;
         }
     }
 }
