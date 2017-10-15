@@ -2,6 +2,7 @@
 using Persistencia;
 using Dominio;
 using Excepciones;
+using System.Collections.Generic;
 
 namespace Logica
 {
@@ -47,6 +48,28 @@ namespace Logica
             throw new NotImplementedException();
         }
 
+        public void ModificarAlumno(Alumno alumno, string cambios)
+        {
+            // Respetar orden: Nombre;Apellido;Cedula;Email
+            string[] nuevosDatos = cambios.Split(';');
+            string nuevoNombre      = nuevosDatos[0];
+            string nuevoApellido    = nuevosDatos[1];
+            string nuevaCedula      = nuevosDatos[2];
+            string nuevoEmail       = nuevosDatos[3];
+
+            alumno.Nombre = nuevoNombre;
+            alumno.Apellido = nuevoApellido;
+            if((alumno.Cedula != nuevaCedula) && ValidarCedula(nuevaCedula))
+                alumno.Cedula = nuevaCedula;
+            alumno.Mail = nuevoEmail;
+        }
+
+        private bool ValidarCedula(string cedulaParaValidar)
+        {
+            return EsFormatoCedulaAlumnoCorrecto(cedulaParaValidar) && !ExisteAlumnoConMismaCedula(cedulaParaValidar);
+        }
+
+        #region Control de atributos
         public bool ExisteAlumnoConMismoNumeroEstudiante(Alumno alumno1)
         {
             bool ret = false;
@@ -79,6 +102,7 @@ namespace Logica
         {
             return string.IsNullOrEmpty(alumno.Mail);
         }
+        #endregion
 
         public void ValidarAlumno(Alumno alumno)
         {
@@ -90,7 +114,7 @@ namespace Logica
             {
                 throw new ExcepcionAlumnoSinApellido();
             }
-            if(EsAlumnoSinCedula(alumno))
+            if (EsAlumnoSinCedula(alumno))
             {
                 throw new ExcepcionAlumnoSinCedula();
             }
@@ -98,24 +122,24 @@ namespace Logica
             {
                 throw new ExcepcionAlumnoSinEmail();
             }
-            if (!EsFormatoCedulaAlumnoCorrecto(alumno))
+            if (!EsFormatoCedulaAlumnoCorrecto(alumno.Cedula))
             {
                 throw new ExcepcionFormatoCedulaIncorrecto();
             }
-            if (ExisteAlumnoConMismaCedula(alumno))
+            if (ExisteAlumnoConMismaCedula(alumno.Cedula))
             {
                 throw new ExcepcionExisteAlumnoConMismaCedula();
             }
         }
 
-        public bool EsFormatoCedulaAlumnoCorrecto(Alumno alumno)
+        public bool EsFormatoCedulaAlumnoCorrecto(string cedula)
         {
             bool ret = false;
-            if(alumno.Cedula.Length == 9)
+            if(cedula.Length == 9)
             {
-                string subOne   = alumno.Cedula.Substring(0, 7); 
-                string subTwo   = alumno.Cedula.Substring(7, 1); 
-                string subTree  = alumno.Cedula.Substring(8, 1);
+                string subOne   = cedula.Substring(0, 7); 
+                string subTwo   = cedula.Substring(7, 1); 
+                string subTree  = cedula.Substring(8, 1);
 
                 int n;
                 var isNumericSubOne = int.TryParse(subOne, out n);
@@ -144,12 +168,12 @@ namespace Logica
             }
         }
 
-        public bool ExisteAlumnoConMismaCedula(Alumno alumno1)
+        public bool ExisteAlumnoConMismaCedula(string cedula)
         {
             bool ret = false;
             foreach(Alumno a in repositorio.Alumnos)
             {
-                if(alumno1.Cedula == a.Cedula)
+                if(cedula == a.Cedula)
                 {
                     ret = true;
                 }
