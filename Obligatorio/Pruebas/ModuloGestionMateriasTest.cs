@@ -271,9 +271,9 @@ namespace Pruebas
             moduloAlumnos.Alta(alumno);
             moduloAlumnos.Alta(alumno2);
             moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
-            moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
+            moduloMaterias.AgregarAlumnoEnMateria(materia, alumno2);
             moduloMaterias.EliminarMateriaEncadaAlumnoInscripto(materia);
-            Assert.IsTrue(alumno.MateriasInscripto.Count == 0);
+            Assert.IsTrue(alumno.MateriasInscripto.Count == 0 && alumno2.MateriasInscripto.Count == 0);
         }
 
         [TestMethod]

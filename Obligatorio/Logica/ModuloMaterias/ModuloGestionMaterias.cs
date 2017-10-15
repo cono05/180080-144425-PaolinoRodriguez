@@ -78,6 +78,7 @@ namespace Logica
 
         public void AgregarAlumnoEnMateria(Materia materia, Alumno alumno)
         {
+            ValidarInscripcionDeAlumnoEnMateria(materia, alumno);
             materia.Alumnos.Add(alumno);
             alumno.MateriasInscripto.Add(materia); 
         }
@@ -134,6 +135,12 @@ namespace Logica
         public bool HayMateriasRegistradas()
         {
             return ObtenerMaterias().Count > 0;
+        }
+
+        public void ValidarInscripcionDeAlumnoEnMateria(Materia materia, Alumno alumno)
+        {
+            if (EstaInscriptoEnLaMateria(materia, alumno))
+                throw new ExcepcionAlumnoYaCursaLaMateria();
         }
     }
 }
