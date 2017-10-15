@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dominio;
 using Persistencia;
 using Logica;
+using Excepciones;
 
 namespace Pruebas
 {
@@ -36,7 +37,7 @@ namespace Pruebas
         public void EliminarAlumnoInscritoEnMateriasTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Maxi", "Ramirez", "3234256-7", "mr@mail.com", 9);
+            Alumno alumno   = UtilidadesPruebas.CrearAlumnoDePrueba("Maxi", "Ramirez", "3234256-7", "mr@mail.com", 9);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño Aplicaciones 1", 1);
             ModuloGestionAlumno moduloAlumno    = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
             ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
@@ -145,39 +146,55 @@ namespace Pruebas
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ExcepcionAlumnoSinNombre))]
         public void ValidarAlumnoSinNombreErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("", "Apellido", "0000000-3", "apellido@gmail.com", 1);
             modulo.ValidarAlumno(alumno);
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ExcepcionAlumnoSinApellido))]
         public void ValidarAlumnoSinApellidoErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "", "0000000-3", "apellido@gmail.com", 1);
             modulo.ValidarAlumno(alumno);
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ExcepcionAlumnoSinCedula))]
         public void ValidarAlumnoSinCedulaErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "", "apellido@gmail.com", 1);
             modulo.ValidarAlumno(alumno);
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ExcepcionAlumnoSinEmail))]
         public void ValidarAlumnoSinEmailErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "", 1);
             modulo.ValidarAlumno(alumno);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionExisteAlumnoConMismaCedula))]
+        public void ValidarAlumnoExisteAlumnoConMismaCedulaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            modulo.Alta(alumno1);
+            modulo.ValidarAlumno(alumno2);
         }
 
         [TestMethod]
@@ -202,14 +219,35 @@ namespace Pruebas
         public void InscribirAlumnoEnMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionAlumno moduloAlumno = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionAlumno moduloAlumno    = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
             ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+            Alumno alumno   = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño de Aplicaciones 1", 030);
             moduloAlumno.InscribirAlumnoEnMateria(alumno, materia);
             Assert.IsTrue(moduloMateria.EstaInscriptoEnLaMateria(materia, alumno));
         }
 
+        [TestMethod]
+        public void ExisteAlumnoConMismaCedulaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "nombre1apellido1@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre2", "Apellido2", "0000000-1", "nombre2apellido2@gmail.com", 2);
+            modulo.Alta(alumno1);
+            Assert.IsTrue(modulo.ExisteAlumnoConMismaCedula(alumno1));
+        }
+
+        [TestMethod]
+        public void ExisteAlumnoConMismaCedulaFalseTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "nombre1apellido1@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre2", "Apellido2", "0000000-2", "nombre2apellido2@gmail.com", 2);
+            modulo.Alta(alumno1);
+            Assert.IsFalse(modulo.ExisteAlumnoConMismaCedula(alumno2));
+        }
     }
 }
 
