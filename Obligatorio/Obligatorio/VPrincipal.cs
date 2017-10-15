@@ -19,7 +19,7 @@ namespace Obligatorio
         private void CargarPanelPrincipal(ref ModuloGestionMaterias moduloMateria, ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuPrincipal());
+            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumno, ref moduloDocente,ref moduloMateria));
         }
         private void InitializeComponent()
         {

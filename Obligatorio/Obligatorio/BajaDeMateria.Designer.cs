@@ -1,6 +1,6 @@
 ﻿namespace Obligatorio
 {
-    partial class MenuPrincipal
+    partial class BajaDeMateria
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -30,19 +30,19 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.MateriasListBox = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.GestionarMateriasBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.GestionarMateriasBtn);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.MateriasListBox);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -54,55 +54,53 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(353, 60);
+            this.label1.Location = new System.Drawing.Point(362, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 25);
+            this.label1.Size = new System.Drawing.Size(163, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Menú Principal";
+            this.label1.Text = "Baja de Materia";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(236, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Seleccione una materia del Listado:";
+            // 
+            // MateriasListBox
+            // 
+            this.MateriasListBox.FormattingEnabled = true;
+            this.MateriasListBox.Location = new System.Drawing.Point(239, 101);
+            this.MateriasListBox.Name = "MateriasListBox";
+            this.MateriasListBox.Size = new System.Drawing.Size(172, 251);
+            this.MateriasListBox.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(167, 121);
+            this.button1.Location = new System.Drawing.Point(460, 293);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Eliminar Materia";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(311, 121);
+            this.button2.Location = new System.Drawing.Point(594, 293);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Volver al Menú";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // GestionarMateriasBtn
-            // 
-            this.GestionarMateriasBtn.Location = new System.Drawing.Point(447, 121);
-            this.GestionarMateriasBtn.Name = "GestionarMateriasBtn";
-            this.GestionarMateriasBtn.Size = new System.Drawing.Size(94, 40);
-            this.GestionarMateriasBtn.TabIndex = 3;
-            this.GestionarMateriasBtn.Text = "Gestionar Materias";
-            this.GestionarMateriasBtn.UseVisualStyleBackColor = true;
-            this.GestionarMateriasBtn.Click += new System.EventHandler(this.GestionarMateriasBtn_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(563, 121);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // MenuPrincipal
+            // BajaDeMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "MenuPrincipal";
+            this.Name = "BajaDeMateria";
             this.Size = new System.Drawing.Size(875, 406);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -113,10 +111,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button GestionarMateriasBtn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox MateriasListBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

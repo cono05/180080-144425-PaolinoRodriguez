@@ -7,24 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
 
 namespace Obligatorio
 {
     public partial class MenuPrincipal : UserControl
     {
-        public MenuPrincipal()
+        private ModuloGestionAlumno moduloAlumnos;
+        private ModuloGestionDocente moduloDocentes;
+        private ModuloGestionMaterias moduloMaterias;
+
+        public MenuPrincipal(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
         {
             InitializeComponent();
+            moduloAlumnos = moduloAlumno;
+            moduloDocentes = moduloDocente;
+            moduloMaterias = moduloMateria;
         }
 
-        private void GestionarAlumnosBtn_Click(object sender, EventArgs e)
+        private void GestionarMateriasBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void MenuPrincipal_Load(object sender, EventArgs e)
-        {
-
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
     }
 }

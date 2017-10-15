@@ -8,7 +8,7 @@ namespace Dominio
         public ICollection<Docente> Docentes { get; set; }
         public string Nombre { get; set; }
         public int Codigo { get; set; }
-        private static int numero = 0;
+        private static int numero = 1000;
         
 
         public Materia()
