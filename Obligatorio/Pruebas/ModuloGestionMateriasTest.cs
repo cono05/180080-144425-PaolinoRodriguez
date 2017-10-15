@@ -235,7 +235,7 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 111222);
             ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            Assert.IsTrue(modulo.TienenMismoNumeroEstudiante(alumno, alumno2));
+            Assert.IsTrue(modulo.TienenMismoNumeroEstudiante(alumno, alumno));
         }
         
 

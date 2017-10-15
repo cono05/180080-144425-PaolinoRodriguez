@@ -30,7 +30,6 @@ namespace Pruebas
             alumno.Apellido = apellido;
             alumno.Cedula = cedula;
             alumno.Mail = mail;
-            alumno.NumeroDeEstudiante = numeroDeEstudiante;
             return alumno;
         }
 
