@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.MateriasListBox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.MateriasListBox = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,16 +49,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label1
+            // button2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(362, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Baja de Materia";
+            this.button2.Location = new System.Drawing.Point(456, 321);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 40);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Volver al Menú";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.VolverAlMenuClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(323, 321);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 40);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Eliminar Materia";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.EliminarMateriaClick);
+            // 
+            // MateriasListBox
+            // 
+            this.MateriasListBox.FormattingEnabled = true;
+            this.MateriasListBox.Location = new System.Drawing.Point(353, 101);
+            this.MateriasListBox.Name = "MateriasListBox";
+            this.MateriasListBox.Size = new System.Drawing.Size(172, 199);
+            this.MateriasListBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -69,31 +88,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Seleccione una materia del Listado:";
             // 
-            // MateriasListBox
+            // label1
             // 
-            this.MateriasListBox.FormattingEnabled = true;
-            this.MateriasListBox.Location = new System.Drawing.Point(353, 101);
-            this.MateriasListBox.Name = "MateriasListBox";
-            this.MateriasListBox.Size = new System.Drawing.Size(172, 199);
-            this.MateriasListBox.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(323, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Eliminar Materia";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(456, 321);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 40);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Volver al Menú";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(362, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Baja de Materia";
             // 
             // BajaDeMateria
             // 

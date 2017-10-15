@@ -51,5 +51,11 @@ namespace Obligatorio
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
+
+        private void BajaDeMateriaBtn_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new BajaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
     }
 }

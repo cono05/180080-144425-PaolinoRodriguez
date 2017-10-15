@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AltaDeMateriaBtn = new System.Windows.Forms.Button();
-            this.BajaDeMateriaBtn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.BajaDeMateriaBtn = new System.Windows.Forms.Button();
+            this.AltaDeMateriaBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,61 +57,15 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // AltaDeMateriaBtn
+            // button1
             // 
-            this.AltaDeMateriaBtn.Location = new System.Drawing.Point(195, 99);
-            this.AltaDeMateriaBtn.Name = "AltaDeMateriaBtn";
-            this.AltaDeMateriaBtn.Size = new System.Drawing.Size(94, 40);
-            this.AltaDeMateriaBtn.TabIndex = 0;
-            this.AltaDeMateriaBtn.Text = "Alta de Materia";
-            this.AltaDeMateriaBtn.UseVisualStyleBackColor = true;
-            this.AltaDeMateriaBtn.Click += new System.EventHandler(this.AltaDeMateriaBtn_Click);
-            // 
-            // BajaDeMateriaBtn
-            // 
-            this.BajaDeMateriaBtn.Location = new System.Drawing.Point(380, 99);
-            this.BajaDeMateriaBtn.Name = "BajaDeMateriaBtn";
-            this.BajaDeMateriaBtn.Size = new System.Drawing.Size(94, 40);
-            this.BajaDeMateriaBtn.TabIndex = 1;
-            this.BajaDeMateriaBtn.Text = "Baja de Materia";
-            this.BajaDeMateriaBtn.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(195, 196);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(380, 196);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 40);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(550, 196);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 40);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(550, 99);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 40);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(380, 282);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 40);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Volver al Menú Principal";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -123,15 +77,62 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Menú Gestión Materias";
             // 
-            // button1
+            // button6
             // 
-            this.button1.Location = new System.Drawing.Point(380, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Volver al Menú Principal";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button6.Location = new System.Drawing.Point(550, 99);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(94, 40);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(550, 196);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(94, 40);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(380, 196);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 40);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(195, 196);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 40);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // BajaDeMateriaBtn
+            // 
+            this.BajaDeMateriaBtn.Location = new System.Drawing.Point(380, 99);
+            this.BajaDeMateriaBtn.Name = "BajaDeMateriaBtn";
+            this.BajaDeMateriaBtn.Size = new System.Drawing.Size(94, 40);
+            this.BajaDeMateriaBtn.TabIndex = 1;
+            this.BajaDeMateriaBtn.Text = "Baja de Materia";
+            this.BajaDeMateriaBtn.UseVisualStyleBackColor = true;
+            this.BajaDeMateriaBtn.Click += new System.EventHandler(this.BajaDeMateriaBtn_Click);
+            // 
+            // AltaDeMateriaBtn
+            // 
+            this.AltaDeMateriaBtn.Location = new System.Drawing.Point(195, 99);
+            this.AltaDeMateriaBtn.Name = "AltaDeMateriaBtn";
+            this.AltaDeMateriaBtn.Size = new System.Drawing.Size(94, 40);
+            this.AltaDeMateriaBtn.TabIndex = 0;
+            this.AltaDeMateriaBtn.Text = "Alta de Materia";
+            this.AltaDeMateriaBtn.UseVisualStyleBackColor = true;
+            this.AltaDeMateriaBtn.Click += new System.EventHandler(this.AltaDeMateriaBtn_Click);
             // 
             // MenuGestionMaterias
             // 
