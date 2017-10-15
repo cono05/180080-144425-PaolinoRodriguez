@@ -208,7 +208,6 @@ namespace Pruebas
         }
         #endregion Validaciones test
 
-
         [TestMethod]
         public void EsFormatoCedulaAlumnoCorrectoTest()
         {
@@ -237,6 +236,46 @@ namespace Pruebas
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño de Aplicaciones 1", 030);
             moduloAlumno.InscribirAlumnoEnMateria(alumno, materia);
             Assert.IsTrue(moduloMateria.EstaInscriptoEnLaMateria(materia, alumno));
+        }
+
+        [TestMethod]
+        public void DesinscribirAlumnoEnMateriaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno moduloAlumno    = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño de Aplicaciones 1", 030);
+            moduloAlumno.InscribirAlumnoEnMateria(alumno, materia);
+            moduloAlumno.DesincribirAlumnoEnMateria(alumno, materia);
+            Assert.IsTrue(alumno.MateriasInscripto.Count == 0);
+        }
+
+        [TestMethod]
+        public void EstaAlumnoInscritoEnMateriaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno moduloAlumno    = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño de Aplicaciones 1", 030);
+
+            Assert.IsFalse(moduloAlumno.EstaAlumnoInscritoEnMateria(alumno, materia));
+
+        }
+
+        [TestMethod]
+        public void EstaAlumnoInscritoEnMateriaFalseTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno moduloAlumno = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño de Aplicaciones 1", 030);
+            moduloAlumno.InscribirAlumnoEnMateria(alumno, materia);
+
+            Assert.IsTrue(moduloAlumno.EstaAlumnoInscritoEnMateria(alumno, materia));
+
         }
 
         [TestMethod]

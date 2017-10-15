@@ -137,8 +137,11 @@ namespace Logica
 
         public void InscribirAlumnoEnMateria(Alumno alumno, Materia materia)
         {
-            alumno.MateriasInscripto.Add(materia);
-            materia.Alumnos.Add(alumno);
+            if(!EstaAlumnoInscritoEnMateria(alumno, materia))
+            {
+                alumno.MateriasInscripto.Add(materia);
+                materia.Alumnos.Add(alumno);
+            }
         }
 
         public bool ExisteAlumnoConMismaCedula(Alumno alumno1)
@@ -152,6 +155,20 @@ namespace Logica
                 }
             }
             return ret;
+        }
+
+        public void DesincribirAlumnoEnMateria(Alumno alumno, Materia materia)
+        {
+            if(EstaAlumnoInscritoEnMateria(alumno, materia))
+            {
+                alumno.MateriasInscripto.Remove(materia);
+                materia.Alumnos.Remove(alumno);
+            }
+        }
+
+        public bool EstaAlumnoInscritoEnMateria(Alumno alumno, Materia materia)
+        {
+            return alumno.MateriasInscripto.Contains(materia);
         }
     }
 }
