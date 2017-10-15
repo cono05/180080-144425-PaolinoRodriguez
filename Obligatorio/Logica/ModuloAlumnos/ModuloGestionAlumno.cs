@@ -55,6 +55,7 @@ namespace Logica
 
         public void ModificarAlumno(Alumno alumno, string cambios)
         {
+            ValidarBajaAlumno(alumno);
             // Respetar orden: Nombre;Apellido;Cedula;Email
             string[] nuevosDatos = cambios.Split(';');
             string nuevoNombre      = nuevosDatos[0];
