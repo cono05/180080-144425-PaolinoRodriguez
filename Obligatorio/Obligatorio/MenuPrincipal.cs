@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using Dominio;
 
 namespace Obligatorio
 {
@@ -29,6 +30,16 @@ namespace Obligatorio
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CargarDatosDePrueba()
+        {
+            
         }
     }
 }

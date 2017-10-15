@@ -32,13 +32,15 @@ namespace Obligatorio
             AlumnosNoCursanListBox.DataSource = null;
             AlumnosInscriptosListBox.DataSource = null;
             ICollection<Alumno> listaQueNoCursan = CargarListBoxAlumnosNoInscriptos(materia);
+            ICollection<Alumno> listaQueCursan = moduloMaterias.ObtenerAlumnosInscriptosEnMateria(materia);
             if (listaQueNoCursan.Count > 0)
             {
                 AlumnosNoCursanListBox.DataSource = listaQueNoCursan;
             }
-            
-            //List<Materia> lista = CargarComboUsuarios(equipo);
-            //listUsuarios.DataSource = listaAuxiliar;
+            if (listaQueCursan.Count > 0)
+            {
+                AlumnosInscriptosListBox.DataSource = listaQueCursan;
+            }            
         }
 
         public ICollection<Alumno> CargarListBoxAlumnosNoInscriptos(Materia materia)

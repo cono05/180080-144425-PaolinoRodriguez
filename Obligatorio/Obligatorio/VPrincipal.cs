@@ -53,6 +53,6 @@ namespace Obligatorio
         private void VPrincipal_Load(object sender, System.EventArgs e)
         {
 
-        }
+        }        
     }
 }

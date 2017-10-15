@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.GestionarMateriasBtn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.GestionarMateriasBtn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,34 +49,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label1
+            // button4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(353, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Menú Principal";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(167, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(311, 121);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(563, 121);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 40);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // GestionarMateriasBtn
             // 
@@ -88,14 +70,33 @@
             this.GestionarMateriasBtn.UseVisualStyleBackColor = true;
             this.GestionarMateriasBtn.Click += new System.EventHandler(this.GestionarMateriasBtn_Click);
             // 
-            // button4
+            // button2
             // 
-            this.button4.Location = new System.Drawing.Point(563, 121);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(311, 121);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 40);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(167, 121);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 40);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(353, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Menú Principal";
             // 
             // MenuPrincipal
             // 

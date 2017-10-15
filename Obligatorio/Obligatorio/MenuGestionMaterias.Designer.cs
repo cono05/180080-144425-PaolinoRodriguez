@@ -85,6 +85,7 @@
             this.AgregarAlumnoEnMateria.TabIndex = 5;
             this.AgregarAlumnoEnMateria.Text = "Agregar Alumno en una Materia";
             this.AgregarAlumnoEnMateria.UseVisualStyleBackColor = true;
+            this.AgregarAlumnoEnMateria.Click += new System.EventHandler(this.AgregarAlumnoEnMateria_Click);
             // 
             // button5
             // 
