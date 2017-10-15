@@ -268,6 +268,31 @@ namespace Pruebas
             moduloMaterias.EliminarMateriaEncadaAlumnoInscripto(materia);
             Assert.IsTrue(alumno.MateriasInscripto.Count == 0);
         }
+
+        [TestMethod]
+        public void HayMateriasRegistradasTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
+            moduloMaterias.Alta(materia);
+            Assert.IsTrue(moduloMaterias.HayMateriasRegistradas());
+        }
+
+        [TestMethod]
+        public void HayMateriasRegistradasFalseTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Assert.IsFalse(moduloMaterias.HayMateriasRegistradas());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionAlumnoYaCursaLaMateria))]
+        public void ValidarInscripcionDeAlumnoEnMateriaTest()
+        {
+            
+        }
         
     }
 }
