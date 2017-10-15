@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaDeAlumnoEnMateria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AltaDeAlumnoEnMateria.Designer.cs">
+      <DependentUpon>AltaDeAlumnoEnMateria.cs</DependentUpon>
+    </Compile>
     <Compile Include="AltaDeMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="VPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="AltaDeAlumnoEnMateria.resx">
+      <DependentUpon>AltaDeAlumnoEnMateria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AltaDeMateria.resx">
       <DependentUpon>AltaDeMateria.cs</DependentUpon>
     </EmbeddedResource>

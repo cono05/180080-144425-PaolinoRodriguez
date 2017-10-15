@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.AgregarAlumnoEnMateria = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             // 
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.AgregarAlumnoEnMateria);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -77,14 +77,14 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Menú Gestión Materias";
             // 
-            // button6
+            // AgregarAlumnoEnMateria
             // 
-            this.button6.Location = new System.Drawing.Point(550, 99);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 40);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.AgregarAlumnoEnMateria.Location = new System.Drawing.Point(550, 99);
+            this.AgregarAlumnoEnMateria.Name = "AgregarAlumnoEnMateria";
+            this.AgregarAlumnoEnMateria.Size = new System.Drawing.Size(94, 40);
+            this.AgregarAlumnoEnMateria.TabIndex = 5;
+            this.AgregarAlumnoEnMateria.Text = "Agregar Alumno en una Materia";
+            this.AgregarAlumnoEnMateria.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -152,7 +152,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button AgregarAlumnoEnMateria;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
