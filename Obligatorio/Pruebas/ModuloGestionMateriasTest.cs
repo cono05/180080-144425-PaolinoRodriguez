@@ -234,9 +234,10 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             modulo.Alta(materia);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
-            modulo.EliminarAlumnoDeUnaMateria(materia, alumno);
+            ModuloGestionMaterias.EliminarAlumnoDeUnaMateria(materia, alumno);
             Assert.IsTrue(materia.Alumnos.Count == 0);
         }
+<<<<<<< HEAD
         [TestCleanup()]
 
         [TestMethod]
@@ -264,3 +265,7 @@ namespace Pruebas
 
     
 
+=======
+    }
+}
+>>>>>>> 7a3c425b1fe04a370530024d330c18aa0f6a7eb4

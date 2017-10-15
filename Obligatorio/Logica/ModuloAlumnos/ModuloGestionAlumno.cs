@@ -7,7 +7,7 @@ namespace Logica
 {
     public class ModuloGestionAlumno : IModulo
     {
-        private RepositorioRam repositorio;
+        public RepositorioRam repositorio;
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
@@ -18,12 +18,23 @@ namespace Logica
 
         public void Alta(object obj)
         {
+            ValidarAlumno((Alumno)obj);
             repositorio.AgregarAlumno((Alumno)obj);
         }
 
         public void Baja(object obj)
         {
-            throw new NotImplementedException();
+            // Antes de eliminar alumno, lo doy de baja en las materias que esta inscrito
+            BajaDeAlumnoEnMaterias((Alumno)obj);
+            repositorio.EliminarAlumno((Alumno)obj);
+        }
+
+        public void BajaDeAlumnoEnMaterias(Alumno alumno)
+        {
+            foreach (Materia m in alumno.MateriasInscripto)
+            {
+                ModuloGestionMaterias.EliminarAlumnoDeUnaMateria(m, alumno);
+            }
         }
 
         public void Modificar()

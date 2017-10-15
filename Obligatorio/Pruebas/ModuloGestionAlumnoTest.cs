@@ -20,6 +20,18 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void EliminarAlumnoTest()
+        {
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "1234567-8", "m@g.com", 7);
+            modulo.Alta(alumno);
+            int antesEliminar = modulo.repositorio.Alumnos.Count;
+            modulo.Baja(alumno);
+            int despuesEliminar = modulo.repositorio.Alumnos.Count;
+            Assert.IsTrue(antesEliminar == despuesEliminar + 1);
+        }
+
+        [TestMethod]
         public void ExisteAlumnoConMismoNumeroEstudianteTest()
         {
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba();
