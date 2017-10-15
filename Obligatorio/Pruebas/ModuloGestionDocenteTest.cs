@@ -27,7 +27,8 @@ namespace Pruebas
         [TestMethod]
         public void ExisteDocenteConMismaCedulaTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-2");
             modulo.Alta(docente1);
@@ -37,7 +38,8 @@ namespace Pruebas
         [TestMethod]
         public void ExisteDocenteConMismaCedulaFalseTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-2");
             modulo.Alta(docente1);
@@ -47,7 +49,8 @@ namespace Pruebas
         [TestMethod]
         public void EsDocenteSinNombreTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("", "Apellido", "0000000-1");
             Assert.IsTrue(modulo.EsDocenteSinNombre(docente));
         }
@@ -55,7 +58,8 @@ namespace Pruebas
         [TestMethod]
         public void EsDocenteSinNombreFalseTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Assert.IsFalse(modulo.EsDocenteSinNombre(docente));
         }
@@ -63,7 +67,8 @@ namespace Pruebas
         [TestMethod]
         public void EsDocenteSinApellidoTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "", "0000000-1");
             Assert.IsTrue(modulo.EsDocenteSinApellido(docente));
         }
@@ -71,7 +76,8 @@ namespace Pruebas
         [TestMethod]
         public void EsDocenteSinApellidoFalseTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Assert.IsFalse(modulo.EsDocenteSinApellido(docente));
         }
@@ -79,7 +85,8 @@ namespace Pruebas
         [TestMethod]
         public void EsDocenteSinCedulaTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "");
             Assert.IsTrue(modulo.EsDocenteSinCedula(docente));
         }
@@ -87,7 +94,8 @@ namespace Pruebas
         [TestMethod]
         public void EsDocenteSinCedulaFalseTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Assert.IsFalse(modulo.EsDocenteSinCedula(docente));
         }
@@ -95,7 +103,8 @@ namespace Pruebas
         [TestMethod]
         public void EsFormatoCedulaDocenteCorrectoTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Assert.IsTrue(modulo.EsFormatoCedulaDocenteCorrecto(docente));
         }
@@ -103,7 +112,8 @@ namespace Pruebas
         [TestMethod]
         public void EsFormatoCedulaDocenteCorrectoFalseTest()
         {
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba();
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234-67-8");
             Assert.IsFalse(modulo.EsFormatoCedulaDocenteCorrecto(docente));
         }
