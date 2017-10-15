@@ -117,5 +117,16 @@ namespace Logica
             materia.Alumnos.Remove(alumno);
             alumno.MateriasInscripto.Remove(materia);
         }
+
+        public void EliminarMateriaEncadaAlumnoInscripto(Materia materia)
+        {
+            foreach (Alumno a in repositorio.ObtenerAlumnos())
+            {
+                if (EstaInscriptoEnLaMateria(materia, a))
+                {
+                    a.MateriasInscripto.Remove(materia);
+                }
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace Pruebas
 {
     class UtilidadesPruebas
     {
+        private static RepositorioRam repositorio = new RepositorioRam();
         public static Materia CrearMateriaDePueba(string nombre, int codigo)
         {
             Materia materia = Materia.CrearMateria();
@@ -40,7 +41,7 @@ namespace Pruebas
 
         public static ModuloGestionMaterias CrearModuloGestionMateriasDePrueba()
         {
-            RepositorioRam repositorio = new RepositorioRam();
+            //RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionMaterias moduloGestionMaterias = new ModuloGestionMaterias(ref repositorio);
             //ModuloGestionMaterias moduloGestionMaterias = ModuloGestionMaterias.ObtenerInstancia(ref repositorio);
             return moduloGestionMaterias;
@@ -48,14 +49,14 @@ namespace Pruebas
 
         public static ModuloGestionAlumno CrearModuloGestionAlumnosDePrueba()
         {
-            RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionAlumno moduloGestionAlumnos = new ModuloGestionAlumno(repositorio);
+            //RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionAlumno moduloGestionAlumnos = new ModuloGestionAlumno(ref repositorio);
             return moduloGestionAlumnos;
         }
 
         public static ModuloGestionDocente CrearModuloGestionDocentesDePrueba()
         {
-            RepositorioRam repositorio = new RepositorioRam();
+            //RepositorioRam repositorio = new RepositorioRam();
             ModuloGestionDocente moduloGestionDocentes = new ModuloGestionDocente(repositorio);
             return moduloGestionDocentes;
         }

@@ -11,7 +11,7 @@ namespace Logica
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
-        public ModuloGestionAlumno(RepositorioRam repositorio)
+        public ModuloGestionAlumno(ref RepositorioRam repositorio)
         {
             this.repositorio = repositorio;
         }

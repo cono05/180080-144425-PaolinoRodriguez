@@ -14,7 +14,7 @@ namespace Pruebas
         {
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionAlumno modulo = new ModuloGestionAlumno(repositorio);
+            ModuloGestionAlumno modulo = new ModuloGestionAlumno(ref repositorio);
             modulo.Alta(alumno);
             Assert.IsTrue(repositorio.Alumnos.Count == 1);
         }
