@@ -54,8 +54,17 @@ namespace Obligatorio
 
         private void BajaDeMateriaBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new BajaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            if (moduloMaterias.HayMateriasRegistradas())
+            {
+                panel1.Controls.Clear();
+                panel1.Controls.Add(new BajaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            }
+            else
+            {
+                MessageBox.Show("No existen materias en el sistema", MessageBoxButtons.OK.ToString());
+            }
+
+            
         }
     }
 }

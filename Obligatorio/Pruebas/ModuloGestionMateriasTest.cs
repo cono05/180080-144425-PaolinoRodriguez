@@ -293,6 +293,13 @@ namespace Pruebas
             ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
             Assert.IsFalse(moduloMaterias.HayMateriasRegistradas());
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionAlumnoYaCursaLaMateria))]
+        public void ValidarInscripcionDeAlumnoEnMateriaTest()
+        {
+            
+        }
         
     }
 }

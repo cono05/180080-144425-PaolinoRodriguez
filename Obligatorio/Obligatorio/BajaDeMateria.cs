@@ -67,6 +67,9 @@ namespace Obligatorio
             {
                 MessageBox.Show(excepcion.Message);
             }
+            finally
+            {
+            }
         }
 
         private void VolverAlMenuClick(object sender, EventArgs e)

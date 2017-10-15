@@ -78,7 +78,8 @@ namespace Logica
 
         public void AgregarAlumnoEnMateria(Materia materia, Alumno alumno)
         {
-            materia.Alumnos.Add(alumno); 
+            materia.Alumnos.Add(alumno);
+            alumno.MateriasInscripto.Add(materia); 
         }
 
         public void ValidarAltaMateria(Materia materia)
