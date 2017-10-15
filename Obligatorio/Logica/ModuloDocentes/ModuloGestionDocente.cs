@@ -11,24 +11,38 @@ namespace Logica
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
-        public ModuloGestionDocente(RepositorioRam repositorio)
+        public ModuloGestionDocente(ref RepositorioRam repositorio)
         {
             this.repositorio = repositorio;
         }
 
         public void Alta(object obj)
         {
+            ValidarAlta((Docente)obj);
             repositorio.AgregarDocente((Docente)obj);
         }
 
         public void Baja(object obj)
         {
-            throw new NotImplementedException();
+            ValidarBaja((Docente)obj);
+            repositorio.EliminarDocente((Docente)obj);
         }
 
         public void Modificar()
         {
             throw new NotImplementedException();
+        }
+
+        public void ValidarAlta(Docente docente)
+        {
+            if (ExisteDocenteConMismaCedula(docente.Cedula))
+                throw new ExcepcionExisteDocenteConMismaCedula(); 
+        }
+
+        public void ValidarBaja(Docente docente)
+        {
+            if (!ExisteDocenteConMismaCedula(docente.Cedula))
+                throw new ExcepcionNoExisteDocente();
         }
 
         public bool ExisteDocenteConMismaCedula(string cedula)
@@ -60,6 +74,20 @@ namespace Logica
             return string.IsNullOrEmpty(docente.Cedula);
         }
 
+        public bool EstaInscritoEnLaMateria(Docente docente, Materia materia)
+        {
+            return docente.MateriasQueDicta.Contains(materia);
+        }
+
+        public void InscribirDocenteEnMateria(Docente docente, Materia materia)
+        {
+            if (!EstaInscritoEnLaMateria(docente, materia))
+            {
+                docente.MateriasQueDicta.Add(materia);
+                materia.Docentes.Add(docente);
+            }
+        }
+
         public bool EsFormatoCedulaDocenteCorrecto(string cedula)
         {
             bool ret = false;
@@ -85,6 +113,15 @@ namespace Logica
                 }
             }
             return ret;
+        }
+
+        public void DesinscribirDocenteEnMateria(Docente docente, Materia materia)
+        {
+            if (!EstaInscritoEnLaMateria(docente, materia))
+            {
+                docente.MateriasQueDicta.Remove(materia);
+                materia.Docentes.Remove(docente);
+            }
         }
 
         public void ValidarDocente(Docente docente)

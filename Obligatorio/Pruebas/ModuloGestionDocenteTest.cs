@@ -16,9 +16,49 @@ namespace Pruebas
         {
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionDocente modulo = new ModuloGestionDocente(repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             modulo.Alta(docente);
             Assert.IsTrue(repositorio.Docentes.Count == 1);
+        }
+
+        [TestMethod]
+        public void EliminarDocenteTest()
+        {
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            modulo.Alta(docente);
+            int antesEliminar = repositorio.Docentes.Count;
+            modulo.Baja(docente);
+            int despuesEliminar = repositorio.Docentes.Count;
+            Assert.IsTrue(antesEliminar == despuesEliminar + 1);
+        }
+
+        [TestMethod]
+        public void InscribirDocenteTest()
+        {
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Carlitos", "Roxlo", "1234567-8");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Algoritmos", 1);
+            moduloDocente.InscribirDocenteEnMateria(docente, materia);
+            Assert.IsTrue(moduloDocente.EstaInscritoEnLaMateria(docente, materia));
+        }
+
+        [TestMethod]
+        public void DesinscribirDocenteTest()
+        {
+            RepositorioRam repositorio = new RepositorioRam();
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Carlitos", "Roxlo", "1234567-8");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Algoritmos", 1);
+            moduloDocente.InscribirDocenteEnMateria(docente, materia);
+            bool esInscrito1 = moduloDocente.EstaInscritoEnLaMateria(docente, materia);
+            moduloDocente.DesinscribirDocenteEnMateria(docente, materia);
+            bool esInscrito2 = moduloDocente.EstaInscritoEnLaMateria(docente, materia);
+            Assert.IsTrue(esInscrito1 && esInscrito2);
         }
 
         [TestMethod]
