@@ -72,5 +72,11 @@ namespace Obligatorio
             panel1.Controls.Clear();
             panel1.Controls.Add(new AltaDeAlumnoEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
+
+        private void ModificarMateriaBtn_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new ModificacionMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
     }
 }

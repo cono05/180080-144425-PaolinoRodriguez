@@ -46,28 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaDeAlumnoEnMateria.cs">
+    <Compile Include="VentanasDeMaterias\AltaDeAlumnoEnMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AltaDeAlumnoEnMateria.Designer.cs">
+    <Compile Include="VentanasDeMaterias\AltaDeAlumnoEnMateria.Designer.cs">
       <DependentUpon>AltaDeAlumnoEnMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaDeMateria.cs">
+    <Compile Include="VentanasDeMaterias\AltaDeMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AltaDeMateria.Designer.cs">
+    <Compile Include="VentanasDeMaterias\AltaDeMateria.Designer.cs">
       <DependentUpon>AltaDeMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="BajaDeMateria.cs">
+    <Compile Include="VentanasDeMaterias\BajaDeMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BajaDeMateria.Designer.cs">
+    <Compile Include="VentanasDeMaterias\BajaDeMateria.Designer.cs">
       <DependentUpon>BajaDeMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuGestionMaterias.cs">
+    <Compile Include="MenuGestionDocente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuGestionMaterias.Designer.cs">
+    <Compile Include="MenuGestionDocente.Designer.cs">
+      <DependentUpon>MenuGestionDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeMaterias\MenuGestionMaterias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeMaterias\MenuGestionMaterias.Designer.cs">
       <DependentUpon>MenuGestionMaterias.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.cs">
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeMaterias\ModificacionMateria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeMaterias\ModificacionMateria.Designer.cs">
+      <DependentUpon>ModificacionMateria.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,20 +117,26 @@
     <Compile Include="VPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="AltaDeAlumnoEnMateria.resx">
+    <EmbeddedResource Include="VentanasDeMaterias\AltaDeAlumnoEnMateria.resx">
       <DependentUpon>AltaDeAlumnoEnMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaDeMateria.resx">
+    <EmbeddedResource Include="VentanasDeMaterias\AltaDeMateria.resx">
       <DependentUpon>AltaDeMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BajaDeMateria.resx">
+    <EmbeddedResource Include="VentanasDeMaterias\BajaDeMateria.resx">
       <DependentUpon>BajaDeMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuGestionMaterias.resx">
+    <EmbeddedResource Include="MenuGestionDocente.resx">
+      <DependentUpon>MenuGestionDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeMaterias\MenuGestionMaterias.resx">
       <DependentUpon>MenuGestionMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeMaterias\ModificacionMateria.resx">
+      <DependentUpon>ModificacionMateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
