@@ -82,8 +82,16 @@ namespace Obligatorio
 
         private void AltaBajaDocenteBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaBajaDocenteEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            if (moduloDocentes.HayDocentesRegistrados())
+            {
+                panel1.Controls.Clear();
+                panel1.Controls.Add(new AltaBajaDocenteEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            }
+            else
+            {
+                MessageBox.Show("No existen Docentes en el sistema", MessageBoxButtons.OK.ToString());
+            }
+            
         }
     }
 }
