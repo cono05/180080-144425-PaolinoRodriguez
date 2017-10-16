@@ -45,7 +45,7 @@ namespace Obligatorio.VentanasDeAlumno
             {
                 Alumno aux = Alumno.ClonarAlumno(alumnoSeleccionado);
                 string datos = textBoxNombre.Text + ";" + textBoxApellido.Text + ";" + textBoxCedula.Text + ";" + textBoxEmail.Text;
-                moduloAlumnos.ModificarAlumno(alumnoSeleccionado, datos);
+                moduloAlumnos.ModificarAlumno(alumnoSeleccionado, aux);
 
                 if (!aux.Equals(alumnoSeleccionado))
                 {

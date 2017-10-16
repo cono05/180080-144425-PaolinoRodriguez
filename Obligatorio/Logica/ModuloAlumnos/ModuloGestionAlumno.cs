@@ -30,10 +30,22 @@ namespace Logica
             
         }
 
-        public void ValidarModificarAlumno(Alumno alumno)
+        public void ValidarModificarAlumno(Alumno alumnoOriginal, Alumno alumnoNuevosDatos)
         {
-            if (!ExisteAlumnoConMismaCedula(alumno.Cedula))
-                throw new ExcepcionNoExisteAlumno();
+            if (alumnoNuevosDatos.Cedula != alumnoOriginal.Cedula && ExisteAlumnoConMismaCedula(alumnoNuevosDatos.Cedula))
+                throw new ExcepcionExisteAlumnoConMismaCedula();
+            if (EsAlumnoSinNombre(alumnoNuevosDatos))
+                throw new ExcepcionAlumnoSinNombre();
+            if (EsAlumnoSinApellido(alumnoNuevosDatos))
+                throw new ExcepcionAlumnoSinApellido();
+            if (EsAlumnoSinCedula(alumnoNuevosDatos))
+                throw new ExcepcionAlumnoSinCedula();
+            if (EsAlumnoSinEmail(alumnoNuevosDatos))
+                throw new ExcepcionAlumnoSinEmail();
+            if (!EsFormatoCedulaAlumnoCorrecto(alumnoNuevosDatos.Cedula))
+                throw new ExcepcionFormatoCedulaIncorrecto();
+            if (alumnoNuevosDatos.Mail != alumnoOriginal.Mail && ExisteAlumnoConMismoEmail(alumnoNuevosDatos))
+                throw new ExcepcionExisteAlumnoConMismoEmail();
         }
 
         public void BajaDeAlumnoEnMaterias(Alumno alumno)
@@ -53,26 +65,10 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public void ModificarAlumno(Alumno alumno, string cambios)
+        public void ModificarAlumno(Alumno alumnoOrignal, Alumno alumnoNuevosDatos)
         {
-            // Ver que alumno a modificar existe
-            ValidarModificarAlumno(alumno);
-            // Respetar orden: Nombre;Apellido;Cedula;Email
-            string[] nuevosDatos = cambios.Split(';');
-            string nuevoNombre      = nuevosDatos[0];
-            string nuevoApellido    = nuevosDatos[1];
-            string nuevaCedula      = nuevosDatos[2];
-            string nuevoEmail       = nuevosDatos[3];
+            ValidarModificarAlumno(alumnoOrignal, alumnoNuevosDatos);
 
-            alumno.Nombre   = (nuevoNombre != "") ? nuevoNombre : alumno.Nombre;
-            alumno.Apellido = (nuevoApellido != "") ? nuevoApellido : alumno.Apellido;
-            alumno.Mail     = (nuevoEmail != "") ? nuevoEmail : alumno.Mail;
-            // Si la cedula cambia, verificar que no se este usando ya
-            if (alumno.Cedula != nuevaCedula)
-            {
-                ValidarCedula(nuevaCedula);
-                alumno.Cedula = nuevaCedula;
-            }
         }
 
         public ICollection<Alumno> ObtenerAlumnos()
