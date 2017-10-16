@@ -37,8 +37,13 @@ namespace Logica
         public void ValidarAlta(Docente docente)
         {
             if (ExisteDocenteConMismaCedula(docente.Cedula))
-                throw new ExcepcionExisteDocenteConMismaCedula(); 
-            //if()
+                throw new ExcepcionExisteDocenteConMismaCedula();
+            if (EsDocenteSinNombre(docente))
+                throw new ExcepcionDocenteSinNombre();
+            if (EsDocenteSinApellido(docente))
+                throw new ExcepcionDocenteSinApellido();
+            if (EsDocenteSinCedula(docente))
+                throw new ExcepcionDocenteSinCedula();
         }
 
         public void ValidarBaja(Docente docente)
@@ -119,7 +124,7 @@ namespace Logica
 
         public void DesinscribirDocenteEnMateria(Docente docente, Materia materia)
         {
-            if (!EstaInscritoEnLaMateria(docente, materia))
+            if (EstaInscritoEnLaMateria(docente, materia))
             {
                 docente.MateriasQueDicta.Remove(materia);
                 materia.Docentes.Remove(docente);
