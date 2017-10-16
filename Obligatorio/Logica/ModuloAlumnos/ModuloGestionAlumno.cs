@@ -43,7 +43,8 @@ namespace Logica
             {
                 if (alumno.MateriasInscripto.Contains(m))
                 {
-                    ModuloGestionMaterias.EliminarAlumnoDeUnaMateria(m, alumno);
+                    m.Alumnos.Remove(alumno);
+                    alumno.MateriasInscripto.Remove(m);
                 }
             }
         }

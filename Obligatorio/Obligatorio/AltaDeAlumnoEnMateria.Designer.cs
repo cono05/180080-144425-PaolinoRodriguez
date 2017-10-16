@@ -39,6 +39,7 @@
             this.MateriasListBox = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.InscribirAlumnoEnMateriaBtn);
             this.panel2.Controls.Add(this.AlumnosInscriptosListBox);
@@ -69,7 +71,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(446, 317);
+            this.button3.Location = new System.Drawing.Point(525, 317);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 40);
             this.button3.TabIndex = 9;
@@ -79,7 +81,7 @@
             // 
             // InscribirAlumnoEnMateriaBtn
             // 
-            this.InscribirAlumnoEnMateriaBtn.Location = new System.Drawing.Point(304, 317);
+            this.InscribirAlumnoEnMateriaBtn.Location = new System.Drawing.Point(378, 317);
             this.InscribirAlumnoEnMateriaBtn.Name = "InscribirAlumnoEnMateriaBtn";
             this.InscribirAlumnoEnMateriaBtn.Size = new System.Drawing.Size(94, 40);
             this.InscribirAlumnoEnMateriaBtn.TabIndex = 8;
@@ -149,6 +151,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Alta de Alumno en Materia";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(678, 317);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 40);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Desinscribir Alumno";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.DesinscribirAlumnoBtnClick);
+            // 
             // AltaDeAlumnoEnMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,5 +188,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox AlumnosNoCursanListBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }

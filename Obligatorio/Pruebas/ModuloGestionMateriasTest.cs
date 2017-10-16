@@ -271,7 +271,7 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             modulo.Alta(materia);
             modulo.AgregarAlumnoEnMateria(materia, alumno);
-            ModuloGestionMaterias.EliminarAlumnoDeUnaMateria(materia, alumno);
+            modulo.EliminarAlumnoDeUnaMateria(materia, alumno);
             Assert.IsTrue(materia.Alumnos.Count == 0);
         }
 

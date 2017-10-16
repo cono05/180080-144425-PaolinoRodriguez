@@ -26,6 +26,8 @@ namespace Obligatorio
             moduloMaterias = moduloMateria;
             MateriasListBox.DataSource = null;
             MateriasListBox.DataSource = CargarListBoxMaterias();
+            AlumnosInscriptosListBox.SetSelected(0,false);
+            AlumnosNoCursanListBox.SetSelected(0, false);
         }
 
         private void MateriasListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,7 +44,9 @@ namespace Obligatorio
             if (listaQueCursan.Count > 0)
             {
                 AlumnosInscriptosListBox.DataSource = listaQueCursan;
-            }            
+            }
+            AlumnosInscriptosListBox.SetSelected(0, false);
+            AlumnosNoCursanListBox.SetSelected(0, false);
         }
 
         public ICollection<Alumno> CargarListBoxAlumnosNoInscriptos(Materia materia)
@@ -88,7 +92,11 @@ namespace Obligatorio
                     AlumnosNoCursanListBox.DataSource = null;
                     AlumnosNoCursanListBox.DataSource = CargarListBoxAlumnosNoInscriptos(materia);
                     AlumnosInscriptosListBox.DataSource = moduloMaterias.ObtenerAlumnosInscriptosEnMateria(materia);
-                    MessageBox.Show("El alumno " + alumno.ToString() + " se ha inscripto correctamente en "+ materia.ToString(), MessageBoxButtons.OK.ToString());
+                    MessageBox.Show("El alumno " + alumno.ToString() + " se ha inscripto correctamente en " + materia.ToString(), MessageBoxButtons.OK.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ningún alumno.", MessageBoxButtons.OK.ToString());
                 }
             }
             catch (ExcepcionAlumnoYaCursaLaMateria excepcion)
@@ -111,6 +119,40 @@ namespace Obligatorio
         {
             panel2.Controls.Clear();
             panel2.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
+
+        private void DesinscribirAlumnoBtnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                Alumno alumnoADesinscribir = (Alumno)AlumnosInscriptosListBox.SelectedItem;
+                Materia materia = (Materia)MateriasListBox.SelectedItem;
+                if (alumnoADesinscribir != null)
+                {
+                    moduloMaterias.EliminarAlumnoDeUnaMateria(materia, alumnoADesinscribir);
+                    AlumnosInscriptosListBox.DataSource = null;
+                    AlumnosNoCursanListBox.DataSource = null;
+                    AlumnosNoCursanListBox.DataSource = CargarListBoxAlumnosNoInscriptos(materia);
+                    AlumnosInscriptosListBox.DataSource = moduloMaterias.ObtenerAlumnosInscriptosEnMateria(materia);
+                    MessageBox.Show("El alumno " + alumnoADesinscribir.ToString() + " se ha eliminado correctamente de " + materia.ToString(), MessageBoxButtons.OK.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ningún alumno.", MessageBoxButtons.OK.ToString());
+                }
+            }
+            catch (ExcepcionAlumnoYaCursaLaMateria excepcion)
+            {
+                MessageBox.Show(excepcion.Message);
+            }
+            catch (Exception excepcion)
+            {
+                MessageBox.Show(excepcion.Message);
+            }
+            finally
+            {
+
+            }
         }
     }
 }

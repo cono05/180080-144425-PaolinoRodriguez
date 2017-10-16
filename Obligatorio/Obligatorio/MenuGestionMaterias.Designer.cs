@@ -81,9 +81,9 @@
             // 
             this.AgregarAlumnoEnMateria.Location = new System.Drawing.Point(550, 99);
             this.AgregarAlumnoEnMateria.Name = "AgregarAlumnoEnMateria";
-            this.AgregarAlumnoEnMateria.Size = new System.Drawing.Size(94, 40);
+            this.AgregarAlumnoEnMateria.Size = new System.Drawing.Size(94, 51);
             this.AgregarAlumnoEnMateria.TabIndex = 5;
-            this.AgregarAlumnoEnMateria.Text = "Agregar Alumno en una Materia";
+            this.AgregarAlumnoEnMateria.Text = "Alta y Baja de Alumno en una Materia";
             this.AgregarAlumnoEnMateria.UseVisualStyleBackColor = true;
             this.AgregarAlumnoEnMateria.Click += new System.EventHandler(this.AgregarAlumnoEnMateria_Click);
             // 
@@ -119,7 +119,7 @@
             // 
             this.BajaDeMateriaBtn.Location = new System.Drawing.Point(380, 99);
             this.BajaDeMateriaBtn.Name = "BajaDeMateriaBtn";
-            this.BajaDeMateriaBtn.Size = new System.Drawing.Size(94, 40);
+            this.BajaDeMateriaBtn.Size = new System.Drawing.Size(94, 51);
             this.BajaDeMateriaBtn.TabIndex = 1;
             this.BajaDeMateriaBtn.Text = "Baja de Materia";
             this.BajaDeMateriaBtn.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             // 
             this.AltaDeMateriaBtn.Location = new System.Drawing.Point(195, 99);
             this.AltaDeMateriaBtn.Name = "AltaDeMateriaBtn";
-            this.AltaDeMateriaBtn.Size = new System.Drawing.Size(94, 40);
+            this.AltaDeMateriaBtn.Size = new System.Drawing.Size(94, 51);
             this.AltaDeMateriaBtn.TabIndex = 0;
             this.AltaDeMateriaBtn.Text = "Alta de Materia";
             this.AltaDeMateriaBtn.UseVisualStyleBackColor = true;
