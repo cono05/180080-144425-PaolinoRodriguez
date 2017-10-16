@@ -393,6 +393,7 @@ namespace Pruebas
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ExcepcionDocenteYaDictaEstaMateria))]
         public void ValidarAsignacionDeDocenteAMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
@@ -404,7 +405,7 @@ namespace Pruebas
             moduloMaterias.Alta(materia);
             moduloDocente.Alta(docente);
             moduloMaterias.AsignarDocenteAMateria(materia, docente);
-            moduloMaterias.ValidarAsignacionDeDocenteAMateria(materia);
+            moduloMaterias.ValidarAsignacionDeDocenteAMateria(materia, docente);
         }
         
     }

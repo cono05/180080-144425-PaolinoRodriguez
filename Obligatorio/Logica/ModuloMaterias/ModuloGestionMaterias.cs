@@ -163,6 +163,7 @@ namespace Logica
 
         public void AsignarDocenteAMateria(Materia materia, Docente docente)
         {
+            ValidarAsignacionDeDocenteAMateria(materia, docente);
             materia.Docentes.Add(docente);
             docente.MateriasQueDicta.Add(materia);
         }
@@ -172,9 +173,12 @@ namespace Logica
             return materia.Docentes.Contains(docente);
         }
 
-        public void ValidarAsignacionDeDocenteAMateria(Materia materia)
+        public void ValidarAsignacionDeDocenteAMateria(Materia materia, Docente docente)
         {
-            throw new NotImplementedException();
+            if (EsDocenteDeLaMateria(materia, docente))
+            {
+                throw new ExcepcionDocenteYaDictaEstaMateria();
+            }
         }
     }
 }
