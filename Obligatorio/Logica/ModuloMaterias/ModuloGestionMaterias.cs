@@ -44,11 +44,12 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public void ModificarMateria(Materia materia, string datos)
+        public void ModificarMateria(Materia materia, string nuevoNombre)
         {
             // Por ahora solo modificamos nombre
-            ValidarBajaMateria(materia);
-            string nuevoNombre = datos;
+            //ValidarBajaMateria(materia);
+            //string nuevoNombre = datos;
+            ValidarModificacionNombreMateria(materia, nuevoNombre);
             materia.Nombre = nuevoNombre;
         }
 
@@ -178,6 +179,15 @@ namespace Logica
             if (EsDocenteDeLaMateria(materia, docente))
             {
                 throw new ExcepcionDocenteYaDictaEstaMateria();
+            }
+        }
+
+        public void ValidarModificacionNombreMateria(Materia materia, string nombre)
+        {
+            foreach (Materia m in ObtenerMaterias())
+            {
+                if (!materia.Equals(m) && m.Nombre.Equals(nombre))
+                    throw new ExcepcionExisteMateriaConMismoNombre();
             }
         }
     }
