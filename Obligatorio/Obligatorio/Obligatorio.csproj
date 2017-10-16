@@ -58,35 +58,11 @@
     <Compile Include="AltaDeMateria.Designer.cs">
       <DependentUpon>AltaDeMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Alumno\AltaDeAlumno.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Alumno\AltaDeAlumno.Designer.cs">
-      <DependentUpon>AltaDeAlumno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Alumno\BajaDeAlumno.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Alumno\BajaDeAlumno.Designer.cs">
-      <DependentUpon>BajaDeAlumno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Alumno\ModificarAlumno.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Alumno\ModificarAlumno.Designer.cs">
-      <DependentUpon>ModificarAlumno.cs</DependentUpon>
-    </Compile>
     <Compile Include="BajaDeMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BajaDeMateria.Designer.cs">
       <DependentUpon>BajaDeMateria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Alumno\MenuGestionAlumno.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Alumno\MenuGestionAlumno.Designer.cs">
-      <DependentUpon>MenuGestionAlumno.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuGestionMaterias.cs">
       <SubType>UserControl</SubType>
@@ -102,6 +78,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentanasDeAlumno\AltaDeAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\AltaDeAlumno.Designer.cs">
+      <DependentUpon>AltaDeAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\BajaDeAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\BajaDeAlumno.Designer.cs">
+      <DependentUpon>BajaDeAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\MenuGestionAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\MenuGestionAlumno.Designer.cs">
+      <DependentUpon>MenuGestionAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\ModificarAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\ModificarAlumno.Designer.cs">
+      <DependentUpon>ModificarAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="VPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,20 +111,8 @@
     <EmbeddedResource Include="AltaDeMateria.resx">
       <DependentUpon>AltaDeMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Alumno\AltaDeAlumno.resx">
-      <DependentUpon>AltaDeAlumno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Alumno\BajaDeAlumno.resx">
-      <DependentUpon>BajaDeAlumno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Alumno\ModificarAlumno.resx">
-      <DependentUpon>ModificarAlumno.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BajaDeMateria.resx">
       <DependentUpon>BajaDeMateria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Alumno\MenuGestionAlumno.resx">
-      <DependentUpon>MenuGestionAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestionMaterias.resx">
       <DependentUpon>MenuGestionMaterias.cs</DependentUpon>
@@ -141,6 +129,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanasDeAlumno\AltaDeAlumno.resx">
+      <DependentUpon>AltaDeAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeAlumno\BajaDeAlumno.resx">
+      <DependentUpon>BajaDeAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeAlumno\MenuGestionAlumno.resx">
+      <DependentUpon>MenuGestionAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeAlumno\ModificarAlumno.resx">
+      <DependentUpon>ModificarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VPrincipal.resx">
       <DependentUpon>VPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +175,7 @@
       <Name>Persistencia</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

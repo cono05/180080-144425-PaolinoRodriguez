@@ -8,13 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
-using Obligatorio.Alumno;
 
-namespace Obligatorio
+namespace Obligatorio.VentanasDeAlumno
 {
     public partial class MenuGestionAlumno : UserControl
     {
-
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
@@ -22,7 +20,7 @@ namespace Obligatorio
         public MenuGestionAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
         {
             InitializeComponent();
-            moduloAlumnos  = moduloAlumno;
+            moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
         }

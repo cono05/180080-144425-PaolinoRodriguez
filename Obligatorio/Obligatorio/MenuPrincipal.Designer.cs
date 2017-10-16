@@ -32,7 +32,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.GestionarMateriasBtn = new System.Windows.Forms.Button();
             this.GestionarDocentesBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonGestionarAlumno = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.GestionarMateriasBtn);
             this.panel1.Controls.Add(this.GestionarDocentesBtn);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonGestionarAlumno);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -80,14 +80,15 @@
             this.GestionarDocentesBtn.UseVisualStyleBackColor = true;
             this.GestionarDocentesBtn.Click += new System.EventHandler(this.GestionarDocentesBtn_Click);
             // 
-            // button1
+            // buttonGestionarAlumno
             // 
-            this.button1.Location = new System.Drawing.Point(167, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonGestionarAlumno.Location = new System.Drawing.Point(167, 121);
+            this.buttonGestionarAlumno.Name = "buttonGestionarAlumno";
+            this.buttonGestionarAlumno.Size = new System.Drawing.Size(94, 40);
+            this.buttonGestionarAlumno.TabIndex = 1;
+            this.buttonGestionarAlumno.Text = "Gestionar Alumnos";
+            this.buttonGestionarAlumno.UseVisualStyleBackColor = true;
+            this.buttonGestionarAlumno.Click += new System.EventHandler(this.buttonGestionarAlumno_Click);
             // 
             // label1
             // 
@@ -119,6 +120,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button GestionarMateriasBtn;
         private System.Windows.Forms.Button GestionarDocentesBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonGestionarAlumno;
     }
 }

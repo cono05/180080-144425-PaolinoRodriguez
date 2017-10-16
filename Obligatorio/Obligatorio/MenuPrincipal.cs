@@ -42,5 +42,11 @@ namespace Obligatorio
         {
 
         }
+
+        private void buttonGestionarAlumno_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new VentanasDeAlumno.MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
     }
 }

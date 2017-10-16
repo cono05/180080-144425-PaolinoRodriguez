@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
 
-namespace Obligatorio.Alumno
+namespace Obligatorio.VentanasDeAlumno
 {
-    public partial class AltaDeAlumno : UserControl
+    public partial class BajaDeAlumno : UserControl
     {
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
 
-        public AltaDeAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
+        public BajaDeAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
         {
             InitializeComponent();
-            moduloAlumnos  = moduloAlumno;
+            moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
         }

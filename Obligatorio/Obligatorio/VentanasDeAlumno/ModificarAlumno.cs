@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
 
-namespace Obligatorio.Alumno
+namespace Obligatorio.VentanasDeAlumno
 {
     public partial class ModificarAlumno : UserControl
     {
@@ -17,16 +17,12 @@ namespace Obligatorio.Alumno
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
 
-        public ModificarAlumno()
+        public ModificarAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
         {
             InitializeComponent();
-        }
-
-        public ModificarAlumno(ref ModuloGestionAlumno moduloAlumnos, ref ModuloGestionDocente moduloDocentes, ref ModuloGestionMaterias moduloMaterias)
-        {
-            this.moduloAlumnos = moduloAlumnos;
-            this.moduloDocentes = moduloDocentes;
-            this.moduloMaterias = moduloMaterias;
+            moduloAlumnos = moduloAlumno;
+            moduloDocentes = moduloDocente;
+            moduloMaterias = moduloMateria;
         }
     }
 }

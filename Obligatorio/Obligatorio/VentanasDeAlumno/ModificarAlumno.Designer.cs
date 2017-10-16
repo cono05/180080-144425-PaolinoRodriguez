@@ -1,4 +1,4 @@
-﻿namespace Obligatorio.Alumno
+﻿namespace Obligatorio.VentanasDeAlumno
 {
     partial class ModificarAlumno
     {
