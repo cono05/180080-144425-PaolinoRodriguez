@@ -53,20 +53,10 @@ namespace Pruebas
             modulo.Alta(alumnoOriginal);
             string nombreOriginal = alumnoOriginal.Nombre;
             string apellidoOriginal = alumnoOriginal.Apellido;
-            modulo.ModificarAlumno(alumnoOriginal, alumnoNuevosDatos);
+            modulo.ModificarAlumno(ref alumnoOriginal, alumnoNuevosDatos);
             string nombreActualizado = alumnoOriginal.Nombre;
             string apellidoActualizado = alumnoOriginal.Apellido;
             Assert.IsTrue(!(nombreOriginal.Equals(nombreActualizado) && !(apellidoOriginal.Equals(apellidoActualizado))));
-        }
-
-        [TestMethod]
-        public void ClonarAlumnoTest()
-        {
-            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            Alumno alumnoOriginal = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "1234567-8", "np@mail.com", 1);
-            Alumno alumnoClon = modulo.ClonarAlumno(alumnoOriginal);
-            Assert.IsTrue(alumnoOriginal.Equals(alumnoClon));
         }
 
         [TestMethod]
