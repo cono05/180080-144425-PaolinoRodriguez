@@ -348,6 +348,21 @@ namespace Pruebas
             moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
             Assert.IsTrue(moduloMaterias.ObtenerAlumnosInscriptosEnMateria(materia).Count == 1);            
         }
+
+        [TestMethod]
+        public void AsignarDocenteAMateriaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Jose", "Diaz", "1234567-8");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            moduloMaterias.Alta(materia);
+            moduloDocente.Alta(docente);
+            moduloMaterias.AsignarDocenteAMateria(materia, docente);
+            Assert.IsTrue(materia.Docentes.Contains(docente));
+        }
         
     }
 }

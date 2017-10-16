@@ -160,5 +160,10 @@ namespace Logica
         {
             return materia.Alumnos;
         }
+
+        public void AsignarDocenteAMateria(Materia materia, Docente docente)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
