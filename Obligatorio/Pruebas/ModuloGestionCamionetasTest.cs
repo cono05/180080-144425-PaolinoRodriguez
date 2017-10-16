@@ -15,6 +15,7 @@ namespace Pruebas
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
             Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
             moduloCamionetas.Alta(camioneta);
+            Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Contains(camioneta));
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Dominio;
 using Persistencia;
 
 namespace Logica
@@ -17,7 +19,7 @@ namespace Logica
 
         public void Alta(object obj)
         {
-            throw new NotImplementedException();
+            repositorio.AgregarCamioneta((Camioneta)obj);
         }
 
         public void Baja(object obj)
@@ -28,6 +30,11 @@ namespace Logica
         public void Modificar()
         {
             throw new NotImplementedException();
+        }
+
+        public ICollection<Camioneta> ObtenerCamionetas()
+        {
+            return repositorio.ObtenerCamionetas();
         }
     }
 }
