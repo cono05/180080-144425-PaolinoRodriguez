@@ -48,6 +48,7 @@
     <Compile Include="ExcepcionDocenteSinApellido.cs" />
     <Compile Include="ExcepcionDocenteSinCedula.cs" />
     <Compile Include="ExcepcionDocenteSinNombre.cs" />
+    <Compile Include="ExcepcionDocenteYaDictaEstaMateria.cs" />
     <Compile Include="ExcepcionExisteAlumnoConMismaCedula.cs" />
     <Compile Include="ExcepcionExisteDocenteConMismaCedula.cs" />
     <Compile Include="ExcepcionExisteMateriaConMismoNombre.cs" />
