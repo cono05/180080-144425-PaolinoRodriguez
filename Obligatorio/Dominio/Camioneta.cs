@@ -19,6 +19,12 @@ namespace Dominio
             Capacidad = 0;
         }
 
+        public static Camioneta CrearCamioneta()
+        {
+            Camioneta camioneta = new Camioneta();
+            return camioneta;
+        }
+
         public override bool Equals(object obj)
         {
             bool equals = false;

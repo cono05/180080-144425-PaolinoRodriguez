@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Persistencia;
 
 namespace Pruebas
 {
@@ -7,8 +8,11 @@ namespace Pruebas
     public class ModuloGestionCamionetasTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void AgregarCamionetaTest()
         {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+
+
         }
     }
 }

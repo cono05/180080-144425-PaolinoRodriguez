@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dominio;
 using Logica;
 using Persistencia;
+
 namespace Pruebas
 {
     class UtilidadesPruebas
@@ -42,6 +43,15 @@ namespace Pruebas
             return docente;
         }
 
+        public static Camioneta CrearCamionetaDePrueba(string marca, string chapa, int capacidad)
+        {
+            Camioneta camioneta = Camioneta.CrearCamioneta();
+            camioneta.Marca = marca;
+            camioneta.Chapa = chapa;
+            camioneta.Capacidad = capacidad;
+            return camioneta;
+        }
+
         public static ModuloGestionMaterias CrearModuloGestionMateriasDePrueba(ref RepositorioRam repositorio)
         {
             ModuloGestionMaterias moduloGestionMaterias = new ModuloGestionMaterias(ref repositorio);
@@ -61,6 +71,11 @@ namespace Pruebas
             return moduloGestionDocentes;
         }
 
+        public static ModuloGestionCamioneta CrearModuloGestionCamioneta(ref RepositorioRam repositorio)
+        {
+            ModuloGestionCamioneta moduloGestionCamionetas = new ModuloGestionCamioneta(ref repositorio);
+            return moduloGestionCamionetas;
+        }
 
-    }
+   }
 }
