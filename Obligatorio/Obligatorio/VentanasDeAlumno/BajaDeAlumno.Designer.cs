@@ -55,6 +55,7 @@
             this.listBoxAlumnos.Name = "listBoxAlumnos";
             this.listBoxAlumnos.Size = new System.Drawing.Size(235, 160);
             this.listBoxAlumnos.TabIndex = 25;
+            this.listBoxAlumnos.SelectedIndexChanged += new System.EventHandler(this.listBoxAlumnos_SelectedIndexChanged);
             // 
             // buttonVolver
             // 
@@ -85,6 +86,7 @@
             this.label1.Size = new System.Drawing.Size(166, 25);
             this.label1.TabIndex = 22;
             this.label1.Text = "Baja De Alumno";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BajaDeAlumno
             // 

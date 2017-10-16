@@ -50,6 +50,7 @@
     <Compile Include="ExcepcionDocenteSinNombre.cs" />
     <Compile Include="ExcepcionDocenteYaDictaEstaMateria.cs" />
     <Compile Include="ExcepcionExisteAlumnoConMismaCedula.cs" />
+    <Compile Include="ExcepcionExisteAlumnoConMismoEmail.cs" />
     <Compile Include="ExcepcionExisteDocenteConMismaCedula.cs" />
     <Compile Include="ExcepcionExisteMateriaConMismoNombre.cs" />
     <Compile Include="ExcepcionFormatoCedulaIncorrecto.cs" />
