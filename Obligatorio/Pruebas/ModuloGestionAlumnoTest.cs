@@ -60,6 +60,16 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void ClonarAlumnoTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumnoOriginal = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "1234567-8", "np@mail.com", 1);
+            Alumno alumnoClon = modulo.ClonarAlumno(alumnoOriginal);
+            Assert.IsTrue(alumnoOriginal.Equals(alumnoClon));
+        }
+
+        [TestMethod]
         public void EliminarAlumnoInscritoEnMateriasTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();

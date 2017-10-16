@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
 using Dominio;
+using Excepciones;
 
 namespace Obligatorio.VentanasDeAlumno
 {
@@ -43,28 +44,64 @@ namespace Obligatorio.VentanasDeAlumno
             Alumno alumnoSeleccionado = (Alumno)listBoxAlumnos.SelectedItem;
             try
             {
-                Alumno aux = Alumno.ClonarAlumno(alumnoSeleccionado);
-                string datos = textBoxNombre.Text + ";" + textBoxApellido.Text + ";" + textBoxCedula.Text + ";" + textBoxEmail.Text;
-                moduloAlumnos.ModificarAlumno(alumnoSeleccionado, aux);
+                Alumno aux = Alumno.CrearAlumno();
+                aux.Nombre = textBoxNombre.Text;
+                aux.Apellido = textBoxApellido.Text;
+                aux.Cedula = textBoxCedula.Text;
+                aux.Mail = textBoxEmail.Text;
 
-                if (!aux.Equals(alumnoSeleccionado))
+                if (!SonIguales(alumnoSeleccionado, aux))
                 {
-                    string mensaje = string.Format("\t¡Modificación exitosa! \nDatos previos: {0} {1} CI {2} email {3} \nDatos actuales: " + 
-                        "{4} {5} CI {6} email {7}", aux.Nombre, aux.Apellido, aux.Cedula, aux.Mail, alumnoSeleccionado.Nombre, 
+                    moduloAlumnos.ModificarAlumno(ref alumnoSeleccionado, aux);
+                    string mensaje = string.Format("\t¡Modificación exitosa! \nDatos previos: {0} {1} CI {2} email {3} \nDatos actuales: " +
+                        "{4} {5} CI {6} email {7}", aux.Nombre, aux.Apellido, aux.Cedula, aux.Mail, alumnoSeleccionado.Nombre,
                             alumnoSeleccionado.Apellido, alumnoSeleccionado.Cedula, alumnoSeleccionado.Mail);
 
                     MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
+                    //Para limpiar todos los textboxes
+                    panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+                    listBoxAlumnos.DataSource = null;
+                    listBoxAlumnos.DataSource = CargarListBoxAlumnos();
                 }
-                
-                //Para limpiar todos los textboxes
-                panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
-                listBoxAlumnos.DataSource = null;
-                listBoxAlumnos.DataSource = CargarListBoxAlumnos();
             }
-            catch(Exception ex)
+            catch(ExcepcionExisteAlumnoConMismaCedula ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (ExcepcionAlumnoSinNombre ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ExcepcionAlumnoSinApellido ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ExcepcionAlumnoSinCedula ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ExcepcionAlumnoSinEmail ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ExcepcionFormatoCedulaIncorrecto ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ExcepcionExisteAlumnoConMismoEmail ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private bool SonIguales(Alumno a1, Alumno a2)
+        {
+            return  a1.Nombre.Equals(a2.Nombre) && a1.Apellido.Equals(a2.Apellido) 
+                    && a1.Cedula.Equals(a2.Cedula) && a1.Mail.Equals(a2.Mail);
         }
 
         private void listBoxAlumnos_SelectedIndexChanged(object sender, EventArgs e)
