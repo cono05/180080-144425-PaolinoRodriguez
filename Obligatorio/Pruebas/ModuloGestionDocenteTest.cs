@@ -58,7 +58,7 @@ namespace Pruebas
             bool esInscrito1 = moduloDocente.EstaInscritoEnLaMateria(docente, materia);
             moduloDocente.DesinscribirDocenteEnMateria(docente, materia);
             bool esInscrito2 = moduloDocente.EstaInscritoEnLaMateria(docente, materia);
-            Assert.IsTrue(esInscrito1 && esInscrito2);
+            Assert.IsTrue(esInscrito1 && !esInscrito2);
         }
 
         [TestMethod]
@@ -163,7 +163,7 @@ namespace Pruebas
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("", "Apellido", "1234567-8");
-            modulo.ValidarDocente(docente);
+            modulo.ValidarAlta(docente);
         }
 
         [TestMethod]
@@ -173,7 +173,7 @@ namespace Pruebas
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "", "1234567-8");
-            modulo.ValidarDocente(docente);
+            modulo.ValidarAlta(docente);
         }
 
         [TestMethod]
@@ -183,7 +183,7 @@ namespace Pruebas
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "");
-            modulo.ValidarDocente(docente);
+            modulo.ValidarAlta(docente);
         }
 
         [TestMethod]
@@ -193,7 +193,7 @@ namespace Pruebas
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "123-4");
-            modulo.ValidarDocente(docente);
+            modulo.ValidarAlta(docente);
         }
 
         [TestMethod]
@@ -205,7 +205,7 @@ namespace Pruebas
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre2", "Apellido2", "1234567-8");
             modulo.Alta(docente1);
-            modulo.ValidarDocente(docente2);
+            modulo.ValidarAlta(docente2);
         }
 
         #endregion

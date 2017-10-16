@@ -47,17 +47,17 @@ namespace Obligatorio.VentanasDeAlumno
                 {
                     MessageBox.Show(ex.Message);
                 }
-                catch (Exception ex) // Ver bien que otros errores podrian suceder
+                catch (Exception ex) 
                 {
-                    throw ex;
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
 
-        public ICollection<Alumno> CargarListBoxAlumnos()
+        private ICollection<Alumno> CargarListBoxAlumnos()
         {
             ICollection<Alumno> lista = new List<Alumno>();
-            foreach (Alumno alumno in moduloAlumnos.repositorio.ObtenerAlumnos())
+            foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
             {
                 lista.Add(alumno);
             }
