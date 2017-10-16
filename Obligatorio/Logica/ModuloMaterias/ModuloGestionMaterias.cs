@@ -169,6 +169,11 @@ namespace Logica
 
         public bool EsDocenteDeLaMateria(Materia materia, Docente docente)
         {
+            return materia.Docentes.Contains(docente);
+        }
+
+        public void ValidarAsignacionDeDocenteAMateria(Materia materia)
+        {
             throw new NotImplementedException();
         }
     }
