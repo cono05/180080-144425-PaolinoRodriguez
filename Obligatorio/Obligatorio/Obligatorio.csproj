@@ -58,11 +58,35 @@
     <Compile Include="AltaDeMateria.Designer.cs">
       <DependentUpon>AltaDeMateria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alumno\AltaDeAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alumno\AltaDeAlumno.Designer.cs">
+      <DependentUpon>AltaDeAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\BajaDeAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alumno\BajaDeAlumno.Designer.cs">
+      <DependentUpon>BajaDeAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\ModificarAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alumno\ModificarAlumno.Designer.cs">
+      <DependentUpon>ModificarAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="BajaDeMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BajaDeMateria.Designer.cs">
       <DependentUpon>BajaDeMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\MenuGestionAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alumno\MenuGestionAlumno.Designer.cs">
+      <DependentUpon>MenuGestionAlumno.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuGestionMaterias.cs">
       <SubType>UserControl</SubType>
@@ -87,8 +111,20 @@
     <EmbeddedResource Include="AltaDeMateria.resx">
       <DependentUpon>AltaDeMateria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Alumno\AltaDeAlumno.resx">
+      <DependentUpon>AltaDeAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumno\BajaDeAlumno.resx">
+      <DependentUpon>BajaDeAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumno\ModificarAlumno.resx">
+      <DependentUpon>ModificarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BajaDeMateria.resx">
       <DependentUpon>BajaDeMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumno\MenuGestionAlumno.resx">
+      <DependentUpon>MenuGestionAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestionMaterias.resx">
       <DependentUpon>MenuGestionMaterias.cs</DependentUpon>
