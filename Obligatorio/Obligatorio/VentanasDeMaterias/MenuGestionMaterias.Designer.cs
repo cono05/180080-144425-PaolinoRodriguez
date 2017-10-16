@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AgregarAlumnoEnMateria = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AltaBajaDocenteBtn = new System.Windows.Forms.Button();
             this.ModificarMateriaBtn = new System.Windows.Forms.Button();
             this.BajaDeMateriaBtn = new System.Windows.Forms.Button();
             this.AltaDeMateriaBtn = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.AgregarAlumnoEnMateria);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.AltaBajaDocenteBtn);
             this.panel1.Controls.Add(this.ModificarMateriaBtn);
             this.panel1.Controls.Add(this.BajaDeMateriaBtn);
             this.panel1.Controls.Add(this.AltaDeMateriaBtn);
@@ -91,26 +91,26 @@
             // 
             this.button5.Location = new System.Drawing.Point(550, 196);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 40);
+            this.button5.Size = new System.Drawing.Size(94, 48);
             this.button5.TabIndex = 4;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // AltaBajaDocenteBtn
             // 
-            this.button4.Location = new System.Drawing.Point(380, 196);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 40);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.AltaBajaDocenteBtn.Location = new System.Drawing.Point(380, 196);
+            this.AltaBajaDocenteBtn.Name = "AltaBajaDocenteBtn";
+            this.AltaBajaDocenteBtn.Size = new System.Drawing.Size(94, 48);
+            this.AltaBajaDocenteBtn.TabIndex = 3;
+            this.AltaBajaDocenteBtn.Text = "Alta y baja Docente en Materia";
+            this.AltaBajaDocenteBtn.UseVisualStyleBackColor = true;
             // 
             // ModificarMateriaBtn
             // 
             this.ModificarMateriaBtn.Location = new System.Drawing.Point(195, 196);
             this.ModificarMateriaBtn.Name = "ModificarMateriaBtn";
-            this.ModificarMateriaBtn.Size = new System.Drawing.Size(94, 40);
+            this.ModificarMateriaBtn.Size = new System.Drawing.Size(94, 48);
             this.ModificarMateriaBtn.TabIndex = 2;
             this.ModificarMateriaBtn.Text = "Modificar Materia";
             this.ModificarMateriaBtn.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AgregarAlumnoEnMateria;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AltaBajaDocenteBtn;
         private System.Windows.Forms.Button ModificarMateriaBtn;
         private System.Windows.Forms.Button BajaDeMateriaBtn;
         private System.Windows.Forms.Button AltaDeMateriaBtn;
