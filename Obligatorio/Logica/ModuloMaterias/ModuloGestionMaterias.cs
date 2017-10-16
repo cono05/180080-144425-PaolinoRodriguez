@@ -163,6 +163,12 @@ namespace Logica
 
         public void AsignarDocenteAMateria(Materia materia, Docente docente)
         {
+            materia.Docentes.Add(docente);
+            docente.MateriasQueDicta.Add(materia);
+        }
+
+        public bool EsDocenteDeLaMateria(Materia materia, Docente docente)
+        {
             throw new NotImplementedException();
         }
     }
