@@ -407,6 +407,17 @@ namespace Pruebas
             moduloMaterias.AsignarDocenteAMateria(materia, docente);
             moduloMaterias.ValidarAsignacionDeDocenteAMateria(materia, docente);
         }
+
+        [TestMethod]
+        public void ValidarModifcacionNombreMateriaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            moduloMaterias.Alta(materia);
+            moduloMaterias.ValidarModificacionNombreMateria(materia, "Diseño");
+
+        }
         
     }
 }

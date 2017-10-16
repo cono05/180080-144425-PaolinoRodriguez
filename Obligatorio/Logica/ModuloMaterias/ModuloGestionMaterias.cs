@@ -180,5 +180,10 @@ namespace Logica
                 throw new ExcepcionDocenteYaDictaEstaMateria();
             }
         }
+
+        public void ValidarModificacionNombreMateria(Materia materia, string nombre)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
