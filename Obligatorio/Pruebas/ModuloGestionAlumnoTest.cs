@@ -17,7 +17,7 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
             ModuloGestionAlumno modulo = new ModuloGestionAlumno(ref repositorio);
             modulo.Alta(alumno);
-            Assert.IsTrue(repositorio.Alumnos.Count == 1);
+            Assert.IsTrue(modulo.ObtenerAlumnos().Count == 1);
         }
 
         [TestMethod]
@@ -27,10 +27,20 @@ namespace Pruebas
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "1234567-8", "m@g.com", 7);
             modulo.Alta(alumno);
-            int antesEliminar = modulo.repositorio.Alumnos.Count;
+            int antesEliminar = modulo.ObtenerAlumnos().Count;
             modulo.Baja(alumno);
-            int despuesEliminar = modulo.repositorio.Alumnos.Count;
+            int despuesEliminar = modulo.ObtenerAlumnos().Count;
             Assert.IsTrue(antesEliminar == despuesEliminar + 1);
+        }
+
+        [TestMethod]
+        public void ObtenerAlumnosTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "1234567-8", "m@g.com", 7);
+            modulo.Alta(alumno);
+            Assert.IsTrue(modulo.ObtenerAlumnos().Count == 1);
         }
 
         [TestMethod]
@@ -110,9 +120,9 @@ namespace Pruebas
             moduloAlumno.Alta(alumno);
             moduloMateria.Alta(materia);
             moduloAlumno.InscribirAlumnoEnMateria(alumno, materia);
-            int antesEliminar = moduloAlumno.repositorio.Alumnos.Count;
+            int antesEliminar = moduloAlumno.ObtenerAlumnos().Count;
             moduloAlumno.Baja(alumno);
-            int despuesEliminar = moduloAlumno.repositorio.Alumnos.Count;
+            int despuesEliminar = moduloAlumno.ObtenerAlumnos().Count;
             Assert.IsTrue(antesEliminar == despuesEliminar + 1);
         }
 

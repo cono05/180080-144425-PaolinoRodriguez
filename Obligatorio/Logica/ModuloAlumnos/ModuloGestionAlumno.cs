@@ -75,6 +75,11 @@ namespace Logica
             }
         }
 
+        public ICollection<Alumno> ObtenerAlumnos()
+        {
+            return repositorio.ObtenerAlumnos();
+        }
+
         private void ValidarCedula(string cedulaParaValidar)
         {
             if (!EsFormatoCedulaAlumnoCorrecto(cedulaParaValidar))
