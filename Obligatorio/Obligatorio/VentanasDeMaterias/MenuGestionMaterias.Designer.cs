@@ -105,6 +105,7 @@
             this.AltaBajaDocenteBtn.TabIndex = 3;
             this.AltaBajaDocenteBtn.Text = "Alta y baja Docente en Materia";
             this.AltaBajaDocenteBtn.UseVisualStyleBackColor = true;
+            this.AltaBajaDocenteBtn.Click += new System.EventHandler(this.AltaBajaDocenteBtn_Click);
             // 
             // ModificarMateriaBtn
             // 

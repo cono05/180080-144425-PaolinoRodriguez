@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using Obligatorio.VentanasDeMaterias;
 
 namespace Obligatorio
 {
@@ -77,6 +78,20 @@ namespace Obligatorio
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new ModificacionMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
+
+        private void AltaBajaDocenteBtn_Click(object sender, EventArgs e)
+        {
+            if (moduloDocentes.HayDocentesRegistrados())
+            {
+                panel1.Controls.Clear();
+                panel1.Controls.Add(new AltaBajaDocenteEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            }
+            else
+            {
+                MessageBox.Show("No existen Docentes en el sistema", MessageBoxButtons.OK.ToString());
+            }
+            
         }
     }
 }

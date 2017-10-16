@@ -16,6 +16,10 @@ namespace Dominio
             return docente;
         }
 
+        public override string ToString()
+        {
+            return Nombre + " " + Apellido;
+        }
 
     }
 }

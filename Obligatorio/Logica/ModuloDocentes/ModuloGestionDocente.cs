@@ -2,6 +2,7 @@
 using Persistencia;
 using Dominio;
 using Excepciones;
+using System.Collections.Generic;
 
 namespace Logica
 {
@@ -37,6 +38,7 @@ namespace Logica
         {
             if (ExisteDocenteConMismaCedula(docente.Cedula))
                 throw new ExcepcionExisteDocenteConMismaCedula(); 
+            //if()
         }
 
         public void ValidarBaja(Docente docente)
@@ -147,6 +149,16 @@ namespace Logica
                 throw new ExcepcionExisteDocenteConMismaCedula();
             }
             
+        }
+
+        public ICollection<Docente> ObtenerDocentes()
+        {
+            return repositorio.ObtenerDocentes();
+        }
+
+        public bool HayDocentesRegistrados()
+        {
+            return ObtenerDocentes().Count > 0;
         }
         /*TODO: Docente y Alumno pueden tener la misma cedula. Cambiar */
     }
