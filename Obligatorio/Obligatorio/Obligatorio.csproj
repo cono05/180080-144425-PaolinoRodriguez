@@ -70,10 +70,10 @@
     <Compile Include="VentanasDeMaterias\BajaDeMateria.Designer.cs">
       <DependentUpon>BajaDeMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuGestionDocente.cs">
+    <Compile Include="VentanasDeDocente\MenuGestionDocente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuGestionDocente.Designer.cs">
+    <Compile Include="VentanasDeDocente\MenuGestionDocente.Designer.cs">
       <DependentUpon>MenuGestionDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanasDeMaterias\MenuGestionMaterias.cs">
@@ -135,7 +135,7 @@
     <EmbeddedResource Include="VentanasDeMaterias\BajaDeMateria.resx">
       <DependentUpon>BajaDeMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuGestionDocente.resx">
+    <EmbeddedResource Include="VentanasDeDocente\MenuGestionDocente.resx">
       <DependentUpon>MenuGestionDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\MenuGestionMaterias.resx">
