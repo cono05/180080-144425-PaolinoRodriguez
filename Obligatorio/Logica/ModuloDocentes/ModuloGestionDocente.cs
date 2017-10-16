@@ -44,8 +44,33 @@ namespace Logica
                 throw new ExcepcionDocenteSinApellido();
             if (EsDocenteSinCedula(docente))
                 throw new ExcepcionDocenteSinCedula();
+            if (!EsFormatoCedulaDocenteCorrecto(docente.Cedula))
+                throw new ExcepcionFormatoCedulaIncorrecto();
         }
 
+        //public void ValidarDocente(Docente docente)
+        //{
+        //    if (EsDocenteSinNombre(docente))
+        //    {
+        //        throw new ExcepcionDocenteSinNombre();
+        //    }
+        //    if (EsDocenteSinApellido(docente))
+        //    {
+        //        throw new ExcepcionDocenteSinApellido();
+        //    }
+        //    if (EsDocenteSinCedula(docente))
+        //    {
+        //        throw new ExcepcionDocenteSinCedula();
+        //    }
+        //    if (!EsFormatoCedulaDocenteCorrecto(docente.Cedula))
+        //    {
+        //        throw new ExcepcionFormatoCedulaIncorrecto();
+        //    }
+        //    if (ExisteDocenteConMismaCedula(docente.Cedula))
+        //    {
+        //        throw new ExcepcionExisteDocenteConMismaCedula();
+        //    }
+        //}
         public void ValidarBaja(Docente docente)
         {
             if (!ExisteDocenteConMismaCedula(docente.Cedula))
@@ -129,31 +154,6 @@ namespace Logica
                 docente.MateriasQueDicta.Remove(materia);
                 materia.Docentes.Remove(docente);
             }
-        }
-
-        public void ValidarDocente(Docente docente)
-        {
-            if (EsDocenteSinNombre(docente))
-            {
-                throw new ExcepcionDocenteSinNombre();
-            }
-            if (EsDocenteSinApellido(docente))
-            {
-                throw new ExcepcionDocenteSinApellido();
-            }
-            if (EsDocenteSinCedula(docente))
-            {
-                throw new ExcepcionDocenteSinCedula();
-            }
-            if (!EsFormatoCedulaDocenteCorrecto(docente.Cedula))
-            {
-                throw new ExcepcionFormatoCedulaIncorrecto();
-            }
-            if (ExisteDocenteConMismaCedula(docente.Cedula))
-            {
-                throw new ExcepcionExisteDocenteConMismaCedula();
-            }
-            
         }
 
         public ICollection<Docente> ObtenerDocentes()

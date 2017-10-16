@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VentanasDeDocente\AltaDeDocente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeDocente\AltaDeDocente.Designer.cs">
+      <DependentUpon>AltaDeDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeDocente\BajaDeDocente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeDocente\BajaDeDocente.Designer.cs">
+      <DependentUpon>BajaDeDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeDocente\ModificarDocente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeDocente\ModificarDocente.Designer.cs">
+      <DependentUpon>ModificarDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +141,15 @@
     <Compile Include="VPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="VentanasDeDocente\AltaDeDocente.resx">
+      <DependentUpon>AltaDeDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeDocente\BajaDeDocente.resx">
+      <DependentUpon>BajaDeDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeDocente\ModificarDocente.resx">
+      <DependentUpon>ModificarDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.resx">
       <DependentUpon>AltaBajaDocenteEnMateria.cs</DependentUpon>
     </EmbeddedResource>
