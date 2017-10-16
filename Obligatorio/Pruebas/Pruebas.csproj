@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ModuloGestionMateriasTest.cs" />
     <Compile Include="ModuloGestionAlumnoTest.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="UtilidadesPruebas.cs" />
   </ItemGroup>
   <ItemGroup>
