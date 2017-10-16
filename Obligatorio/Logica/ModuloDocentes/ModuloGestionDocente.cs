@@ -152,6 +152,11 @@ namespace Logica
 
         public ICollection<Docente> ObtenerDocentes()
         {
+            return repositorio.ObtenerDocentes();
+        }
+
+        public bool HayDocentesRegistrados()
+        {
             throw new NotImplementedException();
         }
         /*TODO: Docente y Alumno pueden tener la misma cedula. Cambiar */

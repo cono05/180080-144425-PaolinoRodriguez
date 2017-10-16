@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
 using Dominio;
+using Excepciones;
 namespace Obligatorio.VentanasDeMaterias
 {
     public partial class AltaBajaDocenteEnMateria : UserControl
@@ -45,31 +46,78 @@ namespace Obligatorio.VentanasDeMaterias
             Materia materia = (Materia)MateriasListBox.SelectedItem;
             DocentesNoDictanListBox.DataSource = null;
             DocentesQueDictanListBox.DataSource = null;
-            ICollection<Alumno> listaQueNoCursan = CargarListBoxDocentesNoDictan(materia);
-            ICollection<Alumno> listaQueCursan = moduloMaterias.ObtenerAlumnosInscriptosEnMateria(materia);
-            if (listaQueNoCursan.Count > 0)
+            ICollection<Docente> listaQueNoDictanLaMateria = CargarListBoxDocentesNoDictan(materia);
+            ICollection<Docente> listaQueDictanLaMateria = CargarListBoxDocentesDictanMateria(materia);
+            if (listaQueNoDictanLaMateria.Count > 0)
             {
-                AlumnosNoCursanListBox.DataSource = listaQueNoCursan;
+                DocentesNoDictanListBox.DataSource = listaQueNoDictanLaMateria;
             }
-            if (listaQueCursan.Count > 0)
+            if (listaQueDictanLaMateria.Count > 0)
             {
-                AlumnosInscriptosListBox.DataSource = listaQueCursan;
+                DocentesQueDictanListBox.DataSource = listaQueDictanLaMateria;
             }
-            AlumnosInscriptosListBox.SetSelected(0, false);
-            AlumnosNoCursanListBox.SetSelected(0, false);
+            DocentesNoDictanListBox.SetSelected(0, false);
+            DocentesQueDictanListBox.SetSelected(0, false);
         }
 
         public ICollection<Docente> CargarListBoxDocentesNoDictan(Materia materia)
         {
             ICollection<Docente> lista = new List<Docente>();
-            //foreach (Alumno a in moduloMaterias.obtener())
-            //{
-            //    if (!moduloMaterias.EstaInscriptoEnLaMateria(materia, a))
-            //    {
-            //        lista.Add(a);
-            //    }
-            //}
+            foreach (Docente d in moduloDocentes.ObtenerDocentes())
+            {
+                if (!moduloDocentes.EstaInscritoEnLaMateria(d, materia))
+                {
+                    lista.Add(d);
+                }
+            }
             return lista;
+        }
+
+        public ICollection<Docente> CargarListBoxDocentesDictanMateria(Materia materia)
+        {
+            ICollection<Docente> lista = new List<Docente>();
+            foreach (Docente d in moduloDocentes.ObtenerDocentes())
+            {
+                if (moduloDocentes.EstaInscritoEnLaMateria(d, materia))
+                {
+                    lista.Add(d);
+                }
+            }
+            return lista;
+        }
+
+        private void AsignarDocenteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Docente docente = (Docente)DocentesNoDictanListBox.SelectedItem;
+                Materia materia = (Materia)MateriasListBox.SelectedItem;
+                if (docente != null)
+                {
+                    moduloDocentes.InscribirDocenteEnMateria(docente, materia);
+                    DocentesQueDictanListBox.DataSource = null;
+                    DocentesNoDictanListBox.DataSource = null;
+                    DocentesNoDictanListBox.DataSource = CargarListBoxDocentesNoDictan(materia);
+                    DocentesQueDictanListBox.DataSource = CargarListBoxDocentesDictanMateria(materia);
+                    MessageBox.Show("El Docente " + docente.ToString() + " se ha asignado correctamente en " + materia.ToString(), MessageBoxButtons.OK.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ningún alumno.", MessageBoxButtons.OK.ToString());
+                }
+            }
+            catch (ExcepcionDocenteYaDictaEstaMateria excepcion)
+            {
+                MessageBox.Show(excepcion.Message);
+            }
+            catch (Exception excepcion)
+            {
+                MessageBox.Show(excepcion.Message);
+            }
+            finally
+            {
+
+            }
         }
     }
 }

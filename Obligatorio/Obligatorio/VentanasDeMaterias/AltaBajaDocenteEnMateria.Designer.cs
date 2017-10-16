@@ -131,6 +131,7 @@
             this.AsignarDocenteBtn.TabIndex = 7;
             this.AsignarDocenteBtn.Text = "Asignar Docente a la Materia";
             this.AsignarDocenteBtn.UseVisualStyleBackColor = true;
+            this.AsignarDocenteBtn.Click += new System.EventHandler(this.AsignarDocenteBtn_Click);
             // 
             // VolverAlMenuBtn
             // 
