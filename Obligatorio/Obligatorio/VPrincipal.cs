@@ -76,10 +76,16 @@ namespace Obligatorio
 
             Docente docente = Docente.CrearDocente();
             docente.Cedula = "1222333-4";
+            docente.Nombre = "Pedro";
+            docente.Apellido = "Lopez";
             Docente docente2 = Docente.CrearDocente();
             docente2.Cedula = "1222222-4";
+            docente2.Nombre = "Martin";
+            docente2.Apellido = "Leon";
             Docente docente3 = Docente.CrearDocente();
             docente3.Cedula = "1333333-4";
+            docente3.Nombre = "Jose";
+            docente3.Apellido = "Souza";
 
             Materia materia = Materia.CrearMateria();
             materia.Nombre = "Diseño 1";

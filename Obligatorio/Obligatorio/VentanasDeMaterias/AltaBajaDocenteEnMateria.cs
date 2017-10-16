@@ -121,5 +121,37 @@ namespace Obligatorio.VentanasDeMaterias
 
             }
         }
+
+        private void QuitarDocenteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Docente DocenteADesinscribir = (Docente)DocentesQueDictanListBox.SelectedItem;
+                Materia materia = (Materia)MateriasListBox.SelectedItem;
+                if (DocenteADesinscribir != null)
+                {
+                    moduloDocentes.DesinscribirDocenteEnMateria(DocenteADesinscribir, materia);
+                    DocentesQueDictanListBox.DataSource = null;
+                    DocentesNoDictanListBox.DataSource = null;
+                    DocentesNoDictanListBox.DataSource = CargarListBoxDocentesNoDictan(materia);
+                    DocentesQueDictanListBox.DataSource = CargarListBoxDocentesDictanMateria(materia);
+                    MessageBox.Show("El Docente " + DocenteADesinscribir.ToString() + " se ha eliminado correctamente de " + materia.ToString(), MessageBoxButtons.OK.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ningún Docente.", MessageBoxButtons.OK.ToString());
+                }
+            }
+            catch (Exception excepcion)
+            {
+                MessageBox.Show(excepcion.Message);
+            }
+         }
+
+        private void VolverAlMenuBtn_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
     }
 }
