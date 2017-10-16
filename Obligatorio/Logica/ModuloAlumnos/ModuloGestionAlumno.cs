@@ -65,10 +65,14 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public void ModificarAlumno(Alumno alumnoOrignal, Alumno alumnoNuevosDatos)
+        public void ModificarAlumno(ref Alumno alumnoOrignal, Alumno alumnoNuevosDatos)
         {
             ValidarModificarAlumno(alumnoOrignal, alumnoNuevosDatos);
-
+            alumnoOrignal.Nombre    = alumnoNuevosDatos.Nombre;
+            alumnoOrignal.Apellido  = alumnoNuevosDatos.Apellido;
+            alumnoOrignal.Cedula    = alumnoNuevosDatos.Cedula;
+            alumnoOrignal.Mail      = alumnoNuevosDatos.Mail;
+            //alumnoOrignal.NumeroDeEstudiante = alumnoNuevosDatos.NumeroDeEstudiante;
         }
 
         public ICollection<Alumno> ObtenerAlumnos()

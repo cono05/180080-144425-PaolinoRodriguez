@@ -20,17 +20,6 @@ namespace Dominio
             return alumno;
         }
 
-        public static Alumno ClonarAlumno(Alumno aClonar)
-        {
-            Alumno alumno   = new Alumno();
-            alumno.Nombre   = aClonar.Nombre;
-            alumno.Apellido = aClonar.Apellido;
-            alumno.Cedula   = aClonar.Cedula;
-            alumno.Mail     = aClonar.Mail;
-            alumno.NumeroDeEstudiante = aClonar.NumeroDeEstudiante;
-            return alumno;
-        }
-
         public override bool Equals(object obj)
         {
             bool equals = false;
