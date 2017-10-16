@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.AgregarMateriaBtn = new System.Windows.Forms.Button();
             this.VolverAMenuGestionMateriasBtn = new System.Windows.Forms.Button();
+            this.AgregarMateriaBtn = new System.Windows.Forms.Button();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,32 +49,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label1
+            // VolverAMenuGestionMateriasBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(331, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Alta de Materia";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(235, 135);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre:";
-            // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.Location = new System.Drawing.Point(288, 132);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(252, 20);
-            this.textBoxNombre.TabIndex = 2;
+            this.VolverAMenuGestionMateriasBtn.Location = new System.Drawing.Point(446, 253);
+            this.VolverAMenuGestionMateriasBtn.Name = "VolverAMenuGestionMateriasBtn";
+            this.VolverAMenuGestionMateriasBtn.Size = new System.Drawing.Size(94, 40);
+            this.VolverAMenuGestionMateriasBtn.TabIndex = 4;
+            this.VolverAMenuGestionMateriasBtn.Text = "Volver al Menú";
+            this.VolverAMenuGestionMateriasBtn.UseVisualStyleBackColor = true;
+            this.VolverAMenuGestionMateriasBtn.Click += new System.EventHandler(this.VolverAMenuGestionMateriasBtn_Click);
             // 
             // AgregarMateriaBtn
             // 
@@ -86,15 +71,31 @@
             this.AgregarMateriaBtn.UseVisualStyleBackColor = true;
             this.AgregarMateriaBtn.Click += new System.EventHandler(this.AgregarMateriaBtn_Click);
             // 
-            // VolverAMenuGestionMateriasBtn
+            // textBoxNombre
             // 
-            this.VolverAMenuGestionMateriasBtn.Location = new System.Drawing.Point(446, 253);
-            this.VolverAMenuGestionMateriasBtn.Name = "VolverAMenuGestionMateriasBtn";
-            this.VolverAMenuGestionMateriasBtn.Size = new System.Drawing.Size(94, 40);
-            this.VolverAMenuGestionMateriasBtn.TabIndex = 4;
-            this.VolverAMenuGestionMateriasBtn.Text = "Volver al Menú";
-            this.VolverAMenuGestionMateriasBtn.UseVisualStyleBackColor = true;
-            this.VolverAMenuGestionMateriasBtn.Click += new System.EventHandler(this.VolverAMenuGestionMateriasBtn_Click);
+            this.textBoxNombre.Location = new System.Drawing.Point(288, 132);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(252, 20);
+            this.textBoxNombre.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(235, 135);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(331, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Alta de Materia";
             // 
             // AltaDeMateria
             // 

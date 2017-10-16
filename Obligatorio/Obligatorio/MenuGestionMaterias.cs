@@ -66,5 +66,11 @@ namespace Obligatorio
 
             
         }
+
+        private void AgregarAlumnoEnMateria_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new AltaDeAlumnoEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
     }
 }

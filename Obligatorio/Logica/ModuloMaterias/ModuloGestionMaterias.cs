@@ -150,5 +150,15 @@ namespace Logica
             if (EstaInscriptoEnLaMateria(materia, alumno))
                 throw new ExcepcionAlumnoYaCursaLaMateria();
         }
+
+        public ICollection<Alumno> ObtenerAlumnos()
+        {
+            return repositorio.ObtenerAlumnos();
+        }
+
+        public ICollection<Alumno> ObtenerAlumnosInscriptosEnMateria(Materia materia)
+        {
+            return materia.Alumnos;
+        }
     }
 }

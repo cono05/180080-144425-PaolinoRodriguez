@@ -48,6 +48,15 @@ namespace Pruebas
             Materia materia3 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             Materia materia4 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             Assert.IsTrue(materia4.Codigo - materia3.Codigo == 1);
-        }        
+        }
+
+        [TestMethod]
+        public void ToStringTest()
+        {
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño 1", 11);
+            int codigoMateria = materia.Codigo;
+            string esperado = "Diseño 1" + "(" + materia.Codigo + ")";
+            Assert.AreEqual(esperado, materia.ToString());
+        }
     }
 }

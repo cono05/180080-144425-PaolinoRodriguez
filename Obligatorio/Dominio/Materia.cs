@@ -35,5 +35,10 @@ namespace Dominio
             }
             return equals;
         }
+
+        public override string ToString()
+        {
+            return Nombre + "(" + Codigo + ")";
+        }
     }
 }
