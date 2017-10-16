@@ -230,5 +230,6 @@ namespace Pruebas
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Assert.IsFalse(modulo.HayDocentesRegistrados());
         }
+
     }
 }

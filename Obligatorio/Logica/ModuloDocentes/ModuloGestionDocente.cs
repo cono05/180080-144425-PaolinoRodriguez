@@ -38,6 +38,7 @@ namespace Logica
         {
             if (ExisteDocenteConMismaCedula(docente.Cedula))
                 throw new ExcepcionExisteDocenteConMismaCedula(); 
+            //if()
         }
 
         public void ValidarBaja(Docente docente)
