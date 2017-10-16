@@ -51,13 +51,15 @@ namespace Obligatorio.VentanasDeMaterias
             if (listaQueNoDictanLaMateria.Count > 0)
             {
                 DocentesNoDictanListBox.DataSource = listaQueNoDictanLaMateria;
+                DocentesNoDictanListBox.SetSelected(0, false);
             }
             if (listaQueDictanLaMateria.Count > 0)
             {
                 DocentesQueDictanListBox.DataSource = listaQueDictanLaMateria;
+                DocentesQueDictanListBox.SetSelected(0, false);
             }
-            DocentesNoDictanListBox.SetSelected(0, false);
-            DocentesQueDictanListBox.SetSelected(0, false);
+            
+            
         }
 
         public ICollection<Docente> CargarListBoxDocentesNoDictan(Materia materia)

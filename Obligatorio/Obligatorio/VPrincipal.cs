@@ -74,6 +74,13 @@ namespace Obligatorio
             alumno3.Cedula = "1234333-8";
             alumno3.Mail = "dd@gmail.com";
 
+            Docente docente = Docente.CrearDocente();
+            docente.Cedula = "1222333-4";
+            Docente docente2 = Docente.CrearDocente();
+            docente2.Cedula = "1222222-4";
+            Docente docente3 = Docente.CrearDocente();
+            docente3.Cedula = "1333333-4";
+
             Materia materia = Materia.CrearMateria();
             materia.Nombre = "Diseño 1";
             Materia materia2 = Materia.CrearMateria();
@@ -86,6 +93,9 @@ namespace Obligatorio
             moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
             moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno2);
             moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno3);
+            moduloDocentes.Alta(docente);
+            moduloDocentes.Alta(docente2);
+            moduloDocentes.Alta(docente3);
         }
     }
 }
