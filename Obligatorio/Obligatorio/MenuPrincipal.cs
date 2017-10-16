@@ -38,6 +38,9 @@ namespace Obligatorio
 
         }
 
-        
+        private void GestionarDocentesBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

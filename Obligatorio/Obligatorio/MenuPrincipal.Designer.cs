@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.GestionarMateriasBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.GestionarDocentesBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -41,7 +41,7 @@
             // 
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.GestionarMateriasBtn);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.GestionarDocentesBtn);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -53,7 +53,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(563, 121);
+            this.button4.Location = new System.Drawing.Point(577, 121);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 40);
             this.button4.TabIndex = 4;
@@ -70,14 +70,15 @@
             this.GestionarMateriasBtn.UseVisualStyleBackColor = true;
             this.GestionarMateriasBtn.Click += new System.EventHandler(this.GestionarMateriasBtn_Click);
             // 
-            // button2
+            // GestionarDocentesBtn
             // 
-            this.button2.Location = new System.Drawing.Point(311, 121);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.GestionarDocentesBtn.Location = new System.Drawing.Point(311, 121);
+            this.GestionarDocentesBtn.Name = "GestionarDocentesBtn";
+            this.GestionarDocentesBtn.Size = new System.Drawing.Size(94, 40);
+            this.GestionarDocentesBtn.TabIndex = 2;
+            this.GestionarDocentesBtn.Text = "Gestionar Docentes";
+            this.GestionarDocentesBtn.UseVisualStyleBackColor = true;
+            this.GestionarDocentesBtn.Click += new System.EventHandler(this.GestionarDocentesBtn_Click);
             // 
             // button1
             // 
@@ -117,7 +118,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button GestionarMateriasBtn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button GestionarDocentesBtn;
         private System.Windows.Forms.Button button1;
     }
 }
