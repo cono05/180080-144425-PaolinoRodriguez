@@ -419,6 +419,8 @@ namespace Pruebas
             moduloMaterias.Alta(materia);
             moduloMaterias.ValidarModificacionNombreMateria(materia2, "Diseño");
         }
+
+        
         
     }
 }

@@ -2,6 +2,7 @@
 using Persistencia;
 using Dominio;
 using Excepciones;
+using System.Collections.Generic;
 
 namespace Logica
 {
@@ -147,6 +148,11 @@ namespace Logica
                 throw new ExcepcionExisteDocenteConMismaCedula();
             }
             
+        }
+
+        public ICollection<Docente> ObtenerDocentes()
+        {
+            throw new NotImplementedException();
         }
         /*TODO: Docente y Alumno pueden tener la misma cedula. Cambiar */
     }
