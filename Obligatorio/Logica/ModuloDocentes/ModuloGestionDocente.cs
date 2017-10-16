@@ -157,7 +157,7 @@ namespace Logica
 
         public bool HayDocentesRegistrados()
         {
-            throw new NotImplementedException();
+            return ObtenerDocentes().Count > 0;
         }
         /*TODO: Docente y Alumno pueden tener la misma cedula. Cambiar */
     }
