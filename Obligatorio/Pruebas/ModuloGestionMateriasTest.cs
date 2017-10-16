@@ -409,14 +409,15 @@ namespace Pruebas
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ExcepcionExisteMateriaConMismoNombre))]
         public void ValidarModifcacionNombreMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 15);
             moduloMaterias.Alta(materia);
-            moduloMaterias.ValidarModificacionNombreMateria(materia, "Diseño");
-
+            moduloMaterias.ValidarModificacionNombreMateria(materia2, "Diseño");
         }
         
     }

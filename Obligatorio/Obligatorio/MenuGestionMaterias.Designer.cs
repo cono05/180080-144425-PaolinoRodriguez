@@ -114,6 +114,7 @@
             this.ModificarMateriaBtn.TabIndex = 2;
             this.ModificarMateriaBtn.Text = "Modificar Materia";
             this.ModificarMateriaBtn.UseVisualStyleBackColor = true;
+            this.ModificarMateriaBtn.Click += new System.EventHandler(this.ModificarMateriaBtn_Click);
             // 
             // BajaDeMateriaBtn
             // 
