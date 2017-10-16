@@ -74,5 +74,43 @@ namespace Obligatorio
         {
 
         }
+
+        private void InscribirAlumnoBtnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                Alumno alumno = (Alumno)AlumnosNoCursanListBox.SelectedItem;
+                Materia materia = (Materia)MateriasListBox.SelectedItem;
+                if (alumno != null)
+                {
+                    moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
+                    AlumnosInscriptosListBox.DataSource = null;
+                    AlumnosNoCursanListBox.DataSource = null;
+                    AlumnosNoCursanListBox.DataSource = CargarListBoxAlumnosNoInscriptos(materia);
+                    AlumnosInscriptosListBox.DataSource = moduloMaterias.ObtenerAlumnosInscriptosEnMateria(materia);
+                    MessageBox.Show("El alumno " + alumno.ToString() + " se ha inscripto correctamente en "+ materia.ToString(), MessageBoxButtons.OK.ToString());
+                }
+            }
+            catch (ExcepcionAlumnoYaCursaLaMateria excepcion)
+            {
+                MessageBox.Show(excepcion.Message);
+            }
+            catch (Exception excepcion)
+            {
+                MessageBox.Show(excepcion.Message);
+            }
+            finally
+            {
+
+            }
+            
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
     }
 }
