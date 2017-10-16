@@ -17,7 +17,7 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
             ModuloGestionAlumno modulo = new ModuloGestionAlumno(ref repositorio);
             modulo.Alta(alumno);
-            Assert.IsTrue(repositorio.Alumnos.Count == 1);
+            Assert.IsTrue(modulo.ObtenerAlumnos().Count == 1);
         }
 
         [TestMethod]
@@ -27,10 +27,20 @@ namespace Pruebas
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "1234567-8", "m@g.com", 7);
             modulo.Alta(alumno);
-            int antesEliminar = modulo.repositorio.Alumnos.Count;
+            int antesEliminar = modulo.ObtenerAlumnos().Count;
             modulo.Baja(alumno);
-            int despuesEliminar = modulo.repositorio.Alumnos.Count;
+            int despuesEliminar = modulo.ObtenerAlumnos().Count;
             Assert.IsTrue(antesEliminar == despuesEliminar + 1);
+        }
+
+        [TestMethod]
+        public void ObtenerAlumnosTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "1234567-8", "m@g.com", 7);
+            modulo.Alta(alumno);
+            Assert.IsTrue(modulo.ObtenerAlumnos().Count == 1);
         }
 
         [TestMethod]
@@ -54,7 +64,7 @@ namespace Pruebas
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "1234567-8", "np@mail.com", 1);
             modulo.Alta(alumno);
             string nombreViejo = alumno.Nombre;
-            string datos = alumno.Nombre + ";" + alumno.Apellido + ";" + "3" + ";" + alumno.Mail;
+            string datos = alumno.Nombre + ";" + alumno.Apellido + ";" + "3333333-3" + ";" + alumno.Mail;
             modulo.ModificarAlumno(alumno, datos);
             Assert.IsTrue(nombreViejo.Equals(alumno.Nombre));
         }
@@ -110,9 +120,9 @@ namespace Pruebas
             moduloAlumno.Alta(alumno);
             moduloMateria.Alta(materia);
             moduloAlumno.InscribirAlumnoEnMateria(alumno, materia);
-            int antesEliminar = moduloAlumno.repositorio.Alumnos.Count;
+            int antesEliminar = moduloAlumno.ObtenerAlumnos().Count;
             moduloAlumno.Baja(alumno);
-            int despuesEliminar = moduloAlumno.repositorio.Alumnos.Count;
+            int despuesEliminar = moduloAlumno.ObtenerAlumnos().Count;
             Assert.IsTrue(antesEliminar == despuesEliminar + 1);
         }
 
@@ -136,6 +146,28 @@ namespace Pruebas
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre2", "Apellido2", "0000000-2", "nombre2apellido2@gmail.com", 2);
             modulo.Alta(alumno1);
             Assert.IsFalse(modulo.ExisteAlumnoConMismoNumeroEstudiante(alumno2));
+        }
+
+        [TestMethod]
+        public void ExisteAlumnoConMismoEmailTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "nombre1apellido1@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre2", "Apellido2", "0000000-2", "nombre1apellido1@gmail.com", 2);
+            modulo.Alta(alumno1);
+            Assert.IsTrue(modulo.ExisteAlumnoConMismoEmail(alumno2));
+        }
+
+        [TestMethod]
+        public void ExisteAlumnoConMismoEmailFalseTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "nombre1apellido1@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre2", "Apellido2", "0000000-2", "nombre2apellido2@gmail.com", 2);
+            modulo.Alta(alumno1);
+            Assert.IsFalse(modulo.ExisteAlumnoConMismoEmail(alumno2));
         }
 
         [TestMethod]
@@ -280,7 +312,19 @@ namespace Pruebas
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0004h00-3", "apellido@gmail.com", 1);
-            modulo.ValidarBajaAlumno(alumno);
+            modulo.ValidarModificarAlumno(alumno);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionExisteAlumnoConMismoEmail))]
+        public void ValidarExisteAlumnoConMismoEmail()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "apellido@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0111010-3", "apellido@gmail.com", 2);
+            modulo.Alta(alumno1);
+            modulo.ValidarAlumno(alumno2);
         }
         #endregion Validaciones test
 

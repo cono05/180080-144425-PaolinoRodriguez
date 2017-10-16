@@ -39,6 +39,9 @@ namespace Obligatorio.VentanasDeAlumno
                     moduloAlumnos.Baja(alumno);
                     listBoxAlumnos.DataSource = null;
                     listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                    string mensaje = string.Format("El alumno {0} {1} CI {2} se ha eliminado correctamente", alumno.Nombre, alumno.Apellido, alumno.Cedula);
+                    MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
+
                 }
                 catch (ExcepcionNoExisteAlumno ex)
                 {
@@ -65,6 +68,16 @@ namespace Obligatorio.VentanasDeAlumno
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+        }
+
+        private void listBoxAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

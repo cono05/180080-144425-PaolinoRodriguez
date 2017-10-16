@@ -25,13 +25,12 @@ namespace Logica
 
         public void Baja(object obj)
         {
-            ValidarBajaAlumno((Alumno)obj);
             BajaDeAlumnoEnMaterias((Alumno)obj);
             repositorio.EliminarAlumno((Alumno)obj);
             
         }
 
-        public void ValidarBajaAlumno(Alumno alumno)
+        public void ValidarModificarAlumno(Alumno alumno)
         {
             if (!ExisteAlumnoConMismaCedula(alumno.Cedula))
                 throw new ExcepcionNoExisteAlumno();
@@ -56,7 +55,8 @@ namespace Logica
 
         public void ModificarAlumno(Alumno alumno, string cambios)
         {
-            ValidarBajaAlumno(alumno);
+            // Ver que alumno a modificar existe
+            ValidarModificarAlumno(alumno);
             // Respetar orden: Nombre;Apellido;Cedula;Email
             string[] nuevosDatos = cambios.Split(';');
             string nuevoNombre      = nuevosDatos[0];
@@ -64,16 +64,28 @@ namespace Logica
             string nuevaCedula      = nuevosDatos[2];
             string nuevoEmail       = nuevosDatos[3];
 
-            alumno.Nombre = nuevoNombre;
-            alumno.Apellido = nuevoApellido;
-            if((alumno.Cedula != nuevaCedula) && ValidarCedula(nuevaCedula))
+            alumno.Nombre   = (nuevoNombre != "") ? nuevoNombre : alumno.Nombre;
+            alumno.Apellido = (nuevoApellido != "") ? nuevoApellido : alumno.Apellido;
+            alumno.Mail     = (nuevoEmail != "") ? nuevoEmail : alumno.Mail;
+            // Si la cedula cambia, verificar que no se este usando ya
+            if (alumno.Cedula != nuevaCedula)
+            {
+                ValidarCedula(nuevaCedula);
                 alumno.Cedula = nuevaCedula;
-            alumno.Mail = nuevoEmail;
+            }
         }
 
-        private bool ValidarCedula(string cedulaParaValidar)
+        public ICollection<Alumno> ObtenerAlumnos()
         {
-            return EsFormatoCedulaAlumnoCorrecto(cedulaParaValidar) && !ExisteAlumnoConMismaCedula(cedulaParaValidar);
+            return repositorio.ObtenerAlumnos();
+        }
+
+        private void ValidarCedula(string cedulaParaValidar)
+        {
+            if (!EsFormatoCedulaAlumnoCorrecto(cedulaParaValidar))
+                throw new ExcepcionFormatoCedulaIncorrecto();
+            if (ExisteAlumnoConMismaCedula(cedulaParaValidar))
+                throw new ExcepcionExisteAlumnoConMismaCedula();
         }
 
         #region Control de atributos
@@ -137,6 +149,10 @@ namespace Logica
             {
                 throw new ExcepcionExisteAlumnoConMismaCedula();
             }
+            if (ExisteAlumnoConMismoEmail(alumno))
+            {
+                throw new ExcepcionExisteAlumnoConMismoEmail();
+            }
         }
 
         public bool EsFormatoCedulaAlumnoCorrecto(string cedula)
@@ -183,6 +199,7 @@ namespace Logica
                 if(cedula == a.Cedula)
                 {
                     ret = true;
+                    break;
                 }
             }
             return ret;
@@ -200,6 +217,20 @@ namespace Logica
         public bool EstaAlumnoInscritoEnMateria(Alumno alumno, Materia materia)
         {
             return alumno.MateriasInscripto.Contains(materia);
+        }
+
+        public bool ExisteAlumnoConMismoEmail(Alumno alumno)
+        {
+            bool ret = false;
+            foreach(Alumno a in repositorio.Alumnos)
+            {
+                if(a.Mail == alumno.Mail)
+                {
+                    ret = true;
+                    break;
+                }
+            }
+            return ret;
         }
     }
 }
