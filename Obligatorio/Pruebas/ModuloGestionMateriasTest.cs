@@ -10,6 +10,23 @@ namespace Pruebas
     [TestClass]
     public class ModuloGestionMateriasTest
     {
+        [TestMethod]
+        public void GetNombreModulotest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            modulo.Nombre = "moduloMaterias";
+            Assert.AreEqual("moduloMaterias", modulo.Nombre);
+        }
+
+        [TestMethod]
+        public void GetDescripcionTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            modulo.Descripcion = "descripcion";
+            Assert.AreEqual("descripcion", modulo.Descripcion);
+        }
 
         [TestMethod]
         public void AgregarMateriaTest()
