@@ -31,16 +31,6 @@ namespace Obligatorio
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AltaDeMateriaBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
@@ -64,8 +54,6 @@ namespace Obligatorio
             {
                 MessageBox.Show("No existen materias en el sistema", MessageBoxButtons.OK.ToString());
             }
-
-            
         }
 
         private void AgregarAlumnoEnMateria_Click(object sender, EventArgs e)
@@ -91,7 +79,6 @@ namespace Obligatorio
             {
                 MessageBox.Show("No existen Docentes en el sistema", MessageBoxButtons.OK.ToString());
             }
-            
         }
     }
 }

@@ -42,6 +42,8 @@ namespace Obligatorio
                     {
                         moduloMaterias.ModificarMateria(materia, nombreNuevo);
                         MessageBox.Show("El nombre de la materia se ha modificado correctamente.", MessageBoxButtons.OK.ToString());
+                        MateriasListBox.DataSource = null;
+                        MateriasListBox.DataSource = CargarListBoxMaterias();
                     }
                 }
                 else
@@ -58,11 +60,6 @@ namespace Obligatorio
             {
                 MessageBox.Show(exception.Message);
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public ICollection<Materia> CargarListBoxMaterias()

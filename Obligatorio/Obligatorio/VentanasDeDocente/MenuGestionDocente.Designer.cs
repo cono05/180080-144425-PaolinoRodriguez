@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.buttonModificar = new System.Windows.Forms.Button();
-            this.buttonBaja = new System.Windows.Forms.Button();
-            this.buttonAlta = new System.Windows.Forms.Button();
+            this.VolverBtn = new System.Windows.Forms.Button();
+            this.ModificarDocenteBtn = new System.Windows.Forms.Button();
+            this.BajaDocenteBtn = new System.Windows.Forms.Button();
+            this.AltaDocenteBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonVolver);
-            this.panel1.Controls.Add(this.buttonModificar);
-            this.panel1.Controls.Add(this.buttonBaja);
-            this.panel1.Controls.Add(this.buttonAlta);
+            this.panel1.Controls.Add(this.VolverBtn);
+            this.panel1.Controls.Add(this.ModificarDocenteBtn);
+            this.panel1.Controls.Add(this.BajaDocenteBtn);
+            this.panel1.Controls.Add(this.AltaDocenteBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -50,45 +50,45 @@
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
             // 
-            // buttonVolver
+            // VolverBtn
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(397, 271);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(94, 40);
-            this.buttonVolver.TabIndex = 13;
-            this.buttonVolver.Text = "Volver al Menú Principal";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.VolverBtn.Location = new System.Drawing.Point(397, 271);
+            this.VolverBtn.Name = "VolverBtn";
+            this.VolverBtn.Size = new System.Drawing.Size(94, 40);
+            this.VolverBtn.TabIndex = 13;
+            this.VolverBtn.Text = "Volver al Menú Principal";
+            this.VolverBtn.UseVisualStyleBackColor = true;
+            this.VolverBtn.Click += new System.EventHandler(this.VolverBtn_Click);
             // 
-            // buttonModificar
+            // ModificarDocenteBtn
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(593, 135);
-            this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(94, 40);
-            this.buttonModificar.TabIndex = 12;
-            this.buttonModificar.Text = "Modificar Docente";
-            this.buttonModificar.UseVisualStyleBackColor = true;
-            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
+            this.ModificarDocenteBtn.Location = new System.Drawing.Point(593, 135);
+            this.ModificarDocenteBtn.Name = "ModificarDocenteBtn";
+            this.ModificarDocenteBtn.Size = new System.Drawing.Size(94, 40);
+            this.ModificarDocenteBtn.TabIndex = 12;
+            this.ModificarDocenteBtn.Text = "Modificar Docente";
+            this.ModificarDocenteBtn.UseVisualStyleBackColor = true;
+            this.ModificarDocenteBtn.Click += new System.EventHandler(this.ModificarDocenteBtn_Click);
             // 
-            // buttonBaja
+            // BajaDocenteBtn
             // 
-            this.buttonBaja.Location = new System.Drawing.Point(397, 135);
-            this.buttonBaja.Name = "buttonBaja";
-            this.buttonBaja.Size = new System.Drawing.Size(94, 40);
-            this.buttonBaja.TabIndex = 11;
-            this.buttonBaja.Text = "Baja de Docente";
-            this.buttonBaja.UseVisualStyleBackColor = true;
-            this.buttonBaja.Click += new System.EventHandler(this.buttonBaja_Click);
+            this.BajaDocenteBtn.Location = new System.Drawing.Point(397, 135);
+            this.BajaDocenteBtn.Name = "BajaDocenteBtn";
+            this.BajaDocenteBtn.Size = new System.Drawing.Size(94, 40);
+            this.BajaDocenteBtn.TabIndex = 11;
+            this.BajaDocenteBtn.Text = "Baja de Docente";
+            this.BajaDocenteBtn.UseVisualStyleBackColor = true;
+            this.BajaDocenteBtn.Click += new System.EventHandler(this.BajaDocenteBtn_Click);
             // 
-            // buttonAlta
+            // AltaDocenteBtn
             // 
-            this.buttonAlta.Location = new System.Drawing.Point(201, 135);
-            this.buttonAlta.Name = "buttonAlta";
-            this.buttonAlta.Size = new System.Drawing.Size(94, 40);
-            this.buttonAlta.TabIndex = 10;
-            this.buttonAlta.Text = "Alta de Docente";
-            this.buttonAlta.UseVisualStyleBackColor = true;
-            this.buttonAlta.Click += new System.EventHandler(this.buttonAlta_Click);
+            this.AltaDocenteBtn.Location = new System.Drawing.Point(201, 135);
+            this.AltaDocenteBtn.Name = "AltaDocenteBtn";
+            this.AltaDocenteBtn.Size = new System.Drawing.Size(94, 40);
+            this.AltaDocenteBtn.TabIndex = 10;
+            this.AltaDocenteBtn.Text = "Alta de Docente";
+            this.AltaDocenteBtn.UseVisualStyleBackColor = true;
+            this.AltaDocenteBtn.Click += new System.EventHandler(this.AltaDocenteBtn_Click);
             // 
             // label1
             // 
@@ -112,14 +112,13 @@
             this.ResumeLayout(false);
 
         }
-
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonModificar;
-        private System.Windows.Forms.Button buttonBaja;
-        private System.Windows.Forms.Button buttonAlta;
+        private System.Windows.Forms.Button ModificarDocenteBtn;
+        private System.Windows.Forms.Button BajaDocenteBtn;
+        private System.Windows.Forms.Button AltaDocenteBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonVolver;
+        private System.Windows.Forms.Button VolverBtn;
     }
 }

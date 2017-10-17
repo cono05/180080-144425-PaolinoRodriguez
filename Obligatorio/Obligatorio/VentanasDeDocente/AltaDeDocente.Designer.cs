@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.VolverBtn = new System.Windows.Forms.Button();
+            this.AgregarDocenteBtn = new System.Windows.Forms.Button();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.textBoxApellido = new System.Windows.Forms.TextBox();
@@ -47,8 +47,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.buttonVolver);
-            this.panel1.Controls.Add(this.buttonAgregar);
+            this.panel1.Controls.Add(this.VolverBtn);
+            this.panel1.Controls.Add(this.AgregarDocenteBtn);
             this.panel1.Controls.Add(this.textBoxEmail);
             this.panel1.Controls.Add(this.textBoxCedula);
             this.panel1.Controls.Add(this.textBoxApellido);
@@ -74,25 +74,25 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "Formato esperado: 1234567-8";
             // 
-            // buttonVolver
+            // VolverBtn
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(579, 236);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(94, 51);
-            this.buttonVolver.TabIndex = 33;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.VolverBtn.Location = new System.Drawing.Point(579, 236);
+            this.VolverBtn.Name = "VolverBtn";
+            this.VolverBtn.Size = new System.Drawing.Size(94, 51);
+            this.VolverBtn.TabIndex = 33;
+            this.VolverBtn.Text = "Volver";
+            this.VolverBtn.UseVisualStyleBackColor = true;
+            this.VolverBtn.Click += new System.EventHandler(this.VolverBtn_Click);
             // 
-            // buttonAgregar
+            // AgregarDocenteBtn
             // 
-            this.buttonAgregar.Location = new System.Drawing.Point(579, 128);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(94, 51);
-            this.buttonAgregar.TabIndex = 32;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.UseVisualStyleBackColor = true;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            this.AgregarDocenteBtn.Location = new System.Drawing.Point(579, 128);
+            this.AgregarDocenteBtn.Name = "AgregarDocenteBtn";
+            this.AgregarDocenteBtn.Size = new System.Drawing.Size(94, 51);
+            this.AgregarDocenteBtn.TabIndex = 32;
+            this.AgregarDocenteBtn.Text = "Agregar";
+            this.AgregarDocenteBtn.UseVisualStyleBackColor = true;
+            this.AgregarDocenteBtn.Click += new System.EventHandler(this.AgregarDocenteBtn_Click);
             // 
             // textBoxEmail
             // 
@@ -189,8 +189,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button buttonVolver;
-        private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.Button VolverBtn;
+        private System.Windows.Forms.Button AgregarDocenteBtn;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxCedula;
         private System.Windows.Forms.TextBox textBoxApellido;

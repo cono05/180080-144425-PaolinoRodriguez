@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listBoxAlumnos = new System.Windows.Forms.ListBox();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.buttonModificar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxCedula = new System.Windows.Forms.TextBox();
@@ -42,6 +38,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ListBoxAlumnos = new System.Windows.Forms.ListBox();
+            this.VolverBtn = new System.Windows.Forms.Button();
+            this.ModificarDocenteBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,54 +56,15 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.listBoxAlumnos);
-            this.panel1.Controls.Add(this.buttonVolver);
-            this.panel1.Controls.Add(this.buttonModificar);
+            this.panel1.Controls.Add(this.ListBoxAlumnos);
+            this.panel1.Controls.Add(this.VolverBtn);
+            this.panel1.Controls.Add(this.ModificarDocenteBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
-            // 
-            // listBoxAlumnos
-            // 
-            this.listBoxAlumnos.FormattingEnabled = true;
-            this.listBoxAlumnos.Location = new System.Drawing.Point(157, 85);
-            this.listBoxAlumnos.Name = "listBoxAlumnos";
-            this.listBoxAlumnos.Size = new System.Drawing.Size(208, 277);
-            this.listBoxAlumnos.TabIndex = 29;
-            this.listBoxAlumnos.SelectedIndexChanged += new System.EventHandler(this.listBoxAlumnos_SelectedIndexChanged);
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Location = new System.Drawing.Point(575, 311);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(94, 51);
-            this.buttonVolver.TabIndex = 28;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
-            // 
-            // buttonModificar
-            // 
-            this.buttonModificar.Location = new System.Drawing.Point(416, 311);
-            this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(94, 51);
-            this.buttonModificar.TabIndex = 27;
-            this.buttonModificar.Text = "Modificar";
-            this.buttonModificar.UseVisualStyleBackColor = true;
-            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 25);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Modificar Alumno";
             // 
             // label6
             // 
@@ -183,6 +144,45 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Nombre:";
             // 
+            // ListBoxAlumnos
+            // 
+            this.ListBoxAlumnos.FormattingEnabled = true;
+            this.ListBoxAlumnos.Location = new System.Drawing.Point(157, 85);
+            this.ListBoxAlumnos.Name = "ListBoxAlumnos";
+            this.ListBoxAlumnos.Size = new System.Drawing.Size(208, 277);
+            this.ListBoxAlumnos.TabIndex = 29;
+            this.ListBoxAlumnos.SelectedIndexChanged += new System.EventHandler(this.ListBoxAlumnos_SelectedIndexChanged);
+            // 
+            // VolverBtn
+            // 
+            this.VolverBtn.Location = new System.Drawing.Point(575, 311);
+            this.VolverBtn.Name = "VolverBtn";
+            this.VolverBtn.Size = new System.Drawing.Size(94, 51);
+            this.VolverBtn.TabIndex = 28;
+            this.VolverBtn.Text = "Volver";
+            this.VolverBtn.UseVisualStyleBackColor = true;
+            this.VolverBtn.Click += new System.EventHandler(this.VolverBtn_Click);
+            // 
+            // ModificarDocenteBtn
+            // 
+            this.ModificarDocenteBtn.Location = new System.Drawing.Point(416, 311);
+            this.ModificarDocenteBtn.Name = "ModificarDocenteBtn";
+            this.ModificarDocenteBtn.Size = new System.Drawing.Size(94, 51);
+            this.ModificarDocenteBtn.TabIndex = 27;
+            this.ModificarDocenteBtn.Text = "Modificar";
+            this.ModificarDocenteBtn.UseVisualStyleBackColor = true;
+            this.ModificarDocenteBtn.Click += new System.EventHandler(this.ModificarDocenteBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(323, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 25);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Modificar Alumno";
+            // 
             // ModificarAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,9 +199,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox listBoxAlumnos;
-        private System.Windows.Forms.Button buttonVolver;
-        private System.Windows.Forms.Button buttonModificar;
+        private System.Windows.Forms.ListBox ListBoxAlumnos;
+        private System.Windows.Forms.Button VolverBtn;
+        private System.Windows.Forms.Button ModificarDocenteBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxEmail;

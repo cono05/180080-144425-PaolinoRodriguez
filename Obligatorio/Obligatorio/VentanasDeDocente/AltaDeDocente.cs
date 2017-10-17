@@ -27,13 +27,13 @@ namespace Obligatorio.VentanasDeDocente
             moduloMaterias = moduloMateria;
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
 
-        private void buttonAgregar_Click(object sender, EventArgs e)
+        private void AgregarDocenteBtn_Click(object sender, EventArgs e)
         {
             try
             {

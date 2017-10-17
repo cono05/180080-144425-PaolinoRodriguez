@@ -25,8 +25,8 @@ namespace Obligatorio.VentanasDeDocente
             moduloAlumnos  = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            listBoxDocentes.DataSource = null;
-            listBoxDocentes.DataSource = CargarListBoxDocentes();
+            ListBoxDocentes.DataSource = null;
+            ListBoxDocentes.DataSource = CargarListBoxDocentes();
         }
 
         private ICollection<Docente> CargarListBoxDocentes()
@@ -39,22 +39,22 @@ namespace Obligatorio.VentanasDeDocente
             return lista;
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
 
-        private void buttonEliminar_Click(object sender, EventArgs e)
+        private void EliminarDocenteBtn_Click(object sender, EventArgs e)
         {
-            Docente docente = (Docente)listBoxDocentes.SelectedItem;
+            Docente docente = (Docente)ListBoxDocentes.SelectedItem;
             if (docente != null)
             {
                 try
                 {
                     moduloDocentes.Baja(docente);
-                    listBoxDocentes.DataSource = null;
-                    listBoxDocentes.DataSource = CargarListBoxDocentes();
+                    ListBoxDocentes.DataSource = null;
+                    ListBoxDocentes.DataSource = CargarListBoxDocentes();
                     string mensaje = string.Format("El docente {0} {1} CI {2} se ha eliminado correctamente", docente.Nombre, docente.Apellido, docente.Cedula);
                     MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
 

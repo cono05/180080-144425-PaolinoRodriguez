@@ -25,8 +25,8 @@ namespace Obligatorio.VentanasDeDocente
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            listBoxDocentes.DataSource = null;
-            listBoxDocentes.DataSource = CargarListBoxDocentes();
+            ListBoxDocentes.DataSource = null;
+            ListBoxDocentes.DataSource = CargarListBoxDocentes();
         }
 
         private ICollection<Docente> CargarListBoxDocentes()
@@ -39,15 +39,15 @@ namespace Obligatorio.VentanasDeDocente
             return lista;
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
 
-        private void buttonModificar_Click(object sender, EventArgs e)
+        private void ModificarDocenteBtn_Click(object sender, EventArgs e)
         {
-            Docente docenteSeleccionado = (Docente)listBoxDocentes.SelectedItem;
+            Docente docenteSeleccionado = (Docente)ListBoxDocentes.SelectedItem;
             if(docenteSeleccionado != null)
             {
                 try
@@ -71,8 +71,8 @@ namespace Obligatorio.VentanasDeDocente
                         MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
                         //Para limpiar todos los textboxes
                         panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
-                        listBoxDocentes.DataSource = null;
-                        listBoxDocentes.DataSource = CargarListBoxDocentes();
+                        ListBoxDocentes.DataSource = null;
+                        ListBoxDocentes.DataSource = CargarListBoxDocentes();
                     }
                 }
                 catch (ExcepcionExisteDocenteConMismaCedula ex)
@@ -108,9 +108,9 @@ namespace Obligatorio.VentanasDeDocente
                     && d1.Cedula.Equals(d2.Cedula);
         }
 
-        private void listBoxDocentes_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxDocentes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Docente docenteSeleccionado = (Docente)listBoxDocentes.SelectedItem;
+            Docente docenteSeleccionado = (Docente)ListBoxDocentes.SelectedItem;
             if (docenteSeleccionado != null)
             {
                 textBoxNombre.Text = docenteSeleccionado.Nombre;

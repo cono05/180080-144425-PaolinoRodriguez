@@ -101,11 +101,11 @@ namespace Obligatorio.VentanasDeMaterias
                     DocentesNoDictanListBox.DataSource = null;
                     DocentesNoDictanListBox.DataSource = CargarListBoxDocentesNoDictan(materia);
                     DocentesQueDictanListBox.DataSource = CargarListBoxDocentesDictanMateria(materia);
-                    MessageBox.Show("El Docente " + docente.ToString() + " se ha asignado correctamente en " + materia.ToString(), MessageBoxButtons.OK.ToString());
+                    MessageBox.Show("El docente " + docente.ToString() + " se ha asignado correctamente en " + materia.ToString(), MessageBoxButtons.OK.ToString());
                 }
                 else
                 {
-                    MessageBox.Show("No se ha seleccionado ningún alumno.", MessageBoxButtons.OK.ToString());
+                    MessageBox.Show("No se ha seleccionado ningún docente.", MessageBoxButtons.OK.ToString());
                 }
             }
             catch (ExcepcionDocenteYaDictaEstaMateria excepcion)
@@ -115,10 +115,6 @@ namespace Obligatorio.VentanasDeMaterias
             catch (Exception excepcion)
             {
                 MessageBox.Show(excepcion.Message);
-            }
-            finally
-            {
-
             }
         }
 
@@ -135,11 +131,11 @@ namespace Obligatorio.VentanasDeMaterias
                     DocentesNoDictanListBox.DataSource = null;
                     DocentesNoDictanListBox.DataSource = CargarListBoxDocentesNoDictan(materia);
                     DocentesQueDictanListBox.DataSource = CargarListBoxDocentesDictanMateria(materia);
-                    MessageBox.Show("El Docente " + DocenteADesinscribir.ToString() + " se ha eliminado correctamente de " + materia.ToString(), MessageBoxButtons.OK.ToString());
+                    MessageBox.Show("El docente " + DocenteADesinscribir.ToString() + " se ha eliminado correctamente de " + materia.ToString(), MessageBoxButtons.OK.ToString());
                 }
                 else
                 {
-                    MessageBox.Show("No se ha seleccionado ningún Docente.", MessageBoxButtons.OK.ToString());
+                    MessageBox.Show("No se ha seleccionado ningún docente.", MessageBoxButtons.OK.ToString());
                 }
             }
             catch (Exception excepcion)

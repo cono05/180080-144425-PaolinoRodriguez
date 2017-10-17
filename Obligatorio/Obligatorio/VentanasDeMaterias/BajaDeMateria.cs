@@ -39,11 +39,6 @@ namespace Obligatorio
 
 
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void EliminarMateriaClick(object sender, EventArgs e)
         {
             try
@@ -66,9 +61,6 @@ namespace Obligatorio
             catch (Exception excepcion)
             {
                 MessageBox.Show(excepcion.Message);
-            }
-            finally
-            {
             }
         }
 

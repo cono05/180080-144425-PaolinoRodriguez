@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.BotonVolver = new System.Windows.Forms.Button();
+            this.BotonAgregar = new System.Windows.Forms.Button();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.textBoxApellido = new System.Windows.Forms.TextBox();
@@ -40,15 +41,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.buttonVolver);
-            this.panel1.Controls.Add(this.buttonAgregar);
+            this.panel1.Controls.Add(this.BotonVolver);
+            this.panel1.Controls.Add(this.BotonAgregar);
             this.panel1.Controls.Add(this.textBoxEmail);
             this.panel1.Controls.Add(this.textBoxCedula);
             this.panel1.Controls.Add(this.textBoxApellido);
@@ -64,25 +64,35 @@
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
             // 
-            // buttonVolver
+            // label6
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(583, 229);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(94, 51);
-            this.buttonVolver.TabIndex = 21;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(251, 240);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(128, 12);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Formato esperado: 1234567-8";
             // 
-            // buttonAgregar
+            // BotonVolver
             // 
-            this.buttonAgregar.Location = new System.Drawing.Point(583, 121);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(94, 51);
-            this.buttonAgregar.TabIndex = 20;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.UseVisualStyleBackColor = true;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            this.BotonVolver.Location = new System.Drawing.Point(583, 229);
+            this.BotonVolver.Name = "BotonVolver";
+            this.BotonVolver.Size = new System.Drawing.Size(94, 51);
+            this.BotonVolver.TabIndex = 21;
+            this.BotonVolver.Text = "Volver";
+            this.BotonVolver.UseVisualStyleBackColor = true;
+            this.BotonVolver.Click += new System.EventHandler(this.VolverBtn_Click);
+            // 
+            // BotonAgregar
+            // 
+            this.BotonAgregar.Location = new System.Drawing.Point(583, 121);
+            this.BotonAgregar.Name = "BotonAgregar";
+            this.BotonAgregar.Size = new System.Drawing.Size(94, 51);
+            this.BotonAgregar.TabIndex = 20;
+            this.BotonAgregar.Text = "Agregar";
+            this.BotonAgregar.UseVisualStyleBackColor = true;
+            this.BotonAgregar.Click += new System.EventHandler(this.AgregarAlumnoBtn_Click);
             // 
             // textBoxEmail
             // 
@@ -162,16 +172,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Alta De Alumno";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(251, 240);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 12);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Formato esperado: 1234567-8";
-            // 
             // AltaDeAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,8 +188,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonVolver;
-        private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.Button BotonVolver;
+        private System.Windows.Forms.Button BotonAgregar;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxCedula;
         private System.Windows.Forms.TextBox textBoxApellido;

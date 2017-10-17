@@ -25,20 +25,20 @@ namespace Obligatorio.VentanasDeAlumno
             moduloAlumnos  = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            listBoxAlumnos.DataSource = null;
-            listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+            ListBoxAlumnos.DataSource = null;
+            ListBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
 
-        private void buttonEliminar_Click(object sender, EventArgs e)
+        private void EliminarAlumnoBtn_Click(object sender, EventArgs e)
         {
-            Alumno alumno = (Alumno)listBoxAlumnos.SelectedItem;
+            Alumno alumno = (Alumno)ListBoxAlumnos.SelectedItem;
             if (alumno != null)
             {
                 try
                 {
                     moduloAlumnos.Baja(alumno);
-                    listBoxAlumnos.DataSource = null;
-                    listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                    ListBoxAlumnos.DataSource = null;
+                    ListBoxAlumnos.DataSource = CargarListBoxAlumnos();
                     string mensaje = string.Format("El alumno {0} {1} CI {2} se ha eliminado correctamente", alumno.Nombre, alumno.Apellido, alumno.Cedula);
                     MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
 
@@ -64,20 +64,10 @@ namespace Obligatorio.VentanasDeAlumno
             return lista;
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
-        }
-
-        private void listBoxAlumnos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

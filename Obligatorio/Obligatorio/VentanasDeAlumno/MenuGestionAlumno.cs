@@ -25,25 +25,25 @@ namespace Obligatorio.VentanasDeAlumno
             moduloMaterias = moduloMateria;
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
 
-        private void buttonAlta_Click(object sender, EventArgs e)
+        private void AltaAlumnoBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new AltaDeAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
 
-        private void buttonModificar_Click(object sender, EventArgs e)
+        private void ModificarAlumnoBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new ModificarAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
 
-        private void buttonBaja_Click(object sender, EventArgs e)
+        private void BajaAlumnoBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new BajaDeAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));

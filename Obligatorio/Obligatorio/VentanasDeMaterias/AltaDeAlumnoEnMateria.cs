@@ -26,7 +26,9 @@ namespace Obligatorio
             moduloMaterias = moduloMateria;
             MateriasListBox.DataSource = null;
             MateriasListBox.DataSource = CargarListBoxMaterias();
+            AlumnosInscriptosListBox.DataSource = null;
             AlumnosInscriptosListBox.SetSelected(0,false);
+            AlumnosNoCursanListBox.DataSource = null;
             AlumnosNoCursanListBox.SetSelected(0, false);
         }
 
@@ -74,11 +76,6 @@ namespace Obligatorio
             return lista;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void InscribirAlumnoBtnClick(object sender, EventArgs e)
         {
             try
@@ -107,12 +104,6 @@ namespace Obligatorio
             {
                 MessageBox.Show(excepcion.Message);
             }
-            finally
-            {
-
-            }
-            
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -148,10 +139,6 @@ namespace Obligatorio
             catch (Exception excepcion)
             {
                 MessageBox.Show(excepcion.Message);
-            }
-            finally
-            {
-
             }
         }
     }

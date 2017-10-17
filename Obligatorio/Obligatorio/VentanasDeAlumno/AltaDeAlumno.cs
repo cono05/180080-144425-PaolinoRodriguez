@@ -27,7 +27,7 @@ namespace Obligatorio.VentanasDeAlumno
             moduloMaterias = moduloMateria;
         }
 
-        private void buttonAgregar_Click(object sender, EventArgs e)
+        private void AgregarAlumnoBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace Obligatorio.VentanasDeAlumno
             
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));

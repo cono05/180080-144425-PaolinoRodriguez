@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listBoxDocentes = new System.Windows.Forms.ListBox();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.buttonEliminar = new System.Windows.Forms.Button();
+            this.ListBoxDocentes = new System.Windows.Forms.ListBox();
+            this.VolverBtn = new System.Windows.Forms.Button();
+            this.EliminarDocenteBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.listBoxDocentes);
-            this.panel1.Controls.Add(this.buttonVolver);
-            this.panel1.Controls.Add(this.buttonEliminar);
+            this.panel1.Controls.Add(this.ListBoxDocentes);
+            this.panel1.Controls.Add(this.VolverBtn);
+            this.panel1.Controls.Add(this.EliminarDocenteBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -48,33 +48,33 @@
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
             // 
-            // listBoxDocentes
+            // ListBoxDocentes
             // 
-            this.listBoxDocentes.FormattingEnabled = true;
-            this.listBoxDocentes.Location = new System.Drawing.Point(208, 131);
-            this.listBoxDocentes.Name = "listBoxDocentes";
-            this.listBoxDocentes.Size = new System.Drawing.Size(235, 160);
-            this.listBoxDocentes.TabIndex = 29;
+            this.ListBoxDocentes.FormattingEnabled = true;
+            this.ListBoxDocentes.Location = new System.Drawing.Point(208, 131);
+            this.ListBoxDocentes.Name = "ListBoxDocentes";
+            this.ListBoxDocentes.Size = new System.Drawing.Size(235, 160);
+            this.ListBoxDocentes.TabIndex = 29;
             // 
-            // buttonVolver
+            // VolverBtn
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(559, 240);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(94, 51);
-            this.buttonVolver.TabIndex = 28;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.VolverBtn.Location = new System.Drawing.Point(559, 240);
+            this.VolverBtn.Name = "VolverBtn";
+            this.VolverBtn.Size = new System.Drawing.Size(94, 51);
+            this.VolverBtn.TabIndex = 28;
+            this.VolverBtn.Text = "Volver";
+            this.VolverBtn.UseVisualStyleBackColor = true;
+            this.VolverBtn.Click += new System.EventHandler(this.VolverBtn_Click);
             // 
-            // buttonEliminar
+            // EliminarDocenteBtn
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(559, 131);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(94, 51);
-            this.buttonEliminar.TabIndex = 27;
-            this.buttonEliminar.Text = "Eliminar";
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            this.EliminarDocenteBtn.Location = new System.Drawing.Point(559, 131);
+            this.EliminarDocenteBtn.Name = "EliminarDocenteBtn";
+            this.EliminarDocenteBtn.Size = new System.Drawing.Size(94, 51);
+            this.EliminarDocenteBtn.TabIndex = 27;
+            this.EliminarDocenteBtn.Text = "Eliminar";
+            this.EliminarDocenteBtn.UseVisualStyleBackColor = true;
+            this.EliminarDocenteBtn.Click += new System.EventHandler(this.EliminarDocenteBtn_Click);
             // 
             // label1
             // 
@@ -102,9 +102,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox listBoxDocentes;
-        private System.Windows.Forms.Button buttonVolver;
-        private System.Windows.Forms.Button buttonEliminar;
+        private System.Windows.Forms.ListBox ListBoxDocentes;
+        private System.Windows.Forms.Button VolverBtn;
+        private System.Windows.Forms.Button EliminarDocenteBtn;
         private System.Windows.Forms.Label label1;
     }
 }

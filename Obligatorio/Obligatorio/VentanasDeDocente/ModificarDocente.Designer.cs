@@ -30,17 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.textBoxApellido = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBoxDocentes = new System.Windows.Forms.ListBox();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.buttonModificar = new System.Windows.Forms.Button();
+            this.ListBoxDocentes = new System.Windows.Forms.ListBox();
+            this.VolverBtn = new System.Windows.Forms.Button();
+            this.ModificarDocenteBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,17 +46,15 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBoxEmail);
             this.panel1.Controls.Add(this.textBoxCedula);
             this.panel1.Controls.Add(this.textBoxApellido);
             this.panel1.Controls.Add(this.textBoxNombre);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.listBoxDocentes);
-            this.panel1.Controls.Add(this.buttonVolver);
-            this.panel1.Controls.Add(this.buttonModificar);
+            this.panel1.Controls.Add(this.ListBoxDocentes);
+            this.panel1.Controls.Add(this.VolverBtn);
+            this.panel1.Controls.Add(this.ModificarDocenteBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -75,13 +71,6 @@
             this.label6.Size = new System.Drawing.Size(128, 12);
             this.label6.TabIndex = 51;
             this.label6.Text = "Formato esperado: 1234567-8";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(497, 228);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(188, 20);
-            this.textBoxEmail.TabIndex = 50;
             // 
             // textBoxCedula
             // 
@@ -103,16 +92,6 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(188, 20);
             this.textBoxNombre.TabIndex = 47;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(430, 228);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 16);
-            this.label5.TabIndex = 46;
-            this.label5.Text = "E-mail:";
             // 
             // label4
             // 
@@ -144,34 +123,34 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "Nombre:";
             // 
-            // listBoxDocentes
+            // ListBoxDocentes
             // 
-            this.listBoxDocentes.FormattingEnabled = true;
-            this.listBoxDocentes.Location = new System.Drawing.Point(174, 82);
-            this.listBoxDocentes.Name = "listBoxDocentes";
-            this.listBoxDocentes.Size = new System.Drawing.Size(208, 277);
-            this.listBoxDocentes.TabIndex = 42;
-            this.listBoxDocentes.SelectedIndexChanged += new System.EventHandler(this.listBoxDocentes_SelectedIndexChanged);
+            this.ListBoxDocentes.FormattingEnabled = true;
+            this.ListBoxDocentes.Location = new System.Drawing.Point(174, 82);
+            this.ListBoxDocentes.Name = "ListBoxDocentes";
+            this.ListBoxDocentes.Size = new System.Drawing.Size(208, 277);
+            this.ListBoxDocentes.TabIndex = 42;
+            this.ListBoxDocentes.SelectedIndexChanged += new System.EventHandler(this.ListBoxDocentes_SelectedIndexChanged);
             // 
-            // buttonVolver
+            // VolverBtn
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(592, 308);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(94, 51);
-            this.buttonVolver.TabIndex = 41;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.VolverBtn.Location = new System.Drawing.Point(592, 308);
+            this.VolverBtn.Name = "VolverBtn";
+            this.VolverBtn.Size = new System.Drawing.Size(94, 51);
+            this.VolverBtn.TabIndex = 41;
+            this.VolverBtn.Text = "Volver";
+            this.VolverBtn.UseVisualStyleBackColor = true;
+            this.VolverBtn.Click += new System.EventHandler(this.VolverBtn_Click);
             // 
-            // buttonModificar
+            // ModificarDocenteBtn
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(433, 308);
-            this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(94, 51);
-            this.buttonModificar.TabIndex = 40;
-            this.buttonModificar.Text = "Modificar";
-            this.buttonModificar.UseVisualStyleBackColor = true;
-            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
+            this.ModificarDocenteBtn.Location = new System.Drawing.Point(433, 308);
+            this.ModificarDocenteBtn.Name = "ModificarDocenteBtn";
+            this.ModificarDocenteBtn.Size = new System.Drawing.Size(94, 51);
+            this.ModificarDocenteBtn.TabIndex = 40;
+            this.ModificarDocenteBtn.Text = "Modificar";
+            this.ModificarDocenteBtn.UseVisualStyleBackColor = true;
+            this.ModificarDocenteBtn.Click += new System.EventHandler(this.ModificarDocenteBtn_Click);
             // 
             // label1
             // 
@@ -200,17 +179,15 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxCedula;
         private System.Windows.Forms.TextBox textBoxApellido;
         private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBoxDocentes;
-        private System.Windows.Forms.Button buttonVolver;
-        private System.Windows.Forms.Button buttonModificar;
+        private System.Windows.Forms.ListBox ListBoxDocentes;
+        private System.Windows.Forms.Button VolverBtn;
+        private System.Windows.Forms.Button ModificarDocenteBtn;
         private System.Windows.Forms.Label label1;
     }
 }

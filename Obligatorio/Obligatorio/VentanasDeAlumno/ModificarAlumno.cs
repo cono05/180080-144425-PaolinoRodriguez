@@ -25,8 +25,8 @@ namespace Obligatorio.VentanasDeAlumno
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            listBoxAlumnos.DataSource = null;
-            listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+            ListBoxAlumnos.DataSource = null;
+            ListBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
 
         private ICollection<Alumno> CargarListBoxAlumnos()
@@ -39,9 +39,9 @@ namespace Obligatorio.VentanasDeAlumno
             return lista;
         }
 
-        private void buttonModificar_Click(object sender, EventArgs e)
+        private void ModificarDocenteBtn_Click(object sender, EventArgs e)
         {
-            Alumno alumnoSeleccionado = (Alumno)listBoxAlumnos.SelectedItem;
+            Alumno alumnoSeleccionado = (Alumno)ListBoxAlumnos.SelectedItem;
             if(alumnoSeleccionado != null)
             {
                 try
@@ -64,8 +64,8 @@ namespace Obligatorio.VentanasDeAlumno
                         MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
                         //Para limpiar todos los textboxes
                         panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
-                        listBoxAlumnos.DataSource = null;
-                        listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                        ListBoxAlumnos.DataSource = null;
+                        ListBoxAlumnos.DataSource = CargarListBoxAlumnos();
                     }
                 }
                 catch (ExcepcionExisteAlumnoConMismaCedula ex)
@@ -109,9 +109,9 @@ namespace Obligatorio.VentanasDeAlumno
                     && a1.Cedula.Equals(a2.Cedula) && a1.Mail.Equals(a2.Mail);
         }
 
-        private void listBoxAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Alumno alumnoSeleccionado = (Alumno)listBoxAlumnos.SelectedItem;
+            Alumno alumnoSeleccionado = (Alumno)ListBoxAlumnos.SelectedItem;
             if(alumnoSeleccionado != null)
             {
                 textBoxNombre.Text   = alumnoSeleccionado.Nombre;
@@ -121,7 +121,7 @@ namespace Obligatorio.VentanasDeAlumno
             }
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));

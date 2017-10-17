@@ -55,7 +55,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
@@ -95,7 +94,6 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // AltaBajaDocenteBtn
             // 
