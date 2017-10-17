@@ -70,10 +70,10 @@ namespace Logica
                 throw new ExcepcionCamionetaSinMarca();
         }
 
-        public bool TieneCapacidadCero(Camioneta camioneta)
+        public bool TieneCapacidadNoValida(Camioneta camioneta)
         {
             bool retorno = false;
-            retorno = camioneta.Capacidad == 0;
+            retorno = camioneta.Capacidad <= 0 || camioneta.Capacidad > 40;
             return retorno;
         }
     }

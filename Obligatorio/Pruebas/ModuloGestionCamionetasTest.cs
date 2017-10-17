@@ -96,21 +96,21 @@ namespace Pruebas
         }
 
         [TestMethod]
-        public void TieneCapacidadCeroTrueTest()
+        public void TieneCapacidadNoValidaTrueTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
             Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 0);
-            Assert.IsTrue(moduloCamionetas.TieneCapacidadCero(camioneta));
+            Assert.IsTrue(moduloCamionetas.TieneCapacidadNoValida(camioneta));
         }
 
         [TestMethod]
-        public void TieneCapacidadCeroFalseTest()
+        public void TieneCapacidadNoValidaFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
             Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20);
-            Assert.IsFalse(moduloCamionetas.TieneCapacidadCero(camioneta));
+            Assert.IsFalse(moduloCamionetas.TieneCapacidadNoValida(camioneta));
         }
         
     }
