@@ -18,7 +18,6 @@ namespace Obligatorio
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-
         public MenuPrincipal(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
             ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
@@ -30,8 +29,8 @@ namespace Obligatorio
         }
 
         private void GestionarMateriasBtn_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
+        {           
+            panel1.Controls.Clear():
             panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
@@ -42,17 +41,14 @@ namespace Obligatorio
 
         private void GestionarDocentesBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            
+            panel1.Controls.Clear();            
             panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void buttonGestionarAlumno_Click(object sender, EventArgs e)
         {
-            
             panel1.Controls.Clear();
-            panel1.Controls.Add(new VentanasDeAlumno.MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
-         
+            panel1.Controls.Add(new VentanasDeAlumno.MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));            
         }
 
         private void GestionarCamionetasBtn_Click(object sender, EventArgs e)

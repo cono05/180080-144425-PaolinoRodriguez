@@ -18,6 +18,7 @@ namespace Obligatorio
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
+        private UserControl actual;
 
         public MenuGestionMaterias(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
             ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
@@ -43,7 +44,12 @@ namespace Obligatorio
         private void button1_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            if (this.actual != null) { this.actual.Dispose(); }
+
+            this.actual = new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas);
+            panel1.Controls.Add(this.actual);
+            //panel1.Controls.Clear();
+            //panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void BajaDeMateriaBtn_Click(object sender, EventArgs e)
