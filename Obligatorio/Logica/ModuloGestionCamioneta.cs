@@ -69,5 +69,10 @@ namespace Logica
             if (EsCamionetaSinMarca(camioneta))
                 throw new ExcepcionCamionetaSinMarca();
         }
+
+        public bool TieneCapacidadCero(Camioneta camioneta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

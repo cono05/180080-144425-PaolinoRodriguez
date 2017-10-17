@@ -94,6 +94,15 @@ namespace Pruebas
             moduloCamionetas.Alta(camioneta);
             Assert.IsTrue(moduloCamionetas.ExisteCamioneta(camioneta));
         }
+
+        [TestMethod]
+        public void TieneCapacidadCeroTrueTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20);
+            Assert.IsTrue(moduloCamionetas.TieneCapacidadCero(camioneta));
+        }
         
     }
 }
