@@ -54,7 +54,9 @@ namespace Logica
 
         public bool EsCamionetaSinMarca(Camioneta camioneta)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            retorno = string.IsNullOrEmpty(camioneta.Marca);
+            return retorno;
         }
     }
 }
