@@ -46,7 +46,10 @@ namespace Logica
 
         public bool EsCamionetaSinChapa(Camioneta camioneta)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            retorno = string.IsNullOrEmpty(camioneta.Chapa);
+            return retorno;
+
         }
     }
 }
