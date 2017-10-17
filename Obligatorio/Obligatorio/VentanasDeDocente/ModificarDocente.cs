@@ -42,7 +42,7 @@ namespace Obligatorio.VentanasDeDocente
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref docenteSeleccionadomoduloDocentes, ref moduloMaterias));
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
@@ -60,11 +60,14 @@ namespace Obligatorio.VentanasDeDocente
 
                     if (!SonIguales(docenteSeleccionado, aux))
                     {
-                        moduloDocentes.ModificarDocente(ref docenteSeleccionado, aux);
-                        string mensaje = string.Format("¡Modificación exitosa! \n\nDatos previos: {0} {1} CI {2} \nDatos actuales: " +
-                            "{3} {4} CI {5}", aux.Nombre, aux.Apellido, aux.Cedula, docenteSeleccionado.Nombre,
-                                docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
 
+                        string datosAntesCambio = string.Format("Datos previos: {0} {1} CI {2}",
+                        docenteSeleccionado.Nombre, docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
+                        moduloDocentes.ModificarDocente(ref docenteSeleccionado, aux);
+                        string datosDespuesCambio = string.Format("Datos actuales: {0} {1} CI {2}",
+                            docenteSeleccionado.Nombre, docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
+
+                        string mensaje = string.Format("¡Modificación exitosa! \n" + datosAntesCambio + "\n" + datosDespuesCambio);
                         MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
                         //Para limpiar todos los textboxes
                         panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());

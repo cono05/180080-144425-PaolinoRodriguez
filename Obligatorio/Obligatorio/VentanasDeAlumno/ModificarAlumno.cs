@@ -42,59 +42,64 @@ namespace Obligatorio.VentanasDeAlumno
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             Alumno alumnoSeleccionado = (Alumno)listBoxAlumnos.SelectedItem;
-            try
+            if(alumnoSeleccionado != null)
             {
-                Alumno aux = Alumno.CrearAlumno();
-                aux.Nombre = textBoxNombre.Text;
-                aux.Apellido = textBoxApellido.Text;
-                aux.Cedula = textBoxCedula.Text;
-                aux.Mail = textBoxEmail.Text;
-
-                if (!SonIguales(alumnoSeleccionado, aux))
+                try
                 {
-                    moduloAlumnos.ModificarAlumno(ref alumnoSeleccionado, aux);
-                    string mensaje = string.Format("\t¡Modificación exitosa! \nDatos previos: {0} {1} CI {2} email {3} \nDatos actuales: " +
-                        "{4} {5} CI {6} email {7}", aux.Nombre, aux.Apellido, aux.Cedula, aux.Mail, alumnoSeleccionado.Nombre,
-                            alumnoSeleccionado.Apellido, alumnoSeleccionado.Cedula, alumnoSeleccionado.Mail);
+                    Alumno aux = Alumno.CrearAlumno();
+                    aux.Nombre = textBoxNombre.Text;
+                    aux.Apellido = textBoxApellido.Text;
+                    aux.Cedula = textBoxCedula.Text;
+                    aux.Mail = textBoxEmail.Text;
 
-                    MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
-                    //Para limpiar todos los textboxes
-                    panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
-                    listBoxAlumnos.DataSource = null;
-                    listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                    if (!SonIguales(alumnoSeleccionado, aux))
+                    {
+                        string datosAntesCambio = string.Format("Datos previos: {0} {1} CI {2} email {3}",
+                            alumnoSeleccionado.Nombre, alumnoSeleccionado.Apellido, alumnoSeleccionado.Cedula, alumnoSeleccionado.Mail);
+                        moduloAlumnos.ModificarAlumno(ref alumnoSeleccionado, aux);
+                        string datosDespuesCambio = string.Format("Datos actuales: {0} {1} CI {2} email {3}",
+                            alumnoSeleccionado.Nombre, alumnoSeleccionado.Apellido, alumnoSeleccionado.Cedula, alumnoSeleccionado.Mail);
+
+                        string mensaje = string.Format("¡Modificación exitosa!\n" + datosAntesCambio + "\n" + datosDespuesCambio);
+                        MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
+                        //Para limpiar todos los textboxes
+                        panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+                        listBoxAlumnos.DataSource = null;
+                        listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                    }
                 }
-            }
-            catch(ExcepcionExisteAlumnoConMismaCedula ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ExcepcionAlumnoSinNombre ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ExcepcionAlumnoSinApellido ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ExcepcionAlumnoSinCedula ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ExcepcionAlumnoSinEmail ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ExcepcionFormatoCedulaIncorrecto ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ExcepcionExisteAlumnoConMismoEmail ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (ExcepcionExisteAlumnoConMismaCedula ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ExcepcionAlumnoSinNombre ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ExcepcionAlumnoSinApellido ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ExcepcionAlumnoSinCedula ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ExcepcionAlumnoSinEmail ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ExcepcionFormatoCedulaIncorrecto ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ExcepcionExisteAlumnoConMismoEmail ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
