@@ -36,5 +36,10 @@ namespace Logica
         {
             return repositorio.ObtenerCamionetas();
         }
+
+        public bool ExisteCamioneta(Camioneta camioneta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
