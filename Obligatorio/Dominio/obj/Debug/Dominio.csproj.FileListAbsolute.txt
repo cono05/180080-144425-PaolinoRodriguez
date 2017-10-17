@@ -1,7 +1,3 @@
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\bin\Debug\Dominio.dll
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\bin\Debug\Dominio.pdb
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\obj\Debug\Dominio.dll
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Dominio\obj\Debug\Dominio.pdb
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Dominio\bin\Debug\Dominio.dll
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Dominio\bin\Debug\Dominio.pdb
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Dominio\obj\Debug\Dominio.dll

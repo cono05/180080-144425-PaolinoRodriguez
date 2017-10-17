@@ -1,16 +1,3 @@
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Pruebas.dll
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Pruebas.pdb
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Dominio.dll
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Excepciones.dll
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Logica.dll
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Persistencia.dll
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Dominio.pdb
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Excepciones.pdb
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Logica.pdb
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\bin\Debug\Persistencia.pdb
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.csprojResolveAssemblyReference.cache
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.dll
-C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Pruebas\obj\Debug\Pruebas.pdb
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\Pruebas.dll
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\Pruebas.pdb
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\Dominio.dll

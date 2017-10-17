@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BajaDeCamioneta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BajaDeCamioneta.Designer.cs">
+      <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeMaterias\AltaDeCamioneta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <Compile Include="VPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="BajaDeCamioneta.resx">
+      <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaDeCamioneta.resx">
       <DependentUpon>AltaDeCamioneta.cs</DependentUpon>
     </EmbeddedResource>

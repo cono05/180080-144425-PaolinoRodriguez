@@ -43,6 +43,7 @@ namespace Obligatorio
         private void GestionarDocentesBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
+            
             panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
