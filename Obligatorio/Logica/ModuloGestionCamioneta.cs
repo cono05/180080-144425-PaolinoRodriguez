@@ -72,7 +72,9 @@ namespace Logica
 
         public bool TieneCapacidadCero(Camioneta camioneta)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            retorno = camioneta.Capacidad == 0;
+            return retorno;
         }
     }
 }
