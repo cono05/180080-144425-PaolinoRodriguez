@@ -9,14 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Excepciones;
+using Logica;
 
 namespace Obligatorio
 {
     public partial class AltaDeCamioneta : UserControl
     {
-        public AltaDeCamioneta()
+        private ModuloGestionAlumno moduloAlumnos;
+        private ModuloGestionDocente moduloDocentes;
+        private ModuloGestionMaterias moduloMaterias;
+        private ModuloGestionCamioneta moduloCamionetas;
+        public AltaDeCamioneta(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
+            moduloAlumnos = moduloAlumno;
+            moduloDocentes = moduloDocente;
+            moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
         }
 
         private void AgregarCamionetaBtn_Click(object sender, EventArgs e)
@@ -27,8 +37,8 @@ namespace Obligatorio
                 camioneta.Marca = this.MarcaTextBox.Text;
                 camioneta.Chapa = ChapaTextBox.Text;
                 camioneta.Capacidad = Int32.Parse(CapacidadTextBox.Text);
-                //moduloMaterias.Alta(materia);
-                //MessageBox.Show("La materia: " + materia.Nombre + ". Codigo: " + materia.Codigo + " se ha agregado correctamente", MessageBoxButtons.OK.ToString());
+                moduloCamionetas.Alta(camioneta);
+                MessageBox.Show("La camioneta: " + camioneta.ToString()+" se ha agregado correctamente", MessageBoxButtons.OK.ToString());
                 //textBoxNombre.Clear();
             }
             catch (ExcepcionExisteMateriaConMismoNombre exception)

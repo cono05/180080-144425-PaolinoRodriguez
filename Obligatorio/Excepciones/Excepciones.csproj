@@ -47,6 +47,7 @@
     <Compile Include="ExcepcionAlumnoYaCursaLaMateria.cs" />
     <Compile Include="ExcepcionCamionetaSinChapa.cs" />
     <Compile Include="ExcepcionCamionetaSinMarca.cs" />
+    <Compile Include="ExcepcionCapacidadNoValida.cs" />
     <Compile Include="ExcepcionDocenteSinApellido.cs" />
     <Compile Include="ExcepcionDocenteSinCedula.cs" />
     <Compile Include="ExcepcionDocenteSinNombre.cs" />

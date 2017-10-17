@@ -35,7 +35,7 @@ namespace Obligatorio
         private void RegistrarCamionetaBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            panel1.Controls.Add(new AltaDeCamioneta(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
     }
 }

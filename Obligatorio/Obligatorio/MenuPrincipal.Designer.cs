@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.GestionarCamionetasBtn = new System.Windows.Forms.Button();
             this.GestionarMateriasBtn = new System.Windows.Forms.Button();
             this.GestionarDocentesBtn = new System.Windows.Forms.Button();
             this.buttonGestionarAlumno = new System.Windows.Forms.Button();
@@ -39,7 +39,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.GestionarCamionetasBtn);
             this.panel1.Controls.Add(this.GestionarMateriasBtn);
             this.panel1.Controls.Add(this.GestionarDocentesBtn);
             this.panel1.Controls.Add(this.buttonGestionarAlumno);
@@ -51,14 +51,15 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button4
+            // GestionarCamionetasBtn
             // 
-            this.button4.Location = new System.Drawing.Point(577, 121);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.GestionarCamionetasBtn.Location = new System.Drawing.Point(577, 121);
+            this.GestionarCamionetasBtn.Name = "GestionarCamionetasBtn";
+            this.GestionarCamionetasBtn.Size = new System.Drawing.Size(94, 40);
+            this.GestionarCamionetasBtn.TabIndex = 4;
+            this.GestionarCamionetasBtn.Text = "Gestionar Camionetas";
+            this.GestionarCamionetasBtn.UseVisualStyleBackColor = true;
+            this.GestionarCamionetasBtn.Click += new System.EventHandler(this.GestionarCamionetasBtn_Click);
             // 
             // GestionarMateriasBtn
             // 
@@ -117,7 +118,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button GestionarCamionetasBtn;
         private System.Windows.Forms.Button GestionarMateriasBtn;
         private System.Windows.Forms.Button GestionarDocentesBtn;
         private System.Windows.Forms.Button buttonGestionarAlumno;
