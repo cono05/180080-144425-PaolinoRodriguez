@@ -18,12 +18,15 @@ namespace Obligatorio
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
-        public AltaDeAlumnoEnMateria(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
+        private ModuloGestionCamioneta moduloCamionetas;
+        public AltaDeAlumnoEnMateria(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
             MateriasListBox.DataSource = null;
             MateriasListBox.DataSource = CargarListBoxMaterias();
             AlumnosInscriptosListBox.DataSource = null;
@@ -109,7 +112,7 @@ namespace Obligatorio
         private void button3_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            panel2.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel2.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void DesinscribirAlumnoBtnClick(object sender, EventArgs e)

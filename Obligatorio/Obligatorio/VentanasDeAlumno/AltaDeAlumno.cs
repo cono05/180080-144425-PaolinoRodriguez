@@ -18,13 +18,16 @@ namespace Obligatorio.VentanasDeAlumno
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
+        private ModuloGestionCamioneta moduloCamionetas;
 
-        public AltaDeAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
+        public AltaDeAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
         }
 
         private void AgregarAlumnoBtn_Click(object sender, EventArgs e)
@@ -73,7 +76,12 @@ namespace Obligatorio.VentanasDeAlumno
         private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

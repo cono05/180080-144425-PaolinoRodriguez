@@ -18,12 +18,15 @@ namespace Obligatorio
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
-        public ModificacionMateria(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
+        private ModuloGestionCamioneta moduloCamionetas;
+        public ModificacionMateria(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
             MateriasListBox.DataSource = null;
             MateriasListBox.DataSource = CargarListBoxMaterias();
             MateriasListBox.SetSelected(0, false);
@@ -75,7 +78,7 @@ namespace Obligatorio
         private void VolverAlMenuClickClick(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void MateriasListBox_SelectedIndexChanged(object sender, EventArgs e)
