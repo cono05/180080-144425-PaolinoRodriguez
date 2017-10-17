@@ -43,5 +43,10 @@ namespace Logica
             retorno = ObtenerCamionetas().Contains(camioneta);
             return retorno;
         }
+
+        public bool EsCamionetaSinChapa(Camioneta camioneta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
