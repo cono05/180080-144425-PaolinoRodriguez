@@ -13,7 +13,7 @@ namespace Dominio
         public string Marca { get; set; }
         public int Capacidad { get; set; }
 
-        public Camioneta()
+        private Camioneta()
         {
             Chapa = string.Empty;
             Capacidad = 0;

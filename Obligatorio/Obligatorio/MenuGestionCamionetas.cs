@@ -45,6 +45,10 @@ namespace Obligatorio
                 panel1.Controls.Clear();
                 panel1.Controls.Add(new BajaDeCamioneta(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
             }
+            else
+            {
+                MessageBox.Show("No existen camionetas en el sistema", MessageBoxButtons.OK.ToString());
+            }
         }
 
         private void VolverAlMenuBtnClick(object sender, EventArgs e)

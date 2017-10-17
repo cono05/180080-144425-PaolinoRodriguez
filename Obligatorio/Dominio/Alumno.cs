@@ -9,7 +9,7 @@ namespace Dominio
         public ICollection<Materia> MateriasInscripto { get; set; }
 
         private static int numero = 1111;
-        public Alumno()
+        private Alumno()
         {
             MateriasInscripto = new List<Materia>();
             NumeroDeEstudiante = ++numero;

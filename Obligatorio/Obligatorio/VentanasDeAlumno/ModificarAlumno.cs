@@ -33,7 +33,7 @@ namespace Obligatorio.VentanasDeAlumno
         private ICollection<Alumno> CargarListBoxAlumnos()
         {
             ICollection<Alumno> lista = new List<Alumno>();
-            foreach (Alumno alumno in moduloAlumnos.repositorio.ObtenerAlumnos())
+            foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
             {
                 lista.Add(alumno);
             }

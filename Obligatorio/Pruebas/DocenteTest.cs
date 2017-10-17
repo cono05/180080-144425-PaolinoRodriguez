@@ -10,7 +10,7 @@ namespace Pruebas
         [TestMethod]
         public void CrearDocenteVacioTest()
         {
-            Docente docente = new Docente();
+            Docente docente = Docente.CrearDocente();
             Assert.IsTrue(docente.MateriasQueDicta.Count == 0);
         }
 
