@@ -39,7 +39,9 @@ namespace Logica
 
         public bool ExisteCamioneta(Camioneta camioneta)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            retorno = ObtenerCamionetas().Contains(camioneta);
+            return retorno;
         }
     }
 }
