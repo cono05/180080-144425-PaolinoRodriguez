@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 406);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(251, 240);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(128, 12);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Formato esperado: 1234567-8";
             // 
             // buttonVolver
             // 
@@ -161,16 +172,6 @@
             this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "Alta De Alumno";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(251, 240);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 12);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Formato esperado: 1234567-8";
             // 
             // AltaDeAlumno
             // 

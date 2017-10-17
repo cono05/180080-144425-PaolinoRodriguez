@@ -18,19 +18,22 @@ namespace Obligatorio.VentanasDeDocente
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
+        private ModuloGestionCamioneta moduloCamionetas;
 
-        public AltaDeDocente(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
+        public AltaDeDocente(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, 
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos  = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)

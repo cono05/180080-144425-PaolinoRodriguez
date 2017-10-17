@@ -15,13 +15,15 @@ namespace Obligatorio
             ModuloGestionAlumno moduloAlumnos = new ModuloGestionAlumno(ref repositorio);
             ModuloGestionDocente moduloDocentes = new ModuloGestionDocente(ref repositorio);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(ref repositorio);
+            ModuloGestionCamioneta moduloCamionetas = new ModuloGestionCamioneta(ref repositorio);
             CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);
-            CargarPanelPrincipal(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);
+            CargarPanelPrincipal(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes, ref moduloCamionetas);
         }
-        private void CargarPanelPrincipal(ref ModuloGestionMaterias moduloMateria, ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente)
+        private void CargarPanelPrincipal(ref ModuloGestionMaterias moduloMateria, ref ModuloGestionAlumno moduloAlumno,
+            ref ModuloGestionDocente moduloDocente, ref ModuloGestionCamioneta moduloCamioneta)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumno, ref moduloDocente,ref moduloMateria));
+            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumno, ref moduloDocente,ref moduloMateria, ref moduloCamioneta));
         }
         private void InitializeComponent()
         {

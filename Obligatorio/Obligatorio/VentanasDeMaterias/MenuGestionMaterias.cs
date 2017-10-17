@@ -17,13 +17,16 @@ namespace Obligatorio
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
+        private ModuloGestionCamioneta moduloCamionetas;
 
-        public MenuGestionMaterias(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
+        public MenuGestionMaterias(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
         }
 
         private void MenuGestionMaterias_Load(object sender, EventArgs e)
@@ -44,13 +47,13 @@ namespace Obligatorio
         private void AltaDeMateriaBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new AltaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void BajaDeMateriaBtn_Click(object sender, EventArgs e)
@@ -58,7 +61,8 @@ namespace Obligatorio
             if (moduloMaterias.HayMateriasRegistradas())
             {
                 panel1.Controls.Clear();
-                panel1.Controls.Add(new BajaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+
+                panel1.Controls.Add(new BajaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
             }
             else
             {
@@ -71,13 +75,13 @@ namespace Obligatorio
         private void AgregarAlumnoEnMateria_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaDeAlumnoEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new AltaDeAlumnoEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void ModificarMateriaBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new ModificacionMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new ModificacionMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void AltaBajaDocenteBtn_Click(object sender, EventArgs e)
@@ -85,7 +89,7 @@ namespace Obligatorio
             if (moduloDocentes.HayDocentesRegistrados())
             {
                 panel1.Controls.Clear();
-                panel1.Controls.Add(new AltaBajaDocenteEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+                panel1.Controls.Add(new AltaBajaDocenteEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
             }
             else
             {

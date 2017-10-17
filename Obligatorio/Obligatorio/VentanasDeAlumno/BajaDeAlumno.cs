@@ -18,13 +18,15 @@ namespace Obligatorio.VentanasDeAlumno
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
-
-        public BajaDeAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria)
+        private ModuloGestionCamioneta moduloCamionetas;
+        public BajaDeAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos  = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
             listBoxAlumnos.DataSource = null;
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
@@ -67,7 +69,7 @@ namespace Obligatorio.VentanasDeAlumno
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void listBoxAlumnos_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,6 +78,11 @@ namespace Obligatorio.VentanasDeAlumno
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
