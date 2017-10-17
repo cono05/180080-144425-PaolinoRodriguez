@@ -242,6 +242,62 @@ namespace Pruebas
             modulo.ValidarAlta(docente2);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionDocenteSinNombre))]
+        public void ValidarModificarDocenteSinNombreErrorTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("", "Apellido", "1234567-8");
+            modulo.ValidarModificarDocente(docente1, docente2);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionDocenteSinApellido))]
+        public void ValidarModificarDocenteSinApellidoErrorTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "", "1234567-8");
+            modulo.ValidarModificarDocente(docente1, docente2);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionDocenteSinCedula))]
+        public void ValidarModificarDocenteSinCedulaErrorTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "");
+            modulo.ValidarModificarDocente(docente1, docente2);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionFormatoCedulaIncorrecto))]
+        public void ValidarModificarDocenteFormatoCedulaIncorrectoErrorTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "234");
+            modulo.ValidarModificarDocente(docente1, docente2);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionExisteDocenteConMismaCedula))]
+        public void ValidarModificarDocenteExisteDocenteConMismaCedulaErrorTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            modulo.Alta(docente1);
+            Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "2456756-1");
+            Docente docente3 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            modulo.ValidarModificarDocente(docente2, docente3);
+        }       
         #endregion
 
         [TestMethod]
