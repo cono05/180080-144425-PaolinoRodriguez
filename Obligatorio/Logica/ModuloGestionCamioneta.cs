@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Dominio;
 using Persistencia;
+using Excepciones;
 
 namespace Logica
 {
@@ -61,7 +62,12 @@ namespace Logica
 
         public void ValidarAlta(Camioneta camioneta)
         {
-            
+            if (ExisteCamioneta(camioneta))
+                throw new ExcepcionExisteCamionetaConMismaChapa();
+            if (EsCamionetaSinChapa(camioneta))
+                throw new ExcepcionCamionetaSinChapa();
+            if (EsCamionetaSinMarca(camioneta))
+                throw new ExcepcionCamionetaSinMarca();
         }
     }
 }
