@@ -42,7 +42,7 @@ namespace Obligatorio.VentanasDeDocente
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref docenteSeleccionadomoduloDocentes, ref moduloMaterias));
+            panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias));
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)

@@ -79,14 +79,6 @@ namespace Logica
             return repositorio.ObtenerAlumnos();
         }
 
-        private void ValidarCedula(string cedulaParaValidar)
-        {
-            if (!EsFormatoCedulaAlumnoCorrecto(cedulaParaValidar))
-                throw new ExcepcionFormatoCedulaIncorrecto();
-            if (ExisteAlumnoConMismaCedula(cedulaParaValidar))
-                throw new ExcepcionExisteAlumnoConMismaCedula();
-        }
-
         #region Control de atributos
         public bool ExisteAlumnoConMismoNumeroEstudiante(Alumno alumno1)
         {
@@ -125,33 +117,19 @@ namespace Logica
         public void ValidarAlumno(Alumno alumno)
         {
             if (EsAlumnoSinNombre(alumno))
-            {
                 throw new ExcepcionAlumnoSinNombre();
-            }
             if (EsAlumnoSinApellido(alumno))
-            {
                 throw new ExcepcionAlumnoSinApellido();
-            }
             if (EsAlumnoSinCedula(alumno))
-            {
                 throw new ExcepcionAlumnoSinCedula();
-            }
             if (EsAlumnoSinEmail(alumno))
-            {
                 throw new ExcepcionAlumnoSinEmail();
-            }
             if (!EsFormatoCedulaAlumnoCorrecto(alumno.Cedula))
-            {
                 throw new ExcepcionFormatoCedulaIncorrecto();
-            }
             if (ExisteAlumnoConMismaCedula(alumno.Cedula))
-            {
                 throw new ExcepcionExisteAlumnoConMismaCedula();
-            }
             if (ExisteAlumnoConMismoEmail(alumno))
-            {
                 throw new ExcepcionExisteAlumnoConMismoEmail();
-            }
         }
 
         public bool EsFormatoCedulaAlumnoCorrecto(string cedula)
