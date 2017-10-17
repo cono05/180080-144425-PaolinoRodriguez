@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBoxAlumnos = new System.Windows.Forms.ListBox();
+            this.listBoxDocentes = new System.Windows.Forms.ListBox();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.buttonModificar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.listBoxAlumnos);
+            this.panel1.Controls.Add(this.listBoxDocentes);
             this.panel1.Controls.Add(this.buttonVolver);
             this.panel1.Controls.Add(this.buttonModificar);
             this.panel1.Controls.Add(this.label1);
@@ -144,13 +144,14 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "Nombre:";
             // 
-            // listBoxAlumnos
+            // listBoxDocentes
             // 
-            this.listBoxAlumnos.FormattingEnabled = true;
-            this.listBoxAlumnos.Location = new System.Drawing.Point(174, 82);
-            this.listBoxAlumnos.Name = "listBoxAlumnos";
-            this.listBoxAlumnos.Size = new System.Drawing.Size(208, 277);
-            this.listBoxAlumnos.TabIndex = 42;
+            this.listBoxDocentes.FormattingEnabled = true;
+            this.listBoxDocentes.Location = new System.Drawing.Point(174, 82);
+            this.listBoxDocentes.Name = "listBoxDocentes";
+            this.listBoxDocentes.Size = new System.Drawing.Size(208, 277);
+            this.listBoxDocentes.TabIndex = 42;
+            this.listBoxDocentes.SelectedIndexChanged += new System.EventHandler(this.listBoxDocentes_SelectedIndexChanged);
             // 
             // buttonVolver
             // 
@@ -160,6 +161,7 @@
             this.buttonVolver.TabIndex = 41;
             this.buttonVolver.Text = "Volver";
             this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // buttonModificar
             // 
@@ -169,6 +171,7 @@
             this.buttonModificar.TabIndex = 40;
             this.buttonModificar.Text = "Modificar";
             this.buttonModificar.UseVisualStyleBackColor = true;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
             // 
             // label1
             // 
@@ -176,9 +179,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(340, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 25);
+            this.label1.Size = new System.Drawing.Size(186, 25);
             this.label1.TabIndex = 39;
-            this.label1.Text = "Modificar Alumno";
+            this.label1.Text = "Modificar Docente";
             // 
             // ModificarDocente
             // 
@@ -205,7 +208,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBoxAlumnos;
+        private System.Windows.Forms.ListBox listBoxDocentes;
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Label label1;

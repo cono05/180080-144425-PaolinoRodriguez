@@ -34,6 +34,23 @@ namespace Pruebas
             Assert.IsTrue(antesEliminar == despuesEliminar + 1);
         }
 
+
+        [TestMethod]
+        public void ModificarDocenteTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docenteOriginal = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            Docente docenteNuevosDatos = UtilidadesPruebas.CrearDocenteDePrueba("NombreNuevo", "ApellidoNuevo", "1234567-8");
+            modulo.Alta(docenteOriginal);
+            string nombreOriginal = docenteOriginal.Nombre;
+            string apellidoOriginal = docenteOriginal.Apellido;
+            modulo.ModificarDocente(ref docenteOriginal, docenteNuevosDatos);
+            string nombreActualizado = docenteOriginal.Nombre;
+            string apellidoActualizado = docenteOriginal.Apellido;
+            Assert.IsTrue(!(nombreOriginal.Equals(nombreActualizado) && !(apellidoOriginal.Equals(apellidoActualizado))));
+        }
+
         [TestMethod]
         public void InscribirDocenteTest()
         {

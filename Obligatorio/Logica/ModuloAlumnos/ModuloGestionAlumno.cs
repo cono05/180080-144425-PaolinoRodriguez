@@ -72,7 +72,6 @@ namespace Logica
             alumnoOrignal.Apellido  = alumnoNuevosDatos.Apellido;
             alumnoOrignal.Cedula    = alumnoNuevosDatos.Cedula;
             alumnoOrignal.Mail      = alumnoNuevosDatos.Mail;
-            //alumnoOrignal.NumeroDeEstudiante = alumnoNuevosDatos.NumeroDeEstudiante;
         }
 
         public ICollection<Alumno> ObtenerAlumnos()

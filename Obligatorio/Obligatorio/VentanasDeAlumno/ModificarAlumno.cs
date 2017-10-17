@@ -29,7 +29,7 @@ namespace Obligatorio.VentanasDeAlumno
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
 
-        public ICollection<Alumno> CargarListBoxAlumnos()
+        private ICollection<Alumno> CargarListBoxAlumnos()
         {
             ICollection<Alumno> lista = new List<Alumno>();
             foreach (Alumno alumno in moduloAlumnos.repositorio.ObtenerAlumnos())

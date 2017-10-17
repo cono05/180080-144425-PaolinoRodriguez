@@ -48,6 +48,28 @@ namespace Logica
                 throw new ExcepcionFormatoCedulaIncorrecto();
         }
 
+        public void ModificarDocente(ref Docente docenteOriginal, Docente docenteNuevosDatos)
+        {
+            ValidarModificarDocente(docenteOriginal, docenteNuevosDatos);
+            docenteOriginal.Nombre = docenteNuevosDatos.Nombre;
+            docenteOriginal.Apellido = docenteNuevosDatos.Apellido;
+            docenteOriginal.Cedula = docenteNuevosDatos.Cedula;
+        }
+
+        private void ValidarModificarDocente(Docente docenteOriginal, Docente docenteNuevosDatos)
+        {
+            if (docenteOriginal.Cedula != docenteNuevosDatos.Cedula && ExisteDocenteConMismaCedula(docenteNuevosDatos.Cedula))
+                throw new ExcepcionExisteDocenteConMismaCedula();
+            if (EsDocenteSinNombre(docenteNuevosDatos))
+                throw new ExcepcionDocenteSinNombre();
+            if (EsDocenteSinApellido(docenteNuevosDatos))
+                throw new ExcepcionDocenteSinApellido();
+            if (EsDocenteSinCedula(docenteNuevosDatos))
+                throw new ExcepcionDocenteSinCedula();
+            if (!EsFormatoCedulaDocenteCorrecto(docenteNuevosDatos.Cedula))
+                throw new ExcepcionFormatoCedulaIncorrecto();
+        }
+
         //public void ValidarDocente(Docente docente)
         //{
         //    if (EsDocenteSinNombre(docente))
@@ -71,6 +93,7 @@ namespace Logica
         //        throw new ExcepcionExisteDocenteConMismaCedula();
         //    }
         //}
+
         public void ValidarBaja(Docente docente)
         {
             if (!ExisteDocenteConMismaCedula(docente.Cedula))
