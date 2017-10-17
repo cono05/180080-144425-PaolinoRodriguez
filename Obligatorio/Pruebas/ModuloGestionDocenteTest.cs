@@ -265,5 +265,15 @@ namespace Pruebas
             Assert.IsFalse(modulo.HayDocentesRegistrados());
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionNoExisteDocente))]
+        public void ValidarBajaErrorCedulaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
+            modulo.ValidarBaja(docente1);
+        }
+
     }
 }
