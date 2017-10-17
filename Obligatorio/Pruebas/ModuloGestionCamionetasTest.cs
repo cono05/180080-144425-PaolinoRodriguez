@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Persistencia;
 using Logica;
 using Dominio;
+using Excepciones;
 namespace Pruebas
 {
     [TestClass]
@@ -111,6 +112,38 @@ namespace Pruebas
             moduloCamionetas.ValidarAlta(camioneta);
             moduloCamionetas.Alta(camioneta);
             Assert.IsTrue(moduloCamionetas.ExisteCamioneta(camioneta));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionCamionetaSinMarca))]
+        public void ValidarAltaCamionetaErrorMarcaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20);
+            moduloCamionetas.ValidarAlta(camioneta);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionExisteCamionetaConMismaChapa))]
+        public void ValidarAltaCamionetaErrorChapaRepetidaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20);
+            moduloCamionetas.ValidarAlta(camioneta);
+            moduloCamionetas.Alta(camioneta);
+            moduloCamionetas.ValidarAlta(camioneta);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionCamionetaSinChapa))]
+        public void ValidarAltaCamionetaErrorSinChapaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "", 20);
+            moduloCamionetas.ValidarAlta(camioneta);
         }
 
         [TestMethod]
