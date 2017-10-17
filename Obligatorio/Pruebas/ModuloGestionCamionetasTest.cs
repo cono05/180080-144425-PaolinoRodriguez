@@ -83,5 +83,17 @@ namespace Pruebas
             Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20);
             Assert.IsTrue(moduloCamionetas.EsCamionetaSinMarca(camioneta));
         }
+
+        [TestMethod]
+        public void ValidarAltaCamionetaOkTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20);
+            moduloCamionetas.ValidarAlta(camioneta);
+            moduloCamionetas.Alta(camioneta);
+            Assert.IsTrue(moduloCamionetas.ExisteCamioneta(camioneta));
+        }
+        
     }
 }

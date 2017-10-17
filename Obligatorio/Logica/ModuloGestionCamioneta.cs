@@ -58,5 +58,10 @@ namespace Logica
             retorno = string.IsNullOrEmpty(camioneta.Marca);
             return retorno;
         }
+
+        public void ValidarAlta(Camioneta camioneta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
