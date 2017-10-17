@@ -29,7 +29,7 @@ namespace Obligatorio
             moduloCamionetas = moduloCamioneta;
             MateriasListBox.DataSource = null;
             MateriasListBox.DataSource = CargarListBoxMaterias();
-            MateriasListBox.SetSelected(0, false);
+            //MateriasListBox.SetSelected(0, false);
         }
 
         private void ModificarNombreBtnClick(object sender, EventArgs e)
