@@ -10,6 +10,5 @@ namespace Logica
     {
         void Alta(Object obj);
         void Baja(Object obj);
-        void Modificar();
     }
 }

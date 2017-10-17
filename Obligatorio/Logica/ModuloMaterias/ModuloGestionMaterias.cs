@@ -39,11 +39,6 @@ namespace Logica
             repositorio.EliminarMateria((Materia)obj);
         }
 
-        public void Modificar()
-        {
-            throw new NotImplementedException();
-        }
-
         public void ModificarMateria(Materia materia, string nuevoNombre)
         {
             // Por ahora solo modificamos nombre

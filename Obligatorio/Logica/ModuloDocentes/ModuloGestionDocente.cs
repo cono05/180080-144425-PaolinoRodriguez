@@ -29,11 +29,6 @@ namespace Logica
             repositorio.EliminarDocente((Docente)obj);
         }
 
-        public void Modificar()
-        {
-            throw new NotImplementedException();
-        }
-
         public void ValidarAlta(Docente docente)
         {
             if (ExisteDocenteConMismaCedula(docente.Cedula))

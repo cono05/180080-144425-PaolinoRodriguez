@@ -60,11 +60,6 @@ namespace Logica
             }
         }
 
-        public void Modificar()
-        {
-            throw new NotImplementedException();
-        }
-
         public void ModificarAlumno(ref Alumno alumnoOrignal, Alumno alumnoNuevosDatos)
         {
             ValidarModificarAlumno(alumnoOrignal, alumnoNuevosDatos);

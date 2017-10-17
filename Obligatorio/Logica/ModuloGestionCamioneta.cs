@@ -29,11 +29,6 @@ namespace Logica
             repositorio.EliminarCamioneta((Camioneta)obj);
         }
 
-        public void Modificar()
-        {
-            throw new NotImplementedException();
-        }
-
         public ICollection<Camioneta> ObtenerCamionetas()
         {
             return repositorio.ObtenerCamionetas();
