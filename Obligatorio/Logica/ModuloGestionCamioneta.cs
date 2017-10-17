@@ -61,7 +61,7 @@ namespace Logica
 
         public void ValidarAlta(Camioneta camioneta)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
