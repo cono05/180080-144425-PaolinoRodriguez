@@ -51,5 +51,10 @@ namespace Logica
             return retorno;
 
         }
+
+        public bool EsCamionetaSinMarca(Camioneta camioneta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
