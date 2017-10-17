@@ -9,6 +9,24 @@ namespace Pruebas
     public class ModuloGestionCamionetasTest
     {
         [TestMethod]
+        public void GetNombreModuloGestionCamionetaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            moduloCamionetas.Nombre = "moduloCamionetas";
+            Assert.AreEqual("moduloCamionetas", moduloCamionetas.Nombre);
+        }
+
+        [TestMethod]
+        public void GetDescripcionModuloGestionCamionetasTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            moduloCamionetas.Descripcion = "moduloDescripcion";
+            Assert.AreEqual("moduloDescripcion", moduloCamionetas.Descripcion);
+        }
+
+        [TestMethod]
         public void AgregarCamionetaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
