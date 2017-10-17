@@ -30,10 +30,26 @@ namespace Logica
             
         }
 
+        public void ValidarAlumno(Alumno alumno)
+        {
+            if (EsAlumnoSinNombre(alumno))
+                throw new ExcepcionAlumnoSinNombre();
+            if (EsAlumnoSinApellido(alumno))
+                throw new ExcepcionAlumnoSinApellido();
+            if (EsAlumnoSinCedula(alumno))
+                throw new ExcepcionAlumnoSinCedula();
+            if (EsAlumnoSinEmail(alumno))
+                throw new ExcepcionAlumnoSinEmail();
+            if (!EsFormatoCedulaAlumnoCorrecto(alumno.Cedula))
+                throw new ExcepcionFormatoCedulaIncorrecto();
+            if (ExisteAlumnoConMismaCedula(alumno.Cedula))
+                throw new ExcepcionExisteAlumnoConMismaCedula();
+            if (ExisteAlumnoConMismoEmail(alumno))
+                throw new ExcepcionExisteAlumnoConMismoEmail();
+        }
+
         public void ValidarModificarAlumno(Alumno alumnoOriginal, Alumno alumnoNuevosDatos)
         {
-            if (alumnoNuevosDatos.Cedula != alumnoOriginal.Cedula && ExisteAlumnoConMismaCedula(alumnoNuevosDatos.Cedula))
-                throw new ExcepcionExisteAlumnoConMismaCedula();
             if (EsAlumnoSinNombre(alumnoNuevosDatos))
                 throw new ExcepcionAlumnoSinNombre();
             if (EsAlumnoSinApellido(alumnoNuevosDatos))
@@ -46,6 +62,8 @@ namespace Logica
                 throw new ExcepcionFormatoCedulaIncorrecto();
             if (alumnoNuevosDatos.Mail != alumnoOriginal.Mail && ExisteAlumnoConMismoEmail(alumnoNuevosDatos))
                 throw new ExcepcionExisteAlumnoConMismoEmail();
+            if (alumnoNuevosDatos.Cedula != alumnoOriginal.Cedula && ExisteAlumnoConMismaCedula(alumnoNuevosDatos.Cedula))
+                throw new ExcepcionExisteAlumnoConMismaCedula();
         }
 
         public void BajaDeAlumnoEnMaterias(Alumno alumno)
@@ -108,24 +126,6 @@ namespace Logica
             return string.IsNullOrEmpty(alumno.Mail);
         }
         #endregion
-
-        public void ValidarAlumno(Alumno alumno)
-        {
-            if (EsAlumnoSinNombre(alumno))
-                throw new ExcepcionAlumnoSinNombre();
-            if (EsAlumnoSinApellido(alumno))
-                throw new ExcepcionAlumnoSinApellido();
-            if (EsAlumnoSinCedula(alumno))
-                throw new ExcepcionAlumnoSinCedula();
-            if (EsAlumnoSinEmail(alumno))
-                throw new ExcepcionAlumnoSinEmail();
-            if (!EsFormatoCedulaAlumnoCorrecto(alumno.Cedula))
-                throw new ExcepcionFormatoCedulaIncorrecto();
-            if (ExisteAlumnoConMismaCedula(alumno.Cedula))
-                throw new ExcepcionExisteAlumnoConMismaCedula();
-            if (ExisteAlumnoConMismoEmail(alumno))
-                throw new ExcepcionExisteAlumnoConMismoEmail();
-        }
 
         public bool EsFormatoCedulaAlumnoCorrecto(string cedula)
         {
