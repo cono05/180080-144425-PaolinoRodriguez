@@ -32,7 +32,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.AgregarAlumnoEnMateria = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.AltaBajaDocenteBtn = new System.Windows.Forms.Button();
             this.ModificarMateriaBtn = new System.Windows.Forms.Button();
             this.BajaDeMateriaBtn = new System.Windows.Forms.Button();
@@ -45,7 +44,6 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.AgregarAlumnoEnMateria);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.AltaBajaDocenteBtn);
             this.panel1.Controls.Add(this.ModificarMateriaBtn);
             this.panel1.Controls.Add(this.BajaDeMateriaBtn);
@@ -86,18 +84,9 @@
             this.AgregarAlumnoEnMateria.UseVisualStyleBackColor = true;
             this.AgregarAlumnoEnMateria.Click += new System.EventHandler(this.AgregarAlumnoEnMateria_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(550, 196);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 48);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // AltaBajaDocenteBtn
             // 
-            this.AltaBajaDocenteBtn.Location = new System.Drawing.Point(380, 196);
+            this.AltaBajaDocenteBtn.Location = new System.Drawing.Point(550, 196);
             this.AltaBajaDocenteBtn.Name = "AltaBajaDocenteBtn";
             this.AltaBajaDocenteBtn.Size = new System.Drawing.Size(94, 48);
             this.AltaBajaDocenteBtn.TabIndex = 3;
@@ -154,7 +143,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AgregarAlumnoEnMateria;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button AltaBajaDocenteBtn;
         private System.Windows.Forms.Button ModificarMateriaBtn;
         private System.Windows.Forms.Button BajaDeMateriaBtn;
