@@ -10,11 +10,14 @@ namespace Persistencia
         public ICollection<Alumno> Alumnos { get; set; }
         public ICollection<Docente> Docentes { get; set; }
 
+        public ICollection<Camioneta> Camionetas { get; set; }
+
         public RepositorioRam()
         {
             Materias = new List<Materia>();
             Alumnos = new List<Alumno>();
             Docentes = new List<Docente>();
+            Camionetas = new List<Camioneta>();
         }
 
         public void AgregarAlumno(Alumno alumno)
@@ -32,6 +35,11 @@ namespace Persistencia
             this.Materias.Add(materia);
         }
 
+        public void AgregarCamioneta(Camioneta camioneta)
+        {
+            Camionetas.Add(camioneta);
+        }
+
         public void EliminarAlumno(Alumno alumno)
         {
             this.Alumnos.Remove(alumno);
@@ -47,6 +55,11 @@ namespace Persistencia
             Materias.Remove(materia);
         }
 
+        public void EliminarCamioneta(Camioneta camioneta)
+        {
+            Camionetas.Remove(camioneta);
+        }
+
         public ICollection<Materia> ObtenerMaterias() {
             return Materias;
         }
@@ -59,6 +72,11 @@ namespace Persistencia
         public ICollection<Docente> ObtenerDocentes()
         {
             return Docentes;
+        }
+
+        public ICollection<Camioneta> ObtenerCamionetas()
+        {
+            return Camionetas;
         }
     }
 }
