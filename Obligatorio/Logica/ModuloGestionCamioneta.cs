@@ -20,6 +20,7 @@ namespace Logica
 
         public void Alta(object obj)
         {
+            ValidarAlta((Camioneta)obj);
             repositorio.AgregarCamioneta((Camioneta)obj);
         }
 
