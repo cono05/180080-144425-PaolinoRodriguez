@@ -71,7 +71,7 @@ namespace Pruebas
             return moduloGestionDocentes;
         }
 
-        public static ModuloGestionCamioneta CrearModuloGestionCamioneta(ref RepositorioRam repositorio)
+        public static ModuloGestionCamioneta CrearModuloGestionCamionetaDePrueba(ref RepositorioRam repositorio)
         {
             ModuloGestionCamioneta moduloGestionCamionetas = new ModuloGestionCamioneta(ref repositorio);
             return moduloGestionCamionetas;

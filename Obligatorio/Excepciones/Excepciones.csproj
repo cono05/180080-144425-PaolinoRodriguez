@@ -45,12 +45,15 @@
     <Compile Include="ExcepcionAlumnoSinEmail.cs" />
     <Compile Include="ExcepcionAlumnoSinNombre.cs" />
     <Compile Include="ExcepcionAlumnoYaCursaLaMateria.cs" />
+    <Compile Include="ExcepcionCamionetaSinChapa.cs" />
+    <Compile Include="ExcepcionCamionetaSinMarca.cs" />
     <Compile Include="ExcepcionDocenteSinApellido.cs" />
     <Compile Include="ExcepcionDocenteSinCedula.cs" />
     <Compile Include="ExcepcionDocenteSinNombre.cs" />
     <Compile Include="ExcepcionDocenteYaDictaEstaMateria.cs" />
     <Compile Include="ExcepcionExisteAlumnoConMismaCedula.cs" />
     <Compile Include="ExcepcionExisteAlumnoConMismoEmail.cs" />
+    <Compile Include="ExcepcionExisteCamionetaConMismaChapa.cs" />
     <Compile Include="ExcepcionExisteDocenteConMismaCedula.cs" />
     <Compile Include="ExcepcionExisteMateriaConMismoNombre.cs" />
     <Compile Include="ExcepcionFormatoCedulaIncorrecto.cs" />
