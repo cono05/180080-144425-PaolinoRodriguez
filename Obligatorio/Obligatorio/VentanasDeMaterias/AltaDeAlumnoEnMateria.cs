@@ -29,10 +29,11 @@ namespace Obligatorio
             moduloCamionetas = moduloCamioneta;
             MateriasListBox.DataSource = null;
             MateriasListBox.DataSource = CargarListBoxMaterias();
+            
             AlumnosInscriptosListBox.DataSource = null;
-            AlumnosInscriptosListBox.SetSelected(0,false);
+            //AlumnosInscriptosListBox.SetSelected(0,false);
             AlumnosNoCursanListBox.DataSource = null;
-            AlumnosNoCursanListBox.SetSelected(0, false);
+            //AlumnosNoCursanListBox.SetSelected(0, false);
         }
 
         private void MateriasListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,8 +51,8 @@ namespace Obligatorio
             {
                 AlumnosInscriptosListBox.DataSource = listaQueCursan;
             }
-            AlumnosInscriptosListBox.SetSelected(0, false);
-            AlumnosNoCursanListBox.SetSelected(0, false);
+            //AlumnosInscriptosListBox.SetSelected(0, false);
+            //AlumnosNoCursanListBox.SetSelected(0, false);
         }
 
         public ICollection<Alumno> CargarListBoxAlumnosNoInscriptos(Materia materia)
