@@ -60,7 +60,6 @@
     <Compile Include="ExcepcionFormatoCedulaIncorrecto.cs" />
     <Compile Include="ExcepcionMateriaCodigoRepetido.cs" />
     <Compile Include="ExcepcionMateriaSinNombre.cs" />
-    <Compile Include="ExcepcionNoExisteAlumno.cs" />
     <Compile Include="ExcepcionNoExisteDocente.cs" />
     <Compile Include="ExcepcionNoExisteMateriaConEseCodigo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

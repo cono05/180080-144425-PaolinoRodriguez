@@ -163,6 +163,25 @@ namespace Pruebas
             Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20);
             Assert.IsFalse(moduloCamionetas.TieneCapacidadNoValida(camioneta));
         }
-        
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionCapacidadNoValida))]
+        public void CapacidadNoValidaErrorTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 55);
+            moduloCamionetas.TieneCapacidadNoValida(camioneta);
+            moduloCamionetas.ValidarAlta(camioneta);
+        }
+
+        [TestMethod]
+        public void ToStringTrueTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(ref repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 55);
+            Assert.AreEqual("Ford (AAA1515)", camioneta.ToString());
+        }
     }
 }

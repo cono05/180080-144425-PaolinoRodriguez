@@ -44,10 +44,6 @@ namespace Obligatorio.VentanasDeAlumno
                     MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
 
                 }
-                catch (ExcepcionNoExisteAlumno ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
                 catch (Exception ex) 
                 {
                     MessageBox.Show(ex.Message);
