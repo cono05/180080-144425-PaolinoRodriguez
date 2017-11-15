@@ -18,8 +18,8 @@ namespace Obligatorio
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        public MenuPrincipal(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
-            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
+        public MenuPrincipal( ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+            ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
@@ -31,7 +31,7 @@ namespace Obligatorio
         private void GestionarMateriasBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            panel1.Controls.Add(new MenuGestionMaterias( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -42,19 +42,21 @@ namespace Obligatorio
         private void GestionarDocentesBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();            
-            panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            panel1.Controls.Add(new MenuGestionDocente( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
         }
 
         private void buttonGestionarAlumno_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new VentanasDeAlumno.MenuGestionAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));            
+            int i = panel1.Controls.Count;
+            panel1.Controls.Add(new VentanasDeAlumno.MenuGestionAlumno( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));            
         }
 
         private void GestionarCamionetasBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionCamionetas(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            panel1.Controls.Add(new MenuGestionCamionetas( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
         }
+       
     }
 }

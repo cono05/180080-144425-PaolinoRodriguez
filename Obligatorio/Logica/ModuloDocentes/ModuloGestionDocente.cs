@@ -8,11 +8,11 @@ namespace Logica
 {
     public class ModuloGestionDocente : IModulo
     {
-        private RepositorioRam repositorio;
+        private IRepositorio repositorio;
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
-        public ModuloGestionDocente(ref RepositorioRam repositorio)
+        public ModuloGestionDocente( IRepositorio repositorio)
         {
             this.repositorio = repositorio;
         }
@@ -43,7 +43,7 @@ namespace Logica
                 throw new ExcepcionFormatoCedulaIncorrecto();
         }
 
-        public void ModificarDocente(ref Docente docenteOriginal, Docente docenteNuevosDatos)
+        public void ModificarDocente( Docente docenteOriginal, Docente docenteNuevosDatos)
         {
             ValidarModificarDocente(docenteOriginal, docenteNuevosDatos);
             docenteOriginal.Nombre = docenteNuevosDatos.Nombre;
