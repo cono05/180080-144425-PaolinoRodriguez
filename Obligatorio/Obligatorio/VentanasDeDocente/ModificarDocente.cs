@@ -20,7 +20,7 @@ namespace Obligatorio.VentanasDeDocente
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
 
-        public ModificarDocente(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamionetas)
+        public ModificarDocente( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamionetas)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
@@ -43,7 +43,7 @@ namespace Obligatorio.VentanasDeDocente
         private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            panel1.Controls.Add(new MenuGestionDocente( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
         }
 
         private void ModificarDocenteBtn_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Obligatorio.VentanasDeDocente
 
                         string datosAntesCambio = string.Format("Datos previos: {0} {1} CI {2}",
                         docenteSeleccionado.Nombre, docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
-                        moduloDocentes.ModificarDocente(ref docenteSeleccionado, aux);
+                        moduloDocentes.ModificarDocente( docenteSeleccionado, aux);
                         string datosDespuesCambio = string.Format("Datos actuales: {0} {1} CI {2}",
                             docenteSeleccionado.Nombre, docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
 

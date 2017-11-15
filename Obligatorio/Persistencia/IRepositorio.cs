@@ -16,6 +16,10 @@ namespace Persistencia
         void EliminarDocente(Docente docente);
         ICollection<Materia> ObtenerMaterias();
         ICollection<Alumno> ObtenerAlumnos();
+        ICollection<Docente> ObtenerDocentes();
+        ICollection<Camioneta> ObtenerCamionetas();
+        void EliminarCamioneta(Camioneta camioneta);
+        void AgregarCamioneta(Camioneta camioneta);
 
     }
 }

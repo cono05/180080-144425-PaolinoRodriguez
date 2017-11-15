@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.VolverBtn = new System.Windows.Forms.Button();
             this.ModificarDocenteBtn = new System.Windows.Forms.Button();
             this.BajaDocenteBtn = new System.Windows.Forms.Button();
             this.AltaDocenteBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ListBoxDocentes = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.VolverBtn);
+            this.panel1.Controls.Add(this.ListBoxDocentes);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ModificarDocenteBtn);
             this.panel1.Controls.Add(this.BajaDocenteBtn);
             this.panel1.Controls.Add(this.AltaDocenteBtn);
@@ -47,24 +49,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(875, 406);
+            this.panel1.Size = new System.Drawing.Size(875, 299);
             this.panel1.TabIndex = 0;
-            // 
-            // VolverBtn
-            // 
-            this.VolverBtn.Location = new System.Drawing.Point(397, 271);
-            this.VolverBtn.Name = "VolverBtn";
-            this.VolverBtn.Size = new System.Drawing.Size(94, 40);
-            this.VolverBtn.TabIndex = 13;
-            this.VolverBtn.Text = "Volver al Menú Principal";
-            this.VolverBtn.UseVisualStyleBackColor = true;
-            this.VolverBtn.Click += new System.EventHandler(this.VolverBtn_Click);
             // 
             // ModificarDocenteBtn
             // 
-            this.ModificarDocenteBtn.Location = new System.Drawing.Point(593, 135);
+            this.ModificarDocenteBtn.Location = new System.Drawing.Point(523, 144);
             this.ModificarDocenteBtn.Name = "ModificarDocenteBtn";
-            this.ModificarDocenteBtn.Size = new System.Drawing.Size(94, 40);
+            this.ModificarDocenteBtn.Size = new System.Drawing.Size(94, 51);
             this.ModificarDocenteBtn.TabIndex = 12;
             this.ModificarDocenteBtn.Text = "Modificar Docente";
             this.ModificarDocenteBtn.UseVisualStyleBackColor = true;
@@ -72,9 +64,9 @@
             // 
             // BajaDocenteBtn
             // 
-            this.BajaDocenteBtn.Location = new System.Drawing.Point(397, 135);
+            this.BajaDocenteBtn.Location = new System.Drawing.Point(523, 210);
             this.BajaDocenteBtn.Name = "BajaDocenteBtn";
-            this.BajaDocenteBtn.Size = new System.Drawing.Size(94, 40);
+            this.BajaDocenteBtn.Size = new System.Drawing.Size(94, 51);
             this.BajaDocenteBtn.TabIndex = 11;
             this.BajaDocenteBtn.Text = "Baja de Docente";
             this.BajaDocenteBtn.UseVisualStyleBackColor = true;
@@ -82,9 +74,9 @@
             // 
             // AltaDocenteBtn
             // 
-            this.AltaDocenteBtn.Location = new System.Drawing.Point(201, 135);
+            this.AltaDocenteBtn.Location = new System.Drawing.Point(523, 76);
             this.AltaDocenteBtn.Name = "AltaDocenteBtn";
-            this.AltaDocenteBtn.Size = new System.Drawing.Size(94, 40);
+            this.AltaDocenteBtn.Size = new System.Drawing.Size(94, 51);
             this.AltaDocenteBtn.TabIndex = 10;
             this.AltaDocenteBtn.Text = "Alta de Docente";
             this.AltaDocenteBtn.UseVisualStyleBackColor = true;
@@ -94,11 +86,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(317, 37);
+            this.label1.Location = new System.Drawing.Point(310, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Menú Gestión Docentes";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(237, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Listado de alumnos:";
+            // 
+            // ListBoxDocentes
+            // 
+            this.ListBoxDocentes.FormattingEnabled = true;
+            this.ListBoxDocentes.Location = new System.Drawing.Point(240, 76);
+            this.ListBoxDocentes.Name = "ListBoxDocentes";
+            this.ListBoxDocentes.Size = new System.Drawing.Size(199, 199);
+            this.ListBoxDocentes.TabIndex = 14;
             // 
             // MenuGestionDocente
             // 
@@ -106,7 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "MenuGestionDocente";
-            this.Size = new System.Drawing.Size(875, 406);
+            this.Size = new System.Drawing.Size(875, 299);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -119,6 +128,7 @@
         private System.Windows.Forms.Button BajaDocenteBtn;
         private System.Windows.Forms.Button AltaDocenteBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button VolverBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox ListBoxDocentes;
     }
 }
