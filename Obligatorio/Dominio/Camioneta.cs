@@ -8,6 +8,7 @@ namespace Dominio
 {
     public class Camioneta
     {
+        public int Id { get; set; }
         public string Chapa { get; set; }
 
         public string Marca { get; set; }

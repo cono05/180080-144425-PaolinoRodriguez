@@ -4,8 +4,9 @@ namespace Dominio
 {
     public class Materia
     {
-        public ICollection<Alumno> Alumnos { get; set; }
-        public ICollection<Docente> Docentes { get; set; }
+        public int Id { get; set; }
+        public virtual ICollection<Alumno> Alumnos { get; set; }
+        public virtual ICollection<Docente> Docentes { get; set; }
         public string Nombre { get; set; }
         public int Codigo { get; set; }
         private static int numero = 1000;

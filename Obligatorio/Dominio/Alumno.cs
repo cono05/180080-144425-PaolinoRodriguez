@@ -4,14 +4,17 @@ namespace Dominio
 {
     public class Alumno : Persona
     {
+        //public int Id { get; set; }
         public int NumeroDeEstudiante { get; set; }
         public string Mail { get; set; }
-        public ICollection<Materia> MateriasInscripto { get; set; }
-
+        public virtual ICollection<Materia> MateriasInscripto { get; set; }
+        
         private static int numero = 1111;
+
         private Alumno()
         {
             MateriasInscripto = new List<Materia>();
+            Id = numeroId++;
             NumeroDeEstudiante = ++numero;
         }
         public static Alumno CrearAlumno()
