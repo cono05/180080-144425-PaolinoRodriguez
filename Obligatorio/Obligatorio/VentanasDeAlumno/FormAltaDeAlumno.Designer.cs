@@ -165,7 +165,7 @@
             this.BotonCancelar.Name = "BotonCancelar";
             this.BotonCancelar.Size = new System.Drawing.Size(94, 51);
             this.BotonCancelar.TabIndex = 38;
-            this.BotonCancelar.Text = "Cancelar";
+            this.BotonCancelar.Text = "Salir";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             this.BotonCancelar.Click += new System.EventHandler(this.CancelarBoton_Click);
             // 
