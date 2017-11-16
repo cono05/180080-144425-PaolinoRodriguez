@@ -162,9 +162,7 @@
     <Compile Include="VentanasDeAlumno\ModificarAlumno.Designer.cs">
       <DependentUpon>ModificarAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="VPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="VPrincipal.cs" />
     <EmbeddedResource Include="BajaDeCamioneta.resx">
       <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -246,9 +244,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
