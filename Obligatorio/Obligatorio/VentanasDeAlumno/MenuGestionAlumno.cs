@@ -60,8 +60,10 @@ namespace Obligatorio.VentanasDeAlumno
 
         private void BajaAlumnoBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new BajaDeAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormBajaAlumno bajaAlumno = new FormBajaAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            bajaAlumno.Show();
+            //panel1.Controls.Clear();
+            //panel1.Controls.Add(new BajaDeAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -78,5 +80,11 @@ namespace Obligatorio.VentanasDeAlumno
             }
             return lista;
         }
+        public void CargarListBoxAlumnosPublico()
+        {
+            listBoxAlumnos.DataSource = null;
+            listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+        }
+
     }
 }

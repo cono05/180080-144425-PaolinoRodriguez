@@ -32,12 +32,13 @@ namespace Obligatorio.VentanasDeAlumno
         }
         private ICollection<Alumno> CargarListBoxAlumnos()
         {
+            listBoxAlumnos.DataSource = null;
             ICollection<Alumno> lista = new List<Alumno>();
-            foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
-            {
-                lista.Add(alumno);
-            }
-            return lista;
+            //foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
+            //{
+            //    lista.Add(alumno);
+            //}
+            return lista = moduloAlumnos.ObtenerAlumnos();
         }
 
         private void salirBtn_Click(object sender, EventArgs e)
@@ -55,12 +56,11 @@ namespace Obligatorio.VentanasDeAlumno
                 alumno.Cedula = cedulaTextBox.Text;
                 alumno.Mail = emailTextBox.Text;
                 moduloAlumnos.Alta(alumno);
-
                 string mensaje = string.Format("El alumno {0} {1} CI {2} se ha agregado correctamente", alumno.Nombre, alumno.Apellido, alumno.Cedula);
                 MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
-                //Para limpiar todos los textboxes
-                Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
                 listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                LimpiarTextBoxs();
+                ActualizarListaAlumnosEnMenuGestionAlumnos();
             }
             catch (ExcepcionAlumnoSinNombre ex)
             {
@@ -86,6 +86,15 @@ namespace Obligatorio.VentanasDeAlumno
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void LimpiarTextBoxs()
+        {
+            Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+        }
+        private void ActualizarListaAlumnosEnMenuGestionAlumnos()
+        {
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            menuAlumnos.CargarListBoxAlumnosPublico();
         }
     }
 }

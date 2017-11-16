@@ -200,6 +200,7 @@ namespace Obligatorio
         {
             MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             CargarPanelPrincipal(menuAlumnos);
+            menuAlumnos.CargarListBoxAlumnosPublico();
             //if (!PanelPrincipal.Controls.Contains(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas)))
             //{
             //    PanelPrincipal.Controls.Add(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas));
