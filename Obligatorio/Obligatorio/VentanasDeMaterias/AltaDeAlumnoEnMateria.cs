@@ -113,7 +113,7 @@ namespace Obligatorio
         private void button3_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            panel2.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            panel2.Controls.Add(new MenuGestionMaterias( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
         }
 
         private void DesinscribirAlumnoBtnClick(object sender, EventArgs e)

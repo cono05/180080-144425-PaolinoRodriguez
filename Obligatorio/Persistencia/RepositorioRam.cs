@@ -9,7 +9,6 @@ namespace Persistencia
         public ICollection<Materia> Materias { get; set; }
         public ICollection<Alumno> Alumnos { get; set; }
         public ICollection<Docente> Docentes { get; set; }
-
         public ICollection<Camioneta> Camionetas { get; set; }
 
         public RepositorioRam()

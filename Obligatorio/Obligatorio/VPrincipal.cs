@@ -2,47 +2,136 @@
 using Persistencia;
 using Logica;
 using Dominio;
+using Obligatorio.VentanasDeAlumno;
+
 namespace Obligatorio
 {
     class VPrincipal : Form
     {
-        private Panel panel1;
+        private Button GestionarAlumnosBtn;
+        private Button GestionarDocentesBtn;
+        private Button GestionarMateriasBtn;
+        private Button GestionarCamionetasBtn;
+        private Button button5;
+        private Button CargarDatosBtn;
+        private Panel PanelPrincipal;
+        private ModuloGestionAlumno moduloAlumnos;
+        private ModuloGestionDocente moduloDocentes;
+        private ModuloGestionMaterias moduloMaterias;
+        private ModuloGestionCamioneta moduloCamionetas;
 
         public VPrincipal()
         {
             InitializeComponent();
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionAlumno moduloAlumnos = new ModuloGestionAlumno(ref repositorio);
-            ModuloGestionDocente moduloDocentes = new ModuloGestionDocente(ref repositorio);
-            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(ref repositorio);
-            ModuloGestionCamioneta moduloCamionetas = new ModuloGestionCamioneta(ref repositorio);
-            CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);
-            CargarPanelPrincipal(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes, ref moduloCamionetas);
+            moduloAlumnos = new ModuloGestionAlumno(ref repositorio);
+            moduloDocentes = new ModuloGestionDocente(ref repositorio);
+            moduloMaterias = new ModuloGestionMaterias(ref repositorio);
+            moduloCamionetas = new ModuloGestionCamioneta(ref repositorio);
+            CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);            
         }
-        private void CargarPanelPrincipal(ref ModuloGestionMaterias moduloMateria, ref ModuloGestionAlumno moduloAlumno,
-            ref ModuloGestionDocente moduloDocente, ref ModuloGestionCamioneta moduloCamioneta)
+        private void CargarPanelPrincipal(UserControl userControl)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumno, ref moduloDocente,ref moduloMateria, ref moduloCamioneta));
+            if (!PanelPrincipal.Controls.Contains(userControl))
+            {
+                PanelPrincipal.Controls.Add(userControl);
+                userControl.Dock = DockStyle.Fill;
+                userControl.BringToFront();
+            }
+            else
+            {
+                userControl.BringToFront();
+            }
+            //PanelPrincipal.Controls.Clear();
+            //PanelPrincipal.Controls.Add(new MenuPrincipal(ref moduloAlumno, ref moduloDocente,ref moduloMateria, ref moduloCamioneta));
         }
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelPrincipal = new System.Windows.Forms.Panel();
+            this.GestionarAlumnosBtn = new System.Windows.Forms.Button();
+            this.GestionarDocentesBtn = new System.Windows.Forms.Button();
+            this.GestionarMateriasBtn = new System.Windows.Forms.Button();
+            this.GestionarCamionetasBtn = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.CargarDatosBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // panel1
+            // PanelPrincipal
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(875, 406);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.PanelPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelPrincipal.Location = new System.Drawing.Point(0, 84);
+            this.PanelPrincipal.Name = "PanelPrincipal";
+            this.PanelPrincipal.Size = new System.Drawing.Size(875, 322);
+            this.PanelPrincipal.TabIndex = 0;
+            this.PanelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // GestionarAlumnosBtn
+            // 
+            this.GestionarAlumnosBtn.Location = new System.Drawing.Point(87, 12);
+            this.GestionarAlumnosBtn.Name = "GestionarAlumnosBtn";
+            this.GestionarAlumnosBtn.Size = new System.Drawing.Size(96, 55);
+            this.GestionarAlumnosBtn.TabIndex = 1;
+            this.GestionarAlumnosBtn.Text = "Gestionar Alumnos";
+            this.GestionarAlumnosBtn.UseVisualStyleBackColor = true;
+            this.GestionarAlumnosBtn.Click += new System.EventHandler(this.GestionarAlumnosBtn_Click);
+            // 
+            // GestionarDocentesBtn
+            // 
+            this.GestionarDocentesBtn.Location = new System.Drawing.Point(199, 12);
+            this.GestionarDocentesBtn.Name = "GestionarDocentesBtn";
+            this.GestionarDocentesBtn.Size = new System.Drawing.Size(98, 55);
+            this.GestionarDocentesBtn.TabIndex = 2;
+            this.GestionarDocentesBtn.Text = "Gestionar Docentes";
+            this.GestionarDocentesBtn.UseVisualStyleBackColor = true;
+            this.GestionarDocentesBtn.Click += new System.EventHandler(this.GestionarDocentesBtn_Click);
+            // 
+            // GestionarMateriasBtn
+            // 
+            this.GestionarMateriasBtn.Location = new System.Drawing.Point(312, 12);
+            this.GestionarMateriasBtn.Name = "GestionarMateriasBtn";
+            this.GestionarMateriasBtn.Size = new System.Drawing.Size(98, 55);
+            this.GestionarMateriasBtn.TabIndex = 3;
+            this.GestionarMateriasBtn.Text = "Gestionar Materias";
+            this.GestionarMateriasBtn.UseVisualStyleBackColor = true;
+            this.GestionarMateriasBtn.Click += new System.EventHandler(this.GestionarMateriasBtn_Click);
+            // 
+            // GestionarCamionetasBtn
+            // 
+            this.GestionarCamionetasBtn.Location = new System.Drawing.Point(426, 12);
+            this.GestionarCamionetasBtn.Name = "GestionarCamionetasBtn";
+            this.GestionarCamionetasBtn.Size = new System.Drawing.Size(98, 55);
+            this.GestionarCamionetasBtn.TabIndex = 4;
+            this.GestionarCamionetasBtn.Text = "Gestionar Camionetas";
+            this.GestionarCamionetasBtn.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(541, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(98, 55);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Gestionar Cuotas y Actividades";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // CargarDatosBtn
+            // 
+            this.CargarDatosBtn.Location = new System.Drawing.Point(765, 12);
+            this.CargarDatosBtn.Name = "CargarDatosBtn";
+            this.CargarDatosBtn.Size = new System.Drawing.Size(98, 55);
+            this.CargarDatosBtn.TabIndex = 6;
+            this.CargarDatosBtn.Text = "Cargar datos de pruebas";
+            this.CargarDatosBtn.UseVisualStyleBackColor = true;
             // 
             // VPrincipal
             // 
             this.ClientSize = new System.Drawing.Size(875, 406);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.CargarDatosBtn);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.GestionarCamionetasBtn);
+            this.Controls.Add(this.GestionarMateriasBtn);
+            this.Controls.Add(this.GestionarDocentesBtn);
+            this.Controls.Add(this.GestionarAlumnosBtn);
+            this.Controls.Add(this.PanelPrincipal);
             this.Name = "VPrincipal";
             this.Load += new System.EventHandler(this.VPrincipal_Load);
             this.ResumeLayout(false);
@@ -104,6 +193,34 @@ namespace Obligatorio
             moduloDocentes.Alta(docente);
             moduloDocentes.Alta(docente2);
             moduloDocentes.Alta(docente3);
+        }
+
+        private void GestionarAlumnosBtn_Click(object sender, System.EventArgs e)
+        {
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            CargarPanelPrincipal(menuAlumnos);
+            //if (!PanelPrincipal.Controls.Contains(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas)))
+            //{
+            //    PanelPrincipal.Controls.Add(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas));
+            //    MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).Dock = DockStyle.Fill;
+            //    MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).BringToFront();
+            //}
+            //else
+            //{
+            //    MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).BringToFront();
+            //}
+        }
+
+        private void GestionarDocentesBtn_Click(object sender, System.EventArgs e)
+        {
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            CargarPanelPrincipal(menuDocentes);
+        }
+
+        private void GestionarMateriasBtn_Click(object sender, System.EventArgs e)
+        {
+            MenuGestionMaterias menuMaterias = MenuGestionMaterias.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            CargarPanelPrincipal(menuMaterias);
         }
     }
 }

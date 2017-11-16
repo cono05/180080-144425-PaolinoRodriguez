@@ -18,10 +18,18 @@ namespace Obligatorio
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        private UserControl actual;
+        private static MenuGestionMaterias instancia;
 
-        public MenuGestionMaterias(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
-            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
+        public static MenuGestionMaterias ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        {
+            if (instancia == null)
+                instancia = new MenuGestionMaterias(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
+            return instancia;
+        }
+
+        public MenuGestionMaterias( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
@@ -43,11 +51,11 @@ namespace Obligatorio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            if (this.actual != null) { this.actual.Dispose(); }
+            //panel1.Controls.Clear();
+            //if (this.actual != null) { this.actual.Dispose(); }
 
-            this.actual = new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas);
-            panel1.Controls.Add(this.actual);
+            //this.actual = new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas);
+            //panel1.Controls.Add(this.actual);
             //panel1.Controls.Clear();
             //panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }

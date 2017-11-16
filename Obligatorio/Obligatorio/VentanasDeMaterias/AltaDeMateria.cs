@@ -62,7 +62,7 @@ namespace Obligatorio
         private void VolverAMenuGestionMateriasBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            panel1.Controls.Add(new MenuGestionMaterias( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

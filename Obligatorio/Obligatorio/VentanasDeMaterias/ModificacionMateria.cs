@@ -78,7 +78,7 @@ namespace Obligatorio
         private void VolverAlMenuClickClick(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            panel1.Controls.Add(new MenuGestionMaterias( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
         }
 
         private void MateriasListBox_SelectedIndexChanged(object sender, EventArgs e)

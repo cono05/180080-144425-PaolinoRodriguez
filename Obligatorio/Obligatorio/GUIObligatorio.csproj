@@ -118,12 +118,6 @@
     <Compile Include="VentanasDeMaterias\MenuGestionMaterias.Designer.cs">
       <DependentUpon>MenuGestionMaterias.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="VentanasDeMaterias\ModificacionMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,9 +188,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\MenuGestionMaterias.resx">
       <DependentUpon>MenuGestionMaterias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\ModificacionMateria.resx">
       <DependentUpon>ModificacionMateria.cs</DependentUpon>
