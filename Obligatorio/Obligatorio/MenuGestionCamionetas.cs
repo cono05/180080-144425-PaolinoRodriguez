@@ -17,8 +17,18 @@ namespace Obligatorio
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        public MenuGestionCamionetas(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
-            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
+        private static MenuGestionCamionetas instancia;
+
+
+        public static MenuGestionCamionetas ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        {
+            if (instancia == null)
+                instancia = new MenuGestionCamionetas(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
+            return instancia;
+        }
+        public MenuGestionCamionetas( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;

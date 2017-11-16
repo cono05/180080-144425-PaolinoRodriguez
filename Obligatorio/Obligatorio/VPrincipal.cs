@@ -103,6 +103,7 @@ namespace Obligatorio
             this.GestionarCamionetasBtn.TabIndex = 4;
             this.GestionarCamionetasBtn.Text = "Gestionar Camionetas";
             this.GestionarCamionetasBtn.UseVisualStyleBackColor = true;
+            this.GestionarCamionetasBtn.Click += new System.EventHandler(this.GestionarCamionetasBtn_Click);
             // 
             // button5
             // 
@@ -221,6 +222,12 @@ namespace Obligatorio
         {
             MenuGestionMaterias menuMaterias = MenuGestionMaterias.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             CargarPanelPrincipal(menuMaterias);
+        }
+
+        private void GestionarCamionetasBtn_Click(object sender, System.EventArgs e)
+        {
+            MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            CargarPanelPrincipal(menuCamionetas);
         }
     }
 }
