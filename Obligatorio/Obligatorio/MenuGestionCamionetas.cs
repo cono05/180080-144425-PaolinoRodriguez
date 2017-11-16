@@ -17,8 +17,8 @@ namespace Obligatorio
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        public MenuGestionCamionetas( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        public MenuGestionCamionetas(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
@@ -35,7 +35,7 @@ namespace Obligatorio
         private void RegistrarCamionetaBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaDeCamioneta( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            panel1.Controls.Add(new AltaDeCamioneta(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void EliminarCamionetaBtn_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Obligatorio
             if (moduloCamionetas.ObtenerCamionetas().Count > 0)
             {
                 panel1.Controls.Clear();
-                panel1.Controls.Add(new BajaDeCamioneta( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+                panel1.Controls.Add(new BajaDeCamioneta(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
             }
             else
             {
@@ -54,7 +54,7 @@ namespace Obligatorio
         private void VolverAlMenuBtnClick(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuPrincipal( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
     }
 }

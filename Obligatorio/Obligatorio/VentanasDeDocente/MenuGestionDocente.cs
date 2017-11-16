@@ -19,60 +19,39 @@ namespace Obligatorio
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        private static MenuGestionDocente instancia;
 
-        public static MenuGestionDocente ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
-        {
-            if (instancia == null)
-                instancia = new MenuGestionDocente(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
-            return instancia;
-        }
-
-        public MenuGestionDocente( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente, 
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        public MenuGestionDocente(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, 
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos  = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
-            ListBoxDocentes.DataSource = null;
-            ListBoxDocentes.DataSource = CargarListBoxDocentes();
         }
 
         private void VolverBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuPrincipal( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void AltaDocenteBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new VentanasDeDocente.AltaDeDocente( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            panel1.Controls.Add(new VentanasDeDocente.AltaDeDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void ModificarDocenteBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new VentanasDeDocente.ModificarDocente( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            panel1.Controls.Add(new VentanasDeDocente.ModificarDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void BajaDocenteBtn_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new VentanasDeDocente.BajaDeDocente( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
-        }
-
-        private ICollection<Docente> CargarListBoxDocentes()
-        {
-            ICollection<Docente> lista = new List<Docente>();
-            foreach (Docente docente in moduloDocentes.ObtenerDocentes())
-            {
-                lista.Add(docente);
-            }
-            return lista;
+            panel1.Controls.Add(new VentanasDeDocente.BajaDeDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
     }
 }

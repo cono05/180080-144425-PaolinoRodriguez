@@ -18,8 +18,8 @@ namespace Obligatorio
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
 
-        public BajaDeMateria( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente, 
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        public BajaDeMateria(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, 
+            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
@@ -70,7 +70,7 @@ namespace Obligatorio
         private void VolverAlMenuClick(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionMaterias( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            panel1.Controls.Add(new MenuGestionMaterias(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
     }
 }

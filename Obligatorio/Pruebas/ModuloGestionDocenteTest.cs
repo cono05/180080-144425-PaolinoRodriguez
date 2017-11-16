@@ -14,7 +14,7 @@ namespace Pruebas
         public void GetNombreModuloGestionDocenteTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente moduloDocente= UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente= UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             moduloDocente.Nombre = "moduloDocente";
             Assert.AreEqual("moduloDocente", moduloDocente.Nombre);
         }
@@ -23,7 +23,7 @@ namespace Pruebas
         public void GetDescripcionModuloGestionDocenteTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             moduloDocente.Descripcion = "moduloDescripcion";
             Assert.AreEqual("moduloDescripcion", moduloDocente.Descripcion);
         }
@@ -33,7 +33,7 @@ namespace Pruebas
         {
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             modulo.Alta(docente);
             Assert.IsTrue(repositorio.Docentes.Count == 1);
         }
@@ -43,7 +43,7 @@ namespace Pruebas
         {
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             modulo.Alta(docente);
             int antesEliminar = repositorio.Docentes.Count;
             modulo.Baja(docente);
@@ -56,13 +56,13 @@ namespace Pruebas
         public void ModificarDocenteTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docenteOriginal = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Docente docenteNuevosDatos = UtilidadesPruebas.CrearDocenteDePrueba("NombreNuevo", "ApellidoNuevo", "1234567-8");
             modulo.Alta(docenteOriginal);
             string nombreOriginal = docenteOriginal.Nombre;
             string apellidoOriginal = docenteOriginal.Apellido;
-            modulo.ModificarDocente( docenteOriginal, docenteNuevosDatos);
+            modulo.ModificarDocente(ref docenteOriginal, docenteNuevosDatos);
             string nombreActualizado = docenteOriginal.Nombre;
             string apellidoActualizado = docenteOriginal.Apellido;
             Assert.IsTrue(!(nombreOriginal.Equals(nombreActualizado) && !(apellidoOriginal.Equals(apellidoActualizado))));
@@ -72,8 +72,8 @@ namespace Pruebas
         public void InscribirDocenteTest()
         {
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
-            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Carlitos", "Roxlo", "1234567-8");
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Algoritmos", 1);
             moduloDocente.InscribirDocenteEnMateria(docente, materia);
@@ -84,8 +84,8 @@ namespace Pruebas
         public void DesinscribirDocenteTest()
         {
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
-            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMateria = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Carlitos", "Roxlo", "1234567-8");
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Algoritmos", 1);
             moduloDocente.InscribirDocenteEnMateria(docente, materia);
@@ -99,7 +99,7 @@ namespace Pruebas
         public void ExisteDocenteConMismaCedulaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-2");
             modulo.Alta(docente1);
@@ -110,7 +110,7 @@ namespace Pruebas
         public void ExisteDocenteConMismaCedulaFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-2");
             modulo.Alta(docente1);
@@ -121,7 +121,7 @@ namespace Pruebas
         public void EsDocenteSinNombreTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("", "Apellido", "0000000-1");
             Assert.IsTrue(modulo.EsDocenteSinNombre(docente));
         }
@@ -130,7 +130,7 @@ namespace Pruebas
         public void EsDocenteSinNombreFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Assert.IsFalse(modulo.EsDocenteSinNombre(docente));
         }
@@ -139,7 +139,7 @@ namespace Pruebas
         public void EsDocenteSinApellidoTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "", "0000000-1");
             Assert.IsTrue(modulo.EsDocenteSinApellido(docente));
         }
@@ -148,7 +148,7 @@ namespace Pruebas
         public void EsDocenteSinApellidoFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Assert.IsFalse(modulo.EsDocenteSinApellido(docente));
         }
@@ -157,7 +157,7 @@ namespace Pruebas
         public void EsDocenteSinCedulaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "");
             Assert.IsTrue(modulo.EsDocenteSinCedula(docente));
         }
@@ -166,7 +166,7 @@ namespace Pruebas
         public void EsDocenteSinCedulaFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
             Assert.IsFalse(modulo.EsDocenteSinCedula(docente));
         }
@@ -175,7 +175,7 @@ namespace Pruebas
         public void EsFormatoCedulaDocenteCorrectoTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Assert.IsTrue(modulo.EsFormatoCedulaDocenteCorrecto(docente.Cedula));
         }
@@ -184,7 +184,7 @@ namespace Pruebas
         public void EsFormatoCedulaDocenteCorrectoFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234-67-8");
             Assert.IsFalse(modulo.EsFormatoCedulaDocenteCorrecto(docente.Cedula));
         }
@@ -195,7 +195,7 @@ namespace Pruebas
         public void ValidarDocenteSinNombreErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("", "Apellido", "1234567-8");
             modulo.ValidarAlta(docente);
         }
@@ -205,7 +205,7 @@ namespace Pruebas
         public void ValidarDocenteSinApellidoErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "", "1234567-8");
             modulo.ValidarAlta(docente);
         }
@@ -215,7 +215,7 @@ namespace Pruebas
         public void ValidarDocenteSinCedulaErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "");
             modulo.ValidarAlta(docente);
         }
@@ -225,7 +225,7 @@ namespace Pruebas
         public void ValidarDocenteFormatoCedulaIncorrectoErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "123-4");
             modulo.ValidarAlta(docente);
         }
@@ -235,7 +235,7 @@ namespace Pruebas
         public void ValidarDocenteConCedulaExistenteErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre2", "Apellido2", "1234567-8");
             modulo.Alta(docente1);
@@ -247,7 +247,7 @@ namespace Pruebas
         public void ValidarModificarDocenteSinNombreErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("", "Apellido", "1234567-8");
             modulo.ValidarModificarDocente(docente1, docente2);
@@ -258,7 +258,7 @@ namespace Pruebas
         public void ValidarModificarDocenteSinApellidoErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "", "1234567-8");
             modulo.ValidarModificarDocente(docente1, docente2);
@@ -269,7 +269,7 @@ namespace Pruebas
         public void ValidarModificarDocenteSinCedulaErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "");
             modulo.ValidarModificarDocente(docente1, docente2);
@@ -280,7 +280,7 @@ namespace Pruebas
         public void ValidarModificarDocenteFormatoCedulaIncorrectoErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "234");
             modulo.ValidarModificarDocente(docente1, docente2);
@@ -291,7 +291,7 @@ namespace Pruebas
         public void ValidarModificarDocenteExisteDocenteConMismaCedulaErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             modulo.Alta(docente1);
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "2456756-1");
@@ -304,7 +304,7 @@ namespace Pruebas
         public void ObtenerDocentesTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre2", "Apellido2", "1334567-8");
             modulo.Alta(docente1);
@@ -316,7 +316,7 @@ namespace Pruebas
         public void HayDocentesRegistradosFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             Assert.IsFalse(modulo.HayDocentesRegistrados());
         }
@@ -326,7 +326,7 @@ namespace Pruebas
         public void ValidarBajaErrorCedulaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
             Docente docente1 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "1234567-8");
             modulo.ValidarBaja(docente1);
         }

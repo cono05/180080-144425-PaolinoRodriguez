@@ -52,18 +52,6 @@
     <Compile Include="BajaDeCamioneta.Designer.cs">
       <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanasDeAlumno\FormAltaDeAlumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VentanasDeAlumno\FormAltaDeAlumno.Designer.cs">
-      <DependentUpon>FormAltaDeAlumno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VentanasDeAlumno\FormBajaDeAlumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VentanasDeAlumno\FormBajaDeAlumno.Designer.cs">
-      <DependentUpon>FormBajaDeAlumno.cs</DependentUpon>
-    </Compile>
     <Compile Include="VentanasDeMaterias\AltaDeCamioneta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +132,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentanasDeAlumno\AltaDeAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\AltaDeAlumno.Designer.cs">
+      <DependentUpon>AltaDeAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeAlumno\BajaDeAlumno.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,23 +156,17 @@
     <Compile Include="VentanasDeAlumno\ModificarAlumno.Designer.cs">
       <DependentUpon>ModificarAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="VPrincipal.cs" />
+    <Compile Include="VPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="BajaDeCamioneta.resx">
       <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeAlumno\FormAltaDeAlumno.resx">
-      <DependentUpon>FormAltaDeAlumno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeAlumno\FormBajaDeAlumno.resx">
-      <DependentUpon>FormBajaDeAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaDeCamioneta.resx">
       <DependentUpon>AltaDeCamioneta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestionCamionetas.resx">
       <DependentUpon>MenuGestionCamionetas.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeDocente\AltaDeDocente.resx">
       <DependentUpon>AltaDeDocente.cs</DependentUpon>
@@ -209,7 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\ModificacionMateria.resx">
       <DependentUpon>ModificacionMateria.cs</DependentUpon>
@@ -223,6 +210,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanasDeAlumno\AltaDeAlumno.resx">
+      <DependentUpon>AltaDeAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeAlumno\BajaDeAlumno.resx">
       <DependentUpon>BajaDeAlumno.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +234,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">

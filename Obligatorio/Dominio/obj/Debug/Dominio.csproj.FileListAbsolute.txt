@@ -2,7 +2,7 @@ C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Dominio\b
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Dominio\bin\Debug\Dominio.pdb
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Dominio\obj\Debug\Dominio.dll
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Dominio\obj\Debug\Dominio.pdb
-C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Dominio\bin\Debug\Dominio.dll
-C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Dominio\bin\Debug\Dominio.pdb
-C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Dominio\obj\Debug\Dominio.dll
-C:\Users\Mauricio\Documents\180080 - 144425 - Paolino Rodriguez\Obligatorio\Dominio\obj\Debug\Dominio.pdb
+C:\Users\cono_\Desktop\ENTREGA 180080 - 144425\Codigo\Obligatorio\Dominio\bin\Debug\Dominio.dll
+C:\Users\cono_\Desktop\ENTREGA 180080 - 144425\Codigo\Obligatorio\Dominio\bin\Debug\Dominio.pdb
+C:\Users\cono_\Desktop\ENTREGA 180080 - 144425\Codigo\Obligatorio\Dominio\obj\Debug\Dominio.dll
+C:\Users\cono_\Desktop\ENTREGA 180080 - 144425\Codigo\Obligatorio\Dominio\obj\Debug\Dominio.pdb

@@ -2,105 +2,47 @@
 using Persistencia;
 using Logica;
 using Dominio;
-using Obligatorio.VentanasDeAlumno;
-using System.Collections;
-
 namespace Obligatorio
 {
     class VPrincipal : Form
     {
-        private Button buttonGestionarAlumno;
-        private Button GestionarDocentesBtn;
-        private Button GestionarMateriasBtn;
-        private Button GestionarCamionetasBtn;
-        private Panel PanelPrincipal;
-        private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        
+        private Panel panel1;
+
         public VPrincipal()
         {
             InitializeComponent();
             RepositorioRam repositorio = new RepositorioRam();
-            moduloAlumnos = new ModuloGestionAlumno( repositorio);
-            moduloDocentes = new ModuloGestionDocente( repositorio);
-            moduloMaterias = new ModuloGestionMaterias( repositorio);
-            moduloCamionetas = new ModuloGestionCamioneta( repositorio);
-            CargarDatosDePrueba( moduloMaterias,  moduloAlumnos,  moduloDocentes);
-            CargarPanelPrincipal( moduloMaterias,  moduloAlumnos,  moduloDocentes,  moduloCamionetas);
+            ModuloGestionAlumno moduloAlumnos = new ModuloGestionAlumno(ref repositorio);
+            ModuloGestionDocente moduloDocentes = new ModuloGestionDocente(ref repositorio);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(ref repositorio);
+            ModuloGestionCamioneta moduloCamionetas = new ModuloGestionCamioneta(ref repositorio);
+            CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);
+            CargarPanelPrincipal(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes, ref moduloCamionetas);
         }
-        private void CargarPanelPrincipal( ModuloGestionMaterias moduloMateria,  ModuloGestionAlumno moduloAlumno,
-             ModuloGestionDocente moduloDocente,  ModuloGestionCamioneta moduloCamioneta)
+        private void CargarPanelPrincipal(ref ModuloGestionMaterias moduloMateria, ref ModuloGestionAlumno moduloAlumno,
+            ref ModuloGestionDocente moduloDocente, ref ModuloGestionCamioneta moduloCamioneta)
         {
-            PanelPrincipal.Controls.Clear();
-            //PanelPrincipal.Controls.Add(new MenuPrincipal( moduloAlumno,  moduloDocente, moduloMateria,  moduloCamioneta));
-
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new MenuPrincipal(ref moduloAlumno, ref moduloDocente,ref moduloMateria, ref moduloCamioneta));
         }
         private void InitializeComponent()
         {
-            this.PanelPrincipal = new System.Windows.Forms.Panel();
-            this.buttonGestionarAlumno = new System.Windows.Forms.Button();
-            this.GestionarDocentesBtn = new System.Windows.Forms.Button();
-            this.GestionarMateriasBtn = new System.Windows.Forms.Button();
-            this.GestionarCamionetasBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // PanelPrincipal
+            // panel1
             // 
-            this.PanelPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelPrincipal.Location = new System.Drawing.Point(0, 107);
-            this.PanelPrincipal.Name = "PanelPrincipal";
-            this.PanelPrincipal.Size = new System.Drawing.Size(875, 299);
-            this.PanelPrincipal.TabIndex = 0;
-            this.PanelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // buttonGestionarAlumno
-            // 
-            this.buttonGestionarAlumno.Location = new System.Drawing.Point(58, 23);
-            this.buttonGestionarAlumno.Name = "buttonGestionarAlumno";
-            this.buttonGestionarAlumno.Size = new System.Drawing.Size(94, 57);
-            this.buttonGestionarAlumno.TabIndex = 2;
-            this.buttonGestionarAlumno.Text = "Gestionar Alumnos";
-            this.buttonGestionarAlumno.UseVisualStyleBackColor = true;
-            this.buttonGestionarAlumno.Click += new System.EventHandler(this.buttonGestionarAlumno_Click);
-            // 
-            // GestionarDocentesBtn
-            // 
-            this.GestionarDocentesBtn.Location = new System.Drawing.Point(158, 23);
-            this.GestionarDocentesBtn.Name = "GestionarDocentesBtn";
-            this.GestionarDocentesBtn.Size = new System.Drawing.Size(94, 57);
-            this.GestionarDocentesBtn.TabIndex = 3;
-            this.GestionarDocentesBtn.Text = "Gestionar Docentes";
-            this.GestionarDocentesBtn.UseVisualStyleBackColor = true;
-            this.GestionarDocentesBtn.Click += new System.EventHandler(this.GestionarDocentesBtn_Click);
-            // 
-            // GestionarMateriasBtn
-            // 
-            this.GestionarMateriasBtn.Location = new System.Drawing.Point(258, 23);
-            this.GestionarMateriasBtn.Name = "GestionarMateriasBtn";
-            this.GestionarMateriasBtn.Size = new System.Drawing.Size(94, 57);
-            this.GestionarMateriasBtn.TabIndex = 4;
-            this.GestionarMateriasBtn.Text = "Gestionar Materias";
-            this.GestionarMateriasBtn.UseVisualStyleBackColor = true;
-            // 
-            // GestionarCamionetasBtn
-            // 
-            this.GestionarCamionetasBtn.Location = new System.Drawing.Point(358, 23);
-            this.GestionarCamionetasBtn.Name = "GestionarCamionetasBtn";
-            this.GestionarCamionetasBtn.Size = new System.Drawing.Size(94, 57);
-            this.GestionarCamionetasBtn.TabIndex = 5;
-            this.GestionarCamionetasBtn.Text = "Gestionar Camionetas";
-            this.GestionarCamionetasBtn.UseVisualStyleBackColor = true;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(875, 406);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // VPrincipal
             // 
             this.ClientSize = new System.Drawing.Size(875, 406);
-            this.Controls.Add(this.GestionarCamionetasBtn);
-            this.Controls.Add(this.GestionarMateriasBtn);
-            this.Controls.Add(this.GestionarDocentesBtn);
-            this.Controls.Add(this.buttonGestionarAlumno);
-            this.Controls.Add(this.PanelPrincipal);
+            this.Controls.Add(this.panel1);
             this.Name = "VPrincipal";
             this.Load += new System.EventHandler(this.VPrincipal_Load);
             this.ResumeLayout(false);
@@ -116,7 +58,7 @@ namespace Obligatorio
         {
 
         }
-        private void CargarDatosDePrueba( ModuloGestionMaterias moduloMaterias,  ModuloGestionAlumno moduloAlumnos,  ModuloGestionDocente moduloDocentes)
+        private void CargarDatosDePrueba(ref ModuloGestionMaterias moduloMaterias, ref ModuloGestionAlumno moduloAlumnos, ref ModuloGestionDocente moduloDocentes)
         {
             Alumno alumno = Alumno.CrearAlumno();
             alumno.Nombre = "Jose";
@@ -162,36 +104,6 @@ namespace Obligatorio
             moduloDocentes.Alta(docente);
             moduloDocentes.Alta(docente2);
             moduloDocentes.Alta(docente3);
-
-            /*Cambio de prueba*/
-        }
-
-        private void buttonGestionarAlumno_Click(object sender, System.EventArgs e)
-        {
-            if (!PanelPrincipal.Controls.Contains(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas)))
-            {
-                PanelPrincipal.Controls.Add(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas));
-                MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).Dock = DockStyle.Fill;
-                MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).BringToFront();
-            }
-            else
-            {
-                MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).BringToFront();
-            }
-        }
-
-        private void GestionarDocentesBtn_Click(object sender, System.EventArgs e)
-        {
-            if (!PanelPrincipal.Controls.Contains(MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas)))
-            {
-                PanelPrincipal.Controls.Add(MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas));
-                MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).Dock = DockStyle.Fill;
-                MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).BringToFront();
-            }
-            else
-            {
-                MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).BringToFront();
-            }
         }
     }
 }

@@ -8,11 +8,11 @@ namespace Logica
 {
     public class ModuloGestionAlumno : IModulo
     {
-        private IRepositorio repositorio;
+        private RepositorioRam repositorio;
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
-        public ModuloGestionAlumno(IRepositorio repositorio)
+        public ModuloGestionAlumno(ref RepositorioRam repositorio)
         {
             this.repositorio = repositorio;
         }
@@ -78,7 +78,7 @@ namespace Logica
             }
         }
 
-        public void ModificarAlumno( Alumno alumnoOrignal, Alumno alumnoNuevosDatos)
+        public void ModificarAlumno(ref Alumno alumnoOrignal, Alumno alumnoNuevosDatos)
         {
             ValidarModificarAlumno(alumnoOrignal, alumnoNuevosDatos);
             alumnoOrignal.Nombre    = alumnoNuevosDatos.Nombre;
@@ -166,7 +166,7 @@ namespace Logica
         public bool ExisteAlumnoConMismaCedula(string cedula)
         {
             bool ret = false;
-            foreach(Alumno a in repositorio.ObtenerAlumnos())
+            foreach(Alumno a in repositorio.Alumnos)
             {
                 if(cedula == a.Cedula)
                 {
@@ -194,7 +194,7 @@ namespace Logica
         public bool ExisteAlumnoConMismoEmail(Alumno alumno)
         {
             bool ret = false;
-            foreach(Alumno a in repositorio.ObtenerAlumnos())
+            foreach(Alumno a in repositorio.Alumnos)
             {
                 if(a.Mail == alumno.Mail)
                 {

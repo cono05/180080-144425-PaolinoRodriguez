@@ -52,28 +52,28 @@ namespace Pruebas
             return camioneta;
         }
 
-        public static ModuloGestionMaterias CrearModuloGestionMateriasDePrueba( RepositorioRam repositorio)
+        public static ModuloGestionMaterias CrearModuloGestionMateriasDePrueba(ref RepositorioRam repositorio)
         {
-            ModuloGestionMaterias moduloGestionMaterias = new ModuloGestionMaterias( repositorio);
-            //ModuloGestionMaterias moduloGestionMaterias = ModuloGestionMaterias.ObtenerInstancia( repositorio);
+            ModuloGestionMaterias moduloGestionMaterias = new ModuloGestionMaterias(ref repositorio);
+            //ModuloGestionMaterias moduloGestionMaterias = ModuloGestionMaterias.ObtenerInstancia(ref repositorio);
             return moduloGestionMaterias;
         }
 
-        public static ModuloGestionAlumno CrearModuloGestionAlumnosDePrueba( RepositorioRam repositorio)
+        public static ModuloGestionAlumno CrearModuloGestionAlumnosDePrueba(ref RepositorioRam repositorio)
         {
-            ModuloGestionAlumno moduloGestionAlumnos = new ModuloGestionAlumno( repositorio);
+            ModuloGestionAlumno moduloGestionAlumnos = new ModuloGestionAlumno(ref repositorio);
             return moduloGestionAlumnos;
         }
 
-        public static ModuloGestionDocente CrearModuloGestionDocentesDePrueba( RepositorioRam repositorio)
+        public static ModuloGestionDocente CrearModuloGestionDocentesDePrueba(ref RepositorioRam repositorio)
         {
-            ModuloGestionDocente moduloGestionDocentes = new ModuloGestionDocente( repositorio);
+            ModuloGestionDocente moduloGestionDocentes = new ModuloGestionDocente(ref repositorio);
             return moduloGestionDocentes;
         }
 
-        public static ModuloGestionCamioneta CrearModuloGestionCamionetaDePrueba( RepositorioRam repositorio)
+        public static ModuloGestionCamioneta CrearModuloGestionCamionetaDePrueba(ref RepositorioRam repositorio)
         {
-            ModuloGestionCamioneta moduloGestionCamionetas = new ModuloGestionCamioneta( repositorio);
+            ModuloGestionCamioneta moduloGestionCamionetas = new ModuloGestionCamioneta(ref repositorio);
             return moduloGestionCamionetas;
         }
 

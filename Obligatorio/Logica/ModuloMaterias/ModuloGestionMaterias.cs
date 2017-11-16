@@ -12,16 +12,16 @@ namespace Logica
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         //private static ModuloGestionMaterias instancia;
-        public ModuloGestionMaterias( IRepositorio repositorio)
+        public ModuloGestionMaterias(ref RepositorioRam repositorio)
         {
             this.repositorio = repositorio;
         }
 
-        //public static ModuloGestionMaterias ObtenerInstancia( RepositorioRam repositorio)
+        //public static ModuloGestionMaterias ObtenerInstancia(ref RepositorioRam repositorio)
         //{
         //    if (instancia == null)
         //    {
-        //        instancia = new ModuloGestionMaterias( repositorio);
+        //        instancia = new ModuloGestionMaterias(ref repositorio);
         //    }
         //    return instancia;
         //}
