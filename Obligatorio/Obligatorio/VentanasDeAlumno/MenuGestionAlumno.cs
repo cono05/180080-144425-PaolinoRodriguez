@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using Dominio;
 
 namespace Obligatorio.VentanasDeAlumno
 {
@@ -35,6 +36,8 @@ namespace Obligatorio.VentanasDeAlumno
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
+            listBoxAlumnos.DataSource = null;
+            listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
 
         private void VolverBtn_Click(object sender, EventArgs e)
@@ -45,8 +48,8 @@ namespace Obligatorio.VentanasDeAlumno
 
         private void AltaAlumnoBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaDeAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormAltaAlumno altaAlumno = new FormAltaAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            altaAlumno.Show();
         }
 
         private void ModificarAlumnoBtn_Click(object sender, EventArgs e)
@@ -64,6 +67,16 @@ namespace Obligatorio.VentanasDeAlumno
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private ICollection<Alumno> CargarListBoxAlumnos()
+        {
+            ICollection<Alumno> lista = new List<Alumno>();
+            foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
+            {
+                lista.Add(alumno);
+            }
+            return lista;
         }
     }
 }

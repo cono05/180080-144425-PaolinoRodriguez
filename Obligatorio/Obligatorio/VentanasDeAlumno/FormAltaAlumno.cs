@@ -1,50 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
-using Excepciones;
 using Dominio;
+using Excepciones;
+using Logica;
 
 namespace Obligatorio.VentanasDeAlumno
 {
-    public partial class AltaDeAlumno : UserControl
+    public partial class FormAltaAlumno : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-
-        public AltaDeAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
-            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
+        public FormAltaAlumno(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
+            listBoxAlumnos.DataSource = null;
+            listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+        }
+        private ICollection<Alumno> CargarListBoxAlumnos()
+        {
+            ICollection<Alumno> lista = new List<Alumno>();
+            foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
+            {
+                lista.Add(alumno);
+            }
+            return lista;
         }
 
-        private void AgregarAlumnoBtn_Click(object sender, EventArgs e)
+        private void salirBtn_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void altaDeAlumnoBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 Alumno alumno = Alumno.CrearAlumno();
-                alumno.Nombre = textBoxNombre.Text;
-                alumno.Apellido = textBoxApellido.Text;
-                alumno.Cedula = textBoxCedula.Text;
-                alumno.Mail = textBoxEmail.Text;
+                alumno.Nombre = nombreTextBox.Text;
+                alumno.Apellido = apellidoTextBox.Text;
+                alumno.Cedula = cedulaTextBox.Text;
+                alumno.Mail = emailTextBox.Text;
                 moduloAlumnos.Alta(alumno);
 
                 string mensaje = string.Format("El alumno {0} {1} CI {2} se ha agregado correctamente", alumno.Nombre, alumno.Apellido, alumno.Cedula);
                 MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
                 //Para limpiar todos los textboxes
-                panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+                Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+                listBoxAlumnos.DataSource = CargarListBoxAlumnos();
             }
             catch (ExcepcionAlumnoSinNombre ex)
             {
@@ -70,18 +86,6 @@ namespace Obligatorio.VentanasDeAlumno
             {
                 MessageBox.Show(ex.Message);
             }
-            
-        }
-
-        private void VolverBtn_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionAlumno( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

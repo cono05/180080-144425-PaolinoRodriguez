@@ -52,6 +52,12 @@
     <Compile Include="BajaDeCamioneta.Designer.cs">
       <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanasDeAlumno\FormAltaAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\FormAltaAlumno.Designer.cs">
+      <DependentUpon>FormAltaAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeMaterias\AltaDeCamioneta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </Compile>
     <EmbeddedResource Include="BajaDeCamioneta.resx">
       <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeAlumno\FormAltaAlumno.resx">
+      <DependentUpon>FormAltaAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaDeCamioneta.resx">
       <DependentUpon>AltaDeCamioneta.cs</DependentUpon>
