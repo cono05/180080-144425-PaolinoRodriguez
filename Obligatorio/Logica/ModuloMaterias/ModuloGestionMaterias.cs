@@ -12,7 +12,7 @@ namespace Logica
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         //private static ModuloGestionMaterias instancia;
-        public ModuloGestionMaterias(ref RepositorioRam repositorio)
+        public ModuloGestionMaterias(IRepositorio repositorio)
         {
             this.repositorio = repositorio;
         }

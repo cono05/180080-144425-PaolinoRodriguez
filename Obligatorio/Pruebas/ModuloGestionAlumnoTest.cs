@@ -34,7 +34,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
-            ModuloGestionAlumno modulo = new ModuloGestionAlumno(ref repositorio);
+            ModuloGestionAlumno modulo = new ModuloGestionAlumno(repositorio);
             modulo.Alta(alumno);
             Assert.IsTrue(modulo.ObtenerAlumnos().Count == 1);
         }

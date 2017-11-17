@@ -19,6 +19,8 @@ namespace Persistencia
 
         ICollection<Materia> ObtenerMaterias();
         ICollection<Alumno> ObtenerAlumnos();
+        ICollection<Docente> ObtenerDocentes();
+        ICollection<Camioneta> ObtenerCamionetas();
 
     }
 }

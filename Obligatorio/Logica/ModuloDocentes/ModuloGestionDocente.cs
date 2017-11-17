@@ -8,11 +8,11 @@ namespace Logica
 {
     public class ModuloGestionDocente : IModulo
     {
-        private RepositorioRam repositorio;
+        private IRepositorio repositorio;
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
-        public ModuloGestionDocente(ref RepositorioRam repositorio)
+        public ModuloGestionDocente(IRepositorio repositorio)
         {
             this.repositorio = repositorio;
         }

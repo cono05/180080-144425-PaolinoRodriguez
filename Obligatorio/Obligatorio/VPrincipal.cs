@@ -24,10 +24,10 @@ namespace Obligatorio
         {
             InitializeComponent();
             RepositorioRam repositorio = new RepositorioRam();
-            moduloAlumnos = new ModuloGestionAlumno(ref repositorio);
-            moduloDocentes = new ModuloGestionDocente(ref repositorio);
-            moduloMaterias = new ModuloGestionMaterias(ref repositorio);
-            moduloCamionetas = new ModuloGestionCamioneta(ref repositorio);
+            moduloAlumnos = new ModuloGestionAlumno(repositorio);
+            moduloDocentes = new ModuloGestionDocente(repositorio);
+            moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloCamionetas = new ModuloGestionCamioneta(repositorio);
             CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);            
         }
         private void CargarPanelPrincipal(UserControl userControl)
