@@ -28,8 +28,8 @@ namespace Obligatorio
             return instancia;
         }
 
-        public MenuGestionMaterias( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        public MenuGestionMaterias(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
@@ -50,20 +50,11 @@ namespace Obligatorio
             altaBajaMateria.Show();
         }
 
-       
+
 
         private void BajaDeMateriaBtn_Click(object sender, EventArgs e)
-        {
-            if (moduloMaterias.HayMateriasRegistradas())
-            {
-                panel1.Controls.Clear();
+        { 
 
-                panel1.Controls.Add(new BajaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
-            }
-            else
-            {
-                MessageBox.Show("No existen materias en el sistema", MessageBoxButtons.OK.ToString());
-            }
         }
 
         private void AgregarAlumnoEnMateria_Click(object sender, EventArgs e)
