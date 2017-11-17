@@ -55,8 +55,8 @@ namespace Obligatorio
 
         private void ModificarDocenteBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new VentanasDeDocente.ModificarDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormModificacionDocente modificarDocente = new FormModificacionDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            modificarDocente.Show();
         }
 
         private void BajaDocenteBtn_Click(object sender, EventArgs e)

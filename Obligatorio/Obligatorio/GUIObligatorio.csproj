@@ -82,6 +82,12 @@
     <Compile Include="VentanasDeDocente\FormBajaDocente.Designer.cs">
       <DependentUpon>FormBajaDocente.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanasDeDocente\FormModificacionDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeDocente\FormModificacionDocente.Designer.cs">
+      <DependentUpon>FormModificacionDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeMaterias\AltaDeCamioneta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,12 +99,6 @@
     </Compile>
     <Compile Include="MenuGestionCamionetas.Designer.cs">
       <DependentUpon>MenuGestionCamionetas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VentanasDeDocente\ModificarDocente.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeDocente\ModificarDocente.Designer.cs">
-      <DependentUpon>ModificarDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.cs">
       <SubType>UserControl</SubType>
@@ -171,14 +171,14 @@
     <EmbeddedResource Include="VentanasDeDocente\FormBajaDocente.resx">
       <DependentUpon>FormBajaDocente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeDocente\FormModificacionDocente.resx">
+      <DependentUpon>FormModificacionDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaDeCamioneta.resx">
       <DependentUpon>AltaDeCamioneta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestionCamionetas.resx">
       <DependentUpon>MenuGestionCamionetas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeDocente\ModificarDocente.resx">
-      <DependentUpon>ModificarDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.resx">
       <DependentUpon>AltaBajaDocenteEnMateria.cs</DependentUpon>

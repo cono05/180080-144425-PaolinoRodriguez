@@ -1,55 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
 using Dominio;
 using Excepciones;
+using Logica;
 
 namespace Obligatorio.VentanasDeDocente
 {
-    public partial class ModificarDocente : UserControl
+    public partial class FormModificacionDocente : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-
-        public ModificarDocente(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamionetas)
+        public FormModificacionDocente( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            ListBoxDocentes.DataSource = null;
-            ListBoxDocentes.DataSource = CargarListBoxDocentes();
+            moduloCamionetas = moduloCamioneta;
+            CargarListBoxDocentes();
         }
 
-        private ICollection<Docente> CargarListBoxDocentes()
+        private void CargarListBoxDocentes()
         {
-            ICollection<Docente> lista = new List<Docente>();
-            foreach (Docente docente in moduloDocentes.ObtenerDocentes())
-            {
-                lista.Add(docente);
-            }
-            return lista;
+            listBoxDocentes.DataSource = null;
+            listBoxDocentes.DataSource = moduloDocentes.ObtenerDocentes();
         }
 
-        private void VolverBtn_Click(object sender, EventArgs e)
+        private void LimpiarTextBoxs()
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionDocente( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
         }
-
-        private void ModificarDocenteBtn_Click(object sender, EventArgs e)
+        private void modificarDocenteBtn_Click(object sender, EventArgs e)
         {
-            Docente docenteSeleccionado = (Docente)ListBoxDocentes.SelectedItem;
-            if(docenteSeleccionado != null)
+            Docente docenteSeleccionado = (Docente)listBoxDocentes.SelectedItem;
+            if (docenteSeleccionado != null)
             {
                 try
                 {
@@ -57,23 +50,18 @@ namespace Obligatorio.VentanasDeDocente
                     aux.Nombre = textBoxNombre.Text;
                     aux.Apellido = textBoxApellido.Text;
                     aux.Cedula = textBoxCedula.Text;
-
-
                     if (!SonIguales(docenteSeleccionado, aux))
                     {
-
                         string datosAntesCambio = string.Format("Datos previos: {0} {1} CI {2}",
                         docenteSeleccionado.Nombre, docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
                         moduloDocentes.ModificarDocente(ref docenteSeleccionado, aux);
                         string datosDespuesCambio = string.Format("Datos actuales: {0} {1} CI {2}",
                             docenteSeleccionado.Nombre, docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
-
                         string mensaje = string.Format("¡Modificación exitosa! \n" + datosAntesCambio + "\n" + datosDespuesCambio);
                         MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
-                        //Para limpiar todos los textboxes
-                        panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
-                        ListBoxDocentes.DataSource = null;
-                        ListBoxDocentes.DataSource = CargarListBoxDocentes();
+                        LimpiarTextBoxs();
+                        CargarListBoxDocentes();
+                        ActualizarListaDocentesEnMenuGestionDocentes();
                     }
                 }
                 catch (ExcepcionExisteDocenteConMismaCedula ex)
@@ -102,16 +90,20 @@ namespace Obligatorio.VentanasDeDocente
                 }
             }
         }
-
         private bool SonIguales(Docente d1, Docente d2)
         {
             return d1.Nombre.Equals(d2.Nombre) && d1.Apellido.Equals(d2.Apellido)
                     && d1.Cedula.Equals(d2.Cedula);
         }
 
-        private void ListBoxDocentes_SelectedIndexChanged(object sender, EventArgs e)
+        private void salir_Click(object sender, EventArgs e)
         {
-            Docente docenteSeleccionado = (Docente)ListBoxDocentes.SelectedItem;
+            Dispose();
+        }
+
+        private void listBoxDocentes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Docente docenteSeleccionado = (Docente)listBoxDocentes.SelectedItem;
             if (docenteSeleccionado != null)
             {
                 textBoxNombre.Text = docenteSeleccionado.Nombre;
@@ -119,6 +111,11 @@ namespace Obligatorio.VentanasDeDocente
                 textBoxCedula.Text = docenteSeleccionado.Cedula;
             }
         }
+
+        private void ActualizarListaDocentesEnMenuGestionDocentes()
+        {
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            menuDocentes.CargarListBoxDocentesPublico();
+        }
     }
 }
-

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBoxDocentes = new System.Windows.Forms.ListBox();
             this.ModificarDocenteBtn = new System.Windows.Forms.Button();
             this.BajaDocenteBtn = new System.Windows.Forms.Button();
             this.AltaDocenteBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBoxDocentes = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 322);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(439, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Listado de Docentes:";
+            // 
+            // listBoxDocentes
+            // 
+            this.listBoxDocentes.FormattingEnabled = true;
+            this.listBoxDocentes.Location = new System.Drawing.Point(442, 80);
+            this.listBoxDocentes.Name = "listBoxDocentes";
+            this.listBoxDocentes.Size = new System.Drawing.Size(223, 186);
+            this.listBoxDocentes.TabIndex = 13;
             // 
             // ModificarDocenteBtn
             // 
@@ -90,23 +107,6 @@
             this.label1.Size = new System.Drawing.Size(243, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Menú Gestión Docentes";
-            // 
-            // listBoxDocentes
-            // 
-            this.listBoxDocentes.FormattingEnabled = true;
-            this.listBoxDocentes.Location = new System.Drawing.Point(442, 80);
-            this.listBoxDocentes.Name = "listBoxDocentes";
-            this.listBoxDocentes.Size = new System.Drawing.Size(223, 186);
-            this.listBoxDocentes.TabIndex = 13;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(439, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Listado de Docentes:";
             // 
             // MenuGestionDocente
             // 
