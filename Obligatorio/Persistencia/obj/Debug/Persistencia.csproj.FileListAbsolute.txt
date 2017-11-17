@@ -26,3 +26,8 @@ C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bi
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Persistencia.dll.config
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.dll
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.xml
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.xml

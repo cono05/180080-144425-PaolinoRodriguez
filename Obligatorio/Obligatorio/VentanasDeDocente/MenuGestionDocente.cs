@@ -61,8 +61,8 @@ namespace Obligatorio
 
         private void BajaDocenteBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new VentanasDeDocente.BajaDeDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormBajaDocente bajaDocente = new FormBajaDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            bajaDocente.Show();
         }
 
         private ICollection<Docente> CargarListBoxDocentes()

@@ -11,3 +11,5 @@ C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\b
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\obj\Debug\Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\obj\Debug\Pruebas.dll
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\obj\Debug\Pruebas.pdb
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.dll
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.xml

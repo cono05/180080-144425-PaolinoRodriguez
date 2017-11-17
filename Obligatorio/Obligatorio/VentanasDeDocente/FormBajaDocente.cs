@@ -1,74 +1,76 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
 using Dominio;
 using Excepciones;
+using Logica;
 
 namespace Obligatorio.VentanasDeDocente
 {
-    public partial class BajaDeDocente : UserControl
+    public partial class FormBajaDocente : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-
-        public BajaDeDocente(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
+        public FormBajaDocente( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
-            moduloAlumnos  = moduloAlumno;
+            moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            ListBoxDocentes.DataSource = null;
-            ListBoxDocentes.DataSource = CargarListBoxDocentes();
+            moduloCamionetas = moduloCamioneta;
+            listBoxDocentes.DataSource = CargarListBoxDocentes();
         }
 
         private ICollection<Docente> CargarListBoxDocentes()
         {
-            ICollection<Docente> lista = new List<Docente>();
-            foreach (Docente docente in moduloDocentes.ObtenerDocentes())
-            {
-                lista.Add(docente);
-            }
+            listBoxDocentes.DataSource = null;
+            ICollection<Docente> lista = moduloDocentes.ObtenerDocentes();
             return lista;
         }
 
-        private void VolverBtn_Click(object sender, EventArgs e)
+        private void BajaDocenteBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionDocente( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
-        }
-
-        private void EliminarDocenteBtn_Click(object sender, EventArgs e)
-        {
-            Docente docente = (Docente)ListBoxDocentes.SelectedItem;
+            Docente docente = (Docente)listBoxDocentes.SelectedItem;
             if (docente != null)
             {
                 try
                 {
                     moduloDocentes.Baja(docente);
-                    ListBoxDocentes.DataSource = null;
-                    ListBoxDocentes.DataSource = CargarListBoxDocentes();
+                    listBoxDocentes.DataSource = null;
+                    listBoxDocentes.DataSource = CargarListBoxDocentes();
                     string mensaje = string.Format("El docente {0} {1} CI {2} se ha eliminado correctamente", docente.Nombre, docente.Apellido, docente.Cedula);
                     MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
-
+                    ActualizarListaDocentesEnMenuGestionDocentes();
                 }
                 catch (ExcepcionNoExisteDocente ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+
+        private void ActualizarListaDocentesEnMenuGestionDocentes()
+        {
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            menuDocentes.CargarListBoxDocentesPublico();
+        }
+
+        private void salirBtn_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

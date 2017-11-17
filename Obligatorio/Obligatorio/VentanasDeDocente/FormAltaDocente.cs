@@ -61,6 +61,7 @@ namespace Obligatorio.VentanasDeDocente
                 MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
                 listBoxDocentes.DataSource = CargarListBoxDocentes();
                 LimpiarTextBoxs();
+                ActualizarListaDocentesEnMenuGestionDocentes();
             }
             catch (ExcepcionExisteDocenteConMismaCedula ex)
             {
