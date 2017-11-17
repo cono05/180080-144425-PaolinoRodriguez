@@ -11,7 +11,11 @@ namespace Persistencia
     {
         public void AgregarAlumno(Alumno alumno)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Alumnos.Add(alumno);
+                contexto.SaveChanges();
+            }
         }
 
         public void AgregarCamioneta(Camioneta camioneta)
@@ -21,7 +25,11 @@ namespace Persistencia
 
         public void AgregarDocente(Docente docente)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Docentes.Add(docente);
+                contexto.SaveChanges();
+            }
         }
 
         public void AgregarMateria(Materia materia)

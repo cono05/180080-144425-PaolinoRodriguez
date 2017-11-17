@@ -6,6 +6,8 @@
         public string Nombre { get; set; }
         public string Cedula { get; set; }
 
+        public int Id;
+
         public Persona()
         {
             this.Nombre     = string.Empty;
