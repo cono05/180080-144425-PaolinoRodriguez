@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listBoxAlumnos = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BajaAlumnoBtn = new System.Windows.Forms.Button();
             this.ModificarAlumnoBtn = new System.Windows.Forms.Button();
             this.AltaAlumnoBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBoxAlumnos = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,23 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // listBoxAlumnos
+            // 
+            this.listBoxAlumnos.FormattingEnabled = true;
+            this.listBoxAlumnos.Location = new System.Drawing.Point(442, 80);
+            this.listBoxAlumnos.Name = "listBoxAlumnos";
+            this.listBoxAlumnos.Size = new System.Drawing.Size(223, 186);
+            this.listBoxAlumnos.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(439, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Listado de alumnos:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -64,7 +81,7 @@
             // 
             // BajaAlumnoBtn
             // 
-            this.BajaAlumnoBtn.Location = new System.Drawing.Point(253, 215);
+            this.BajaAlumnoBtn.Location = new System.Drawing.Point(253, 159);
             this.BajaAlumnoBtn.Name = "BajaAlumnoBtn";
             this.BajaAlumnoBtn.Size = new System.Drawing.Size(94, 51);
             this.BajaAlumnoBtn.TabIndex = 7;
@@ -74,7 +91,7 @@
             // 
             // ModificarAlumnoBtn
             // 
-            this.ModificarAlumnoBtn.Location = new System.Drawing.Point(253, 146);
+            this.ModificarAlumnoBtn.Location = new System.Drawing.Point(253, 230);
             this.ModificarAlumnoBtn.Name = "ModificarAlumnoBtn";
             this.ModificarAlumnoBtn.Size = new System.Drawing.Size(94, 51);
             this.ModificarAlumnoBtn.TabIndex = 6;
@@ -91,23 +108,6 @@
             this.AltaAlumnoBtn.Text = "Alta Alumno";
             this.AltaAlumnoBtn.UseVisualStyleBackColor = true;
             this.AltaAlumnoBtn.Click += new System.EventHandler(this.AltaAlumnoBtn_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(439, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Listado de alumnos:";
-            // 
-            // listBoxAlumnos
-            // 
-            this.listBoxAlumnos.FormattingEnabled = true;
-            this.listBoxAlumnos.Location = new System.Drawing.Point(442, 80);
-            this.listBoxAlumnos.Name = "listBoxAlumnos";
-            this.listBoxAlumnos.Size = new System.Drawing.Size(223, 186);
-            this.listBoxAlumnos.TabIndex = 10;
             // 
             // MenuGestionAlumno
             // 

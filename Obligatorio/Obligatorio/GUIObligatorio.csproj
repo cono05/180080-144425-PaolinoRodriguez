@@ -64,6 +64,12 @@
     <Compile Include="VentanasDeAlumno\FormBajaAlumno.Designer.cs">
       <DependentUpon>FormBajaAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanasDeAlumno\FormModificarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeAlumno\FormModificarAlumno.Designer.cs">
+      <DependentUpon>FormModificarAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeMaterias\AltaDeCamioneta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,12 +150,6 @@
     <Compile Include="VentanasDeAlumno\MenuGestionAlumno.Designer.cs">
       <DependentUpon>MenuGestionAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanasDeAlumno\ModificarAlumno.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeAlumno\ModificarAlumno.Designer.cs">
-      <DependentUpon>ModificarAlumno.cs</DependentUpon>
-    </Compile>
     <Compile Include="VPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeAlumno\FormBajaAlumno.resx">
       <DependentUpon>FormBajaAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeAlumno\FormModificarAlumno.resx">
+      <DependentUpon>FormModificarAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaDeCamioneta.resx">
       <DependentUpon>AltaDeCamioneta.cs</DependentUpon>
@@ -209,9 +212,6 @@
     </Compile>
     <EmbeddedResource Include="VentanasDeAlumno\MenuGestionAlumno.resx">
       <DependentUpon>MenuGestionAlumno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeAlumno\ModificarAlumno.resx">
-      <DependentUpon>ModificarAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VPrincipal.resx">
       <DependentUpon>VPrincipal.cs</DependentUpon>

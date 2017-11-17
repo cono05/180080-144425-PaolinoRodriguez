@@ -1,49 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
 using Dominio;
 using Excepciones;
+using Logica;
 
 namespace Obligatorio.VentanasDeAlumno
 {
-    public partial class ModificarAlumno : UserControl
+    public partial class FormModificarAlumno : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-
-        public ModificarAlumno(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
+        public FormModificarAlumno( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            ListBoxAlumnos.DataSource = null;
-            ListBoxAlumnos.DataSource = CargarListBoxAlumnos();
+            listBoxAlumnos.DataSource = null;
+            listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
 
-        private ICollection<Alumno> CargarListBoxAlumnos()
+        private void ModificarAlumnoBtn_Click(object sender, EventArgs e)
         {
-            ICollection<Alumno> lista = new List<Alumno>();
-            foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
-            {
-                lista.Add(alumno);
-            }
-            return lista;
-        }
-
-        private void ModificarDocenteBtn_Click(object sender, EventArgs e)
-        {
-            Alumno alumnoSeleccionado = (Alumno)ListBoxAlumnos.SelectedItem;
-            if(alumnoSeleccionado != null)
+            Alumno alumnoSeleccionado = (Alumno)listBoxAlumnos.SelectedItem;
+            if (alumnoSeleccionado != null)
             {
                 try
                 {
@@ -64,9 +53,9 @@ namespace Obligatorio.VentanasDeAlumno
                         string mensaje = string.Format("¡Modificación exitosa!\n" + datosAntesCambio + "\n" + datosDespuesCambio);
                         MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
                         //Para limpiar todos los textboxes
-                        panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
-                        ListBoxAlumnos.DataSource = null;
-                        ListBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                        LimpiarTextBoxs();
+                        listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                        ActualizarListaAlumnosEnMenuGestionAlumnos();
                     }
                 }
                 catch (ExcepcionExisteAlumnoConMismaCedula ex)
@@ -106,26 +95,46 @@ namespace Obligatorio.VentanasDeAlumno
 
         private bool SonIguales(Alumno a1, Alumno a2)
         {
-            return  a1.Nombre.Equals(a2.Nombre) && a1.Apellido.Equals(a2.Apellido) 
+            return a1.Nombre.Equals(a2.Nombre) && a1.Apellido.Equals(a2.Apellido)
                     && a1.Cedula.Equals(a2.Cedula) && a1.Mail.Equals(a2.Mail);
         }
 
-        private void ListBoxAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        private ICollection<Alumno> CargarListBoxAlumnos()
         {
-            Alumno alumnoSeleccionado = (Alumno)ListBoxAlumnos.SelectedItem;
-            if(alumnoSeleccionado != null)
-            {
-                textBoxNombre.Text   = alumnoSeleccionado.Nombre;
-                textBoxApellido.Text = alumnoSeleccionado.Apellido;
-                textBoxCedula.Text   = alumnoSeleccionado.Cedula;
-                textBoxEmail.Text    = alumnoSeleccionado.Mail;
-            }
+            listBoxAlumnos.DataSource = null;
+            ICollection<Alumno> lista = new List<Alumno>();
+            //foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
+            //{
+            //    lista.Add(alumno);
+            //}
+            return lista = moduloAlumnos.ObtenerAlumnos();
+        }
+        private void LimpiarTextBoxs()
+        {
+            Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
         }
 
-        private void VolverBtn_Click(object sender, EventArgs e)
+        private void ActualizarListaAlumnosEnMenuGestionAlumnos()
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionAlumno( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            menuAlumnos.CargarListBoxAlumnosPublico();
+        }
+
+        private void SalirBtn_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void listBoxAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Alumno alumnoSeleccionado = (Alumno)listBoxAlumnos.SelectedItem;
+            if (alumnoSeleccionado != null)
+            {
+                textBoxNombre.Text = alumnoSeleccionado.Nombre;
+                textBoxApellido.Text = alumnoSeleccionado.Apellido;
+                textBoxCedula.Text = alumnoSeleccionado.Cedula;
+                textBoxEmail.Text = alumnoSeleccionado.Mail;
+            }
         }
     }
 }

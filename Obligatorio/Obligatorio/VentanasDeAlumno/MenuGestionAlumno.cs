@@ -54,8 +54,8 @@ namespace Obligatorio.VentanasDeAlumno
 
         private void ModificarAlumnoBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new ModificarAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormModificarAlumno modificarAlumno = new FormModificarAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            modificarAlumno.Show();
         }
 
         private void BajaAlumnoBtn_Click(object sender, EventArgs e)
