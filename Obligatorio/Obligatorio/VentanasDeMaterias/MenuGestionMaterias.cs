@@ -36,6 +36,7 @@ namespace Obligatorio
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
+            CargarListBoxMaterias();
         }
 
         private void MenuGestionMaterias_Load(object sender, EventArgs e)
@@ -43,22 +44,13 @@ namespace Obligatorio
 
         }
 
-        private void AltaDeMateriaBtn_Click(object sender, EventArgs e)
+        private void AltaBajaDeMateriaBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaDeMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormAltaBajaDeMateria altaBajaMateria = new FormAltaBajaDeMateria(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            altaBajaMateria.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //panel1.Controls.Clear();
-            //if (this.actual != null) { this.actual.Dispose(); }
-
-            //this.actual = new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas);
-            //panel1.Controls.Add(this.actual);
-            //panel1.Controls.Clear();
-            //panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
-        }
+       
 
         private void BajaDeMateriaBtn_Click(object sender, EventArgs e)
         {
@@ -97,6 +89,17 @@ namespace Obligatorio
             {
                 MessageBox.Show("No existen Docentes en el sistema", MessageBoxButtons.OK.ToString());
             }
+        }
+
+        private void CargarListBoxMaterias()
+        {
+            listBoxMaterias.DataSource = null;
+            listBoxMaterias.DataSource = moduloMaterias.ObtenerMaterias();
+        }
+
+        public void CargarListBoxMateriasPublico()
+        {
+            CargarListBoxMaterias();
         }
     }
 }

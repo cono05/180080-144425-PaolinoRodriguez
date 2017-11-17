@@ -29,46 +29,36 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.AgregarAlumnoEnMateria = new System.Windows.Forms.Button();
             this.AltaBajaDocenteBtn = new System.Windows.Forms.Button();
             this.ModificarMateriaBtn = new System.Windows.Forms.Button();
-            this.BajaDeMateriaBtn = new System.Windows.Forms.Button();
             this.AltaDeMateriaBtn = new System.Windows.Forms.Button();
+            this.listBoxMaterias = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.listBoxMaterias);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.AgregarAlumnoEnMateria);
             this.panel1.Controls.Add(this.AltaBajaDocenteBtn);
             this.panel1.Controls.Add(this.ModificarMateriaBtn);
-            this.panel1.Controls.Add(this.BajaDeMateriaBtn);
             this.panel1.Controls.Add(this.AltaDeMateriaBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(875, 406);
+            this.panel1.Size = new System.Drawing.Size(875, 322);
             this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(380, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Volver al Menú Principal";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 34);
+            this.label1.Location = new System.Drawing.Point(320, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 25);
             this.label1.TabIndex = 6;
@@ -76,43 +66,33 @@
             // 
             // AgregarAlumnoEnMateria
             // 
-            this.AgregarAlumnoEnMateria.Location = new System.Drawing.Point(550, 99);
+            this.AgregarAlumnoEnMateria.Location = new System.Drawing.Point(325, 99);
             this.AgregarAlumnoEnMateria.Name = "AgregarAlumnoEnMateria";
             this.AgregarAlumnoEnMateria.Size = new System.Drawing.Size(94, 51);
             this.AgregarAlumnoEnMateria.TabIndex = 5;
-            this.AgregarAlumnoEnMateria.Text = "Alta y Baja de Alumno en una Materia";
+            this.AgregarAlumnoEnMateria.Text = "Alta y baja de Alumno en una Materia";
             this.AgregarAlumnoEnMateria.UseVisualStyleBackColor = true;
             this.AgregarAlumnoEnMateria.Click += new System.EventHandler(this.AgregarAlumnoEnMateria_Click);
             // 
             // AltaBajaDocenteBtn
             // 
-            this.AltaBajaDocenteBtn.Location = new System.Drawing.Point(550, 196);
+            this.AltaBajaDocenteBtn.Location = new System.Drawing.Point(325, 182);
             this.AltaBajaDocenteBtn.Name = "AltaBajaDocenteBtn";
-            this.AltaBajaDocenteBtn.Size = new System.Drawing.Size(94, 48);
+            this.AltaBajaDocenteBtn.Size = new System.Drawing.Size(94, 51);
             this.AltaBajaDocenteBtn.TabIndex = 3;
-            this.AltaBajaDocenteBtn.Text = "Alta y baja Docente en Materia";
+            this.AltaBajaDocenteBtn.Text = "Alta y baja de Docente en Materia";
             this.AltaBajaDocenteBtn.UseVisualStyleBackColor = true;
             this.AltaBajaDocenteBtn.Click += new System.EventHandler(this.AltaBajaDocenteBtn_Click);
             // 
             // ModificarMateriaBtn
             // 
-            this.ModificarMateriaBtn.Location = new System.Drawing.Point(195, 196);
+            this.ModificarMateriaBtn.Location = new System.Drawing.Point(195, 182);
             this.ModificarMateriaBtn.Name = "ModificarMateriaBtn";
-            this.ModificarMateriaBtn.Size = new System.Drawing.Size(94, 48);
+            this.ModificarMateriaBtn.Size = new System.Drawing.Size(94, 51);
             this.ModificarMateriaBtn.TabIndex = 2;
-            this.ModificarMateriaBtn.Text = "Modificar Materia";
+            this.ModificarMateriaBtn.Text = "Modificación de Materia";
             this.ModificarMateriaBtn.UseVisualStyleBackColor = true;
             this.ModificarMateriaBtn.Click += new System.EventHandler(this.ModificarMateriaBtn_Click);
-            // 
-            // BajaDeMateriaBtn
-            // 
-            this.BajaDeMateriaBtn.Location = new System.Drawing.Point(380, 99);
-            this.BajaDeMateriaBtn.Name = "BajaDeMateriaBtn";
-            this.BajaDeMateriaBtn.Size = new System.Drawing.Size(94, 51);
-            this.BajaDeMateriaBtn.TabIndex = 1;
-            this.BajaDeMateriaBtn.Text = "Baja de Materia";
-            this.BajaDeMateriaBtn.UseVisualStyleBackColor = true;
-            this.BajaDeMateriaBtn.Click += new System.EventHandler(this.BajaDeMateriaBtn_Click);
             // 
             // AltaDeMateriaBtn
             // 
@@ -120,9 +100,26 @@
             this.AltaDeMateriaBtn.Name = "AltaDeMateriaBtn";
             this.AltaDeMateriaBtn.Size = new System.Drawing.Size(94, 51);
             this.AltaDeMateriaBtn.TabIndex = 0;
-            this.AltaDeMateriaBtn.Text = "Alta de Materia";
+            this.AltaDeMateriaBtn.Text = "Alta y baja de Materia";
             this.AltaDeMateriaBtn.UseVisualStyleBackColor = true;
-            this.AltaDeMateriaBtn.Click += new System.EventHandler(this.AltaDeMateriaBtn_Click);
+            this.AltaDeMateriaBtn.Click += new System.EventHandler(this.AltaBajaDeMateriaBtn_Click);
+            // 
+            // listBoxMaterias
+            // 
+            this.listBoxMaterias.FormattingEnabled = true;
+            this.listBoxMaterias.Location = new System.Drawing.Point(521, 99);
+            this.listBoxMaterias.Name = "listBoxMaterias";
+            this.listBoxMaterias.Size = new System.Drawing.Size(223, 186);
+            this.listBoxMaterias.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(518, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Listado de Materias:";
             // 
             // MenuGestionMaterias
             // 
@@ -130,7 +127,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "MenuGestionMaterias";
-            this.Size = new System.Drawing.Size(875, 406);
+            this.Size = new System.Drawing.Size(875, 322);
             this.Load += new System.EventHandler(this.MenuGestionMaterias_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -145,8 +142,8 @@
         private System.Windows.Forms.Button AgregarAlumnoEnMateria;
         private System.Windows.Forms.Button AltaBajaDocenteBtn;
         private System.Windows.Forms.Button ModificarMateriaBtn;
-        private System.Windows.Forms.Button BajaDeMateriaBtn;
         private System.Windows.Forms.Button AltaDeMateriaBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBoxMaterias;
+        private System.Windows.Forms.Label label2;
     }
 }
