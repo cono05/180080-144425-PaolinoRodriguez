@@ -59,8 +59,8 @@ namespace Obligatorio
 
         private void AgregarAlumnoEnMateria_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaDeAlumnoEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormAltaBajaDeAlumnoEnMateria altaBajaAlumnoEnMateria = new FormAltaBajaDeAlumnoEnMateria(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            altaBajaAlumnoEnMateria.Show();
         }
 
         private void ModificarMateriaBtn_Click(object sender, EventArgs e)

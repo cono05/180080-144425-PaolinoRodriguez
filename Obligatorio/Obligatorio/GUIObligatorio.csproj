@@ -112,23 +112,17 @@
     <Compile Include="VentanasDeMaterias\AltaDeAlumnoEnMateria.Designer.cs">
       <DependentUpon>AltaDeAlumnoEnMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanasDeMaterias\AltaDeMateria.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeMaterias\AltaDeMateria.Designer.cs">
-      <DependentUpon>AltaDeMateria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VentanasDeMaterias\BajaDeMateria.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeMaterias\BajaDeMateria.Designer.cs">
-      <DependentUpon>BajaDeMateria.cs</DependentUpon>
-    </Compile>
     <Compile Include="VentanasDeDocente\MenuGestionDocente.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="VentanasDeDocente\MenuGestionDocente.Designer.cs">
       <DependentUpon>MenuGestionDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeMaterias\FormAltaBajaDeAlumnoEnMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeMaterias\FormAltaBajaDeAlumnoEnMateria.Designer.cs">
+      <DependentUpon>FormAltaBajaDeAlumnoEnMateria.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanasDeMaterias\FormAltaBajaDeMateria.cs">
       <SubType>Form</SubType>
@@ -192,14 +186,11 @@
     <EmbeddedResource Include="VentanasDeMaterias\AltaDeAlumnoEnMateria.resx">
       <DependentUpon>AltaDeAlumnoEnMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeMaterias\AltaDeMateria.resx">
-      <DependentUpon>AltaDeMateria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeMaterias\BajaDeMateria.resx">
-      <DependentUpon>BajaDeMateria.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeDocente\MenuGestionDocente.resx">
       <DependentUpon>MenuGestionDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeMaterias\FormAltaBajaDeAlumnoEnMateria.resx">
+      <DependentUpon>FormAltaBajaDeAlumnoEnMateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\FormAltaBajaDeMateria.resx">
       <DependentUpon>FormAltaBajaDeMateria.cs</DependentUpon>

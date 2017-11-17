@@ -68,6 +68,12 @@ namespace Obligatorio
             return lista;
         }
 
+        private void CargarListBoxAlumnosInscriptosEnMateria(Materia materia)
+        {
+            AlumnosInscriptosListBox.DataSource = null;
+            AlumnosInscriptosListBox.DataSource = materia.Alumnos;
+        }
+
         
 
         public ICollection<Materia> CargarListBoxMaterias()
