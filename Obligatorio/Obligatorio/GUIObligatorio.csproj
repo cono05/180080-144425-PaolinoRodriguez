@@ -70,6 +70,12 @@
     <Compile Include="VentanasDeAlumno\FormModificarAlumno.Designer.cs">
       <DependentUpon>FormModificarAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanasDeDocente\FormAltaDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeDocente\FormAltaDocente.Designer.cs">
+      <DependentUpon>FormAltaDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeMaterias\AltaDeCamioneta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,12 +87,6 @@
     </Compile>
     <Compile Include="MenuGestionCamionetas.Designer.cs">
       <DependentUpon>MenuGestionCamionetas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VentanasDeDocente\AltaDeDocente.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeDocente\AltaDeDocente.Designer.cs">
-      <DependentUpon>AltaDeDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanasDeDocente\BajaDeDocente.cs">
       <SubType>UserControl</SubType>
@@ -165,14 +165,14 @@
     <EmbeddedResource Include="VentanasDeAlumno\FormModificarAlumno.resx">
       <DependentUpon>FormModificarAlumno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeDocente\FormAltaDocente.resx">
+      <DependentUpon>FormAltaDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaDeCamioneta.resx">
       <DependentUpon>AltaDeCamioneta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestionCamionetas.resx">
       <DependentUpon>MenuGestionCamionetas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeDocente\AltaDeDocente.resx">
-      <DependentUpon>AltaDeDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeDocente\BajaDeDocente.resx">
       <DependentUpon>BajaDeDocente.cs</DependentUpon>

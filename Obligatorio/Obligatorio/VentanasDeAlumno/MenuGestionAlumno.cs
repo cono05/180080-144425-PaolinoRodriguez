@@ -36,7 +36,6 @@ namespace Obligatorio.VentanasDeAlumno
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
-            listBoxAlumnos.DataSource = null;
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
 
@@ -73,11 +72,8 @@ namespace Obligatorio.VentanasDeAlumno
 
         private ICollection<Alumno> CargarListBoxAlumnos()
         {
-            ICollection<Alumno> lista = new List<Alumno>();
-            foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
-            {
-                lista.Add(alumno);
-            }
+            listBoxAlumnos.DataSource = null;
+            ICollection<Alumno> lista = moduloAlumnos.ObtenerAlumnos();
             return lista;
         }
         public void CargarListBoxAlumnosPublico()

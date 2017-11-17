@@ -1,42 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
-using Logica;
 using Excepciones;
+using Logica;
 
 namespace Obligatorio.VentanasDeDocente
 {
-    public partial class AltaDeDocente : UserControl
+    public partial class FormAltaDocente : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
 
-        public AltaDeDocente(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente, 
-            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
+        public FormAltaDocente( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
-            moduloAlumnos  = moduloAlumno;
+            moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
+            listBoxDocentes.DataSource = CargarListBoxDocentes();
         }
 
-        private void VolverBtn_Click(object sender, EventArgs e)
+        private void salirBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionDocente( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            this.Dispose();
+        }
+        private ICollection<Docente> CargarListBoxDocentes()
+        {
+            listBoxDocentes.DataSource = null;
+            ICollection<Docente> lista = moduloDocentes.ObtenerDocentes();
+            return lista;
         }
 
-        private void AgregarDocenteBtn_Click(object sender, EventArgs e)
+        private void LimpiarTextBoxs()
+        {
+            Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+        }
+        
+
+        private void AltaDocenteBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -45,13 +57,12 @@ namespace Obligatorio.VentanasDeDocente
                 docente.Apellido = textBoxApellido.Text;
                 docente.Cedula = textBoxCedula.Text;
                 moduloDocentes.Alta(docente);
-
                 string mensaje = string.Format("El docente {0} {1} CI {2} se ha agregado correctamente", docente.Nombre, docente.Apellido, docente.Cedula);
                 MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
-                //Para limpiar todos los textboxes
-                panel1.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+                listBoxDocentes.DataSource = CargarListBoxDocentes();
+                LimpiarTextBoxs();
             }
-            catch (ExcepcionExisteDocenteConMismaCedula ex) 
+            catch (ExcepcionExisteDocenteConMismaCedula ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -71,10 +82,17 @@ namespace Obligatorio.VentanasDeDocente
             {
                 MessageBox.Show(ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void ActualizarListaDocentesEnMenuGestionDocentes()
+        {
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            menuDocentes.CargarListBoxDocentesPublico();
+        }
+
     }
 }

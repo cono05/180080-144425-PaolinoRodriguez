@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Dominio;
 using Logica;
 using Excepciones;
+using Obligatorio.VentanasDeDocente;
 
 namespace Obligatorio
 {
@@ -37,6 +38,7 @@ namespace Obligatorio
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
+            listBoxDocentes.DataSource = CargarListBoxDocentes();
         }
 
         private void VolverBtn_Click(object sender, EventArgs e)
@@ -47,8 +49,8 @@ namespace Obligatorio
 
         private void AltaDocenteBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new VentanasDeDocente.AltaDeDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormAltaDocente altaDocente = new FormAltaDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            altaDocente.Show();
         }
 
         private void ModificarDocenteBtn_Click(object sender, EventArgs e)
@@ -61,6 +63,19 @@ namespace Obligatorio
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(new VentanasDeDocente.BajaDeDocente(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+        }
+
+        private ICollection<Docente> CargarListBoxDocentes()
+        {
+            listBoxDocentes.DataSource = null;
+            ICollection<Docente> lista = moduloDocentes.ObtenerDocentes();
+            return lista;
+        }
+
+        public void CargarListBoxDocentesPublico()
+        {
+            listBoxDocentes.DataSource = null;
+            listBoxDocentes.DataSource = CargarListBoxDocentes();
         }
     }
 }

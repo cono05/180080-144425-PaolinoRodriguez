@@ -33,12 +33,8 @@ namespace Obligatorio.VentanasDeAlumno
         private ICollection<Alumno> CargarListBoxAlumnos()
         {
             listBoxAlumnos.DataSource = null;
-            ICollection<Alumno> lista = new List<Alumno>();
-            //foreach (Alumno alumno in moduloAlumnos.ObtenerAlumnos())
-            //{
-            //    lista.Add(alumno);
-            //}
-            return lista = moduloAlumnos.ObtenerAlumnos();
+            ICollection<Alumno> lista = moduloAlumnos.ObtenerAlumnos();
+            return lista;
         }
 
         private void salirBtn_Click(object sender, EventArgs e)
