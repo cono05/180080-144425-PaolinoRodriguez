@@ -106,12 +106,6 @@
     <Compile Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.Designer.cs">
       <DependentUpon>AltaBajaDocenteEnMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanasDeMaterias\AltaDeAlumnoEnMateria.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeMaterias\AltaDeAlumnoEnMateria.Designer.cs">
-      <DependentUpon>AltaDeAlumnoEnMateria.cs</DependentUpon>
-    </Compile>
     <Compile Include="VentanasDeDocente\MenuGestionDocente.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.resx">
       <DependentUpon>AltaBajaDocenteEnMateria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeMaterias\AltaDeAlumnoEnMateria.resx">
-      <DependentUpon>AltaDeAlumnoEnMateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeDocente\MenuGestionDocente.resx">
       <DependentUpon>MenuGestionDocente.cs</DependentUpon>
