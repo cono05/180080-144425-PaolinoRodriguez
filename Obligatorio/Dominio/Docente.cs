@@ -8,7 +8,7 @@ namespace Dominio
         public ICollection<Materia> MateriasQueDicta { get; set; }
         private Docente()
         {
-            Id = Id++;
+            
             this.MateriasQueDicta = new List<Materia>();
         }
 

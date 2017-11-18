@@ -3,6 +3,7 @@ using Persistencia;
 using Logica;
 using Dominio;
 using Obligatorio.VentanasDeAlumno;
+using System;
 
 namespace Obligatorio
 {
@@ -28,7 +29,7 @@ namespace Obligatorio
             moduloDocentes = new ModuloGestionDocente(repositorio);
             moduloMaterias = new ModuloGestionMaterias(repositorio);
             //moduloCamionetas = new ModuloGestionCamioneta(repositorio);
-            CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);            
+            
         }
         private void CargarPanelPrincipal(UserControl userControl)
         {
@@ -122,6 +123,7 @@ namespace Obligatorio
             this.CargarDatosBtn.TabIndex = 6;
             this.CargarDatosBtn.Text = "Cargar datos de pruebas";
             this.CargarDatosBtn.UseVisualStyleBackColor = true;
+            this.CargarDatosBtn.Click += new System.EventHandler(this.CargarDatosBtn_Click);
             // 
             // VPrincipal
             // 
@@ -183,6 +185,7 @@ namespace Obligatorio
             materia.Nombre = "Diseño 1";
             Materia materia2 = Materia.CrearMateria();
             materia2.Nombre = "Diseño 2";
+
             moduloAlumnos.Alta(alumno);
             moduloAlumnos.Alta(alumno2);
             moduloAlumnos.Alta(alumno3);
@@ -229,6 +232,18 @@ namespace Obligatorio
         {
             MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             CargarPanelPrincipal(menuCamionetas);
+        }
+
+        private void CargarDatosBtn_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
