@@ -18,6 +18,21 @@ namespace Persistencia
             }
         }
 
+        public void AgregarAlumnoEnMateria(Materia materia, Alumno alumno)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                materia = contexto.Materias.Find(materia.Codigo);
+                alumno = contexto.Alumnos.Find(alumno.Id);
+                contexto.Materias.Attach(materia);
+                contexto.Alumnos.Attach(alumno);
+                materia.Alumnos.Add(alumno);
+                alumno.MateriasInscripto.Add(materia);
+
+                contexto.SaveChanges();
+            }
+        }
+
         public void AgregarCamioneta(Camioneta camioneta)
         {
             throw new NotImplementedException();
@@ -42,11 +57,15 @@ namespace Persistencia
         }
     
 
-        public void EliminarAlumno(Alumno alumno)
+        public void EliminarAlumno(Alumno unAlumno)
         {
             using (Contexto contexto = new Contexto())
             {
-                contexto.Alumnos.Remove(alumno);
+                var alumnoAEliminar = (from alumno in contexto.Alumnos
+                                       where alumno.Id == unAlumno.Id
+                                       select alumno).Single();
+
+                contexto.Alumnos.Remove(alumnoAEliminar);
                 contexto.SaveChanges();
             }
         }
@@ -56,20 +75,28 @@ namespace Persistencia
             throw new NotImplementedException();
         }
 
-        public void EliminarDocente(Docente docente)
+        public void EliminarDocente(Docente unDocente)
         {
             using (Contexto contexto = new Contexto())
             {
-                contexto.Docentes.Remove(docente);
+                var doncenteAEliminar = (from docente in contexto.Docentes
+                                         where docente.Id == unDocente.Id
+                                         select docente).Single();
+
+                contexto.Docentes.Remove(doncenteAEliminar);
                 contexto.SaveChanges();
             }
         }
 
-        public void EliminarMateria(Materia materia)
+        public void EliminarMateria(Materia unaMateria)
         {
             using (Contexto contexto = new Contexto())
             {
-                contexto.Materias.Remove(materia);
+                var materiaAEliminar = (from materia in contexto.Materias
+                                        where materia.Codigo == unaMateria.Codigo
+                                        select materia).Single();
+
+                contexto.Materias.Remove(materiaAEliminar);
                 contexto.SaveChanges();
             }
         }
@@ -79,7 +106,7 @@ namespace Persistencia
             ICollection<Alumno> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Alumnos.ToList();
+                var query = contexto.Alumnos.Include("Materias");
                 retorno = query.ToList();
             }
             return retorno;
@@ -95,7 +122,7 @@ namespace Persistencia
             ICollection<Docente> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Docentes.ToList();
+                var query = contexto.Docentes.Include("Materias");
                 retorno = query.ToList();
             }
             return retorno;
@@ -106,7 +133,7 @@ namespace Persistencia
             ICollection<Materia> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Materias.ToList();
+                var query = contexto.Materias.Include("Alumnos").Include("Docentes");
                 retorno = query.ToList();
             }
             return retorno;

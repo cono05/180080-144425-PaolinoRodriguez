@@ -6,12 +6,11 @@ namespace Dominio
     {
         public int NumeroDeEstudiante { get; set; }
         public string Mail { get; set; }
-        public ICollection<Materia> MateriasInscripto { get; set; }
+        public virtual ICollection<Materia> MateriasInscripto { get; set; }
 
         private static int numero = 1111;
         private Alumno()
         {
-            
             MateriasInscripto = new List<Materia>();
             NumeroDeEstudiante = ++numero;
         }
