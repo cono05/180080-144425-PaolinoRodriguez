@@ -13,3 +13,18 @@ C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\o
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\obj\Debug\Pruebas.pdb
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.dll
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.xml
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Pruebas.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Pruebas.pdb
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Dominio.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Excepciones.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Logica.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Persistencia.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Dominio.pdb
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Excepciones.pdb
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Logica.pdb
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Persistencia.pdb
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.xml
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\obj\Debug\Pruebas.csprojResolveAssemblyReference.cache
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\obj\Debug\Pruebas.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\obj\Debug\Pruebas.pdb

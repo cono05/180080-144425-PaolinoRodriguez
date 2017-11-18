@@ -34,11 +34,26 @@ namespace Persistencia
 
         public void AgregarMateria(Materia materia)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Materias.Add(materia);
+                contexto.SaveChanges();
+            }
         }
+    
 
         public void EliminarAlumno(Alumno alumno)
         {
+            //Alumno miAlumno;
+            //using (Contexto contexto = new Contexto())
+            //{
+            //    IEnumerable<Alumno> query = from AlumnosBD in contexto.Alumnos
+            //                                where AlumnosBD.Id == alumno.Id
+            //                                select alumno;
+
+            //    miAlumno = query.FirstOrDefault();
+
+            //}
             throw new NotImplementedException();
         }
 

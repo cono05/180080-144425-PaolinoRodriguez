@@ -31,3 +31,8 @@ C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persisten
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.xml
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\Persistencia.dll.config
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.xml
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.xml

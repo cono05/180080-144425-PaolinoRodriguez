@@ -23,11 +23,11 @@ namespace Obligatorio
         public VPrincipal()
         {
             InitializeComponent();
-            RepositorioRam repositorio = new RepositorioRam();
+            RepositorioBD repositorio = new RepositorioBD();
             moduloAlumnos = new ModuloGestionAlumno(repositorio);
             moduloDocentes = new ModuloGestionDocente(repositorio);
             moduloMaterias = new ModuloGestionMaterias(repositorio);
-            moduloCamionetas = new ModuloGestionCamioneta(repositorio);
+            //moduloCamionetas = new ModuloGestionCamioneta(repositorio);
             CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);            
         }
         private void CargarPanelPrincipal(UserControl userControl)
@@ -188,9 +188,9 @@ namespace Obligatorio
             moduloAlumnos.Alta(alumno3);
             moduloMaterias.Alta(materia);
             moduloMaterias.Alta(materia2);
-            moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
-            moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno2);
-            moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno3);
+            //moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
+            //moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno2);
+            //moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno3);
             moduloDocentes.Alta(docente);
             moduloDocentes.Alta(docente2);
             moduloDocentes.Alta(docente3);
