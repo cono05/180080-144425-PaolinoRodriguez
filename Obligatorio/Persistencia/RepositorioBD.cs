@@ -42,11 +42,15 @@ namespace Persistencia
         }
     
 
-        public void EliminarAlumno(Alumno alumno)
+        public void EliminarAlumno(Alumno unAlumno)
         {
             using (Contexto contexto = new Contexto())
             {
-                contexto.Alumnos.Remove(alumno);
+                var alumnoAEliminar = (from alumno in contexto.Alumnos
+                                       where alumno.Id == unAlumno.Id
+                                       select alumno).Single();
+
+                contexto.Alumnos.Remove(alumnoAEliminar);
                 contexto.SaveChanges();
             }
         }
@@ -56,20 +60,28 @@ namespace Persistencia
             throw new NotImplementedException();
         }
 
-        public void EliminarDocente(Docente docente)
+        public void EliminarDocente(Docente unDocente)
         {
             using (Contexto contexto = new Contexto())
             {
-                contexto.Docentes.Remove(docente);
+                var doncenteAEliminar = (from docente in contexto.Docentes
+                                         where docente.Id == unDocente.Id
+                                         select docente).Single();
+
+                contexto.Docentes.Remove(doncenteAEliminar);
                 contexto.SaveChanges();
             }
         }
 
-        public void EliminarMateria(Materia materia)
+        public void EliminarMateria(Materia unaMateria)
         {
             using (Contexto contexto = new Contexto())
             {
-                contexto.Materias.Remove(materia);
+                var materiaAEliminar = (from materia in contexto.Materias
+                                        where materia.Codigo == unaMateria.Codigo
+                                        select materia).Single();
+
+                contexto.Materias.Remove(materiaAEliminar);
                 contexto.SaveChanges();
             }
         }
