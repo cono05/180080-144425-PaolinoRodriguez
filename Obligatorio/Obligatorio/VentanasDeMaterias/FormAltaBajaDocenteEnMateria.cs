@@ -47,8 +47,8 @@ namespace Obligatorio.VentanasDeMaterias
                     moduloDocentes.InscribirDocenteEnMateria(docente, materia);
                     docentesDictanListBox.DataSource = null;
                     docentesNoDictanListBox.DataSource = null;
-                    docentesNoDictanListBox.DataSource = CargarListBoxDocentesNoDictan(materia);
-                    docentesDictanListBox.DataSource = CargarListBoxDocentesDictanMateria(materia);
+                    CargarListBoxDocentesNoDictan(materia);
+                    CargarListBoxDocentesDictanMateria(materia);
                     MessageBox.Show("El docente " + docente.ToString() + " se ha asignado correctamente en " + materia.ToString(), MessageBoxButtons.OK.ToString());
                 }
                 else
@@ -69,24 +69,12 @@ namespace Obligatorio.VentanasDeMaterias
         private void listBoxMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
             Materia materia = (Materia)listBoxMaterias.SelectedItem;
-            docentesNoDictanListBox.DataSource = null;
-            docentesNoDictanListBox.DataSource = null;
-            //docentesNoDictanListBox.DataSource
-            //ICollection<Docente> listaQueNoDictanLaMateria = CargarListBoxDocentesNoDictan(materia);
-            //ICollection<Docente> listaQueDictanLaMateria = CargarListBoxDocentesDictanMateria(materia);
-            //if (listaQueNoDictanLaMateria.Count > 0)
-            //{
-            //    docentesNoDictanListBox.DataSource = listaQueNoDictanLaMateria;
-            //    docentesNoDictanListBox.SetSelected(0, false);
-            //}
-            //if (listaQueDictanLaMateria.Count > 0)
-            //{
-            //    docentesDictanListBox.DataSource = listaQueDictanLaMateria;
-            //    docentesDictanListBox.SetSelected(0, false);
-            //}
+            CargarListBoxDocentesDictanMateria(materia);
+            CargarListBoxDocentesNoDictan(materia);
         }
-        public ICollection<Docente> CargarListBoxDocentesNoDictan(Materia materia)
+        public void CargarListBoxDocentesNoDictan(Materia materia)
         {
+            docentesNoDictanListBox.DataSource = null;
             ICollection<Docente> lista = new List<Docente>();
             foreach (Docente d in moduloDocentes.ObtenerDocentes())
             {
@@ -95,19 +83,21 @@ namespace Obligatorio.VentanasDeMaterias
                     lista.Add(d);
                 }
             }
-            return lista;
+            docentesNoDictanListBox.DataSource = lista;
         }
-        public ICollection<Docente> CargarListBoxDocentesDictanMateria(Materia materia)
+        public void /*ICollection<Docente>*/ CargarListBoxDocentesDictanMateria(Materia materia)
         {
-            ICollection<Docente> lista = new List<Docente>();
-            foreach (Docente d in moduloDocentes.ObtenerDocentes())
-            {
-                if (moduloDocentes.EstaInscritoEnLaMateria(d, materia))
-                {
-                    lista.Add(d);
-                }
-            }
-            return lista;
+            docentesDictanListBox.DataSource = null;
+            docentesDictanListBox.DataSource = moduloMaterias.ObtenerDocentesDeUnaMateria(materia);
+            //ICollection<Docente> lista = new List<Docente>();
+            //foreach (Docente d in moduloDocentes.ObtenerDocentes())
+            //{
+            //    if (moduloDocentes.EstaInscritoEnLaMateria(d, materia))
+            //    {
+            //        lista.Add(d);
+            //    }
+            //}
+            //return lista;
         }
 
         private void VolverAlMenuBtn_Click(object sender, EventArgs e)
@@ -124,10 +114,10 @@ namespace Obligatorio.VentanasDeMaterias
                 if (DocenteADesinscribir != null)
                 {
                     moduloDocentes.DesinscribirDocenteEnMateria(DocenteADesinscribir, materia);
-                    docentesDictanListBox.DataSource = null;
-                    docentesNoDictanListBox.DataSource = null;
-                    docentesNoDictanListBox.DataSource = CargarListBoxDocentesNoDictan(materia);
-                    docentesDictanListBox.DataSource = CargarListBoxDocentesDictanMateria(materia);
+                    //docentesDictanListBox.DataSource = null;
+                    //docentesNoDictanListBox.DataSource = null;
+                    CargarListBoxDocentesNoDictan(materia);
+                    CargarListBoxDocentesDictanMateria(materia);
                     MessageBox.Show("El docente " + DocenteADesinscribir.ToString() + " se ha eliminado correctamente de " + materia.ToString(), MessageBoxButtons.OK.ToString());
                 }
                 else
