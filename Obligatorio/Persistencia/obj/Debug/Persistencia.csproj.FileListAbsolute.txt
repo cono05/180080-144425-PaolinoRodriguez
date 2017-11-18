@@ -40,3 +40,7 @@ C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\ob
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csproj.GenerateResource.Cache
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_1.resources
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_2.resources
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.InitialCreate.resources
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_1.resources
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_2.resources
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csproj.GenerateResource.Cache

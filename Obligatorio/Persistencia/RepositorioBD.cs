@@ -122,7 +122,7 @@ namespace Persistencia
             ICollection<Docente> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Docentes.Include("Materias");
+                var query = contexto.Docentes.Include("MateriasQueDicta");
                 retorno = query.ToList();
             }
             return retorno;
