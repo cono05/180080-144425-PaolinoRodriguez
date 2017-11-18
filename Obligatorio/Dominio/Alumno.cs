@@ -11,7 +11,7 @@ namespace Dominio
         private static int numero = 1111;
         private Alumno()
         {
-            Id = Id++;
+            
             MateriasInscripto = new List<Materia>();
             NumeroDeEstudiante = ++numero;
         }

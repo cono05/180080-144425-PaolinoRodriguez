@@ -44,17 +44,11 @@ namespace Persistencia
 
         public void EliminarAlumno(Alumno alumno)
         {
-            //Alumno miAlumno;
-            //using (Contexto contexto = new Contexto())
-            //{
-            //    IEnumerable<Alumno> query = from AlumnosBD in contexto.Alumnos
-            //                                where AlumnosBD.Id == alumno.Id
-            //                                select alumno;
-
-            //    miAlumno = query.FirstOrDefault();
-
-            //}
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Alumnos.Remove(alumno);
+                contexto.SaveChanges();
+            }
         }
 
         public void EliminarCamioneta(Camioneta camioneta)
@@ -64,17 +58,31 @@ namespace Persistencia
 
         public void EliminarDocente(Docente docente)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Docentes.Remove(docente);
+                contexto.SaveChanges();
+            }
         }
 
         public void EliminarMateria(Materia materia)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Materias.Remove(materia);
+                contexto.SaveChanges();
+            }
         }
 
         public ICollection<Alumno> ObtenerAlumnos()
         {
-            throw new NotImplementedException();
+            ICollection<Alumno> retorno;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = contexto.Alumnos.ToList();
+                retorno = query.ToList();
+            }
+            return retorno;
         }
 
         public ICollection<Camioneta> ObtenerCamionetas()
@@ -84,12 +92,24 @@ namespace Persistencia
 
         public ICollection<Docente> ObtenerDocentes()
         {
-            throw new NotImplementedException();
+            ICollection<Docente> retorno;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = contexto.Docentes.ToList();
+                retorno = query.ToList();
+            }
+            return retorno;
         }
 
         public ICollection<Materia> ObtenerMaterias()
         {
-            throw new NotImplementedException();
+            ICollection<Materia> retorno;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = contexto.Materias.ToList();
+                retorno = query.ToList();
+            }
+            return retorno;
         }
     }
 }

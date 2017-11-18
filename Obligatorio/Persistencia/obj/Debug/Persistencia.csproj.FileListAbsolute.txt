@@ -36,3 +36,6 @@ C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bi
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.xml
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.InitialCreate.resources
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csproj.GenerateResource.Cache
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_1.resources
