@@ -191,12 +191,14 @@ namespace Obligatorio
             moduloAlumnos.Alta(alumno3);
             moduloMaterias.Alta(materia);
             moduloMaterias.Alta(materia2);
-            //moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
-            //moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno2);
-            //moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno3);
             moduloDocentes.Alta(docente);
             moduloDocentes.Alta(docente2);
             moduloDocentes.Alta(docente3);
+
+            moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
+            moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno2);
+            moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno3);
+            
         }
 
         private void GestionarAlumnosBtn_Click(object sender, System.EventArgs e)

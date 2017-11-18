@@ -5,10 +5,9 @@ namespace Dominio
     public class Docente : Persona
     {
 
-        public ICollection<Materia> MateriasQueDicta { get; set; }
+        public virtual ICollection<Materia> MateriasQueDicta { get; set; }
         private Docente()
-        {
-            
+        {   
             this.MateriasQueDicta = new List<Materia>();
         }
 

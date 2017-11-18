@@ -99,13 +99,12 @@ namespace Logica
 
         public bool EstaInscriptoEnLaMateria(Materia materia, Alumno alumno)
         {
-            bool retorno = false;
-            foreach (Alumno a in materia.Alumnos)
+            foreach (Alumno alumnoIterativo in materia.Alumnos)
             {
-                if (TienenMismoNumeroEstudiante(a, alumno))
+                if (TienenMismoNumeroEstudiante(alumnoIterativo, alumno))
                     return true;
             }
-            return retorno;
+            return false;
         }
 
         public bool TienenMismoNumeroEstudiante(Alumno alumno, Alumno alumno2)
