@@ -188,7 +188,7 @@ namespace Logica
 
         public ICollection<Docente> ObtenerDocentesDeUnaMateria(Materia materia)
         {
-            throw new NotImplementedException();
+            return materia.Docentes;
         }
     }
 }
