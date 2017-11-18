@@ -185,5 +185,10 @@ namespace Logica
                     throw new ExcepcionExisteMateriaConMismoNombre();
             }
         }
+
+        public ICollection<Docente> ObtenerDocentesDeUnaMateria(Materia materia)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

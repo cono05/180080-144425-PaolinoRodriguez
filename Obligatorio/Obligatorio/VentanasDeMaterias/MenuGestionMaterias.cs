@@ -73,8 +73,8 @@ namespace Obligatorio
         {
             if (moduloDocentes.HayDocentesRegistrados())
             {
-                panel1.Controls.Clear();
-                panel1.Controls.Add(new AltaBajaDocenteEnMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+                FormAltaBajaDocenteEnMateria altaBajaDocenteEnMateria = new FormAltaBajaDocenteEnMateria(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+                altaBajaDocenteEnMateria.Show();
             }
             else
             {

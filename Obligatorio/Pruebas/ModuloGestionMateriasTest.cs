@@ -437,6 +437,24 @@ namespace Pruebas
             moduloMaterias.ValidarModificacionNombreMateria(materia2, "Diseño");
         }
 
+        [TestMethod]
+        public void ObtenerDocentesDeLaMateriaTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Jose", "Diaz", "1234567-8");
+            Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Diego", "Lopez", "1255567-8");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            moduloMaterias.Alta(materia);
+            moduloDocente.Alta(docente);
+            moduloDocente.Alta(docente2);
+            moduloMaterias.AsignarDocenteAMateria(materia, docente);
+            moduloMaterias.AsignarDocenteAMateria(materia, docente2);
+            Assert.IsTrue(moduloMaterias.ObtenerDocentesDeUnaMateria(materia).Count == 2);
+        }
+
         
         
     }
