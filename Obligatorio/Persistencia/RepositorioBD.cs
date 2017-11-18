@@ -18,6 +18,21 @@ namespace Persistencia
             }
         }
 
+        public void AgregarAlumnoEnMateria(Materia materia, Alumno alumno)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                materia = contexto.Materias.Find(materia.Codigo);
+                alumno = contexto.Alumnos.Find(alumno.Id);
+                contexto.Materias.Attach(materia);
+                contexto.Alumnos.Attach(alumno);
+                materia.Alumnos.Add(alumno);
+                alumno.MateriasInscripto.Add(materia);
+
+                contexto.SaveChanges();
+            }
+        }
+
         public void AgregarCamioneta(Camioneta camioneta)
         {
             throw new NotImplementedException();
@@ -91,7 +106,7 @@ namespace Persistencia
             ICollection<Alumno> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Alumnos.ToList();
+                var query = contexto.Alumnos.Include("Materias");
                 retorno = query.ToList();
             }
             return retorno;
@@ -107,7 +122,7 @@ namespace Persistencia
             ICollection<Docente> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Docentes.ToList();
+                var query = contexto.Docentes.Include("Materias");
                 retorno = query.ToList();
             }
             return retorno;
@@ -118,7 +133,7 @@ namespace Persistencia
             ICollection<Materia> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Materias.ToList();
+                var query = contexto.Materias.Include("Alumnos").Include("Docentes");
                 retorno = query.ToList();
             }
             return retorno;

@@ -77,5 +77,12 @@ namespace Persistencia
         {
             return Camionetas;
         }
+
+        public void AgregarAlumnoEnMateria(Materia materia, Alumno alumno)
+        {
+            materia.Alumnos.Add(alumno);
+            alumno.MateriasInscripto.Add(materia);
+        }
+        
     }
 }
