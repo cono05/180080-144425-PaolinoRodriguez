@@ -83,6 +83,21 @@ namespace Persistencia
             materia.Alumnos.Add(alumno);
             alumno.MateriasInscripto.Add(materia);
         }
-        
+
+        public ICollection<Alumno> ObtenerAlumnosDeLaMateria(Materia materia)
+        {
+            return materia.Alumnos;
+        }
+
+        public ICollection<Docente> ObtenerDocentesDeLaMateria(Materia materia)
+        {
+            return materia.Docentes;
+        }
+
+        public void AgregarDocenteEnMateria(Materia materia, Docente docente)
+        {
+            docente.MateriasQueDicta.Add(materia);
+            materia.Docentes.Add(docente);
+        }
     }
 }

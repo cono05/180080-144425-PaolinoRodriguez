@@ -134,7 +134,7 @@ namespace Obligatorio.VentanasDeMaterias
         private void CargarListBoxAlumnosInscriptosEnMateria(Materia materia)
         {
             alumnosInscriptosListBox.DataSource = null;
-            alumnosInscriptosListBox.DataSource = materia.Alumnos;
+            alumnosInscriptosListBox.DataSource = moduloMaterias.ObtenerAlumnosInscriptosEnMateria(materia);
         }
     }
 }

@@ -186,7 +186,7 @@ namespace Logica
 
         public ICollection<Docente> ObtenerDocentesDeUnaMateria(Materia materia)
         {
-            return materia.Docentes;
+            return repositorio.ObtenerDocentesDeLaMateria(materia);
         }
     }
 }

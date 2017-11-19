@@ -75,13 +75,15 @@ namespace Obligatorio.VentanasDeMaterias
         public void CargarListBoxDocentesNoDictan(Materia materia)
         {
             docentesNoDictanListBox.DataSource = null;
-            ICollection<Docente> lista = new List<Docente>();
-            foreach (Docente d in moduloDocentes.ObtenerDocentes())
+            ICollection<Docente> lista = moduloDocentes.ObtenerDocentes(); ;
+            ICollection<Docente> docentesDeLaMateria = moduloMaterias.ObtenerDocentesDeUnaMateria(materia);
+            foreach (Docente d in docentesDeLaMateria)
             {
-                if (!moduloDocentes.EstaInscritoEnLaMateria(d, materia))
-                {
-                    lista.Add(d);
-                }
+                lista.Remove(d);
+                //if (!moduloMaterias.ObtenerDocentesDeUnaMateria(materia).Contains(d)/*!moduloDocentes.EstaInscritoEnLaMateria(d, materia)*/)
+                //{
+                //    lista.Add(d);
+                //}
             }
             docentesNoDictanListBox.DataSource = lista;
         }

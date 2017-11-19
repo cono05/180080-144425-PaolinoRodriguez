@@ -103,18 +103,20 @@ namespace Persistencia
 
         public ICollection<Alumno> ObtenerAlumnos()
         {
-            ICollection<Alumno> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Alumnos.Include("Materias");
-                retorno = query.ToList();
+                var query = contexto.Alumnos.Include("MateriasInscripto").ToList();
+                return query;
             }
-            return retorno;
         }
 
         public ICollection<Camioneta> ObtenerCamionetas()
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                var query = contexto.Camionetas.ToList();
+                return query;
+            }
         }
 
         public ICollection<Docente> ObtenerDocentes()
@@ -137,6 +139,52 @@ namespace Persistencia
                 retorno = query.ToList();
             }
             return retorno;
+        }
+
+        public ICollection<Alumno> ObtenerAlumnosDeLaMateria(Materia materia)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                materia = contexto.Materias.Find(materia.Codigo);
+                //alumno = contexto.Alumnos.Find(alumno.Id);
+                contexto.Materias.Attach(materia);
+                return materia.Alumnos;
+                //contexto.Alumnos.Attach(alumno);
+                //materia.Alumnos.Add(alumno);
+                //alumno.MateriasInscripto.Add(materia);
+
+                //contexto.SaveChanges();
+            }
+        }
+
+        public ICollection<Docente> ObtenerDocentesDeLaMateria(Materia materia)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Materias.Attach(materia);
+                ICollection<Docente> query = contexto.Materias.Find(materia.Codigo).Docentes;
+                //alumno = contexto.Alumnos.Find(alumno.Id);
+                return query;
+                //contexto.Alumnos.Attach(alumno);
+                //materia.Alumnos.Add(alumno);
+                //alumno.MateriasInscripto.Add(materia);
+
+                //contexto.SaveChanges();
+            }
+        }
+
+        public void AgregarDocenteEnMateria(Materia materia, Docente docente)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                materia = contexto.Materias.Find(materia.Codigo);
+                docente = contexto.Docentes.Find(docente.Id);
+                contexto.Materias.Attach(materia);
+                contexto.Docentes.Attach(docente);
+                materia.Docentes.Add(docente);
+                docente.MateriasQueDicta.Add(materia);
+                contexto.SaveChanges();
+            }
         }
     }
 }

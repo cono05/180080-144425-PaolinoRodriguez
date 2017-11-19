@@ -17,6 +17,17 @@ namespace Dominio
             return docente;
         }
 
+        public override bool Equals(object obj)
+        {
+            bool equals = false;
+            if (obj != null && this.GetType() == obj.GetType())
+            {
+                Docente docente = (Docente)obj;
+                equals = docente.Id.Equals(Id);
+            }
+            return equals;
+        }
+
         public override string ToString()
         {
             return Nombre + " " + Apellido;

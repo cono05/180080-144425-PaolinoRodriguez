@@ -107,10 +107,10 @@ namespace Logica
 
         public void InscribirDocenteEnMateria(Docente docente, Materia materia)
         {
-            if (!EstaInscritoEnLaMateria(docente, materia))
+            ICollection<Docente> listaDocentes = repositorio.ObtenerDocentesDeLaMateria(materia);
+            if (!listaDocentes.Contains(docente)/*!EstaInscritoEnLaMateria(docente, materia)*/)
             {
-                docente.MateriasQueDicta.Add(materia);
-                materia.Docentes.Add(docente);
+                repositorio.AgregarDocenteEnMateria(materia, docente);
             }
         }
 
