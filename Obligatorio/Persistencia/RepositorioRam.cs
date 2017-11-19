@@ -99,5 +99,13 @@ namespace Persistencia
             docente.MateriasQueDicta.Add(materia);
             materia.Docentes.Add(docente);
         }
+
+        public void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos)
+        {
+            aCambiar.Nombre     = nuevosDatos.Nombre;
+            aCambiar.Apellido   = nuevosDatos.Apellido;
+            aCambiar.Cedula     = nuevosDatos.Cedula;
+            aCambiar.Mail       = nuevosDatos.Mail;
+        }
     }
 }
