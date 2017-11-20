@@ -45,7 +45,7 @@ namespace Logica
             //ValidarBajaMateria(materia);
             //string nuevoNombre = datos;
             ValidarModificacionNombreMateria(materia, nuevoNombre);
-            materia.Nombre = nuevoNombre;
+            repositorio.ModificarMateria(materia, nuevoNombre);
         }
 
         public bool ExisteMateriaConMismoNombre(Materia materia)

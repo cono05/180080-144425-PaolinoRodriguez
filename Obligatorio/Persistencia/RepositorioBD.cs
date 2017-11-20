@@ -225,5 +225,22 @@ namespace Persistencia
                 contexto.SaveChanges();
             }
         }
+
+        public void ModificarMateria(Materia aCambiar, string nuevoNombre)
+        {
+            Materia miMateria;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = from materia in contexto.Materias
+                            where materia.Codigo == aCambiar.Codigo
+                            select materia;
+
+                miMateria = query.FirstOrDefault();
+
+                contexto.Materias.Attach(miMateria);
+                miMateria.Nombre = nuevoNombre;
+                contexto.SaveChanges();
+            }
+        }
     }
 }

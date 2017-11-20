@@ -114,5 +114,10 @@ namespace Persistencia
             aCambiar.Apellido = nuevosDatos.Apellido;
             aCambiar.Cedula = nuevosDatos.Cedula;
         }
+
+        public void ModificarMateria(Materia aCambiar, String nuevoNombre)
+        {
+            aCambiar.Nombre = nuevoNombre;
+        }
     }
 }
