@@ -14,5 +14,14 @@ namespace Pruebas
             Assert.IsTrue(string.IsNullOrEmpty(actividad.Nombre));
 
         }
+
+        [TestMethod]
+        public void EqualsOkTest()
+        {
+            Actividad actividad1 = UtilidadesPruebas.CrearActividadDePrueba("Evento1", DateTime.Now, 0);
+            Actividad actividad2 = UtilidadesPruebas.CrearActividadDePrueba("Evento1", DateTime.Now, 0);
+            actividad1.Id = actividad2.Id;
+            Assert.IsTrue(actividad1.Equals(actividad2));
+        }
     }
 }
