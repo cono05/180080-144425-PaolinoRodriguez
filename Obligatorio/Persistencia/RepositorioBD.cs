@@ -187,6 +187,20 @@ namespace Persistencia
             }
         }
 
+        public void EliminarDocenteEnMateria(Materia materia, Docente docente)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                materia = contexto.Materias.Find(materia.Codigo);
+                docente = contexto.Docentes.Find(docente.Id);
+                contexto.Materias.Attach(materia);
+                contexto.Docentes.Attach(docente);
+                materia.Docentes.Remove(docente);
+                docente.MateriasQueDicta.Remove(materia);
+                contexto.SaveChanges();
+            }
+        }
+
         public void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos)
         {
             Alumno miAlumno;

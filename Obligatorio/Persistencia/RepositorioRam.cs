@@ -100,6 +100,11 @@ namespace Persistencia
             materia.Docentes.Add(docente);
         }
 
+        public void EliminarDocenteEnMateria(Materia materia, Docente docente)
+        {
+            materia.Docentes.Remove(docente);
+            docente.MateriasQueDicta.Remove(materia);
+        }
         public void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos)
         {
             aCambiar.Nombre     = nuevosDatos.Nombre;
