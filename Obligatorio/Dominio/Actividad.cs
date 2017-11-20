@@ -35,7 +35,7 @@ namespace Dominio
 
         public override string ToString()
         {
-            return "Actividad: " + Nombre + " Fecha:" + Fecha;
+            return "Actividad: " + Nombre + " Fecha: " + Fecha;
         }
     }
 }
