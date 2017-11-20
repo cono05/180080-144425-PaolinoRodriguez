@@ -199,10 +199,29 @@ namespace Persistencia
                 miAlumno = query.FirstOrDefault();
 
                 contexto.Alumnos.Attach(miAlumno);
-                miAlumno.Nombre = nuevosDatos.Nombre;
-                miAlumno.Apellido = nuevosDatos.Apellido;
-                miAlumno.Cedula = nuevosDatos.Cedula;
-                miAlumno.Mail = nuevosDatos.Mail;
+                miAlumno.Nombre     = nuevosDatos.Nombre;
+                miAlumno.Apellido   = nuevosDatos.Apellido;
+                miAlumno.Cedula     = nuevosDatos.Cedula;
+                miAlumno.Mail       = nuevosDatos.Mail;
+                contexto.SaveChanges();
+            }
+        }
+
+        public void ModificarDocente(Docente aCambiar, Docente nuevosDatos)
+        {
+            Docente miDocente;
+            using(Contexto contexto = new Contexto())
+            {
+                var query = from docente in contexto.Docentes
+                            where docente.Id == aCambiar.Id
+                            select docente;
+
+                miDocente = query.FirstOrDefault();
+
+                contexto.Docentes.Attach(miDocente);
+                miDocente.Nombre    = nuevosDatos.Nombre;
+                miDocente.Apellido  = nuevosDatos.Apellido;
+                miDocente.Cedula    = nuevosDatos.Cedula;
                 contexto.SaveChanges();
             }
         }

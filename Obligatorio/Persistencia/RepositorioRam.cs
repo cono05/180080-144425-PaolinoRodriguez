@@ -107,5 +107,12 @@ namespace Persistencia
             aCambiar.Cedula     = nuevosDatos.Cedula;
             aCambiar.Mail       = nuevosDatos.Mail;
         }
+
+        public void ModificarDocente(Docente aCambiar, Docente nuevosDatos)
+        {
+            aCambiar.Nombre = nuevosDatos.Nombre;
+            aCambiar.Apellido = nuevosDatos.Apellido;
+            aCambiar.Cedula = nuevosDatos.Cedula;
+        }
     }
 }

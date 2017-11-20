@@ -20,6 +20,7 @@ namespace Persistencia
         void AgregarAlumnoEnMateria(Materia materia, Alumno alumno);
         void AgregarDocenteEnMateria(Materia materia, Docente docente);
         void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos);
+        void ModificarDocente(Docente aCambiar, Docente nuevosDatos);
 
         ICollection<Materia> ObtenerMaterias();
         ICollection<Alumno> ObtenerAlumnos();

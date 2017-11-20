@@ -46,9 +46,7 @@ namespace Logica
         public void ModificarDocente(ref Docente docenteOriginal, Docente docenteNuevosDatos)
         {
             ValidarModificarDocente(docenteOriginal, docenteNuevosDatos);
-            docenteOriginal.Nombre = docenteNuevosDatos.Nombre;
-            docenteOriginal.Apellido = docenteNuevosDatos.Apellido;
-            docenteOriginal.Cedula = docenteNuevosDatos.Cedula;
+            repositorio.ModificarDocente(docenteOriginal, docenteNuevosDatos);
         }
 
         public void ValidarModificarDocente(Docente docenteOriginal, Docente docenteNuevosDatos)
