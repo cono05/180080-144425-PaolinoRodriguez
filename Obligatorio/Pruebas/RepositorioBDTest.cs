@@ -70,7 +70,32 @@ namespace Pruebas
             Assert.IsTrue(moduloMaterias.ObtenerMaterias().Contains(materia));
         }
 
+        [TestMethod]
+        public void ObtenerMateriasTestBD()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloMaterias.Alta(materia);
+        }
 
-
-    }
+        [TestMethod]
+        public void ObtenerAlumnosDeLaMateriaTestBD()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloMaterias.Alta(materia);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "0000000-1", "nombreapellido@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Pedro", "Perez", "2222222-2", "nombreapellido22@gmail.com", 21);
+            ModuloGestionAlumno moduloAlumnos = new ModuloGestionAlumno(repositorio);
+            moduloAlumnos.Alta(alumno);
+            moduloAlumnos.Alta(alumno2);
+            repositorio.AgregarAlumnoEnMateria(materia, alumno2);
+            repositorio.AgregarAlumnoEnMateria(materia, alumno);
+            Assert.IsTrue(repositorio.ObtenerAlumnosDeLaMateria(materia).Count == 2);
+        }
+   }
 }
