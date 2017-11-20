@@ -71,8 +71,7 @@
     <Compile Include="ModuloGestionMateriasTest.cs" />
     <Compile Include="ModuloGestionAlumnoTest.cs" />
     <Compile Include="ModuloGestionCamionetasTest.cs" />
-    <Compile Include="UnitTest1.cs" />
-    <Compile Include="UtilidadesBD.cs" />
+    <Compile Include="RepositorioBDTest.cs" />
     <Compile Include="UtilidadesPruebas.cs" />
   </ItemGroup>
   <ItemGroup>
