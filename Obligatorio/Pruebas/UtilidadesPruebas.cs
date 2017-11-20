@@ -13,7 +13,6 @@ namespace Pruebas
     {
         public static void VaciarTablas()
         {
-            //Database.SetInitializer<Contexto>(null);
             using (var contexto = new Contexto())
             {
                 var alumnos = (from alumno in contexto.Alumnos select alumno);

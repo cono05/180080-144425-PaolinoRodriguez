@@ -23,7 +23,7 @@ namespace Dominio
             if (obj != null && this.GetType() == obj.GetType())
             {
                 Docente docente = (Docente)obj;
-                equals = docente.Id.Equals(Id);
+                equals = docente.Cedula.Equals(Cedula);
             }
             return equals;
         }
