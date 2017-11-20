@@ -43,6 +43,15 @@ namespace Pruebas
             return docente;
         }
 
+        public static Actividad CrearActividadDePrueba(string nombre, DateTime fecha, decimal costo)
+        {
+            Actividad actividad = Actividad.CrearActividad();
+            actividad.Nombre = nombre;
+            actividad.Fecha = fecha;
+            actividad.Costo = costo;
+            return actividad;
+        }
+
         public static Camioneta CrearCamionetaDePrueba(string marca, string chapa, int capacidad)
         {
             Camioneta camioneta = Camioneta.CrearCamioneta();
