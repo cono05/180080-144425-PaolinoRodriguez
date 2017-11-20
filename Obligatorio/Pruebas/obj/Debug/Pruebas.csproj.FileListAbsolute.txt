@@ -31,3 +31,6 @@ C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\obj\Deb
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\Pruebas.dll.config
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\Pruebas.dll.config
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Pruebas\bin\Debug\EntityFramework.SqlServer.xml

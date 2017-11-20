@@ -84,6 +84,12 @@ namespace Persistencia
             alumno.MateriasInscripto.Add(materia);
         }
 
+        public void EliminarAlumnoDeMateria(Materia materia, Alumno alumno)
+        {
+            materia.Alumnos.Remove(alumno);
+            alumno.MateriasInscripto.Remove(materia);
+        }
+
         public ICollection<Alumno> ObtenerAlumnosDeLaMateria(Materia materia)
         {
             return materia.Alumnos;
@@ -100,12 +106,29 @@ namespace Persistencia
             materia.Docentes.Add(docente);
         }
 
+        public void EliminarDocenteEnMateria(Materia materia, Docente docente)
+        {
+            materia.Docentes.Remove(docente);
+            docente.MateriasQueDicta.Remove(materia);
+        }
         public void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos)
         {
             aCambiar.Nombre     = nuevosDatos.Nombre;
             aCambiar.Apellido   = nuevosDatos.Apellido;
             aCambiar.Cedula     = nuevosDatos.Cedula;
             aCambiar.Mail       = nuevosDatos.Mail;
+        }
+
+        public void ModificarDocente(Docente aCambiar, Docente nuevosDatos)
+        {
+            aCambiar.Nombre = nuevosDatos.Nombre;
+            aCambiar.Apellido = nuevosDatos.Apellido;
+            aCambiar.Cedula = nuevosDatos.Cedula;
+        }
+
+        public void ModificarMateria(Materia aCambiar, String nuevoNombre)
+        {
+            aCambiar.Nombre = nuevoNombre;
         }
     }
 }

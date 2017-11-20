@@ -46,9 +46,7 @@ namespace Logica
         public void ModificarDocente(ref Docente docenteOriginal, Docente docenteNuevosDatos)
         {
             ValidarModificarDocente(docenteOriginal, docenteNuevosDatos);
-            docenteOriginal.Nombre = docenteNuevosDatos.Nombre;
-            docenteOriginal.Apellido = docenteNuevosDatos.Apellido;
-            docenteOriginal.Cedula = docenteNuevosDatos.Cedula;
+            repositorio.ModificarDocente(docenteOriginal, docenteNuevosDatos);
         }
 
         public void ValidarModificarDocente(Docente docenteOriginal, Docente docenteNuevosDatos)
@@ -102,15 +100,23 @@ namespace Logica
 
         public bool EstaInscritoEnLaMateria(Docente docente, Materia materia)
         {
-            return docente.MateriasQueDicta.Contains(materia);
+            ICollection<Docente> listaDocentes = repositorio.ObtenerDocentesDeLaMateria(materia);
+            return listaDocentes.Contains(docente);
         }
 
         public void InscribirDocenteEnMateria(Docente docente, Materia materia)
         {
-            ICollection<Docente> listaDocentes = repositorio.ObtenerDocentesDeLaMateria(materia);
-            if (!listaDocentes.Contains(docente)/*!EstaInscritoEnLaMateria(docente, materia)*/)
+            if (!EstaInscritoEnLaMateria(docente, materia))
             {
                 repositorio.AgregarDocenteEnMateria(materia, docente);
+            }
+        }
+
+        public void DesinscribirDocenteEnMateria(Docente docente, Materia materia)
+        {
+            if (EstaInscritoEnLaMateria(docente, materia))
+            {
+                repositorio.EliminarDocenteEnMateria(materia, docente);
             }
         }
 
@@ -139,15 +145,6 @@ namespace Logica
                 }
             }
             return ret;
-        }
-
-        public void DesinscribirDocenteEnMateria(Docente docente, Materia materia)
-        {
-            if (EstaInscritoEnLaMateria(docente, materia))
-            {
-                docente.MateriasQueDicta.Remove(materia);
-                materia.Docentes.Remove(docente);
-            }
         }
 
         public ICollection<Docente> ObtenerDocentes()

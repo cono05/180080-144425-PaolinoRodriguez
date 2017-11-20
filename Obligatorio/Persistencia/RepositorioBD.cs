@@ -33,6 +33,21 @@ namespace Persistencia
             }
         }
 
+        public void EliminarAlumnoDeMateria(Materia materia, Alumno alumno)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                materia = contexto.Materias.Find(materia.Codigo);
+                alumno = contexto.Alumnos.Find(alumno.Id);
+                contexto.Materias.Attach(materia);
+                contexto.Alumnos.Attach(alumno);
+                materia.Alumnos.Remove(alumno);
+                alumno.MateriasInscripto.Remove(materia);
+
+                contexto.SaveChanges();
+            }
+        }
+
         public void AgregarCamioneta(Camioneta camioneta)
         {
             throw new NotImplementedException();
@@ -183,6 +198,22 @@ namespace Persistencia
                 contexto.Docentes.Attach(docente);
                 materia.Docentes.Add(docente);
                 docente.MateriasQueDicta.Add(materia);
+
+                contexto.SaveChanges();
+            }
+        }
+
+        public void EliminarDocenteEnMateria(Materia materia, Docente docente)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                materia = contexto.Materias.Find(materia.Codigo);
+                docente = contexto.Docentes.Find(docente.Id);
+                contexto.Materias.Attach(materia);
+                contexto.Docentes.Attach(docente);
+                materia.Docentes.Remove(docente);
+                docente.MateriasQueDicta.Remove(materia);
+
                 contexto.SaveChanges();
             }
         }
@@ -199,10 +230,46 @@ namespace Persistencia
                 miAlumno = query.FirstOrDefault();
 
                 contexto.Alumnos.Attach(miAlumno);
-                miAlumno.Nombre = nuevosDatos.Nombre;
-                miAlumno.Apellido = nuevosDatos.Apellido;
-                miAlumno.Cedula = nuevosDatos.Cedula;
-                miAlumno.Mail = nuevosDatos.Mail;
+                miAlumno.Nombre     = nuevosDatos.Nombre;
+                miAlumno.Apellido   = nuevosDatos.Apellido;
+                miAlumno.Cedula     = nuevosDatos.Cedula;
+                miAlumno.Mail       = nuevosDatos.Mail;
+                contexto.SaveChanges();
+            }
+        }
+
+        public void ModificarDocente(Docente aCambiar, Docente nuevosDatos)
+        {
+            Docente miDocente;
+            using(Contexto contexto = new Contexto())
+            {
+                var query = from docente in contexto.Docentes
+                            where docente.Id == aCambiar.Id
+                            select docente;
+
+                miDocente = query.FirstOrDefault();
+
+                contexto.Docentes.Attach(miDocente);
+                miDocente.Nombre    = nuevosDatos.Nombre;
+                miDocente.Apellido  = nuevosDatos.Apellido;
+                miDocente.Cedula    = nuevosDatos.Cedula;
+                contexto.SaveChanges();
+            }
+        }
+
+        public void ModificarMateria(Materia aCambiar, string nuevoNombre)
+        {
+            Materia miMateria;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = from materia in contexto.Materias
+                            where materia.Codigo == aCambiar.Codigo
+                            select materia;
+
+                miMateria = query.FirstOrDefault();
+
+                contexto.Materias.Attach(miMateria);
+                miMateria.Nombre = nuevoNombre;
                 contexto.SaveChanges();
             }
         }
