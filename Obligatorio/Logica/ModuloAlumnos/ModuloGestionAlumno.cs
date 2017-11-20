@@ -81,10 +81,7 @@ namespace Logica
         public void ModificarAlumno(ref Alumno alumnoOrignal, Alumno alumnoNuevosDatos)
         {
             ValidarModificarAlumno(alumnoOrignal, alumnoNuevosDatos);
-            alumnoOrignal.Nombre    = alumnoNuevosDatos.Nombre;
-            alumnoOrignal.Apellido  = alumnoNuevosDatos.Apellido;
-            alumnoOrignal.Cedula    = alumnoNuevosDatos.Cedula;
-            alumnoOrignal.Mail      = alumnoNuevosDatos.Mail;
+            repositorio.ModificarAlumno(alumnoOrignal, alumnoNuevosDatos);
         }
 
         public ICollection<Alumno> ObtenerAlumnos()

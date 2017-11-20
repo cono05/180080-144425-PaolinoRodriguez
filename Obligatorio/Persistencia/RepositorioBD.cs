@@ -186,5 +186,25 @@ namespace Persistencia
                 contexto.SaveChanges();
             }
         }
+
+        public void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos)
+        {
+            Alumno miAlumno;
+            using(Contexto contexto = new Contexto())
+            {
+                var query = from alumno in contexto.Alumnos
+                            where alumno.Id == aCambiar.Id
+                            select alumno;
+
+                miAlumno = query.FirstOrDefault();
+
+                contexto.Alumnos.Attach(miAlumno);
+                miAlumno.Nombre = nuevosDatos.Nombre;
+                miAlumno.Apellido = nuevosDatos.Apellido;
+                miAlumno.Cedula = nuevosDatos.Cedula;
+                miAlumno.Mail = nuevosDatos.Mail;
+                contexto.SaveChanges();
+            }
+        }
     }
 }
