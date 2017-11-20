@@ -94,26 +94,26 @@ namespace Pruebas
             return camioneta;
         }
 
-        public static ModuloGestionMaterias CrearModuloGestionMateriasDePrueba(ref RepositorioRam repositorio)
+        public static ModuloGestionMaterias CrearModuloGestionMateriasDePrueba(IRepositorio repositorio)
         {
             ModuloGestionMaterias moduloGestionMaterias = new ModuloGestionMaterias(repositorio);
             //ModuloGestionMaterias moduloGestionMaterias = ModuloGestionMaterias.ObtenerInstancia(ref repositorio);
             return moduloGestionMaterias;
         }
 
-        public static ModuloGestionAlumno CrearModuloGestionAlumnosDePrueba(ref RepositorioRam repositorio)
+        public static ModuloGestionAlumno CrearModuloGestionAlumnosDePrueba(IRepositorio repositorio)
         {
             ModuloGestionAlumno moduloGestionAlumnos = new ModuloGestionAlumno(repositorio);
             return moduloGestionAlumnos;
         }
 
-        public static ModuloGestionDocente CrearModuloGestionDocentesDePrueba(ref RepositorioRam repositorio)
+        public static ModuloGestionDocente CrearModuloGestionDocentesDePrueba(IRepositorio repositorio)
         {
             ModuloGestionDocente moduloGestionDocentes = new ModuloGestionDocente(repositorio);
             return moduloGestionDocentes;
         }
 
-        public static ModuloGestionCamioneta CrearModuloGestionCamionetaDePrueba(ref RepositorioRam repositorio)
+        public static ModuloGestionCamioneta CrearModuloGestionCamionetaDePrueba(IRepositorio repositorio)
         {
             ModuloGestionCamioneta moduloGestionCamionetas = new ModuloGestionCamioneta(repositorio);
             return moduloGestionCamionetas;

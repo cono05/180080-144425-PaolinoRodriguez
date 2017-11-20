@@ -49,6 +49,16 @@ namespace Pruebas
             Assert.IsFalse(repositorio.ObtenerAlumnosDeLaMateria(materia).Contains(alumno));
         }
 
+        [TestMethod]
+        public void AgregarDocenteTestBD()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
+            modulo.Alta(docente);
+            Assert.IsTrue(!modulo.ObtenerDocentes().Contains(docente));
+        }
 
 
 

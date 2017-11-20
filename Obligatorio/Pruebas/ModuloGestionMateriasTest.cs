@@ -14,7 +14,7 @@ namespace Pruebas
         public void GetNombreModulotest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             modulo.Nombre = "moduloMaterias";
             Assert.AreEqual("moduloMaterias", modulo.Nombre);
         }
@@ -23,7 +23,7 @@ namespace Pruebas
         public void GetDescripcionTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             modulo.Descripcion = "descripcion";
             Assert.AreEqual("descripcion", modulo.Descripcion);
         }
@@ -33,7 +33,7 @@ namespace Pruebas
         {
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             //ModuloGestionMaterias modulo = ModuloGestionMaterias.ObtenerInstancia(repositorio);
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 1);
@@ -45,7 +45,7 @@ namespace Pruebas
         {
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             //ModuloGestionMaterias modulo = ModuloGestionMaterias.ObtenerInstancia(repositorio);
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 1);
@@ -55,7 +55,7 @@ namespace Pruebas
         public void ModificarMateriaTest()
         {
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             modulo.Alta(materia);
             string nombreViejo = materia.Nombre;
@@ -68,7 +68,7 @@ namespace Pruebas
         public void ModificarMateriaFalseTest()
         {
             RepositorioRam repositorio = new RepositorioRam();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             modulo.Alta(materia);
             string nombreViejo = materia.Nombre;
@@ -81,7 +81,7 @@ namespace Pruebas
         public void ExisteMateriaConMismoNombreTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 16);
             modulo.Alta(materia1);
@@ -93,7 +93,7 @@ namespace Pruebas
         public void ExisteMateriaConMismoNombreFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia1 = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 16);
             modulo.Alta(materia1);
@@ -105,7 +105,7 @@ namespace Pruebas
         public void ValidarMateriaOKTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             modulo.ValidarAltaMateria(materia);
             modulo.Alta(materia);
@@ -118,7 +118,7 @@ namespace Pruebas
         public void ValidarMateriaErrorNombreRepetidoTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             modulo.Alta(materia);
             modulo.ValidarAltaMateria(materia);
@@ -129,7 +129,7 @@ namespace Pruebas
         public void EsMateriaSinNombreTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 15);
             Assert.IsFalse(modulo.EsMateriaSinNombre(materia));
         }
@@ -139,7 +139,7 @@ namespace Pruebas
         public void EsMateriaSinNombreTrueTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("", 15);
             Assert.IsTrue(modulo.EsMateriaSinNombre(materia));
         }
@@ -149,7 +149,7 @@ namespace Pruebas
         public void ValidarMateriaSinNombreErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("", 15);
             modulo.ValidarAltaMateria(materia);
         }
@@ -159,7 +159,7 @@ namespace Pruebas
         public void ExisteMateriaConMismoCodigoTrueTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             modulo.Alta(materia);
             Assert.IsTrue(modulo.ExisteMateriaConMismoCodigo(materia));
@@ -170,7 +170,7 @@ namespace Pruebas
         public void ExisteMateriaConMismoCodigoFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 16);
             modulo.Alta(materia);
@@ -183,7 +183,7 @@ namespace Pruebas
         public void ValidarMateriaCodigoRepetidoErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 15);
             modulo.Alta(materia);
@@ -196,7 +196,7 @@ namespace Pruebas
         public void AgregarAlumnoEnMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             modulo.Alta(materia);
@@ -209,7 +209,7 @@ namespace Pruebas
         public void EstaInscriptoEnLaMateriaTrueTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 222222);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
@@ -223,7 +223,7 @@ namespace Pruebas
         public void EstaInscriptoEnLaMateriaFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 222222);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
@@ -240,7 +240,7 @@ namespace Pruebas
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 222222);
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Assert.IsFalse(modulo.TienenMismoNumeroEstudiante(alumno, alumno2));
         }
         
@@ -251,7 +251,7 @@ namespace Pruebas
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "22226789", "m@g.com", 111222);
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Assert.IsTrue(modulo.TienenMismoNumeroEstudiante(alumno, alumno));
         }
         
@@ -260,7 +260,7 @@ namespace Pruebas
         public void BajaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
             modulo.Alta(materia);
             modulo.Baja(materia);
@@ -272,7 +272,7 @@ namespace Pruebas
         public void BajaMateriaErrorTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
             modulo.Baja(materia);
             Assert.IsTrue(modulo.ObtenerMaterias().Count == 0);
@@ -283,7 +283,7 @@ namespace Pruebas
         public void EliminarAlumnoDeUnaMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "123456789", "m@g.com", 111222);
             modulo.Alta(materia);
@@ -298,8 +298,8 @@ namespace Pruebas
         public void EliminarMateriaEnCadaAlumnoInscriptoTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1234567-8", "m@g.com", 111222);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1554567-0", "m@h.com", 111333);
@@ -316,7 +316,7 @@ namespace Pruebas
         public void HayMateriasRegistradasTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 10);
             moduloMaterias.Alta(materia);
             Assert.IsTrue(moduloMaterias.HayMateriasRegistradas());
@@ -326,7 +326,7 @@ namespace Pruebas
         public void HayMateriasRegistradasFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Assert.IsFalse(moduloMaterias.HayMateriasRegistradas());
         }
 
@@ -335,7 +335,7 @@ namespace Pruebas
         public void ValidarInscripcionDeAlumnoEnMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1234567-9", "m@g.com", 111222);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             modulo.Alta(materia);
@@ -347,8 +347,8 @@ namespace Pruebas
         public void ObtenerAlumnosTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba( repositorio);
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1234567-9", "m@g.com", 111222);
             moduloAlumnos.Alta(alumno);
             Assert.IsTrue(modulo.ObtenerAlumnos().Count == 1);
@@ -358,8 +358,8 @@ namespace Pruebas
         public void ObtenerAlumnosInscriptosEnMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio); Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1234567-9", "m@g.com", 111222);
-            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio); Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Jose", "Diaz", "1234567-9", "m@g.com", 111222);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             moduloAlumnos.Alta(alumno);
             moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
@@ -370,9 +370,9 @@ namespace Pruebas
         public void AsignarDocenteAMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba( repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Jose", "Diaz", "1234567-8");
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             moduloMaterias.Alta(materia);
@@ -385,9 +385,9 @@ namespace Pruebas
         public void EsDocenteDeLaMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba( repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Jose", "Diaz", "1234567-8");
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             moduloMaterias.Alta(materia);
@@ -399,9 +399,9 @@ namespace Pruebas
         public void EsDocenteDeLaMateriaFalseTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba( repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Jose", "Diaz", "1234567-8");
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             moduloMaterias.Alta(materia);
@@ -414,9 +414,9 @@ namespace Pruebas
         public void ValidarAsignacionDeDocenteAMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba( repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Jose", "Diaz", "1234567-8");
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             moduloMaterias.Alta(materia);
@@ -430,7 +430,7 @@ namespace Pruebas
         public void ValidarModifcacionNombreMateriaTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
             Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño2", 15);
             moduloMaterias.Alta(materia);
@@ -442,9 +442,9 @@ namespace Pruebas
         {
             UtilidadesPruebas.VaciarTablas();
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
-            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(ref repositorio);
-            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(ref repositorio);
-            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(ref repositorio);
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba( repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba( repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba( repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Jose", "Diaz", "1234567-8");
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Diego", "Lopez", "1258867-8");
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
