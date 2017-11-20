@@ -59,6 +59,16 @@ namespace Pruebas
             modulo.Alta(docente);
             Assert.IsTrue(modulo.ObtenerDocentes().Contains(docente));
         }
+        [TestMethod]
+        public void AgregarMateriaTestBD()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloMaterias.Alta(materia);
+            Assert.IsTrue(moduloMaterias.ObtenerMaterias().Count == 2);
+        }
 
 
 
