@@ -33,6 +33,21 @@ namespace Persistencia
             }
         }
 
+        public void EliminarAlumnoDeMateria(Materia materia, Alumno alumno)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                materia = contexto.Materias.Find(materia.Codigo);
+                alumno = contexto.Alumnos.Find(alumno.Id);
+                contexto.Materias.Attach(materia);
+                contexto.Alumnos.Attach(alumno);
+                materia.Alumnos.Remove(alumno);
+                alumno.MateriasInscripto.Remove(materia);
+
+                contexto.SaveChanges();
+            }
+        }
+
         public void AgregarCamioneta(Camioneta camioneta)
         {
             throw new NotImplementedException();
@@ -183,6 +198,7 @@ namespace Persistencia
                 contexto.Docentes.Attach(docente);
                 materia.Docentes.Add(docente);
                 docente.MateriasQueDicta.Add(materia);
+
                 contexto.SaveChanges();
             }
         }
@@ -197,6 +213,7 @@ namespace Persistencia
                 contexto.Docentes.Attach(docente);
                 materia.Docentes.Remove(docente);
                 docente.MateriasQueDicta.Remove(materia);
+
                 contexto.SaveChanges();
             }
         }

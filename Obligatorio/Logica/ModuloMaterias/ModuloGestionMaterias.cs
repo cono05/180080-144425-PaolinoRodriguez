@@ -119,8 +119,9 @@ namespace Logica
 
         public void EliminarAlumnoDeUnaMateria(Materia materia, Alumno alumno)
         {
-            materia.Alumnos.Remove(alumno);
-            alumno.MateriasInscripto.Remove(materia);
+            repositorio.EliminarAlumnoDeMateria(materia, alumno);
+            //materia.Alumnos.Remove(alumno);
+            //alumno.MateriasInscripto.Remove(materia);
         }
 
         public void EliminarMateriaEncadaAlumnoInscripto(Materia materia)
@@ -155,6 +156,7 @@ namespace Logica
             return materia.Alumnos;
         }
 
+        /* No parece estar en uso */
         public void AsignarDocenteAMateria(Materia materia, Docente docente)
         {
             ValidarAsignacionDeDocenteAMateria(materia, docente);

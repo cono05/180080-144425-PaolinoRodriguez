@@ -84,6 +84,12 @@ namespace Persistencia
             alumno.MateriasInscripto.Add(materia);
         }
 
+        public void EliminarAlumnoDeMateria(Materia materia, Alumno alumno)
+        {
+            materia.Alumnos.Remove(alumno);
+            alumno.MateriasInscripto.Remove(materia);
+        }
+
         public ICollection<Alumno> ObtenerAlumnosDeLaMateria(Materia materia)
         {
             return materia.Alumnos;
