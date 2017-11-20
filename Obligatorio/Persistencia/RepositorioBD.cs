@@ -205,8 +205,8 @@ namespace Persistencia
             ICollection<Actividad> retorno;
             using (Contexto contexto = new Contexto())
             {
-                var query = contexto.Actividades.Include("Participantes");
-                retorno = query.ToList();
+                var query = contexto.Actividades.Include("Participantes").ToList();
+                retorno = query;
             }
             return retorno;
         }
