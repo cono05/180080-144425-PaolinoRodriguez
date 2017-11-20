@@ -11,3 +11,4 @@ C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Dominio\bin\Deb
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Dominio\obj\Debug\Dominio.dll
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Dominio\obj\Debug\Dominio.pdb
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
