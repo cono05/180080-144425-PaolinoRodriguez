@@ -65,8 +65,8 @@ namespace Obligatorio
 
         private void ModificarMateriaBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new ModificacionMateria(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormModificacionMateria modificacionMateria = new FormModificacionMateria(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            modificacionMateria.Show();
         }
 
         private void AltaBajaDocenteBtn_Click(object sender, EventArgs e)
