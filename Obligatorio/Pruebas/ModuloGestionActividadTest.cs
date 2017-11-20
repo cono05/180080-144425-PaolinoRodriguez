@@ -27,5 +27,16 @@ namespace Pruebas
             moduloActividad.Descripcion = "moduloActividadDescripcion";
             Assert.AreEqual("moduloActividadDescripcion", moduloActividad.Descripcion);
         }
+
+        [TestMethod]
+        public void AgregarActividadTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            DateTime fecha = new DateTime(2017, 12, 24);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Actividad1", fecha, 100);
+            modulo.Alta(actividad);
+            Assert.IsTrue(modulo.ObtenerActividades().Count > 0);
+        }
     }
 }

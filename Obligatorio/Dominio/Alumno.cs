@@ -7,11 +7,13 @@ namespace Dominio
         public int NumeroDeEstudiante { get; set; }
         public string Mail { get; set; }
         public virtual ICollection<Materia> MateriasInscripto { get; set; }
+        public virtual ICollection<Actividad> ActividadesInscripto { get; set; }
 
         private static int numero = 1111;
         private Alumno()
         {
             MateriasInscripto = new List<Materia>();
+            ActividadesInscripto = new List<Actividad>();
             NumeroDeEstudiante = ++numero;
         }
         public static Alumno CrearAlumno()

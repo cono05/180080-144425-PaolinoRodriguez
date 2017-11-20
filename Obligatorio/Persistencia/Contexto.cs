@@ -10,10 +10,11 @@ namespace Persistencia
 {
     public class Contexto : DbContext
     {
-        public DbSet<Alumno>    Alumnos { get; set; }
-        public DbSet<Docente>   Docentes { get; set; }
-        public DbSet<Materia>   Materias { get; set; }
-        public DbSet<Camioneta> Camionetas { get; set; }
+        public DbSet<Alumno>    Alumnos     { get; set; }
+        public DbSet<Docente>   Docentes    { get; set; }
+        public DbSet<Materia>   Materias    { get; set; }
+        public DbSet<Camioneta> Camionetas  { get; set; }
+        public DbSet<Actividad> Actividades { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -33,6 +34,10 @@ namespace Persistencia
             // PK -- Primary key de camioneta es la chapa
             modelBuilder.Entity<Camioneta>()
                 .HasKey(camioneta => camioneta.Chapa);
+
+            // PK -- Primary key de actividad es el Id
+            modelBuilder.Entity<Actividad>()
+                .HasKey(actividad => actividad.Id);
 
             // N a N entre alumno y materia
             modelBuilder.Entity<Alumno>()
@@ -55,6 +60,17 @@ namespace Persistencia
                     m.ToTable("Docente_Materia");
                     m.MapLeftKey("DocenteId");
                     m.MapRightKey("MateriaCodigo");
+                });
+
+            // N a N entre actividad y alumnos
+            modelBuilder.Entity<Actividad>()
+                .HasMany(actividad => actividad.Participantes)
+                .WithMany(alumno => alumno.ActividadesInscripto)
+                .Map(m =>
+                {
+                    m.ToTable("Actividad_Alumno");
+                    m.MapLeftKey("ActividadId");
+                    m.MapRightKey("AlumnoId");
                 });
         }
 

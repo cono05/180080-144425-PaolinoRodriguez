@@ -10,6 +10,7 @@ namespace Persistencia
         public ICollection<Alumno> Alumnos { get; set; }
         public ICollection<Docente> Docentes { get; set; }
         public ICollection<Camioneta> Camionetas { get; set; }
+        public ICollection<Actividad> Actividades { get; set; }
 
         public RepositorioRam()
         {
@@ -17,6 +18,7 @@ namespace Persistencia
             Alumnos = new List<Alumno>();
             Docentes = new List<Docente>();
             Camionetas = new List<Camioneta>();
+            Actividades = new List<Actividad>();
         }
 
         public void AgregarAlumno(Alumno alumno)
@@ -37,6 +39,11 @@ namespace Persistencia
         public void AgregarCamioneta(Camioneta camioneta)
         {
             Camionetas.Add(camioneta);
+        }
+
+        public void AgregarActividad(Actividad actividad)
+        {
+            Actividades.Add(actividad);
         }
 
         public void EliminarAlumno(Alumno alumno)
@@ -76,6 +83,10 @@ namespace Persistencia
         public ICollection<Camioneta> ObtenerCamionetas()
         {
             return Camionetas;
+        }
+        public ICollection<Actividad> ObtenerActividades()
+        {
+            return Actividades;
         }
 
         public void AgregarAlumnoEnMateria(Materia materia, Alumno alumno)

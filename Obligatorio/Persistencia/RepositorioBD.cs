@@ -71,7 +71,6 @@ namespace Persistencia
             }
         }
     
-
         public void EliminarAlumno(Alumno unAlumno)
         {
             using (Contexto contexto = new Contexto())
@@ -188,6 +187,17 @@ namespace Persistencia
             }
         }
 
+        public ICollection<Actividad> ObtenerActividades()
+        {
+            ICollection<Actividad> retorno;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = contexto.Actividades.Include("Participantes");
+                retorno = query.ToList();
+            }
+            return retorno;
+        }
+
         public void AgregarDocenteEnMateria(Materia materia, Docente docente)
         {
             using (Contexto contexto = new Contexto())
@@ -270,6 +280,15 @@ namespace Persistencia
 
                 contexto.Materias.Attach(miMateria);
                 miMateria.Nombre = nuevoNombre;
+                contexto.SaveChanges();
+            }
+        }
+
+        public void AgregarActividad(Actividad actividad)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Actividades.Add(actividad);
                 contexto.SaveChanges();
             }
         }

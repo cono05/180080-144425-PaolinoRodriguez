@@ -2,6 +2,7 @@
 using Persistencia;
 using Excepciones;
 using System.Collections.Generic;
+using Dominio;
 
 namespace Logica
 {
@@ -18,12 +19,18 @@ namespace Logica
 
         public void Alta(object obj)
         {
-            throw new NotImplementedException();
+            repositorio.AgregarActividad((Actividad)obj);
         }
 
         public void Baja(object obj)
         {
             throw new NotImplementedException();
         }
+
+        public ICollection<Actividad> ObtenerActividades()
+        {
+            return repositorio.ObtenerActividades();
+        }
+
     }
 }
