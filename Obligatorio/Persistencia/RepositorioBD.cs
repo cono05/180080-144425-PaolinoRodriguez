@@ -161,14 +161,9 @@ namespace Persistencia
             using (Contexto contexto = new Contexto())
             {
                 materia = contexto.Materias.Find(materia.Codigo);
-                //alumno = contexto.Alumnos.Find(alumno.Id);
                 contexto.Materias.Attach(materia);
                 return materia.Alumnos;
-                //contexto.Alumnos.Attach(alumno);
-                //materia.Alumnos.Add(alumno);
-                //alumno.MateriasInscripto.Add(materia);
-
-                //contexto.SaveChanges();
+                
             }
         }
 
@@ -176,15 +171,9 @@ namespace Persistencia
         {
             using (Contexto contexto = new Contexto())
             {
+                materia = contexto.Materias.Find(materia.Codigo);
                 contexto.Materias.Attach(materia);
-                ICollection<Docente> query = contexto.Materias.Find(materia.Codigo).Docentes;
-                //alumno = contexto.Alumnos.Find(alumno.Id);
-                return query;
-                //contexto.Alumnos.Attach(alumno);
-                //materia.Alumnos.Add(alumno);
-                //alumno.MateriasInscripto.Add(materia);
-
-                //contexto.SaveChanges();
+                return materia.Docentes;
             }
         }
 
@@ -198,7 +187,6 @@ namespace Persistencia
                 contexto.Docentes.Attach(docente);
                 materia.Docentes.Add(docente);
                 docente.MateriasQueDicta.Add(materia);
-
                 contexto.SaveChanges();
             }
         }
