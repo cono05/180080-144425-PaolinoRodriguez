@@ -99,6 +99,21 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void AgregarDocenteEnMateriaTestBD()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloMaterias.Alta(materia);
+            ModuloGestionDocente moduloDocentes = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Pedro", "Leon", "5654543-1");
+            moduloDocentes.Alta(docente);
+            repositorio.AgregarDocenteEnMateria(materia, docente);
+            Assert.IsTrue(repositorio.ObtenerDocentesDeLaMateria(materia).Contains(docente));
+        }
+
+        [TestMethod]
         public void ObtenerDocentesDeLaMateriaTestBD()
         {
             UtilidadesPruebas.VaciarTablas();
@@ -112,5 +127,22 @@ namespace Pruebas
             repositorio.AgregarDocenteEnMateria(materia, docente);
             Assert.IsTrue(repositorio.ObtenerDocentesDeLaMateria(materia).Contains(docente));
         }
+
+        [TestMethod]
+        public void EliminarDocenteEnMateriaTestBD()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloMaterias.Alta(materia);
+            ModuloGestionDocente moduloDocentes = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Pedro", "Leon", "5654543-1");
+            moduloDocentes.Alta(docente);
+            repositorio.AgregarDocenteEnMateria(materia, docente);
+            repositorio.EliminarDocenteEnMateria(materia, docente);
+            Assert.IsTrue(repositorio.ObtenerDocentesDeLaMateria(materia).Count==0);
+        }
+
    }
 }
