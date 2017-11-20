@@ -11,6 +11,40 @@ namespace Pruebas
 {
     class UtilidadesPruebas
     {
+        public static void VaciarTablas()
+        {
+            //Database.SetInitializer<Contexto>(null);
+            using (var contexto = new Contexto())
+            {
+                var alumnos = (from alumno in contexto.Alumnos select alumno);
+                foreach (Alumno alumno in alumnos)
+                {
+
+                    contexto.Alumnos.Remove(alumno);
+                }
+
+                var docentes = (from docente in contexto.Docentes
+                                select docente);
+                foreach (Docente docente in docentes)
+                {
+                    contexto.Docentes.Remove(docente);
+                }
+
+                var materias = (from materia in contexto.Materias
+                                select materia);
+                foreach (Materia materia in materias)
+                {
+                    contexto.Materias.Remove(materia);
+                }
+                contexto.SaveChanges();
+            }
+        }
+
+        public static RepositorioBD CrearRepositorioBDPrueba()
+        {
+            RepositorioBD repositorio = new RepositorioBD();
+            return repositorio;
+        }
         public static RepositorioRam CrearRepositorioRamDePrueba()
         {
             RepositorioRam repositorio = new RepositorioRam();
