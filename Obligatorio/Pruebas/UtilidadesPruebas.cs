@@ -120,5 +120,11 @@ namespace Pruebas
             return moduloGestionCamionetas;
         }
 
+        public static ModuloGestionActividad CrearModuloGestionActividadDePrueba(IRepositorio repositorio)
+        {
+            ModuloGestionActividad moduloGestionActividad = new ModuloGestionActividad(repositorio);
+            return moduloGestionActividad;
+        }
+
    }
 }
