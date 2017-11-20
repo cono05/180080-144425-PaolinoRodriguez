@@ -38,5 +38,19 @@ namespace Pruebas
             modulo.Alta(actividad);
             Assert.IsTrue(modulo.ObtenerActividades().Count > 0);
         }
+
+        [TestMethod]
+        public void EliminarActividadTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            DateTime fecha = new DateTime(2017, 12, 24);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Actividad1", fecha, 100);
+            modulo.Alta(actividad);
+            int antesEliminar = modulo.ObtenerActividades().Count;
+            modulo.Baja(actividad);
+            int despuesEliminar = modulo.ObtenerActividades().Count;
+            Assert.IsTrue(antesEliminar == despuesEliminar + 1);
+        }
     }
 }

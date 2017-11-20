@@ -115,6 +115,19 @@ namespace Persistencia
             }
         }
 
+        public void EliminarActividad(Actividad unaActividad)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                var actividadAEliminar = (from actividad in contexto.Actividades
+                                          where actividad.Id == unaActividad.Id
+                                          select actividad).Single();
+
+                contexto.Actividades.Remove(actividadAEliminar);
+                contexto.SaveChanges();
+            }
+        }
+
         public ICollection<Alumno> ObtenerAlumnos()
         {
             using (Contexto contexto = new Contexto())

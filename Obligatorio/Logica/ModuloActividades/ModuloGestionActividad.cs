@@ -24,7 +24,7 @@ namespace Logica
 
         public void Baja(object obj)
         {
-            throw new NotImplementedException();
+            repositorio.EliminarActividad((Actividad)obj);
         }
 
         public ICollection<Actividad> ObtenerActividades()

@@ -66,6 +66,11 @@ namespace Persistencia
             Camionetas.Remove(camioneta);
         }
 
+        public void EliminarActividad(Actividad actividad)
+        {
+            Actividades.Remove(actividad);
+        }
+
         public ICollection<Materia> ObtenerMaterias() {
             return Materias;
         }

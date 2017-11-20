@@ -18,6 +18,7 @@ namespace Persistencia
         void AgregarActividad(Actividad actividad);
         void EliminarCamioneta(Camioneta camioneta);
         void AgregarAlumnoEnMateria(Materia materia, Alumno alumno);
+        void EliminarActividad(Actividad actividad);
         void EliminarAlumnoDeMateria(Materia materia, Alumno alumno);
         void AgregarDocenteEnMateria(Materia materia, Docente docente);
         void EliminarDocenteEnMateria(Materia materia, Docente docente);
