@@ -28,7 +28,7 @@ namespace Dominio
         public override bool Equals(object obj)
         {
             bool equals = false;
-            if (obj != null && this.GetType() == obj.GetType())
+            if (obj != null/* && this.GetType() == obj.GetType()*/)
             {
                 Materia materia = (Materia)obj;
                 equals = materia.Codigo == Codigo;

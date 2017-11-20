@@ -67,7 +67,7 @@ namespace Pruebas
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
             moduloMaterias.Alta(materia);
-            Assert.IsTrue(moduloMaterias.ObtenerMaterias().Count == 2);
+            Assert.IsTrue(moduloMaterias.ObtenerMaterias().Contains(materia));
         }
 
 
