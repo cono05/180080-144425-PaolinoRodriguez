@@ -27,6 +27,7 @@ namespace Persistencia
         void ModificarDocente(Docente aCambiar, Docente nuevosDatos);
         void ModificarMateria(Materia aCambiar, String nuevoNombre);
         void AgregarParticipanteEnActividad(Actividad actividad, Alumno alumno);
+        Actividad ObtenerActividadPorId(int id);
 
         ICollection<Materia> ObtenerMaterias();
         ICollection<Alumno> ObtenerAlumnos();

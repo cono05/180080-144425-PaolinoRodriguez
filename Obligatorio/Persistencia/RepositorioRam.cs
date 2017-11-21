@@ -159,5 +159,15 @@ namespace Persistencia
             aCambiar.Fecha = nuevosDatos.Fecha;
             aCambiar.Costo = nuevosDatos.Costo;
         }
+
+        public Actividad ObtenerActividadPorId(int id)
+        {
+            foreach(Actividad act in this.Actividades)
+            {
+                if(act.Id == id)
+                    return act;
+            }
+            return null;
+        }
     }
 }

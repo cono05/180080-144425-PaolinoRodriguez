@@ -220,10 +220,11 @@ namespace Persistencia
             {
                 actividad = contexto.Actividades.Find(actividad.Id);
                 alumno = contexto.Alumnos.Find(alumno.Id);
-                contexto.Actividades.Attach(actividad);
-                contexto.Alumnos.Attach(alumno);
                 actividad.Participantes.Add(alumno);
                 alumno.ActividadesInscripto.Add(actividad);
+                contexto.Actividades.Attach(actividad);
+                contexto.Alumnos.Attach(alumno);
+
                 contexto.SaveChanges();
             }
         }
@@ -345,6 +346,19 @@ namespace Persistencia
                 miActividad.Costo = nuevosDatos.Costo;
                 contexto.SaveChanges();
             }
+        }
+
+        public Actividad ObtenerActividadPorId(int id)
+        {
+            Actividad retorno;
+            using(Contexto contexto = new Contexto())
+            {
+                //retorno = contexto.Actividades.Find(id);
+                //contexto.Actividades.Attach(retorno);
+                var query = contexto.Actividades.Include("Participantes").ToList();
+                retorno = query.Where(actividad => actividad.Id.Equals(id)).First();
+            }
+            return retorno;
         }
     }
 }

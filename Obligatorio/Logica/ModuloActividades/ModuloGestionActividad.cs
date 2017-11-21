@@ -43,5 +43,10 @@ namespace Logica
             //Validar que ya no este
             repositorio.AgregarParticipanteEnActividad(actividad, alumno);
         }
+
+        public Actividad ObtenerActividadPorId(int id)
+        {
+            return repositorio.ObtenerActividadPorId(id);
+        }
     }
 }

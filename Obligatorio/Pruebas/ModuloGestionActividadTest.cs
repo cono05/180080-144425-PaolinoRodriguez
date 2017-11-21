@@ -70,6 +70,18 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void ObtenerActividadPorIdTest()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("ActividadPruebaObtenerAct", new DateTime(2027, 1, 12), 132);
+            modulo.Alta(actividad);
+            Actividad nuevaAct = modulo.ObtenerActividadPorId(actividad.Id);
+            Assert.IsTrue(nuevaAct.Equals(actividad));
+        }
+
+        [TestMethod]
         public void ModificarActividadTest()
         {
             UtilidadesPruebas.VaciarTablas();
@@ -82,15 +94,10 @@ namespace Pruebas
             DateTime fechaOriginal = actividadOriginal.Fecha;
             modulo.ModificarActividad(ref actividadOriginal, actividadNuevosDatos);
 
-            foreach (Actividad act in modulo.ObtenerActividades())
-            {
-                if(act.Id == actividadOriginal.Id)
-                {
-                    string nombreActualizado = act.Nombre;
-                    DateTime fechaActualizado = act.Fecha;
-                    Assert.IsTrue(!(nombreOriginal.Equals(nombreActualizado)) && (fechaOriginal.CompareTo(fechaActualizado) != 0));
-                }
-            }  
+            string nombreActualizado = modulo.ObtenerActividadPorId(actividadOriginal.Id).Nombre;
+            DateTime fechaActualizado = modulo.ObtenerActividadPorId(actividadOriginal.Id).Fecha;
+
+            Assert.IsTrue(!(nombreOriginal.Equals(nombreActualizado)) && (fechaOriginal.CompareTo(fechaActualizado) != 0));
         }
 
         [TestMethod]
@@ -105,13 +112,8 @@ namespace Pruebas
             moduloAct.Alta(actividad);
             moduloAlu.Alta(alumno);
             moduloAct.AgregarParticipanteEnActividad(actividad, alumno);
-            foreach (Actividad act in moduloAct.ObtenerActividades())
-            {
-                if (act.Id == actividad.Id)
-                {
-                    Assert.IsTrue(actividad.Participantes.Count > 0);
-                }
-            }
+
+            Assert.IsTrue(moduloAct.ObtenerActividadPorId(actividad.Id).Participantes.Count > 0);
         }
     }
 }
