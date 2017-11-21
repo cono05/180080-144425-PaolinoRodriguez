@@ -32,5 +32,10 @@ namespace Logica
             return repositorio.ObtenerActividades();
         }
 
+        public void ModificarActividad(ref Actividad actividadOriginal, Actividad actividadNuevosDatos)
+        {
+            //Validar
+            repositorio.ModificarActividad(actividadOriginal, actividadNuevosDatos);
+        }
     }
 }

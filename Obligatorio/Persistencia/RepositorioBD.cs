@@ -305,5 +305,24 @@ namespace Persistencia
                 contexto.SaveChanges();
             }
         }
+
+        public void ModificarActividad(Actividad aCambiar, Actividad nuevosDatos)
+        {
+            Actividad miActividad;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = from actividad in contexto.Actividades
+                            where actividad.Id == aCambiar.Id
+                            select actividad;
+
+                miActividad = query.FirstOrDefault();
+
+                contexto.Actividades.Attach(miActividad);
+                miActividad.Nombre = nuevosDatos.Nombre;
+                miActividad.Fecha = nuevosDatos.Fecha;
+                miActividad.Costo = nuevosDatos.Costo;
+                contexto.SaveChanges();
+            }
+        }
     }
 }

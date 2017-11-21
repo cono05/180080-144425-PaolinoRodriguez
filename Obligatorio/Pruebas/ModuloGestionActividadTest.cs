@@ -13,6 +13,7 @@ namespace Pruebas
         [TestMethod]
         public void GetNombreModuloGestionActividadTest()
         {
+            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad moduloActividad = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             moduloActividad.Nombre = "moduloActividad";
@@ -22,6 +23,7 @@ namespace Pruebas
         [TestMethod]
         public void GetDescripcionModuloGestionActividadTest()
         {
+            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad moduloActividad = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             moduloActividad.Descripcion = "moduloActividadDescripcion";
@@ -31,6 +33,7 @@ namespace Pruebas
         [TestMethod]
         public void AgregarActividadTest()
         {
+            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             DateTime fecha = new DateTime(2017, 12, 24);
@@ -42,6 +45,7 @@ namespace Pruebas
         [TestMethod]
         public void EliminarActividadTest()
         {
+            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             DateTime fecha = new DateTime(2017, 12, 24);
@@ -56,12 +60,37 @@ namespace Pruebas
         [TestMethod]
         public void ObtenerActividadesTest()
         {
+            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             DateTime fecha = new DateTime(2017, 12, 24);
             Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("ActividadPruebaObtenerAct", fecha, 100);
             modulo.Alta(actividad);
             Assert.IsTrue(modulo.ObtenerActividades().Count > 0);
+        }
+
+        [TestMethod]
+        public void ModificarActividadTest()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividadOriginal     = UtilidadesPruebas.CrearActividadDePrueba("ActividadPruebaOriginal", new DateTime(2017, 12, 24), 100);
+            Actividad actividadNuevosDatos  = UtilidadesPruebas.CrearActividadDePrueba("ActividadPruebaNuevosDatos", new DateTime(2018, 02, 20), 200);
+            modulo.Alta(actividadOriginal);
+            string nombreOriginal = actividadOriginal.Nombre;
+            DateTime fechaOriginal = actividadOriginal.Fecha;
+            modulo.ModificarActividad(ref actividadOriginal, actividadNuevosDatos);
+
+            foreach (Actividad act in modulo.ObtenerActividades())
+            {
+                if(act.Id == actividadOriginal.Id)
+                {
+                    string nombreActualizado = act.Nombre;
+                    DateTime fechaActualizado = act.Fecha;
+                    Assert.IsTrue(!(nombreOriginal.Equals(nombreActualizado)) && (fechaOriginal.CompareTo(fechaActualizado) != 0));
+                }
+            }  
         }
     }
 }

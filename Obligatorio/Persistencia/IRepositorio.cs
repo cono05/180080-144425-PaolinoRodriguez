@@ -23,6 +23,7 @@ namespace Persistencia
         void AgregarDocenteEnMateria(Materia materia, Docente docente);
         void EliminarDocenteEnMateria(Materia materia, Docente docente);
         void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos);
+        void ModificarActividad(Actividad aCambiar, Actividad nuevosDatos);
         void ModificarDocente(Docente aCambiar, Docente nuevosDatos);
         void ModificarMateria(Materia aCambiar, String nuevoNombre);
 

@@ -146,5 +146,12 @@ namespace Persistencia
         {
             aCambiar.Nombre = nuevoNombre;
         }
+
+        public void ModificarActividad(Actividad aCambiar, Actividad nuevosDatos)
+        {
+            aCambiar.Nombre = nuevosDatos.Nombre;
+            aCambiar.Fecha = nuevosDatos.Fecha;
+            aCambiar.Costo = nuevosDatos.Costo;
+        }
     }
 }
