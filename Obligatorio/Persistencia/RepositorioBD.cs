@@ -261,5 +261,15 @@ namespace Persistencia
                 contexto.SaveChanges();
             }
         }
+
+        public Alumno ObtenerAlumnoPorID(int id)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                Alumno alumno = contexto.Alumnos.Find(id);
+                contexto.Alumnos.Attach(alumno);
+                return alumno;
+            }
+        }
     }
 }

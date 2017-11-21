@@ -144,5 +144,32 @@ namespace Pruebas
             Assert.IsTrue(repositorio.ObtenerDocentesDeLaMateria(materia).Count==0);
         }
 
-   }
+        [TestMethod]
+        public void ModificarAlumnoTestBD()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("NombreNuevo", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
+            ModuloGestionAlumno modulo = new ModuloGestionAlumno(repositorio);
+            modulo.Alta(alumno);
+            repositorio.ModificarAlumno(alumno, alumno2);
+            alumno = repositorio.ObtenerAlumnoPorID(alumno.Id);
+            Assert.IsTrue(alumno.Nombre.Equals("NombreNuevo"));
+        }
+
+        [TestMethod]
+        public void ObtenerAlumnoPorIDTest()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
+            ModuloGestionAlumno modulo = new ModuloGestionAlumno(repositorio);
+            modulo.Alta(alumno);
+            Alumno obtenido = repositorio.ObtenerAlumnoPorID(alumno.Id);
+            Assert.AreEqual(alumno.Id, obtenido.Id);
+        }
+    }
+
+   
 }
