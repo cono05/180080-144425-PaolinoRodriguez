@@ -37,5 +37,11 @@ namespace Logica
             //Validar
             repositorio.ModificarActividad(actividadOriginal, actividadNuevosDatos);
         }
+
+        public void AgregarParticipanteEnActividad(Actividad actividad, Alumno alumno)
+        {
+            //Validar que ya no este
+            repositorio.AgregarParticipanteEnActividad(actividad, alumno);
+        }
     }
 }
