@@ -112,6 +112,12 @@ namespace Persistencia
             alumno.MateriasInscripto.Remove(materia);
         }
 
+        public void EliminarParticipanteEnActividad(Actividad actividad, Alumno alumno)
+        {
+            actividad.Participantes.Remove(alumno);
+            alumno.ActividadesInscripto.Remove(actividad);
+        }
+
         public ICollection<Alumno> ObtenerAlumnosDeLaMateria(Materia materia)
         {
             return materia.Alumnos;
@@ -168,6 +174,32 @@ namespace Persistencia
                     return act;
             }
             return null;
+        }
+
+        public Docente ObtenerDocentePorID(int id)
+        {
+            foreach (Docente docente in Docentes)
+            {
+                if (docente.Id == id)
+                    return docente;
+            }
+            return null;
+        }
+
+        public Alumno ObtenerAlumnoPorID(int id)
+        {
+            foreach (Alumno alumno in Alumnos)
+            {
+                if (alumno.Id == id)
+                    return alumno;
+            }
+            return null;
+        }
+
+        public Materia ObtenerMateriaPorCodigo(int codigo)
+        {
+            
+            throw new NotImplementedException();
         }
     }
 }

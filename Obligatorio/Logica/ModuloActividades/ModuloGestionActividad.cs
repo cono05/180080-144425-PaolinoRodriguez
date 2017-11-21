@@ -48,5 +48,40 @@ namespace Logica
         {
             return repositorio.ObtenerActividadPorId(id);
         }
+
+        public void EliminarParticipanteEnActividad(Actividad actividad, Alumno alumno)
+        {
+            //Validar que existe
+            repositorio.EliminarParticipanteEnActividad(actividad, alumno);
+        }
+
+        #region Validaciones
+        public bool EsActividadSinNombre(Actividad actividad)
+        {
+            return string.IsNullOrEmpty(actividad.Nombre);
+        }
+
+        public bool EsActividadSinFecha(Actividad actividad)
+        {
+            return actividad.Fecha.CompareTo(DateTime.MinValue) == 0;
+        }
+
+        public bool EsActividadSinCosto(Actividad actividad)
+        {
+            return actividad.Costo == 0;
+        }
+
+
+        #endregion
+
+        public bool EstaParticipanteInscriptoEnActividad(Alumno unAlumno, Actividad unaActividad)
+        {
+            foreach(Alumno alumno in repositorio.ObtenerActividadPorId(unaActividad.Id).Participantes)
+            {
+                if (alumno.Equals(unAlumno))
+                    return true;
+            }
+            return false;
+        }
     }
 }

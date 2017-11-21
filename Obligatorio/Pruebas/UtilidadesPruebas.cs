@@ -35,6 +35,14 @@ namespace Pruebas
                 {
                     contexto.Materias.Remove(materia);
                 }
+
+                var actividades = (from actividad in contexto.Actividades
+                                select actividad);
+                foreach (Actividad actividad in actividades)
+                {
+                    contexto.Actividades.Remove(actividad);
+                }
+
                 contexto.SaveChanges();
             }
         }

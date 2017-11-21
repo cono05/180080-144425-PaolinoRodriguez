@@ -10,6 +10,13 @@ namespace Pruebas
     [TestClass]
     public class ModuloGestionActividadTest
     {
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            UtilidadesPruebas.VaciarTablas();
+        }
+
         [TestMethod]
         public void GetNombreModuloGestionActividadTest()
         {
@@ -103,7 +110,6 @@ namespace Pruebas
         [TestMethod]
         public void AgregarParticipanteEnActividadTest()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad moduloAct = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             ModuloGestionAlumno moduloAlu = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
@@ -114,6 +120,81 @@ namespace Pruebas
             moduloAct.AgregarParticipanteEnActividad(actividad, alumno);
 
             Assert.IsTrue(moduloAct.ObtenerActividadPorId(actividad.Id).Participantes.Count > 0);
+        }
+
+        [TestMethod]
+        public void EliminarParticipanteEnActividadTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad moduloAct = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionAlumno moduloAlu = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("ActividadAgregarParticipante", new DateTime(2018, 1, 1), 2000);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Carlitos", "Prueba", "1298637-8", "prueba@prueb.com", 78);
+            moduloAct.Alta(actividad);
+            moduloAlu.Alta(alumno);
+            moduloAct.AgregarParticipanteEnActividad(actividad, alumno);
+            bool seAgrego = (moduloAct.ObtenerActividadPorId(actividad.Id).Participantes.Count > 0) ? true : false;
+            moduloAct.EliminarParticipanteEnActividad(actividad, alumno);
+            bool seElimino = (moduloAct.ObtenerActividadPorId(actividad.Id).Participantes.Count == 0) ? true : false;
+
+            Assert.IsTrue(seAgrego && seElimino);
+        }
+
+        [TestMethod]
+        public void EsActividadSinNombreTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("", new DateTime(2017, 1, 1), 10);
+            Assert.IsTrue(modulo.EsActividadSinNombre(actividad));
+        }
+
+        [TestMethod]
+        public void EsActividadSinFechaTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(1, 1, 1), 10);
+            Assert.IsTrue(modulo.EsActividadSinFecha(actividad));
+        }
+
+        [TestMethod]
+        public void EsActividadSinCostoTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(2017, 1, 1), 0);
+            Assert.IsTrue(modulo.EsActividadSinCosto(actividad));
+        }
+
+        [TestMethod]
+        public void EstaParticipanteInscriptoEnActividadTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad moduloActividad = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionAlumno moduloAlumno = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(2018, 1, 1), 90);
+            moduloActividad.Alta(actividad);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+            moduloAlumno.Alta(alumno);
+            moduloActividad.AgregarParticipanteEnActividad(actividad, alumno);
+
+            Assert.IsTrue(moduloActividad.EstaParticipanteInscriptoEnActividad(alumno, actividad));
+
+        }
+
+        [TestMethod]
+        public void EstaParticipanteInscriptoEnActividadFalseTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad moduloActividad  = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionAlumno moduloAlumno        = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(2018, 1, 1), 90);
+            moduloActividad.Alta(actividad);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+
+            Assert.IsFalse(moduloActividad.EstaParticipanteInscriptoEnActividad(alumno, actividad));
+
         }
     }
 }
