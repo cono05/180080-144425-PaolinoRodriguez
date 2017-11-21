@@ -92,5 +92,26 @@ namespace Pruebas
                 }
             }  
         }
+
+        [TestMethod]
+        public void AgregarParticipanteEnActividadTest()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad moduloAct = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionAlumno moduloAlu = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("ActividadAgregarParticipante", new DateTime(2018, 1, 1), 2000);
+            Alumno alumno       = UtilidadesPruebas.CrearAlumnoDePrueba("Carlitos", "Prueba", "1298637-8", "prueba@prueb.com", 78);
+            moduloAct.Alta(actividad);
+            moduloAlu.Alta(alumno);
+            moduloAct.AgregarParticipanteEnActividad(actividad, alumno);
+            foreach (Actividad act in moduloAct.ObtenerActividades())
+            {
+                if (act.Id == actividad.Id)
+                {
+                    Assert.IsTrue(actividad.Participantes.Count > 0);
+                }
+            }
+        }
     }
 }

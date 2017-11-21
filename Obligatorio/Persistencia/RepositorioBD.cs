@@ -214,6 +214,20 @@ namespace Persistencia
             }
         }
 
+        public void AgregarParticipanteEnActividad(Actividad actividad, Alumno alumno)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                actividad = contexto.Actividades.Find(actividad.Id);
+                alumno = contexto.Alumnos.Find(alumno.Id);
+                contexto.Actividades.Attach(actividad);
+                contexto.Alumnos.Attach(alumno);
+                actividad.Participantes.Add(alumno);
+                alumno.ActividadesInscripto.Add(actividad);
+                contexto.SaveChanges();
+            }
+        }
+
         public void EliminarDocenteEnMateria(Materia materia, Docente docente)
         {
             using (Contexto contexto = new Contexto())

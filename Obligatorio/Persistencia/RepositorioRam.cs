@@ -100,6 +100,12 @@ namespace Persistencia
             alumno.MateriasInscripto.Add(materia);
         }
 
+        public void AgregarParticipanteEnActividad(Actividad actividad, Alumno alumno)
+        {
+            actividad.Participantes.Add(alumno);
+            alumno.ActividadesInscripto.Add(actividad);            
+        }
+
         public void EliminarAlumnoDeMateria(Materia materia, Alumno alumno)
         {
             materia.Alumnos.Remove(alumno);
