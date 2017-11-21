@@ -40,5 +40,6 @@ namespace Persistencia
         Alumno ObtenerAlumnoPorID(int id);
         Materia ObtenerMateriaPorCodigo(int codigo);
 
+
     }
 }
