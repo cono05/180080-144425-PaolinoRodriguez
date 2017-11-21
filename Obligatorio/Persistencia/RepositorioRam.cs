@@ -159,5 +159,25 @@ namespace Persistencia
             aCambiar.Fecha = nuevosDatos.Fecha;
             aCambiar.Costo = nuevosDatos.Costo;
         }
+
+        public Docente ObtenerDocentePorID(int id)
+        {
+            foreach (Docente docente in Docentes)
+            {
+                if (docente.Id == id)
+                    return docente;
+            }
+            return null;
+        }
+
+        public Alumno ObtenerAlumnoPorID(int id)
+        {
+            foreach (Alumno alumno in Alumnos)
+            {
+                if (alumno.Id == id)
+                    return alumno;
+            }
+            return null;
+        }
     }
 }
