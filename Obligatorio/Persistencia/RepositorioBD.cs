@@ -146,6 +146,11 @@ namespace Persistencia
             }
         }
 
+        public Materia ObtenerMateriaPorCodigo(int codigo)
+        {
+            throw new NotImplementedException();
+        }
+
         public ICollection<Docente> ObtenerDocentes()
         {
             ICollection<Docente> retorno;
