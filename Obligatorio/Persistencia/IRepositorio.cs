@@ -15,12 +15,15 @@ namespace Persistencia
         void AgregarDocente(Docente docente);
         void EliminarDocente(Docente docente);
         void AgregarCamioneta(Camioneta camioneta);
+        void AgregarActividad(Actividad actividad);
         void EliminarCamioneta(Camioneta camioneta);
         void AgregarAlumnoEnMateria(Materia materia, Alumno alumno);
+        void EliminarActividad(Actividad actividad);
         void EliminarAlumnoDeMateria(Materia materia, Alumno alumno);
         void AgregarDocenteEnMateria(Materia materia, Docente docente);
         void EliminarDocenteEnMateria(Materia materia, Docente docente);
         void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos);
+        void ModificarActividad(Actividad aCambiar, Actividad nuevosDatos);
         void ModificarDocente(Docente aCambiar, Docente nuevosDatos);
         void ModificarMateria(Materia aCambiar, String nuevoNombre);
 
@@ -30,6 +33,7 @@ namespace Persistencia
         ICollection<Camioneta> ObtenerCamionetas();
         ICollection<Alumno> ObtenerAlumnosDeLaMateria(Materia materia);
         ICollection<Docente> ObtenerDocentesDeLaMateria(Materia materia);
+        ICollection<Actividad> ObtenerActividades();
         
 
     }

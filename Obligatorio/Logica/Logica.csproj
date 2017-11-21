@@ -52,6 +52,7 @@
     <Compile Include="IModulo.cs" />
     <Compile Include="ModuloAlumnos\ModuloGestionAlumno.cs" />
     <Compile Include="ModuloDocentes\ModuloGestionDocente.cs" />
+    <Compile Include="ModuloActividades\ModuloGestionActividad.cs" />
     <Compile Include="ModuloGestionCamioneta.cs" />
     <Compile Include="ModuloMaterias\ModuloGestionMaterias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

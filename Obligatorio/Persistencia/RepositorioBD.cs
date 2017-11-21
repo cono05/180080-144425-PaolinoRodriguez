@@ -71,7 +71,6 @@ namespace Persistencia
             }
         }
     
-
         public void EliminarAlumno(Alumno unAlumno)
         {
             using (Contexto contexto = new Contexto())
@@ -112,6 +111,19 @@ namespace Persistencia
                                         select materia).Single();
 
                 contexto.Materias.Remove(materiaAEliminar);
+                contexto.SaveChanges();
+            }
+        }
+
+        public void EliminarActividad(Actividad unaActividad)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                var actividadAEliminar = (from actividad in contexto.Actividades
+                                          where actividad.Id == unaActividad.Id
+                                          select actividad).Single();
+
+                contexto.Actividades.Remove(actividadAEliminar);
                 contexto.SaveChanges();
             }
         }
@@ -175,6 +187,17 @@ namespace Persistencia
                 contexto.Materias.Attach(materia);
                 return materia.Docentes;
             }
+        }
+
+        public ICollection<Actividad> ObtenerActividades()
+        {
+            ICollection<Actividad> retorno;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = contexto.Actividades.Include("Participantes").ToList();
+                retorno = query;
+            }
+            return retorno;
         }
 
         public void AgregarDocenteEnMateria(Materia materia, Docente docente)
@@ -262,6 +285,7 @@ namespace Persistencia
             }
         }
 
+<<<<<<< HEAD
         public Alumno ObtenerAlumnoPorID(int id)
         {
             using (Contexto contexto = new Contexto())
@@ -269,6 +293,33 @@ namespace Persistencia
                 Alumno alumno = contexto.Alumnos.Find(id);
                 contexto.Alumnos.Attach(alumno);
                 return alumno;
+=======
+        public void AgregarActividad(Actividad actividad)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Actividades.Add(actividad);
+                contexto.SaveChanges();
+            }
+        }
+
+        public void ModificarActividad(Actividad aCambiar, Actividad nuevosDatos)
+        {
+            Actividad miActividad;
+            using (Contexto contexto = new Contexto())
+            {
+                var query = from actividad in contexto.Actividades
+                            where actividad.Id == aCambiar.Id
+                            select actividad;
+
+                miActividad = query.FirstOrDefault();
+
+                contexto.Actividades.Attach(miActividad);
+                miActividad.Nombre = nuevosDatos.Nombre;
+                miActividad.Fecha = nuevosDatos.Fecha;
+                miActividad.Costo = nuevosDatos.Costo;
+                contexto.SaveChanges();
+>>>>>>> 66a79d7c88e095a86a490da5b5c047946153b9c7
             }
         }
     }
