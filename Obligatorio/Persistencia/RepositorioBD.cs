@@ -304,6 +304,11 @@ namespace Persistencia
             }
         }
 
+        public Docente ObtenerDocentePorID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void ModificarActividad(Actividad aCambiar, Actividad nuevosDatos)
         {
             Actividad miActividad;

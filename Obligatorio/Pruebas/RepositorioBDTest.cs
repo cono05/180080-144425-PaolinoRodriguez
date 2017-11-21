@@ -8,6 +8,12 @@ namespace Pruebas
     [TestClass]
     public class RepositorioBDTest
     {
+        [TestInitialize]
+        public void TestInitialize() {
+            UtilidadesPruebas.VaciarTablas();
+        }
+        
+            
         [TestMethod]
         public void AgregarAlumnoTest()
         {
@@ -21,7 +27,6 @@ namespace Pruebas
         [TestMethod]
         public void AgregarAlumnoEnMateriaBDTest()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "6765476-1", "nombreapellido2@gmail.com", 1);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
@@ -36,7 +41,6 @@ namespace Pruebas
         [TestMethod]
         public void EliminarAlumnoDeMateriaBDTest()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "6765476-1", "nombreapellido2@gmail.com", 1);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
@@ -52,7 +56,6 @@ namespace Pruebas
         [TestMethod]
         public void AgregarDocenteTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
@@ -62,7 +65,6 @@ namespace Pruebas
         [TestMethod]
         public void AgregarMateriaTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
@@ -73,7 +75,6 @@ namespace Pruebas
         [TestMethod]
         public void ObtenerMateriasTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
@@ -83,7 +84,6 @@ namespace Pruebas
         [TestMethod]
         public void ObtenerAlumnosDeLaMateriaTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
@@ -101,7 +101,6 @@ namespace Pruebas
         [TestMethod]
         public void AgregarDocenteEnMateriaTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
@@ -116,7 +115,6 @@ namespace Pruebas
         [TestMethod]
         public void ObtenerDocentesDeLaMateriaTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
@@ -131,7 +129,6 @@ namespace Pruebas
         [TestMethod]
         public void EliminarDocenteEnMateriaTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
             ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
@@ -147,7 +144,6 @@ namespace Pruebas
         [TestMethod]
         public void ModificarAlumnoTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("NombreNuevo", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
@@ -161,7 +157,6 @@ namespace Pruebas
         [TestMethod]
         public void ObtenerAlumnoPorIDTest()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
             ModuloGestionAlumno modulo = new ModuloGestionAlumno(repositorio);
@@ -173,7 +168,6 @@ namespace Pruebas
         [TestMethod]
         public void EliminarDocenteTestBD()
         {
-            UtilidadesPruebas.VaciarTablas();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
@@ -192,5 +186,30 @@ namespace Pruebas
             modulo.Baja(alumno);
             Assert.IsTrue(modulo.ObtenerAlumnos().Count == 0);
         }
+        [TestMethod]
+        public void ObtenerDocentePorIDTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
+            modulo.Alta(docente);
+            Docente obtenidoPorID = repositorio.ObtenerDocentePorID(docente.Id);
+            Assert.AreEqual(docente.Id, obtenidoPorID.Id);
+        }
+
+
+        [TestMethod]
+        public void ModificarDocenteTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
+            Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre22", "Apellido22", "0000000-1");
+            modulo.Alta(docente);
+            modulo.ModificarDocente(ref docente, docente2);
+            Assert.IsTrue(docente.Nombre.Equals("Nombre22"));
+        }
+
+
     }   
 }
