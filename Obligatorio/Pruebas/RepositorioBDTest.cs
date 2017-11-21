@@ -207,6 +207,7 @@ namespace Pruebas
             Docente docente2 = UtilidadesPruebas.CrearDocenteDePrueba("Nombre22", "Apellido22", "0000000-1");
             modulo.Alta(docente);
             modulo.ModificarDocente(ref docente, docente2);
+            docente = repositorio.ObtenerDocentePorID(docente.Id);
             Assert.IsTrue(docente.Nombre.Equals("Nombre22"));
         }
 

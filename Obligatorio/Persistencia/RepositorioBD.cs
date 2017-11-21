@@ -306,7 +306,12 @@ namespace Persistencia
 
         public Docente ObtenerDocentePorID(int id)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                Docente docente = contexto.Docentes.Find(id);
+                contexto.Docentes.Attach(docente);
+                return docente;
+            }
         }
 
         public void ModificarActividad(Actividad aCambiar, Actividad nuevosDatos)
