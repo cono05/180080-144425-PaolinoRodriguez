@@ -139,5 +139,32 @@ namespace Pruebas
 
             Assert.IsTrue(seAgrego && seElimino);
         }
+
+        [TestMethod]
+        public void EsActividadSinNombreTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("", new DateTime(2017, 1, 1), 10);
+            Assert.IsTrue(modulo.EsActividadSinNombre(actividad));
+        }
+
+        [TestMethod]
+        public void EsActividadSinFechaTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(1, 1, 1), 10);
+            Assert.IsTrue(modulo.EsActividadSinFecha(actividad));
+        }
+
+        [TestMethod]
+        public void EsActividadSinCostoTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(1, 1, 1), 0);
+            Assert.IsTrue(modulo.EsActividadSinCosto(actividad));
+        }
     }
 }

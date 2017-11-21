@@ -54,5 +54,24 @@ namespace Logica
             //Validar que existe
             repositorio.EliminarParticipanteEnActividad(actividad, alumno);
         }
+
+        #region Validaciones
+        public bool EsActividadSinNombre(Actividad actividad)
+        {
+            return string.IsNullOrEmpty(actividad.Nombre);
+        }
+
+        public bool EsActividadSinFecha(Actividad actividad)
+        {
+            return actividad.Fecha.CompareTo(DateTime.MinValue) == 0;
+        }
+
+        public bool EsActividadSinCosto(Actividad actividad)
+        {
+            return actividad.Costo == 0;
+        }
+
+
+        #endregion
     }
 }
