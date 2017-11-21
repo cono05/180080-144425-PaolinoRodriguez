@@ -73,5 +73,15 @@ namespace Logica
 
 
         #endregion
+
+        public bool EstaParticipanteInscriptoEnActividad(Alumno unAlumno, Actividad unaActividad)
+        {
+            foreach(Alumno alumno in repositorio.ObtenerActividadPorId(unaActividad.Id).Participantes)
+            {
+                if (alumno.Equals(unAlumno))
+                    return true;
+            }
+            return false;
+        }
     }
 }

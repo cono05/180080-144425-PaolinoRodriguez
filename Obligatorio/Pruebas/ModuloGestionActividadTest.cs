@@ -163,8 +163,38 @@ namespace Pruebas
         {
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
-            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(1, 1, 1), 0);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(2017, 1, 1), 0);
             Assert.IsTrue(modulo.EsActividadSinCosto(actividad));
+        }
+
+        [TestMethod]
+        public void EstaParticipanteInscriptoEnActividadTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad moduloActividad = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionAlumno moduloAlumno = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(2018, 1, 1), 90);
+            moduloActividad.Alta(actividad);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+            moduloAlumno.Alta(alumno);
+            moduloActividad.AgregarParticipanteEnActividad(actividad, alumno);
+
+            Assert.IsTrue(moduloActividad.EstaParticipanteInscriptoEnActividad(alumno, actividad));
+
+        }
+
+        [TestMethod]
+        public void EstaParticipanteInscriptoEnActividadFalseTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad moduloActividad  = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionAlumno moduloAlumno        = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(2018, 1, 1), 90);
+            moduloActividad.Alta(actividad);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Luca", "Perez", "8765432-1", "lp@mail.com", 10);
+
+            Assert.IsFalse(moduloActividad.EstaParticipanteInscriptoEnActividad(alumno, actividad));
+
         }
     }
 }
