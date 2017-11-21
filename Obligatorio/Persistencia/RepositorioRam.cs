@@ -169,5 +169,31 @@ namespace Persistencia
             }
             return null;
         }
+
+        public Docente ObtenerDocentePorID(int id)
+        {
+            foreach (Docente docente in Docentes)
+            {
+                if (docente.Id == id)
+                    return docente;
+            }
+            return null;
+        }
+
+        public Alumno ObtenerAlumnoPorID(int id)
+        {
+            foreach (Alumno alumno in Alumnos)
+            {
+                if (alumno.Id == id)
+                    return alumno;
+            }
+            return null;
+        }
+
+        public Materia ObtenerMateriaPorCodigo(int codigo)
+        {
+            
+            throw new NotImplementedException();
+        }
     }
 }
