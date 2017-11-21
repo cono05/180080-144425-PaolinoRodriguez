@@ -112,6 +112,12 @@ namespace Persistencia
             alumno.MateriasInscripto.Remove(materia);
         }
 
+        public void EliminarParticipanteEnActividad(Actividad actividad, Alumno alumno)
+        {
+            actividad.Participantes.Remove(alumno);
+            alumno.ActividadesInscripto.Remove(actividad);
+        }
+
         public ICollection<Alumno> ObtenerAlumnosDeLaMateria(Materia materia)
         {
             return materia.Alumnos;

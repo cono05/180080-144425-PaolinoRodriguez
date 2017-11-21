@@ -249,6 +249,24 @@ namespace Persistencia
             }
         }
 
+        public void EliminarParticipanteEnActividad(Actividad unaActividad, Alumno unAlumno)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                var consultaActividad = contexto.Actividades.Include("Participantes").ToList();
+                Actividad miActividad = consultaActividad.Where(actividad => actividad.Id.Equals(unaActividad.Id)).FirstOrDefault();
+                miActividad.Participantes.Remove(unAlumno);
+                contexto.Actividades.Attach(miActividad);
+
+                var consultaAlumno = contexto.Alumnos.Include("ActividadesInscripto").ToList();
+                Alumno miAlumno = consultaAlumno.Where(alumno => alumno.Id.Equals(unAlumno.Id)).FirstOrDefault();
+                miAlumno.ActividadesInscripto.Remove(unaActividad);
+                contexto.Alumnos.Attach(miAlumno);
+
+                contexto.SaveChanges();
+            }
+        }
+
         public void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos)
         {
             Alumno miAlumno;
@@ -356,10 +374,8 @@ namespace Persistencia
         public Actividad ObtenerActividadPorId(int id)
         {
             Actividad retorno;
-            using(Contexto contexto = new Contexto())
+            using (Contexto contexto = new Contexto())
             {
-                //retorno = contexto.Actividades.Find(id);
-                //contexto.Actividades.Attach(retorno);
                 var query = contexto.Actividades.Include("Participantes").ToList();
                 retorno = query.Where(actividad => actividad.Id.Equals(id)).First();
             }

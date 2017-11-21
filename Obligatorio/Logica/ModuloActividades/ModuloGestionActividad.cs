@@ -48,5 +48,11 @@ namespace Logica
         {
             return repositorio.ObtenerActividadPorId(id);
         }
+
+        public void EliminarParticipanteEnActividad(Actividad actividad, Alumno alumno)
+        {
+            //Validar que existe
+            repositorio.EliminarParticipanteEnActividad(actividad, alumno);
+        }
     }
 }
