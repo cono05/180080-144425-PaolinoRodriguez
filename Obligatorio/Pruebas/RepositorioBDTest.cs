@@ -169,7 +169,17 @@ namespace Pruebas
             Alumno obtenido = repositorio.ObtenerAlumnoPorID(alumno.Id);
             Assert.AreEqual(alumno.Id, obtenido.Id);
         }
-    }
 
-   
+        [TestMethod]
+        public void EliminarDocenteTestBD()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
+            modulo.Alta(docente);
+            repositorio.EliminarDocente(docente);
+            Assert.IsTrue(modulo.ObtenerDocentes().Count == 0);
+        }
+    }   
 }
