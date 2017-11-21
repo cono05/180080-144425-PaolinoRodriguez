@@ -179,5 +179,10 @@ namespace Persistencia
             }
             return null;
         }
+
+        public Materia ObtenerMateriaPorCodigo(int codigo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

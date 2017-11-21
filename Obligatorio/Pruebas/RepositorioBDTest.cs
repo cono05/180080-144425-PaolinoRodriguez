@@ -84,6 +84,29 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void ObtenerMateriaPorCodigoTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloMaterias.Alta(materia);
+            Materia materia2 = repositorio.ObtenerMateriaPorCodigo(materia.Codigo);
+            Assert.AreEqual(materia.Codigo, materia2.Codigo);
+        }
+
+        [TestMethod]
+        public void ModificarMateriaTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
+            Materia materia2 = UtilidadesPruebas.CrearMateriaDePueba("Diseño22", 1000);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloMaterias.Alta(materia);
+            moduloMaterias.ModificarMateria(materia, "Diseño22");
+            materia = repositorio.ObtenerMateriaPorCodigo(materia.Codigo);
+        }
+
+        [TestMethod]
         public void ObtenerMateriasTestBD()
         {
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();

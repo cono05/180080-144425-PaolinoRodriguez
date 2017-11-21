@@ -37,6 +37,7 @@ namespace Persistencia
         ICollection<Actividad> ObtenerActividades();
         Docente ObtenerDocentePorID(int id);
         Alumno ObtenerAlumnoPorID(int id);
+        Materia ObtenerMateriaPorCodigo(int codigo);
 
     }
 }
