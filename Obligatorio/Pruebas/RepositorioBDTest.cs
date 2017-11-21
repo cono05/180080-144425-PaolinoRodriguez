@@ -73,6 +73,17 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void EliminarMateriaTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño1", 1000);
+            ModuloGestionMaterias moduloMaterias = new ModuloGestionMaterias(repositorio);
+            moduloMaterias.Alta(materia);
+            moduloMaterias.Baja(materia);
+            Assert.IsTrue(moduloMaterias.ObtenerMaterias().Count == 0);
+        }
+
+        [TestMethod]
         public void ObtenerMateriasTestBD()
         {
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
