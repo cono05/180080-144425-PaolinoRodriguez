@@ -181,5 +181,16 @@ namespace Pruebas
             repositorio.EliminarDocente(docente);
             Assert.IsTrue(modulo.ObtenerDocentes().Count == 0);
         }
+
+        [TestMethod]
+        public void EliminarAlumnoTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
+            ModuloGestionAlumno modulo = new ModuloGestionAlumno(repositorio);
+            modulo.Alta(alumno);
+            modulo.Baja(alumno);
+            Assert.IsTrue(modulo.ObtenerAlumnos().Count == 0);
+        }
     }   
 }
