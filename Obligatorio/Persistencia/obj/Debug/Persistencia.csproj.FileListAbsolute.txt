@@ -5,13 +5,6 @@ C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\bin\Debug\Do
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\cono_\Desktop\OBLIGATORIO DISEÑO\Obligatorio\Persistencia\obj\Debug\Persistencia.pdb
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Persistencia.dll
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Persistencia.pdb
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Dominio.dll
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Dominio.pdb
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.dll
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.pdb
 C:\Users\cono_\Desktop\ENTREGA 180080 - 144425\Codigo\Obligatorio\Persistencia\bin\Debug\Persistencia.dll
 C:\Users\cono_\Desktop\ENTREGA 180080 - 144425\Codigo\Obligatorio\Persistencia\bin\Debug\Persistencia.pdb
 C:\Users\cono_\Desktop\ENTREGA 180080 - 144425\Codigo\Obligatorio\Persistencia\bin\Debug\Dominio.dll
@@ -26,11 +19,6 @@ C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bi
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.pdb
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Persistencia.dll.config
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.dll
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.xml
-C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\Persistencia.dll.config
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.dll
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
@@ -40,8 +28,21 @@ C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\ob
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csproj.GenerateResource.Cache
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_1.resources
 C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_2.resources
+C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_3.resources
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Persistencia.dll.config
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Dominio.dll
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.dll
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\Dominio.pdb
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.xml
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.InitialCreate.resources
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_1.resources
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_2.resources
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_3.resources
 C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csproj.GenerateResource.Cache
-C:\Users\Mauricio\Documents\DA1 - SegundoObligatorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.Migracion_3.resources
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\cono_\Desktop\Obligatorio diseño 2do repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.pdb

@@ -285,7 +285,7 @@ namespace Persistencia
             }
         }
 
-<<<<<<< HEAD
+
         public Alumno ObtenerAlumnoPorID(int id)
         {
             using (Contexto contexto = new Contexto())
@@ -293,7 +293,8 @@ namespace Persistencia
                 Alumno alumno = contexto.Alumnos.Find(id);
                 contexto.Alumnos.Attach(alumno);
                 return alumno;
-=======
+            }
+        }
         public void AgregarActividad(Actividad actividad)
         {
             using (Contexto contexto = new Contexto())
@@ -319,7 +320,6 @@ namespace Persistencia
                 miActividad.Fecha = nuevosDatos.Fecha;
                 miActividad.Costo = nuevosDatos.Costo;
                 contexto.SaveChanges();
->>>>>>> 66a79d7c88e095a86a490da5b5c047946153b9c7
             }
         }
     }
