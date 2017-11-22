@@ -245,6 +245,16 @@ namespace Pruebas
             Assert.IsTrue(docente.Nombre.Equals("Nombre22"));
         }
 
+        [TestMethod]
+        public void AgregarCamionetaTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(repositorio);
+            moduloCamionetas.Nombre = "moduloCamionetas";
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            repositorio.AgregarCamioneta(camioneta);
+            Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Contains(camioneta));
+        }
 
     }   
 }
