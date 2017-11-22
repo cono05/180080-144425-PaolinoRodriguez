@@ -477,7 +477,7 @@ namespace Pruebas
         }
 
         [TestMethod]
-        public void EsValidoMailUsuarioTest()
+        public void EsValidoMailAlumnoTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);

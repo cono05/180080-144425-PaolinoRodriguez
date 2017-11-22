@@ -3,6 +3,7 @@ using Persistencia;
 using Dominio;
 using Excepciones;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Logica
 {
@@ -209,7 +210,23 @@ namespace Logica
 
         public bool EsValidoMailAlumno(string mail)
         {
-            throw new NotImplementedException();
+            string expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(mail, expresion))
+            {
+                if (Regex.Replace(mail, expresion, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            };
         }
     }
 }
