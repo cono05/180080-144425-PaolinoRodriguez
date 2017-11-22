@@ -16,7 +16,7 @@ namespace Logica
 
         public void AgregarModulo(IModulo modulo)
         {
-            throw new NotImplementedException();
+            Modulos.Add(modulo);
         }
     }
 }
