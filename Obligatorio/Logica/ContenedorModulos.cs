@@ -13,5 +13,10 @@ namespace Logica
         {
             Modulos = new List<IModulo>();
         }
+
+        public void AgregarModulo(IModulo modulo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
