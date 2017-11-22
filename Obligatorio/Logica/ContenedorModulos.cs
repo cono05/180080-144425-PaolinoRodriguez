@@ -18,5 +18,10 @@ namespace Logica
         {
             Modulos.Add(modulo);
         }
+
+        public ICollection<IModulo> ObtenerModulos()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
