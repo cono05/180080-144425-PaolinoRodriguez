@@ -32,8 +32,12 @@ namespace Obligatorio
             moduloMaterias = new ModuloGestionMaterias(repositorio);
             moduloCamionetas = new ModuloGestionCamioneta(repositorio);
             moduloActividades = new ModuloGestionActividad(repositorio);
-            
-            
+            ContenedorModulos contendorModulos = ContenedorModulos.ObtenerInstancia();
+            contendorModulos.AgregarModulo(moduloAlumnos);
+            contendorModulos.AgregarModulo(moduloDocentes);
+            contendorModulos.AgregarModulo(moduloMaterias);
+            contendorModulos.AgregarModulo(moduloCamionetas);
+            contendorModulos.AgregarModulo(moduloActividades);
         }
         private void CargarPanelPrincipal(UserControl userControl)
         {
