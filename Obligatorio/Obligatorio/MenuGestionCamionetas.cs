@@ -63,8 +63,7 @@ namespace Obligatorio
 
         private void VolverAlMenuBtnClick(object sender, EventArgs e)
         {
-            //panel1.Controls.Clear();
-            //panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            
         }
     }
 }
