@@ -21,25 +21,24 @@ namespace Obligatorio.VentanasDeActividad
         private ModuloGestionActividad moduloActividades;
 
         private static MenuGestionActividad instancia;
-
-        public static MenuGestionActividad ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta, ModuloGestionActividad moduloActividad)
+        //ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente, ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta, 
+        public static MenuGestionActividad ObtenerInstancia(ModuloGestionActividad moduloActividad)
         {
             if (instancia == null)
-                instancia = new MenuGestionActividad(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta, moduloActividad);
+                instancia = new MenuGestionActividad(moduloActividad); //moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta, 
             return instancia;
         }
 
-        public MenuGestionActividad(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta, ModuloGestionActividad moduloActividad)
+        public MenuGestionActividad(ModuloGestionActividad moduloActividad)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            //moduloAlumnos = moduloAlumno;
+            //moduloDocentes = moduloDocente;
+            //moduloMaterias = moduloMateria;
+            //moduloCamionetas = moduloCamioneta;
             moduloActividades = moduloActividad;
-            /*listBoxActividad.DataSource = */CargarListBoxActividad();
+            /*listBoxActividad.DataSource = */
+            CargarListBoxActividad();
         }
 
         private bool HayParaCargarLista(ModuloGestionActividad modulo)
@@ -67,20 +66,20 @@ namespace Obligatorio.VentanasDeActividad
         }
 
         private void AltaActividadBtn_Click(object sender, EventArgs e)
-        {
-            FormAltaActividad altaActividad = new FormAltaActividad(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, moduloActividades);
+        {   // moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, 
+            FormAltaActividad altaActividad = new FormAltaActividad(moduloActividades);
             altaActividad.Show();
         }
 
         private void BajaActividadBtn_Click(object sender, EventArgs e)
-        {
-            FormBajaActividad bajaActividad = new FormBajaActividad(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, moduloActividades);
+        {   // moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, 
+            FormBajaActividad bajaActividad = new FormBajaActividad(moduloActividades);
             bajaActividad.Show();
         }
 
         private void ModificarActividadBtn_Click(object sender, EventArgs e)
-        {
-            FormModificarActividad modificarActividad = new FormModificarActividad(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, moduloActividades);
+        {   // moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, 
+            FormModificarActividad modificarActividad = new FormModificarActividad(moduloActividades);
             modificarActividad.Show();
         }
     }

@@ -280,8 +280,8 @@ namespace Obligatorio
         }
 
         private void gestionarActividadesBtn_Click(object sender, EventArgs e)
-        {
-            Obligatorio.VentanasDeActividad.MenuGestionActividad menuActividades = VentanasDeActividad.MenuGestionActividad.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, moduloActividades);
+        {   // moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, 
+            Obligatorio.VentanasDeActividad.MenuGestionActividad menuActividades = VentanasDeActividad.MenuGestionActividad.ObtenerInstancia(moduloActividades);
             CargarPanelPrincipal(menuActividades);
 
         }
