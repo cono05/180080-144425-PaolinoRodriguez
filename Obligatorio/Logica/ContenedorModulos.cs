@@ -21,7 +21,7 @@ namespace Logica
 
         public ICollection<IModulo> ObtenerModulos()
         {
-            throw new NotImplementedException();
+            return Modulos;
         }
     }
 }
