@@ -22,6 +22,7 @@ namespace Obligatorio
         private Button gestionarActividadesBtn;
         private ModuloGestionCamioneta moduloCamionetas;
         private ModuloGestionActividad moduloActividades;
+        private ContenedorModulos contenedorModulos;
 
         public VPrincipal()
         {
@@ -32,12 +33,12 @@ namespace Obligatorio
             moduloMaterias = new ModuloGestionMaterias(repositorio);
             moduloCamionetas = new ModuloGestionCamioneta(repositorio);
             moduloActividades = new ModuloGestionActividad(repositorio);
-            ContenedorModulos contendorModulos = ContenedorModulos.ObtenerInstancia();
-            contendorModulos.AgregarModulo(moduloAlumnos);
-            contendorModulos.AgregarModulo(moduloDocentes);
-            contendorModulos.AgregarModulo(moduloMaterias);
-            contendorModulos.AgregarModulo(moduloCamionetas);
-            contendorModulos.AgregarModulo(moduloActividades);
+            contenedorModulos = ContenedorModulos.ObtenerInstancia();
+            contenedorModulos.AgregarModulo(moduloAlumnos);
+            contenedorModulos.AgregarModulo(moduloDocentes);
+            contenedorModulos.AgregarModulo(moduloMaterias);
+            contenedorModulos.AgregarModulo(moduloCamionetas);
+            contenedorModulos.AgregarModulo(moduloActividades);
         }
         private void CargarPanelPrincipal(UserControl userControl)
         {
@@ -223,7 +224,7 @@ namespace Obligatorio
 
         private void GestionarAlumnosBtn_Click(object sender, System.EventArgs e)
         {
-            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
             CargarPanelPrincipal(menuAlumnos);
             menuAlumnos.CargarListBoxAlumnosPublico();
             //if (!PanelPrincipal.Controls.Contains(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas)))

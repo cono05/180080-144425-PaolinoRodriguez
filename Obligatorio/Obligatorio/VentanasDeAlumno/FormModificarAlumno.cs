@@ -16,19 +16,20 @@ namespace Obligatorio.VentanasDeAlumno
     public partial class FormModificarAlumno : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        public FormModificarAlumno( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        //private ModuloGestionDocente moduloDocentes;
+        //private ModuloGestionMaterias moduloMaterias;
+        //private ModuloGestionCamioneta moduloCamionetas;
+        private ContenedorModulos contenedorModulos;
+        public FormModificarAlumno(ContenedorModulos contenedor/* ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta*/)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
-
-            listBoxAlumnos.DataSource = null;
-            listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+            //moduloAlumnos = moduloAlumno;
+            //moduloDocentes = moduloDocente;
+            //moduloMaterias = moduloMateria;
+            //moduloCamionetas = moduloCamioneta;
+            contenedorModulos = contenedor;
+            moduloAlumnos = (ModuloGestionAlumno)contenedor.ObtenerModulo("ModuloAlumnos");
+            CargarListBoxAlumnos();
         }
 
         private void ModificarAlumnoBtn_Click(object sender, EventArgs e)
@@ -48,15 +49,15 @@ namespace Obligatorio.VentanasDeAlumno
                     {
                         string datosAntesCambio = string.Format("Datos previos: {0} {1} CI {2} email {3}",
                             alumnoSeleccionado.Nombre, alumnoSeleccionado.Apellido, alumnoSeleccionado.Cedula, alumnoSeleccionado.Mail);
+
                         moduloAlumnos.ModificarAlumno(ref alumnoSeleccionado, aux);
                         string datosDespuesCambio = string.Format("Datos actuales: {0} {1} CI {2} email {3}",
                             alumnoSeleccionado.Nombre, alumnoSeleccionado.Apellido, alumnoSeleccionado.Cedula, alumnoSeleccionado.Mail);
 
                         string mensaje = string.Format("¡Modificación exitosa!\n" + datosAntesCambio + "\n" + datosDespuesCambio);
                         MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
-                        //Para limpiar todos los textboxes
                         LimpiarTextBoxs();
-                        listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                        CargarListBoxAlumnos();
                         ActualizarListaAlumnosEnMenuGestionAlumnos();
                     }
                 }
@@ -101,11 +102,11 @@ namespace Obligatorio.VentanasDeAlumno
                     && a1.Cedula.Equals(a2.Cedula) && a1.Mail.Equals(a2.Mail);
         }
 
-        private ICollection<Alumno> CargarListBoxAlumnos()
+        private void CargarListBoxAlumnos()
         {
             listBoxAlumnos.DataSource = null;
-            ICollection<Alumno> lista = moduloAlumnos.ObtenerAlumnos();
-            return lista;
+            listBoxAlumnos.DataSource = moduloAlumnos.ObtenerAlumnos();
+            
         }
         private void LimpiarTextBoxs()
         {
@@ -114,7 +115,7 @@ namespace Obligatorio.VentanasDeAlumno
 
         private void ActualizarListaAlumnosEnMenuGestionAlumnos()
         {
-            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
             menuAlumnos.CargarListBoxAlumnosPublico();
         }
 

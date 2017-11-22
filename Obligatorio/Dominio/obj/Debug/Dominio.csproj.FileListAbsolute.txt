@@ -14,4 +14,3 @@ C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Dominio\bin\Debug
 C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Dominio\bin\Debug\Dominio.pdb
 C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Dominio\obj\Debug\Dominio.dll
 C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Dominio\obj\Debug\Dominio.pdb
-C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache

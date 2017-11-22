@@ -18,24 +18,26 @@ namespace Obligatorio.VentanasDeAlumno
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
+        private ContenedorModulos contenedorModulos;
         private static MenuGestionAlumno instancia;
 
-        public static MenuGestionAlumno ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        public static MenuGestionAlumno ObtenerInstancia(ContenedorModulos contenedor/*ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta*/)
         {
             if (instancia == null)
-                instancia = new MenuGestionAlumno(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
+                instancia = new MenuGestionAlumno(contenedor);
             return instancia;
         }
 
-        public MenuGestionAlumno( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        private MenuGestionAlumno(ContenedorModulos contenedor /*ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,*/
+             /*ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta*/)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            contenedorModulos = contenedor;
+            //moduloAlumnos = moduloAlumno;
+            //moduloDocentes = moduloDocente;
+            //moduloMaterias = moduloMateria;
+            //moduloCamionetas = moduloCamioneta;
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
 
@@ -47,19 +49,19 @@ namespace Obligatorio.VentanasDeAlumno
 
         private void AltaAlumnoBtn_Click(object sender, EventArgs e)
         {
-            FormAltaAlumno altaAlumno = new FormAltaAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormAltaAlumno altaAlumno = new FormAltaAlumno(contenedorModulos /*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
             altaAlumno.Show();
         }
 
         private void ModificarAlumnoBtn_Click(object sender, EventArgs e)
         {
-            FormModificarAlumno modificarAlumno = new FormModificarAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormModificarAlumno modificarAlumno = new FormModificarAlumno(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
             modificarAlumno.Show();
         }
 
         private void BajaAlumnoBtn_Click(object sender, EventArgs e)
         {
-            FormBajaAlumno bajaAlumno = new FormBajaAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormBajaAlumno bajaAlumno = new FormBajaAlumno(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
             bajaAlumno.Show();
             //panel1.Controls.Clear();
             //panel1.Controls.Add(new BajaDeAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
@@ -73,13 +75,21 @@ namespace Obligatorio.VentanasDeAlumno
         private ICollection<Alumno> CargarListBoxAlumnos()
         {
             listBoxAlumnos.DataSource = null;
-            ICollection<Alumno> lista = moduloAlumnos.ObtenerAlumnos();
+            //ICollection<Alumno> lista = moduloAlumnos.ObtenerAlumnos();
+            ModuloGestionAlumno modulo = ObtenerModuloAlumno();
+            ICollection<Alumno> lista = modulo.ObtenerAlumnos();
             return lista;
         }
         public void CargarListBoxAlumnosPublico()
         {
             listBoxAlumnos.DataSource = null;
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+        }
+
+        private ModuloGestionAlumno ObtenerModuloAlumno()
+        {
+            ModuloGestionAlumno modulo = (ModuloGestionAlumno)contenedorModulos.ObtenerModulo("ModuloAlumnos");
+            return modulo;
         }
 
     }

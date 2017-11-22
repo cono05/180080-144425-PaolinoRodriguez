@@ -16,17 +16,20 @@ namespace Obligatorio.VentanasDeAlumno
     public partial class FormAltaAlumno : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        public FormAltaAlumno(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        //private ModuloGestionDocente moduloDocentes;
+        //private ModuloGestionMaterias moduloMaterias;
+        //private ModuloGestionCamioneta moduloCamionetas;
+        private ContenedorModulos contenedorModulos;
+        public FormAltaAlumno(ContenedorModulos contenedor /*ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,*/
+             /*ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta*/)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            contenedorModulos = contenedor;
+            moduloAlumnos = (ModuloGestionAlumno)contenedor.ObtenerModulo("ModuloAlumnos");
+            //moduloAlumnos = moduloAlumno;
+            //moduloDocentes = moduloDocente;
+            //moduloMaterias = moduloMateria;
+            //moduloCamionetas = moduloCamioneta;
             listBoxAlumnos.DataSource = null;
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
@@ -51,6 +54,7 @@ namespace Obligatorio.VentanasDeAlumno
                 alumno.Apellido = apellidoTextBox.Text;
                 alumno.Cedula = cedulaTextBox.Text;
                 alumno.Mail = emailTextBox.Text;
+                //ModuloGestionAlumno moduloAlumnos = ObtenerModuloAlumno();
                 moduloAlumnos.Alta(alumno);
                 string mensaje = string.Format("El alumno {0} {1} CI {2} se ha agregado correctamente", alumno.Nombre, alumno.Apellido, alumno.Cedula);
                 MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
@@ -89,8 +93,14 @@ namespace Obligatorio.VentanasDeAlumno
         }
         private void ActualizarListaAlumnosEnMenuGestionAlumnos()
         {
-            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
             menuAlumnos.CargarListBoxAlumnosPublico();
+        }
+
+        private ModuloGestionAlumno ObtenerModuloAlumno()
+        {
+            ModuloGestionAlumno modulo = (ModuloGestionAlumno)contenedorModulos.ObtenerModulo("ModuloAlumnos");
+            return modulo;
         }
     }
 }
