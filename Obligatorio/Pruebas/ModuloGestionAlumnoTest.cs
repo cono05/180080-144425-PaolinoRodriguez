@@ -485,6 +485,14 @@ namespace Pruebas
             Assert.IsTrue(modulo.EsValidoMailAlumno(alumno1.Mail));
         }
 
+        [TestMethod]
+        public void EsValidoMailAlumnoTestFalse()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "mail.com", 1);
+            Assert.IsFalse(modulo.EsValidoMailAlumno(alumno1.Mail));
+        }
     }
 }
 
