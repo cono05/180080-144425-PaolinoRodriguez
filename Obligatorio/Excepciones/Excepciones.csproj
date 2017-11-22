@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcepcionActividadFechaInvalida.cs" />
+    <Compile Include="ExcepcionActividadSinNombre.cs" />
     <Compile Include="ExcepcionAlumnoMailFormatoIncorrecto.cs" />
     <Compile Include="ExcepcionAlumnoSinApellido.cs" />
     <Compile Include="ExcepcionAlumnoSinCedula.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="ExcepcionDocenteSinCedula.cs" />
     <Compile Include="ExcepcionDocenteSinNombre.cs" />
     <Compile Include="ExcepcionDocenteYaDictaEstaMateria.cs" />
+    <Compile Include="ExcepcionActividadCostoInvalido.cs" />
     <Compile Include="ExcepcionExisteAlumnoConMismaCedula.cs" />
     <Compile Include="ExcepcionExisteAlumnoConMismoEmail.cs" />
     <Compile Include="ExcepcionExisteCamionetaConMismaChapa.cs" />
