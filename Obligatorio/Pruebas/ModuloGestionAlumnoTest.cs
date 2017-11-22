@@ -476,6 +476,15 @@ namespace Pruebas
             Assert.IsFalse(modulo.ExisteAlumnoConMismaCedula(alumno2.Cedula));
         }
 
+        [TestMethod]
+        public void EsValidoMailUsuarioTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "nombre1apellido1@gmail.com", 1);
+            Assert.IsTrue(modulo.EsValidoMailAlumno(alumno1.Mail));
+        }
+
     }
 }
 

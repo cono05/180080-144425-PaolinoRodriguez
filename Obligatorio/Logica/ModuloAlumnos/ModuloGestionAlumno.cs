@@ -206,5 +206,10 @@ namespace Logica
             }
             return ret;
         }
+
+        public bool EsValidoMailAlumno(string mail)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
