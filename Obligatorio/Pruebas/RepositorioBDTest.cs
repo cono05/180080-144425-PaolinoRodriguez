@@ -283,5 +283,22 @@ namespace Pruebas
             Assert.IsTrue(camionetas[0].Chapa.Equals("AAA2020"));
         }
 
+        [TestMethod]
+        public void VaciarTablasTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 10, 5);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Nombre", "Apellido", "0000000-1");
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Algoritmos", 1520);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-1", "nombreapellido@gmail.com", 1);
+            repositorio.AgregarCamioneta(camioneta);
+            repositorio.AgregarDocente(docente);
+            repositorio.AgregarAlumno(alumno);
+            repositorio.AgregarMateria(materia);
+            repositorio.VaciarTablas();
+            bool baseVacia = repositorio.ObtenerAlumnos().Count == 0 && repositorio.ObtenerMaterias().Count == 0
+                            && repositorio.ObtenerDocentes().Count == 0 && repositorio.ObtenerCamionetas().Count == 0;
+            Assert.IsTrue(baseVacia);
+        }
     }   
 }
