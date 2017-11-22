@@ -73,6 +73,7 @@
     <Compile Include="ModuloGestionAlumnoTest.cs" />
     <Compile Include="ModuloGestionCamionetasTest.cs" />
     <Compile Include="RepositorioBDTest.cs" />
+    <Compile Include="ContenedorModulosTest.cs" />
     <Compile Include="UtilidadesPruebas.cs" />
   </ItemGroup>
   <ItemGroup>

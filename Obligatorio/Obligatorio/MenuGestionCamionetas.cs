@@ -35,6 +35,7 @@ namespace Obligatorio
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
+            CargarListBoxCamionetas();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

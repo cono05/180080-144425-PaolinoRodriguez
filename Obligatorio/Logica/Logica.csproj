@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContenedorModulos.cs" />
     <Compile Include="IModulo.cs" />
     <Compile Include="ModuloAlumnos\ModuloGestionAlumno.cs" />
     <Compile Include="ModuloDocentes\ModuloGestionDocente.cs" />
