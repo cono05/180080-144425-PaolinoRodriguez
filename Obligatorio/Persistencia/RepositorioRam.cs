@@ -29,8 +29,12 @@ namespace Persistencia
             this.Alumnos.Add(alumno);
         }
 
+        
+
         public void AgregarDocente(Docente docente)
         {
+            docente.Id = Id;
+            Id++;
             this.Docentes.Add(docente);
         }
 
