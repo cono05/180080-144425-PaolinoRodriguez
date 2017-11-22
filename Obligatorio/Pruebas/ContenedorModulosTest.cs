@@ -35,6 +35,17 @@ namespace Pruebas
             Assert.IsTrue(contenedor.ObtenerModulos().Count == 1);
         }
 
+        [TestMethod]
+        public void ObtenerModuloTest()
+        {
+            ContenedorModulos contenedor = new ContenedorModulos();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            contenedor.AgregarModulo(modulo);
+            IModulo obtenido = contenedor.ObtenerModulo("moduloActividades");
+            Assert.IsTrue(obtenido.ObtenerNombre().Equals("ModuloActividades"));
+        }
+
 
     }
     

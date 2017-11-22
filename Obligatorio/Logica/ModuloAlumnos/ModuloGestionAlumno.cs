@@ -29,6 +29,10 @@ namespace Logica
             repositorio.EliminarAlumno((Alumno)obj);
             
         }
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
 
         public void ValidarAlumno(Alumno alumno)
         {

@@ -29,6 +29,11 @@ namespace Logica
             repositorio.EliminarCamioneta((Camioneta)obj);
         }
 
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
+
         public ICollection<Camioneta> ObtenerCamionetas()
         {
             return repositorio.ObtenerCamionetas();

@@ -29,6 +29,11 @@ namespace Logica
             repositorio.EliminarActividad((Actividad)obj);
         }
 
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
+
         public ICollection<Actividad> ObtenerActividades()
         {
             return repositorio.ObtenerActividades();

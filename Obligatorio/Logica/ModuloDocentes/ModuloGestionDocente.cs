@@ -29,6 +29,11 @@ namespace Logica
             repositorio.EliminarDocente((Docente)obj);
         }
 
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
+
         public void ValidarAlta(Docente docente)
         {
             if (ExisteDocenteConMismaCedula(docente.Cedula))

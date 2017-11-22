@@ -23,5 +23,10 @@ namespace Logica
         {
             return Modulos;
         }
+
+        public IModulo ObtenerModulo(string nombreModulo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

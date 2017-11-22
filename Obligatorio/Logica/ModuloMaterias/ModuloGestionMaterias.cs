@@ -39,6 +39,11 @@ namespace Logica
             repositorio.EliminarMateria((Materia)obj);
         }
 
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
+
         public void ModificarMateria(Materia materia, string nuevoNombre)
         {
             // Por ahora solo modificamos nombre
