@@ -22,7 +22,7 @@ namespace Obligatorio
         private Button gestionarActividadesBtn;
         private ModuloGestionCamioneta moduloCamionetas;
         private ModuloGestionActividad moduloActividades;
-        private ContenedorModulos contenedorModulos;
+        
 
         public VPrincipal()
         {
@@ -32,13 +32,7 @@ namespace Obligatorio
             moduloDocentes = new ModuloGestionDocente(repositorio);
             moduloMaterias = new ModuloGestionMaterias(repositorio);
             moduloCamionetas = new ModuloGestionCamioneta(repositorio);
-            moduloActividades = new ModuloGestionActividad(repositorio);
-            contenedorModulos = ContenedorModulos.ObtenerInstancia();
-            contenedorModulos.AgregarModulo(moduloAlumnos);
-            contenedorModulos.AgregarModulo(moduloDocentes);
-            contenedorModulos.AgregarModulo(moduloMaterias);
-            contenedorModulos.AgregarModulo(moduloCamionetas);
-            contenedorModulos.AgregarModulo(moduloActividades);
+            moduloActividades = new ModuloGestionActividad(repositorio);            
         }
         private void CargarPanelPrincipal(UserControl userControl)
         {
@@ -241,7 +235,7 @@ namespace Obligatorio
 
         private void GestionarDocentesBtn_Click(object sender, System.EventArgs e)
         {
-            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(contenedorModulos/*, moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia( moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             CargarPanelPrincipal(menuDocentes);
         }
 

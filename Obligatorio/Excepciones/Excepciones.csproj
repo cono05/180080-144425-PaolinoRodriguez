@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcepcionAlumnoMailFormatoIncorrecto.cs" />
     <Compile Include="ExcepcionAlumnoSinApellido.cs" />
     <Compile Include="ExcepcionAlumnoSinCedula.cs" />
     <Compile Include="ExcepcionAlumnoSinEmail.cs" />

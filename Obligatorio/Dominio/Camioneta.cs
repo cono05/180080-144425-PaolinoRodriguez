@@ -13,10 +13,14 @@ namespace Dominio
         public string Marca { get; set; }
         public int Capacidad { get; set; }
 
+        public int ConsumoCada100Km{ get; set; }
+
+        public float RelacionCantAlumnosConsumo { get; set; }
+
         private Camioneta()
         {
             Chapa = string.Empty;
-            Capacidad = 0;
+            Capacidad = 0;            
         }
 
         public static Camioneta CrearCamioneta()

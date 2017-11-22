@@ -92,7 +92,7 @@ namespace Obligatorio.VentanasDeDocente
 
         private void ActualizarListaDocentesEnMenuGestionDocentes()
         {
-            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(contenedorModulos/*, moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             menuDocentes.CargarListBoxDocentesPublico();
         }
 

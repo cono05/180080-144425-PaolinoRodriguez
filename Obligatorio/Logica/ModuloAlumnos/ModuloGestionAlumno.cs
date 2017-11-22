@@ -52,6 +52,8 @@ namespace Logica
                 throw new ExcepcionExisteAlumnoConMismaCedula();
             if (ExisteAlumnoConMismoEmail(alumno))
                 throw new ExcepcionExisteAlumnoConMismoEmail();
+            if (!EsValidoMailAlumno(alumno.Mail))
+                throw new ExcepcionAlumnoMailFormatoIncorrecto();
         }
 
         public void ValidarModificarAlumno(Alumno alumnoOriginal, Alumno alumnoNuevosDatos)

@@ -16,31 +16,30 @@ namespace Obligatorio
 {
     public partial class MenuGestionDocente : UserControl
     {
-        //private ModuloGestionAlumno moduloAlumnos;
+        private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
-        //private ModuloGestionMaterias moduloMaterias;
-        //private ModuloGestionCamioneta moduloCamionetas;
-        private ContenedorModulos contenedorModulos;
+        private ModuloGestionMaterias moduloMaterias;
+        private ModuloGestionCamioneta moduloCamionetas;
         private static MenuGestionDocente instancia;
 
-        public static MenuGestionDocente ObtenerInstancia(ContenedorModulos contenedor /*ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,*/
-             /*ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta*/)
+        public static MenuGestionDocente ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
         {
             if (instancia == null)
-                instancia = new MenuGestionDocente(contenedor/*moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta*/);
+                instancia = new MenuGestionDocente(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
             return instancia;
         }
 
-        public MenuGestionDocente(ContenedorModulos contenedor /*ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,*/ 
-             /*ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta*/)
+        public MenuGestionDocente(ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
-            //moduloAlumnos  = moduloAlumno;
-            //moduloDocentes = moduloDocente;
-            //moduloMaterias = moduloMateria;
-            //moduloCamionetas = moduloCamioneta;
-            contenedorModulos = contenedor;
-            this.moduloDocentes = (ModuloGestionDocente)contenedor.ObtenerModulo("ModuloDocentes");
+            moduloAlumnos = moduloAlumno;
+            moduloDocentes = moduloDocente;
+            moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
+            
+            
             CargarListBoxDocentes();
         }
 
@@ -52,14 +51,14 @@ namespace Obligatorio
 
         private void AltaDocenteBtn_Click(object sender, EventArgs e)
         {
-            //FormAltaDocente altaDocente = new FormAltaDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
-            //altaDocente.Show();
+            FormAltaDocente altaDocente = new FormAltaDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            altaDocente.Show();
         }
 
         private void ModificarDocenteBtn_Click(object sender, EventArgs e)
         {
-            //FormModificacionDocente modificarDocente = new FormModificacionDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
-            //modificarDocente.Show();
+            FormModificacionDocente modificarDocente = new FormModificacionDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            modificarDocente.Show();
         }
 
         private void BajaDocenteBtn_Click(object sender, EventArgs e)
