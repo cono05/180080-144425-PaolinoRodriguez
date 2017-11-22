@@ -26,7 +26,12 @@ namespace Logica
 
         public IModulo ObtenerModulo(string nombreModulo)
         {
-            throw new NotImplementedException();
+            foreach (IModulo modulo in ObtenerModulos())
+            {
+                if (modulo.ObtenerNombre().Equals(nombreModulo))
+                    return modulo;
+            }
+            return null;
         }
     }
 }

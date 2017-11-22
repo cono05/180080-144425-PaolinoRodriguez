@@ -42,7 +42,7 @@ namespace Pruebas
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             contenedor.AgregarModulo(modulo);
-            IModulo obtenido = contenedor.ObtenerModulo("moduloActividades");
+            IModulo obtenido = contenedor.ObtenerModulo("ModuloActividades");
             Assert.IsTrue(obtenido.ObtenerNombre().Equals("ModuloActividades"));
         }
 
