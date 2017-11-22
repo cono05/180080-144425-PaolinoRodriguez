@@ -196,5 +196,32 @@ namespace Pruebas
             Assert.IsFalse(moduloActividad.EstaParticipanteInscriptoEnActividad(alumno, actividad));
 
         }
+
+        [TestMethod]
+        public void EliminarTodosParticipantesDeActividadTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad moduloAct = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionAlumno moduloAlu    = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("ActividadAgregarParticipante", new DateTime(2018, 1, 1), 2000);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Carlitos", "Prueba", "1298637-8", "pru@prueb.com", 1);
+            Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Marcos", "Sentolla", "1223147-8", "prue@prueb.com", 2);
+            Alumno alumno3 = UtilidadesPruebas.CrearAlumnoDePrueba("Loco", "Robles", "1209807-8", "prueba@prueb.com", 3);
+            moduloAct.Alta(actividad);
+            moduloAlu.Alta(alumno1);
+            moduloAlu.Alta(alumno2);
+            moduloAlu.Alta(alumno3);
+
+            moduloAct.AgregarParticipanteEnActividad(actividad, alumno1);
+            moduloAct.AgregarParticipanteEnActividad(actividad, alumno2);
+            moduloAct.AgregarParticipanteEnActividad(actividad, alumno3);
+
+            bool seAgregaron = (moduloAct.ObtenerActividadPorId(actividad.Id).Participantes.Count == 3) ? true : false;
+            moduloAct.EliminarTodosParticipantesDeActividad(actividad);
+            bool seEliminaron = (moduloAct.ObtenerActividadPorId(actividad.Id).Participantes.Count == 0) ? true : false;
+
+            Assert.IsTrue(seAgregaron && seEliminaron);
+        }
     }
 }

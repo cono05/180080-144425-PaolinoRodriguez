@@ -267,6 +267,22 @@ namespace Persistencia
             }
         }
 
+        public void EliminarTodosParticipantesDeActividad(Actividad unaActividad)
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                var consultaActividad = contexto.Actividades.Include("Participantes").ToList();
+                Actividad miActividad = consultaActividad.Where(actividad => actividad.Id.Equals(unaActividad.Id)).FirstOrDefault();
+                // Elimino actividad dentro de los alumnos que participan de ella
+                foreach (Alumno a in miActividad.Participantes)
+                {
+                    EliminarParticipanteEnActividad(unaActividad, a);
+                }
+
+                contexto.SaveChanges();    
+            }
+        }
+
         public void ModificarAlumno(Alumno aCambiar, Alumno nuevosDatos)
         {
             Alumno miAlumno;

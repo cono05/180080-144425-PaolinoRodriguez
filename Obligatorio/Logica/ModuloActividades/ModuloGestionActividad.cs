@@ -19,11 +19,13 @@ namespace Logica
 
         public void Alta(object obj)
         {
+            //Validar campos
             repositorio.AgregarActividad((Actividad)obj);
         }
 
         public void Baja(object obj)
         {
+            //Eliminar actividad de lista de alumno
             repositorio.EliminarActividad((Actividad)obj);
         }
 
@@ -40,7 +42,7 @@ namespace Logica
 
         public void AgregarParticipanteEnActividad(Actividad actividad, Alumno alumno)
         {
-            //Validar que ya no este
+            //Validar que no este
             repositorio.AgregarParticipanteEnActividad(actividad, alumno);
         }
 
@@ -82,6 +84,11 @@ namespace Logica
                     return true;
             }
             return false;
+        }
+
+        public void EliminarTodosParticipantesDeActividad(Actividad actividad)
+        {
+            repositorio.EliminarTodosParticipantesDeActividad(actividad);
         }
     }
 }
