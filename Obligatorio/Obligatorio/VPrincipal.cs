@@ -30,7 +30,7 @@ namespace Obligatorio
             moduloAlumnos = new ModuloGestionAlumno(repositorio);
             moduloDocentes = new ModuloGestionDocente(repositorio);
             moduloMaterias = new ModuloGestionMaterias(repositorio);
-            //moduloCamionetas = new ModuloGestionCamioneta(repositorio);
+            moduloCamionetas = new ModuloGestionCamioneta(repositorio);
             moduloActividades = new ModuloGestionActividad(repositorio);
             
             

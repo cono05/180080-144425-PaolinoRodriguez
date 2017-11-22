@@ -15,6 +15,7 @@ namespace Logica
         public ModuloGestionMaterias(IRepositorio repositorio)
         {
             this.repositorio = repositorio;
+            Nombre = "ModuloMaterias";
         }
 
         //public static ModuloGestionMaterias ObtenerInstancia(ref RepositorioRam repositorio)

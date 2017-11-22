@@ -11,14 +11,14 @@ namespace Pruebas
         [TestMethod]
         public void CrearContenedorModulosVacioTest()
         {
-            ContenedorModulos contenedor = new ContenedorModulos();
+            ContenedorModulos contenedor = ContenedorModulos.ObtenerInstancia();
             Assert.IsTrue(contenedor.Modulos.Count == 0);
         }
 
         [TestMethod]
         public void AgregarModuloTest()
         {
-            ContenedorModulos contenedor = new ContenedorModulos();
+            ContenedorModulos contenedor = ContenedorModulos.ObtenerInstancia();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             contenedor.AgregarModulo(modulo);
@@ -28,7 +28,7 @@ namespace Pruebas
         [TestMethod]
         public void ObtenerModulosTest()
         {
-            ContenedorModulos contenedor = new ContenedorModulos();
+            ContenedorModulos contenedor = ContenedorModulos.ObtenerInstancia();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             contenedor.AgregarModulo(modulo);
@@ -38,7 +38,7 @@ namespace Pruebas
         [TestMethod]
         public void ObtenerModuloTest()
         {
-            ContenedorModulos contenedor = new ContenedorModulos();
+            ContenedorModulos contenedor = ContenedorModulos.ObtenerInstancia();
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             contenedor.AgregarModulo(modulo);

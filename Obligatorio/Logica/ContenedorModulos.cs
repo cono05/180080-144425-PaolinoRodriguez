@@ -9,7 +9,15 @@ namespace Logica
     public class ContenedorModulos
     {
         public ICollection<IModulo> Modulos { get; set; }
-        public ContenedorModulos()
+        private static ContenedorModulos instancia;
+
+        public static ContenedorModulos ObtenerInstancia()
+        {
+            if (instancia == null)
+                instancia = new ContenedorModulos();
+            return instancia;
+        }
+        private ContenedorModulos()
         {
             Modulos = new List<IModulo>();
         }

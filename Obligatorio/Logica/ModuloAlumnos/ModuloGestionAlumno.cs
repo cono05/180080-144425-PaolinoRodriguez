@@ -15,6 +15,7 @@ namespace Logica
         public ModuloGestionAlumno(IRepositorio repositorio)
         {
             this.repositorio = repositorio;
+            Nombre = "ModuloAlumnos";
         }
 
         public void Alta(object obj)
