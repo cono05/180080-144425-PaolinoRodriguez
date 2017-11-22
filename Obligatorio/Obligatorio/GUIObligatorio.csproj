@@ -67,6 +67,12 @@
     <Compile Include="VentanasDeActividad\FormAltaActividad.Designer.cs">
       <DependentUpon>FormAltaActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanasDeActividad\FormBajaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeActividad\FormBajaActividad.Designer.cs">
+      <DependentUpon>FormBajaActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeActividad\MenuGestionActividad.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeActividad\FormAltaActividad.resx">
       <DependentUpon>FormAltaActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeActividad\FormBajaActividad.resx">
+      <DependentUpon>FormBajaActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeActividad\MenuGestionActividad.resx">
       <DependentUpon>MenuGestionActividad.cs</DependentUpon>
