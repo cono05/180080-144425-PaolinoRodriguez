@@ -266,5 +266,6 @@ namespace Pruebas
             repositorio.EliminarCamioneta(camioneta);
             Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Count == 0);
         }
+
     }   
 }
