@@ -256,5 +256,15 @@ namespace Pruebas
             Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Contains(camioneta));
         }
 
+        [TestMethod]
+        public void EliminarCamionetaTestBD()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            repositorio.AgregarCamioneta(camioneta);
+            repositorio.EliminarCamioneta(camioneta);
+            Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Count == 0);
+        }
     }   
 }

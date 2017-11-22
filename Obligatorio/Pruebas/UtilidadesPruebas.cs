@@ -43,6 +43,13 @@ namespace Pruebas
                     contexto.Actividades.Remove(actividad);
                 }
 
+                var camionetas = (from camioneta in contexto.Camionetas
+                                   select camioneta);
+                foreach (Camioneta camioneta in camionetas)
+                {
+                    contexto.Camionetas.Remove(camioneta);
+                }
+
                 contexto.SaveChanges();
             }
         }
