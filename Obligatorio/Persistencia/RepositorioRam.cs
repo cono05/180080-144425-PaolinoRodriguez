@@ -198,7 +198,11 @@ namespace Persistencia
 
         public Materia ObtenerMateriaPorCodigo(int codigo)
         {
-            
+            throw new NotImplementedException();
+        }
+
+        public void EliminarTodosParticipantesDeActividad(Actividad unaActividad)
+        {
             throw new NotImplementedException();
         }
     }

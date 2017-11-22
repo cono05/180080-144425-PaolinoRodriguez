@@ -19,7 +19,9 @@ namespace Obligatorio
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
+        private Button gestionarActividadesBtn;
         private ModuloGestionCamioneta moduloCamionetas;
+        private ModuloGestionActividad moduloActividades;
 
         public VPrincipal()
         {
@@ -29,6 +31,8 @@ namespace Obligatorio
             moduloDocentes = new ModuloGestionDocente(repositorio);
             moduloMaterias = new ModuloGestionMaterias(repositorio);
             //moduloCamionetas = new ModuloGestionCamioneta(repositorio);
+            moduloActividades = new ModuloGestionActividad(repositorio);
+            
             
         }
         private void CargarPanelPrincipal(UserControl userControl)
@@ -55,6 +59,7 @@ namespace Obligatorio
             this.GestionarCamionetasBtn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.CargarDatosBtn = new System.Windows.Forms.Button();
+            this.gestionarActividadesBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PanelPrincipal
@@ -68,7 +73,7 @@ namespace Obligatorio
             // 
             // GestionarAlumnosBtn
             // 
-            this.GestionarAlumnosBtn.Location = new System.Drawing.Point(87, 12);
+            this.GestionarAlumnosBtn.Location = new System.Drawing.Point(49, 12);
             this.GestionarAlumnosBtn.Name = "GestionarAlumnosBtn";
             this.GestionarAlumnosBtn.Size = new System.Drawing.Size(96, 55);
             this.GestionarAlumnosBtn.TabIndex = 1;
@@ -78,7 +83,7 @@ namespace Obligatorio
             // 
             // GestionarDocentesBtn
             // 
-            this.GestionarDocentesBtn.Location = new System.Drawing.Point(199, 12);
+            this.GestionarDocentesBtn.Location = new System.Drawing.Point(161, 12);
             this.GestionarDocentesBtn.Name = "GestionarDocentesBtn";
             this.GestionarDocentesBtn.Size = new System.Drawing.Size(98, 55);
             this.GestionarDocentesBtn.TabIndex = 2;
@@ -88,7 +93,7 @@ namespace Obligatorio
             // 
             // GestionarMateriasBtn
             // 
-            this.GestionarMateriasBtn.Location = new System.Drawing.Point(312, 12);
+            this.GestionarMateriasBtn.Location = new System.Drawing.Point(274, 12);
             this.GestionarMateriasBtn.Name = "GestionarMateriasBtn";
             this.GestionarMateriasBtn.Size = new System.Drawing.Size(98, 55);
             this.GestionarMateriasBtn.TabIndex = 3;
@@ -98,7 +103,7 @@ namespace Obligatorio
             // 
             // GestionarCamionetasBtn
             // 
-            this.GestionarCamionetasBtn.Location = new System.Drawing.Point(426, 12);
+            this.GestionarCamionetasBtn.Location = new System.Drawing.Point(388, 12);
             this.GestionarCamionetasBtn.Name = "GestionarCamionetasBtn";
             this.GestionarCamionetasBtn.Size = new System.Drawing.Size(98, 55);
             this.GestionarCamionetasBtn.TabIndex = 4;
@@ -108,7 +113,7 @@ namespace Obligatorio
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(541, 12);
+            this.button5.Location = new System.Drawing.Point(614, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(98, 55);
             this.button5.TabIndex = 5;
@@ -125,9 +130,20 @@ namespace Obligatorio
             this.CargarDatosBtn.UseVisualStyleBackColor = true;
             this.CargarDatosBtn.Click += new System.EventHandler(this.CargarDatosBtn_Click);
             // 
+            // gestionarActividadesBtn
+            // 
+            this.gestionarActividadesBtn.Location = new System.Drawing.Point(501, 12);
+            this.gestionarActividadesBtn.Name = "gestionarActividadesBtn";
+            this.gestionarActividadesBtn.Size = new System.Drawing.Size(98, 55);
+            this.gestionarActividadesBtn.TabIndex = 7;
+            this.gestionarActividadesBtn.Text = "Gestionar Actividades";
+            this.gestionarActividadesBtn.UseVisualStyleBackColor = true;
+            this.gestionarActividadesBtn.Click += new System.EventHandler(this.gestionarActividadesBtn_Click);
+            // 
             // VPrincipal
             // 
             this.ClientSize = new System.Drawing.Size(875, 406);
+            this.Controls.Add(this.gestionarActividadesBtn);
             this.Controls.Add(this.CargarDatosBtn);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.GestionarCamionetasBtn);
@@ -246,6 +262,13 @@ namespace Obligatorio
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void gestionarActividadesBtn_Click(object sender, EventArgs e)
+        {
+            Obligatorio.VentanasDeActividad.MenuGestionActividad menuActividades = VentanasDeActividad.MenuGestionActividad.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, moduloActividades);
+            CargarPanelPrincipal(menuActividades);
+
         }
     }
 }

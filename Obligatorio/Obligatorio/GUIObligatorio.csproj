@@ -61,6 +61,30 @@
     <Compile Include="BajaDeCamioneta.Designer.cs">
       <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanasDeActividad\FormAltaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeActividad\FormAltaActividad.Designer.cs">
+      <DependentUpon>FormAltaActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeActividad\FormBajaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeActividad\FormBajaActividad.Designer.cs">
+      <DependentUpon>FormBajaActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeActividad\FormModificarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasDeActividad\FormModificarActividad.Designer.cs">
+      <DependentUpon>FormModificarActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasDeActividad\MenuGestionActividad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentanasDeActividad\MenuGestionActividad.Designer.cs">
+      <DependentUpon>MenuGestionActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasDeAlumno\FormAltaAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +194,18 @@
     </Compile>
     <EmbeddedResource Include="BajaDeCamioneta.resx">
       <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeActividad\FormAltaActividad.resx">
+      <DependentUpon>FormAltaActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeActividad\FormBajaActividad.resx">
+      <DependentUpon>FormBajaActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeActividad\FormModificarActividad.resx">
+      <DependentUpon>FormModificarActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasDeActividad\MenuGestionActividad.resx">
+      <DependentUpon>MenuGestionActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeAlumno\FormAltaAlumno.resx">
       <DependentUpon>FormAltaAlumno.cs</DependentUpon>
