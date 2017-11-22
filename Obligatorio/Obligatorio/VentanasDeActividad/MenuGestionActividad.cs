@@ -39,7 +39,7 @@ namespace Obligatorio.VentanasDeActividad
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
             moduloActividades = moduloActividad;
-            listBoxActividad.DataSource = CargarListBoxActividad();
+            /*listBoxActividad.DataSource = */CargarListBoxActividad();
         }
 
         private bool HayParaCargarLista(ModuloGestionActividad modulo)
@@ -47,22 +47,23 @@ namespace Obligatorio.VentanasDeActividad
             return modulo.ObtenerActividades().Count > 0;
         }
 
-        private ICollection<Actividad> CargarListBoxActividad()
+        private /*ICollection<Actividad>*/ void CargarListBoxActividad()
         {
             listBoxActividad.DataSource = null;
-
-            ICollection<Actividad> lista = null; 
-            if (moduloActividades.ObtenerActividades() != null)
-            {
-                lista = moduloActividades.ObtenerActividades();
-            }
+            listBoxActividad.DataSource = moduloActividades.ObtenerActividades();
+            //ICollection<Actividad> lista = null; 
+            //if (moduloActividades.ObtenerActividades() != null)
+            //{
+            //    lista = moduloActividades.ObtenerActividades();
+            ////}
             
-            return lista;
+            //return lista;
         }
         public void CargarListBoxActividadesPublico()
         {
-            listBoxActividad.DataSource = null;
-            listBoxActividad.DataSource = CargarListBoxActividad();
+            //listBoxActividad.DataSource = null;
+            //listBoxActividad.DataSource =
+            CargarListBoxActividad();
         }
 
         private void AltaActividadBtn_Click(object sender, EventArgs e)

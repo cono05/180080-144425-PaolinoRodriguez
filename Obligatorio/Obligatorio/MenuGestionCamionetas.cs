@@ -65,5 +65,10 @@ namespace Obligatorio
         {
             
         }
+        private void CargarListBoxCamionetas()
+        {
+            listBoxCamionetas.DataSource = null;
+            listBoxCamionetas.DataSource = moduloCamionetas.ObtenerCamionetas();
+        }
     }
 }
