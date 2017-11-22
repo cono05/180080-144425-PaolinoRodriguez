@@ -16,19 +16,17 @@ namespace Obligatorio.VentanasDeAlumno
     public partial class FormModificarAlumno : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
-        //private ModuloGestionDocente moduloDocentes;
-        //private ModuloGestionMaterias moduloMaterias;
-        //private ModuloGestionCamioneta moduloCamionetas;
+        private ModuloGestionDocente moduloDocentes;
+        private ModuloGestionMaterias moduloMaterias;
+        private ModuloGestionCamioneta moduloCamionetas;
         private ContenedorModulos contenedorModulos;
-        public FormModificarAlumno(ContenedorModulos contenedor/* ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta*/)
+        public FormModificarAlumno(ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
-            //moduloAlumnos = moduloAlumno;
-            //moduloDocentes = moduloDocente;
-            //moduloMaterias = moduloMateria;
-            //moduloCamionetas = moduloCamioneta;
-            contenedorModulos = contenedor;
-            moduloAlumnos = (ModuloGestionAlumno)contenedor.ObtenerModulo("ModuloAlumnos");
+            moduloAlumnos = moduloAlumno;
+            moduloDocentes = moduloDocente;
+            moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
             CargarListBoxAlumnos();
         }
 
@@ -115,7 +113,7 @@ namespace Obligatorio.VentanasDeAlumno
 
         private void ActualizarListaAlumnosEnMenuGestionAlumnos()
         {
-            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             menuAlumnos.CargarListBoxAlumnosPublico();
         }
 

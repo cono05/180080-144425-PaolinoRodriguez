@@ -16,20 +16,18 @@ namespace Obligatorio.VentanasDeAlumno
     public partial class FormAltaAlumno : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
-        //private ModuloGestionDocente moduloDocentes;
-        //private ModuloGestionMaterias moduloMaterias;
-        //private ModuloGestionCamioneta moduloCamionetas;
+        private ModuloGestionDocente moduloDocentes;
+        private ModuloGestionMaterias moduloMaterias;
+        private ModuloGestionCamioneta moduloCamionetas;
         private ContenedorModulos contenedorModulos;
-        public FormAltaAlumno(ContenedorModulos contenedor /*ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,*/
-             /*ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta*/)
+        public FormAltaAlumno(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+                                                           ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
-            contenedorModulos = contenedor;
-            moduloAlumnos = (ModuloGestionAlumno)contenedor.ObtenerModulo("ModuloAlumnos");
-            //moduloAlumnos = moduloAlumno;
-            //moduloDocentes = moduloDocente;
-            //moduloMaterias = moduloMateria;
-            //moduloCamionetas = moduloCamioneta;
+            moduloAlumnos = moduloAlumno;
+            moduloDocentes = moduloDocente;
+            moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
             listBoxAlumnos.DataSource = null;
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
@@ -93,7 +91,7 @@ namespace Obligatorio.VentanasDeAlumno
         }
         private void ActualizarListaAlumnosEnMenuGestionAlumnos()
         {
-            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             menuAlumnos.CargarListBoxAlumnosPublico();
         }
 

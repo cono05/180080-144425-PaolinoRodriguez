@@ -19,6 +19,7 @@ namespace Obligatorio.VentanasDeDocente
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
+        private ContenedorModulos contenedorModulos;
         public FormBajaDocente( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,  ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
@@ -64,7 +65,7 @@ namespace Obligatorio.VentanasDeDocente
 
         private void ActualizarListaDocentesEnMenuGestionDocentes()
         {
-            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(contenedorModulos/*, moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
             menuDocentes.CargarListBoxDocentesPublico();
         }
 

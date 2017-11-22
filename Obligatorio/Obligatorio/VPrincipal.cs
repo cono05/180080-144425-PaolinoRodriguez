@@ -224,7 +224,7 @@ namespace Obligatorio
 
         private void GestionarAlumnosBtn_Click(object sender, System.EventArgs e)
         {
-            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             CargarPanelPrincipal(menuAlumnos);
             menuAlumnos.CargarListBoxAlumnosPublico();
             //if (!PanelPrincipal.Controls.Contains(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas)))
@@ -241,7 +241,7 @@ namespace Obligatorio
 
         private void GestionarDocentesBtn_Click(object sender, System.EventArgs e)
         {
-            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(contenedorModulos/*, moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
             CargarPanelPrincipal(menuDocentes);
         }
 
