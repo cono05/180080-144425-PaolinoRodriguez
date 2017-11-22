@@ -18,7 +18,7 @@ namespace Obligatorio.VentanasDeActividad
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        private ModuloGestionActividad moduloActividad;
+        private ModuloGestionActividad moduloActividades;
 
         private static MenuGestionActividad instancia;
 
@@ -38,13 +38,25 @@ namespace Obligatorio.VentanasDeActividad
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
+            moduloActividades = moduloActividad;
             listBoxActividad.DataSource = CargarListBoxActividad();
+        }
+
+        private bool HayParaCargarLista(ModuloGestionActividad modulo)
+        {
+            return modulo.ObtenerActividades().Count > 0;
         }
 
         private ICollection<Actividad> CargarListBoxActividad()
         {
             listBoxActividad.DataSource = null;
-            ICollection<Actividad> lista = moduloActividad.ObtenerActividades();
+
+            ICollection<Actividad> lista = null; 
+            if (moduloActividades.ObtenerActividades() != null)
+            {
+                lista = moduloActividades.ObtenerActividades();
+            }
+            
             return lista;
         }
         public void CargarListBoxActividadesPublico()

@@ -34,13 +34,13 @@ namespace Obligatorio.VentanasDeActividad
             listBoxActividades.DataSource = null;
             listBoxActividades.DataSource = CargarListBoxActividad();
         }
+
         private ICollection<Actividad> CargarListBoxActividad()
         {
             listBoxActividades.DataSource = null;
             ICollection<Actividad> lista = moduloActividades.ObtenerActividades();
             return lista;
         }
-
 
 
         private void altaDeActividadBtn_Click(object sender, EventArgs e)
