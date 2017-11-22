@@ -50,7 +50,11 @@ namespace Persistencia
 
         public void AgregarCamioneta(Camioneta camioneta)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                contexto.Camionetas.Add(camioneta);
+                contexto.SaveChanges();
+            }
         }
 
         public void AgregarDocente(Docente docente)
