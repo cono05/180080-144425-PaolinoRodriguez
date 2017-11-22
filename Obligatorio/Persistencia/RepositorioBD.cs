@@ -160,7 +160,12 @@ namespace Persistencia
 
         public Materia ObtenerMateriaPorCodigo(int codigo)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                var materia = contexto.Materias.Find(codigo);
+                return materia;
+            }
+
         }
 
         public ICollection<Docente> ObtenerDocentes()

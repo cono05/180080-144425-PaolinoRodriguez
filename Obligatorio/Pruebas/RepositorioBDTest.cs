@@ -104,6 +104,7 @@ namespace Pruebas
             moduloMaterias.Alta(materia);
             moduloMaterias.ModificarMateria(materia, "Diseño22");
             materia = repositorio.ObtenerMateriaPorCodigo(materia.Codigo);
+            Assert.IsTrue(materia.Nombre.Equals("Diseño22"));
         }
 
         [TestMethod]
