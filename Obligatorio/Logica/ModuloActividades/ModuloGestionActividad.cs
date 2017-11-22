@@ -25,7 +25,7 @@ namespace Logica
 
         public void Baja(object obj)
         {
-            //Eliminar actividad de lista de alumno
+            EliminarTodosParticipantesDeActividad((Actividad)obj);
             repositorio.EliminarActividad((Actividad)obj);
         }
 
@@ -42,8 +42,12 @@ namespace Logica
 
         public void AgregarParticipanteEnActividad(Actividad actividad, Alumno alumno)
         {
-            //Validar que no este
-            repositorio.AgregarParticipanteEnActividad(actividad, alumno);
+            
+            if(!EstaParticipanteInscriptoEnActividad(alumno, actividad))
+            {
+                repositorio.AgregarParticipanteEnActividad(actividad, alumno);
+            }
+            
         }
 
         public Actividad ObtenerActividadPorId(int id)
@@ -53,8 +57,10 @@ namespace Logica
 
         public void EliminarParticipanteEnActividad(Actividad actividad, Alumno alumno)
         {
-            //Validar que existe
-            repositorio.EliminarParticipanteEnActividad(actividad, alumno);
+            if (EstaParticipanteInscriptoEnActividad(alumno, actividad))
+            {
+                repositorio.EliminarParticipanteEnActividad(actividad, alumno);
+            }
         }
 
         #region Validaciones
