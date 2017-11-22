@@ -88,9 +88,17 @@ namespace Persistencia
             }
         }
 
-        public void EliminarCamioneta(Camioneta camioneta)
+        public void EliminarCamioneta(Camioneta unaCamioneta)
         {
-            throw new NotImplementedException();
+            using (Contexto contexto = new Contexto())
+            {
+                var camionetaAEliminar = (from camioneta in contexto.Camionetas
+                                         where camioneta.Chapa == unaCamioneta.Chapa
+                                         select camioneta).Single();
+
+                contexto.Camionetas.Remove(camionetaAEliminar);
+                contexto.SaveChanges();
+            }
         }
 
         public void EliminarDocente(Docente unDocente)
