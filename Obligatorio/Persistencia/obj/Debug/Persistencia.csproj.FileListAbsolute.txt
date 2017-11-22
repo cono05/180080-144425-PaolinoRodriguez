@@ -63,3 +63,4 @@ C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Persistencia\obj\
 C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.csproj.GenerateResource.Cache
 C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\cono_\Desktop\Obl diseño 3er Repositorio\Obligatorio\Persistencia\obj\Debug\Persistencia.Migrations.consumoyrendimiendocamionetas.resources

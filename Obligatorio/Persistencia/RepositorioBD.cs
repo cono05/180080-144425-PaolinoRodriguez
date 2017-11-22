@@ -419,5 +419,60 @@ namespace Persistencia
             }
             return retorno;
         }
+
+        public List<Camioneta> ObtenerCamionetasPorRendimiento()
+        {
+            using (Contexto contexto = new Contexto())
+            {
+                var query = from camioneta in contexto.Camionetas
+                            orderby camioneta.RelacionCantAlumnosConsumo descending
+                            select camioneta;
+                //query.OrderByDescending(camioneta => camioneta.RelacionCantAlumnosConsumo);
+                return query.ToList();
+            }
+        }
+
+        public void VaciarTablas()
+        {
+            using (var contexto = new Contexto())
+            {
+                var alumnos = (from alumno in contexto.Alumnos select alumno);
+                foreach (Alumno alumno in alumnos)
+                {
+
+                    contexto.Alumnos.Remove(alumno);
+                }
+
+                var docentes = (from docente in contexto.Docentes
+                                select docente);
+                foreach (Docente docente in docentes)
+                {
+                    contexto.Docentes.Remove(docente);
+                }
+
+                var materias = (from materia in contexto.Materias
+                                select materia);
+                foreach (Materia materia in materias)
+                {
+                    contexto.Materias.Remove(materia);
+                }
+
+                var actividades = (from actividad in contexto.Actividades
+                                   select actividad);
+                foreach (Actividad actividad in actividades)
+                {
+                    contexto.Actividades.Remove(actividad);
+                }
+
+                var camionetas = (from camioneta in contexto.Camionetas
+                                  select camioneta);
+                foreach (Camioneta camioneta in camionetas)
+                {
+                    contexto.Camionetas.Remove(camioneta);
+                }
+
+                contexto.SaveChanges();
+            }
+        }
     }
 }

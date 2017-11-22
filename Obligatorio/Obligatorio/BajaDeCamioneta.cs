@@ -68,5 +68,20 @@ namespace Obligatorio
             panel1.Controls.Clear();
             panel1.Controls.Add(new MenuGestionCamionetas( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
         }
+
+        private void CamionetasListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

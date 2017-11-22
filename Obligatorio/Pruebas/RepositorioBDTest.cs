@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dominio;
 using Persistencia;
 using Logica;
+using System.Collections.Generic;
+
 namespace Pruebas
 {
     [TestClass]
@@ -252,7 +254,7 @@ namespace Pruebas
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(repositorio);
             moduloCamionetas.Nombre = "moduloCamionetas";
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20, 10);
             repositorio.AgregarCamioneta(camioneta);
             Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Contains(camioneta));
         }
@@ -262,10 +264,23 @@ namespace Pruebas
         {
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20, 10);
             repositorio.AgregarCamioneta(camioneta);
             repositorio.EliminarCamioneta(camioneta);
             Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Count == 0);
+        }
+
+        [TestMethod]
+        public void ObtenerCamionetasOrdenadasPorRendimientoTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(repositorio);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 10, 5);
+            repositorio.AgregarCamioneta(camioneta);
+            Camioneta camioneta2 = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA2020", 20, 5);
+            repositorio.AgregarCamioneta(camioneta2);
+            List<Camioneta> camionetas = repositorio.ObtenerCamionetasPorRendimiento();
+            Assert.IsTrue(camionetas[0].Chapa.Equals("AAA2020"));
         }
 
     }   

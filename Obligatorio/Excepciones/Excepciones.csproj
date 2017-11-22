@@ -63,6 +63,7 @@
     <Compile Include="ExcepcionMateriaSinNombre.cs" />
     <Compile Include="ExcepcionNoExisteDocente.cs" />
     <Compile Include="ExcepcionNoExisteMateriaConEseCodigo.cs" />
+    <Compile Include="ExcepcionCamionetaConsumoNoValido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

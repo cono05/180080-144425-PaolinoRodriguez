@@ -77,6 +77,7 @@
             this.CamionetasListBox.Name = "CamionetasListBox";
             this.CamionetasListBox.Size = new System.Drawing.Size(178, 199);
             this.CamionetasListBox.TabIndex = 2;
+            this.CamionetasListBox.SelectedIndexChanged += new System.EventHandler(this.CamionetasListBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -86,6 +87,7 @@
             this.label2.Size = new System.Drawing.Size(117, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Listado de Camionetas:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -96,6 +98,7 @@
             this.label1.Size = new System.Drawing.Size(194, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Baja de Camioneta";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BajaDeCamioneta
             // 

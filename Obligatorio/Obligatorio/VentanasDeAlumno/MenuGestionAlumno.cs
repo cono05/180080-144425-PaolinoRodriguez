@@ -60,7 +60,7 @@ namespace Obligatorio.VentanasDeAlumno
 
         private void BajaAlumnoBtn_Click(object sender, EventArgs e)
         {
-            FormBajaAlumno bajaAlumno = new FormBajaAlumno(contenedorModulos/*moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas*/);
+            FormBajaAlumno bajaAlumno = new FormBajaAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
             bajaAlumno.Show();
             //panel1.Controls.Clear();
             //panel1.Controls.Add(new BajaDeAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));

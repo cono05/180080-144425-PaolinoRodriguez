@@ -32,7 +32,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20, 10);
             moduloCamionetas.Alta(camioneta);
             Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Contains(camioneta));
         }
@@ -42,7 +42,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20, 10);
             moduloCamionetas.Baja(camioneta);
             Assert.IsFalse(moduloCamionetas.ObtenerCamionetas().Contains(camioneta));
         }
@@ -52,7 +52,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20, 10);
             moduloCamionetas.Alta(camioneta);
             Assert.IsTrue(moduloCamionetas.ObtenerCamionetas().Count == 1 );
         }
@@ -62,7 +62,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20, 10);
             moduloCamionetas.Alta(camioneta);
             Assert.IsTrue(moduloCamionetas.ExisteCamioneta(camioneta));
         }
@@ -72,7 +72,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1212", 20, 10);
             Assert.IsFalse(moduloCamionetas.ExisteCamioneta(camioneta));
         }
 
@@ -81,7 +81,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "", 20, 10);
             Assert.IsTrue(moduloCamionetas.EsCamionetaSinChapa(camioneta));
         }
 
@@ -90,7 +90,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20, 10);
             Assert.IsFalse(moduloCamionetas.EsCamionetaSinChapa(camioneta));
         }
 
@@ -99,7 +99,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20, 10);
             Assert.IsTrue(moduloCamionetas.EsCamionetaSinMarca(camioneta));
         }
 
@@ -108,7 +108,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20, 10);
             moduloCamionetas.ValidarAlta(camioneta);
             moduloCamionetas.Alta(camioneta);
             Assert.IsTrue(moduloCamionetas.ExisteCamioneta(camioneta));
@@ -120,7 +120,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20, 10);
             moduloCamionetas.ValidarAlta(camioneta);
         }
 
@@ -130,7 +130,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20, 10);
             moduloCamionetas.ValidarAlta(camioneta);
             moduloCamionetas.Alta(camioneta);
             moduloCamionetas.ValidarAlta(camioneta);
@@ -142,7 +142,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "", 20, 10);
             moduloCamionetas.ValidarAlta(camioneta);
         }
 
@@ -151,7 +151,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 0);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 9999, 10);
             Assert.IsTrue(moduloCamionetas.TieneCapacidadNoValida(camioneta));
         }
 
@@ -160,7 +160,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("", "AAA1515", 20, 10);
             Assert.IsFalse(moduloCamionetas.TieneCapacidadNoValida(camioneta));
         }
 
@@ -170,7 +170,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 55);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 9999, 10);
             moduloCamionetas.TieneCapacidadNoValida(camioneta);
             moduloCamionetas.ValidarAlta(camioneta);
         }
@@ -180,7 +180,7 @@ namespace Pruebas
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
             ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba( repositorio);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 55);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 20, 10);
             Assert.AreEqual("Ford (AAA1515)", camioneta.ToString());
         }
     }

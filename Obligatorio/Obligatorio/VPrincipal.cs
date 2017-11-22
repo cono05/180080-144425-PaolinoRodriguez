@@ -5,6 +5,7 @@ using Dominio;
 using Obligatorio.VentanasDeAlumno;
 using System;
 
+
 namespace Obligatorio
 {
     class VPrincipal : Form
@@ -32,7 +33,8 @@ namespace Obligatorio
             moduloDocentes = new ModuloGestionDocente(repositorio);
             moduloMaterias = new ModuloGestionMaterias(repositorio);
             moduloCamionetas = new ModuloGestionCamioneta(repositorio);
-            moduloActividades = new ModuloGestionActividad(repositorio);            
+            moduloActividades = new ModuloGestionActividad(repositorio);
+                        
         }
         private void CargarPanelPrincipal(UserControl userControl)
         {
@@ -46,8 +48,7 @@ namespace Obligatorio
             {
                 userControl.BringToFront();
             }
-            //PanelPrincipal.Controls.Clear();
-            //PanelPrincipal.Controls.Add(new MenuPrincipal(ref moduloAlumno, ref moduloDocente,ref moduloMateria, ref moduloCamioneta));
+            
         }
         private void InitializeComponent()
         {
@@ -167,6 +168,19 @@ namespace Obligatorio
         }
         private void CargarDatosDePrueba(ref ModuloGestionMaterias moduloMaterias, ref ModuloGestionAlumno moduloAlumnos, ref ModuloGestionDocente moduloDocentes)
         {
+            Camioneta camioneta1 = Camioneta.CrearCamioneta();
+            camioneta1.Chapa = "AAA1111";
+            camioneta1.Capacidad = 10;
+            camioneta1.Marca = "Ford";
+            camioneta1.ConsumoCada100Km = 15;
+            camioneta1.RelacionCantAlumnosConsumo = 10 / 15;
+
+            Camioneta camioneta2 = Camioneta.CrearCamioneta();
+            camioneta2.Chapa = "AAA2222";
+            camioneta2.Capacidad = 20;
+            camioneta2.Marca = "Chevrolet";
+            camioneta2.ConsumoCada100Km = 20;
+            camioneta2.RelacionCantAlumnosConsumo = 20/20;
             Alumno alumno = Alumno.CrearAlumno();
             alumno.Nombre = "Jose";
             alumno.Apellido = "Lopez";
@@ -210,6 +224,8 @@ namespace Obligatorio
             moduloDocentes.Alta(docente2);
             moduloDocentes.Alta(docente3);
 
+            moduloCamionetas.Alta(camioneta1);
+            moduloCamionetas.Alta(camioneta2);
             moduloMaterias.AgregarAlumnoEnMateria(materia, alumno);
             moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno2);
             moduloMaterias.AgregarAlumnoEnMateria(materia2, alumno3);
@@ -269,5 +285,8 @@ namespace Obligatorio
             CargarPanelPrincipal(menuActividades);
 
         }
+
+       
+        
     }
 }

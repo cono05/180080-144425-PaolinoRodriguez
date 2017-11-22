@@ -45,16 +45,16 @@ namespace Obligatorio
 
         private void RegistrarCamionetaBtn_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new AltaDeCamioneta(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+            FormAltaDeCamioneta altaCamioneta = new FormAltaDeCamioneta(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            altaCamioneta.Show();
         }
 
         private void EliminarCamionetaBtn_Click(object sender, EventArgs e)
         {
             if (moduloCamionetas.ObtenerCamionetas().Count > 0)
             {
-                panel1.Controls.Clear();
-                panel1.Controls.Add(new BajaDeCamioneta(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+                FormBajaCamioneta bajaCamioneta = new FormBajaCamioneta(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+                bajaCamioneta.Show();
             }
             else
             {
@@ -70,6 +70,22 @@ namespace Obligatorio
         {
             listBoxCamionetas.DataSource = null;
             listBoxCamionetas.DataSource = moduloCamionetas.ObtenerCamionetas();
+        }
+
+        public void CargarListBoxCamionetasPublico()
+        {
+            listBoxCamionetas.DataSource = null;
+            CargarListBoxCamionetas();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VerCamionetasOrdenadasPorRendimiento_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

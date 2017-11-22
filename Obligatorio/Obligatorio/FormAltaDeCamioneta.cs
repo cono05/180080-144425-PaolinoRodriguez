@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +13,14 @@ using Logica;
 
 namespace Obligatorio
 {
-    public partial class AltaDeCamioneta : UserControl
+    public partial class FormAltaDeCamioneta : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        public AltaDeCamioneta(ref ModuloGestionAlumno moduloAlumno, ref ModuloGestionDocente moduloDocente,
-            ref ModuloGestionMaterias moduloMateria, ref ModuloGestionCamioneta moduloCamioneta)
+        public FormAltaDeCamioneta(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
@@ -37,19 +37,26 @@ namespace Obligatorio
                 camioneta.Marca = this.MarcaTextBox.Text;
                 camioneta.Chapa = ChapaTextBox.Text;
                 camioneta.Capacidad = Int32.Parse(CapacidadTextBox.Text);
+                camioneta.ConsumoCada100Km = Int32.Parse(textBoxConsumo.Text);
+                camioneta.RelacionCantAlumnosConsumo = camioneta.Capacidad / camioneta.ConsumoCada100Km;
                 moduloCamionetas.Alta(camioneta);
-                MessageBox.Show("La camioneta: " + camioneta.ToString()+" se ha agregado correctamente", MessageBoxButtons.OK.ToString());
-                //textBoxNombre.Clear();
+                MessageBox.Show("La camioneta: " + camioneta.ToString() + " se ha agregado correctamente", MessageBoxButtons.OK.ToString());
+                LimpiarTextBoxs();
+                ActualizarListaCamionetasEnMenuGestionCamionetas();
             }
-            catch (ExcepcionExisteMateriaConMismoNombre exception)
+            catch (ExcepcionCamionetaSinMarca exception)
             {
                 MessageBox.Show(exception.Message);
             }
-            catch (ExcepcionMateriaSinNombre exception)
+            catch (ExcepcionCapacidadNoValida exception)
             {
                 MessageBox.Show(exception.Message);
             }
-            catch (ExcepcionMateriaCodigoRepetido exception)
+            catch (ExcepcionCamionetaSinChapa exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (ExcepcionCamionetaConsumoNoValido exception)
             {
                 MessageBox.Show(exception.Message);
             }
@@ -62,50 +69,19 @@ namespace Obligatorio
             }
         }
 
+        private void LimpiarTextBoxs()
+        {
+            Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new MenuGestionCamionetas( moduloAlumnos,  moduloDocentes,  moduloMaterias,  moduloCamionetas));
+            Dispose();
         }
-
-        private void label5_Click(object sender, EventArgs e)
+        private void ActualizarListaCamionetasEnMenuGestionCamionetas()
         {
-
-        }
-
-        private void CapacidadTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ChapaTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MarcaTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            menuCamionetas.CargarListBoxCamionetasPublico();
         }
     }
 }

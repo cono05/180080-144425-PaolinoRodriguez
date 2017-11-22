@@ -18,26 +18,21 @@ namespace Obligatorio.VentanasDeAlumno
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        private ContenedorModulos contenedorModulos;
-        public FormBajaAlumno(ContenedorModulos contenedor /*ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,*/
-                                                                  /*ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta*/)
+        public FormBajaAlumno(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+                                                                 ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
-            //moduloAlumnos = moduloAlumno;
-            //moduloDocentes = moduloDocente;
-            //moduloMaterias = moduloMateria;
-            //moduloCamionetas = moduloCamioneta;
-            contenedorModulos = contenedor;
-            listBoxAlumnos.DataSource = null;
-            listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+            moduloAlumnos = moduloAlumno;
+            moduloDocentes = moduloDocente;
+            moduloMaterias = moduloMateria;
+            moduloCamionetas = moduloCamioneta;
+            CargarListBoxAlumnos();
         }
 
-        private ICollection<Alumno> CargarListBoxAlumnos()
+        private void CargarListBoxAlumnos()
         {
             listBoxAlumnos.DataSource = null;
-            ModuloGestionAlumno modulo = (ModuloGestionAlumno)contenedorModulos.ObtenerModulo("ModuloAlumnos");
-            ICollection<Alumno> lista = modulo.ObtenerAlumnos();
-            return lista;
+            listBoxAlumnos.DataSource = moduloAlumnos.ObtenerAlumnos();
         }
 
         private void EliminarAlumnoBtn_Click(object sender, EventArgs e)
@@ -46,12 +41,9 @@ namespace Obligatorio.VentanasDeAlumno
             if (alumno != null)
             {
                 try
-                {
-                    //moduloAlumnos.Baja(alumno);
-                    ModuloGestionAlumno modulo = (ModuloGestionAlumno)contenedorModulos.ObtenerModulo("ModuloAlumnos");
-                    modulo.Baja(alumno);
-                    //listBoxAlumnos.DataSource = null;
-                    listBoxAlumnos.DataSource = CargarListBoxAlumnos();
+                {                    
+                    moduloAlumnos.Baja(alumno);                   
+                    CargarListBoxAlumnos();
                     string mensaje = string.Format("El alumno {0} {1} CI {2} se ha eliminado correctamente", alumno.Nombre, alumno.Apellido, alumno.Cedula);
                     MessageBox.Show(mensaje, MessageBoxButtons.OK.ToString());
                     ActualizarListaAlumnosEnMenuGestionAlumnos();

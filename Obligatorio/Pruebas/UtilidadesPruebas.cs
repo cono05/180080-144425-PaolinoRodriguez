@@ -100,12 +100,14 @@ namespace Pruebas
             return actividad;
         }
 
-        public static Camioneta CrearCamionetaDePrueba(string marca, string chapa, int capacidad)
+        public static Camioneta CrearCamionetaDePrueba(string marca, string chapa, int capacidad, int consumo)
         {
             Camioneta camioneta = Camioneta.CrearCamioneta();
             camioneta.Marca = marca;
             camioneta.Chapa = chapa;
             camioneta.Capacidad = capacidad;
+            camioneta.ConsumoCada100Km = consumo;
+            camioneta.RelacionCantAlumnosConsumo = capacidad / consumo;
             return camioneta;
         }
 
