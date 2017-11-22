@@ -159,7 +159,7 @@ namespace Logica
 
         public ICollection<Alumno> ObtenerAlumnosInscriptosEnMateria(Materia materia)
         {
-            return materia.Alumnos;
+            return repositorio.ObtenerAlumnosDeLaMateria(materia);
         }
 
         /* No parece estar en uso */

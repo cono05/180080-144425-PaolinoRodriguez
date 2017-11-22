@@ -12,6 +12,7 @@ namespace Persistencia
         public ICollection<Camioneta> Camionetas { get; set; }
         public ICollection<Actividad> Actividades { get; set; }
 
+        private static int Id = 1;
         public RepositorioRam()
         {
             Materias = new List<Materia>();
@@ -23,6 +24,8 @@ namespace Persistencia
 
         public void AgregarAlumno(Alumno alumno)
         {
+            alumno.Id = Id;
+            Id++;
             this.Alumnos.Add(alumno);
         }
 
