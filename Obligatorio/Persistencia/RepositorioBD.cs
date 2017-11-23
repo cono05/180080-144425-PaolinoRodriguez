@@ -185,14 +185,7 @@ namespace Persistencia
             {
                 var query = contexto.Materias.Include("Alumnos").Include("Docentes").ToList();
                 return query;
-            }
-            //ICollection<Materia> retorno;
-            //using (Contexto contexto = new Contexto())
-            //{
-            //    var query = contexto.Materias.Include("Alumnos").Include("Docentes");
-            //    retorno = query.ToList();
-            //}
-            //return retorno;
+            }            
         }
 
         public ICollection<Alumno> ObtenerAlumnosDeLaMateria(Materia materia)

@@ -217,5 +217,10 @@ namespace Persistencia
         {
             unaActividad.Participantes.Clear();
         }
+
+        public void VaciarTablas()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

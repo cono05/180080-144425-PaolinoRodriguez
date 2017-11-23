@@ -539,6 +539,31 @@ namespace Pruebas
             Alumno obtenido = modulo.ObtenerAlumnoPorId(10);
             Assert.IsTrue(obtenido == null);
         }
+
+        [TestMethod]
+        public void VaciarTablasRamTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno moduloAlumnos = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            ModuloGestionDocente moduloDocente = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            ModuloGestionActividad moduloActividad = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionCamioneta moduloCamionetas = UtilidadesPruebas.CrearModuloGestionCamionetaDePrueba(repositorio);
+            ModuloGestionMaterias moduloMaterias = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "mail@g.com", 1);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Pablo", "Lopez", "3569658-9");
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("ActividadPruebaOriginal", new DateTime(2017, 12, 24), 100);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 9999, 10);
+            moduloAlumnos.Alta(alumno);
+            moduloDocente.Alta(docente);
+            moduloActividad.Alta(actividad);
+            moduloCamionetas.Alta(camioneta);
+            moduloMaterias.Alta(materia);
+            repositorio.VaciarTablas();
+            bool condicion = repositorio.Alumnos.Count == 0 && repositorio.Docentes.Count == 0
+                && repositorio.Materias.Count == 0 && repositorio.Actividades.Count == 0 && repositorio.Camionetas.Count == 0;
+            Assert.IsTrue(condicion);
+        }
     }
 }
 
