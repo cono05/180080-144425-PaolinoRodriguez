@@ -344,6 +344,14 @@ namespace Pruebas
             Docente obtenido = repositorio.ObtenerDocentePorID(id);
             Assert.IsTrue(obtenido.Nombre.Equals("Nombre2"));
         }
+        [TestMethod]
+        public void ObtenerDocentePorIDNoExistenteTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            Docente obtenido = modulo.ObtenerDocentePorID(10011);
+            Assert.IsTrue(obtenido == null);
+        }
 
         public void ObtenerDocentePorIdTest()
         {

@@ -112,6 +112,15 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void ObtenerActividadPorIdNULLTestRam()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad obtenidaPorId = modulo.ObtenerActividadPorId(10);
+            Assert.IsTrue(obtenidaPorId == null);
+        }
+
+        [TestMethod]
         public void ModificarActividadTest()
         {
             UtilidadesPruebas.VaciarTablas();

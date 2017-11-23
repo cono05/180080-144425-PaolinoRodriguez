@@ -530,6 +530,15 @@ namespace Pruebas
             modulo.Alta(alumno);
             Assert.IsTrue(modulo.EsValidoMailAlumno(alumno.Mail));
         }
+
+        [TestMethod]
+        public void ObtenerAlumnoPorIDNULLTestRam()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Alumno obtenido = modulo.ObtenerAlumnoPorId(10);
+            Assert.IsTrue(obtenido == null);
+        }
     }
 }
 

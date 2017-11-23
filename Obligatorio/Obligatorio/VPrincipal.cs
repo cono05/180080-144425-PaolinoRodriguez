@@ -285,6 +285,7 @@ namespace Obligatorio
             try
             {
                 CargarDatosDePrueba(ref moduloMaterias, ref moduloAlumnos, ref moduloDocentes);
+                MessageBox.Show("Datos de prueba cargados con exito.", MessageBoxButtons.OK.ToString());
             }
             catch(Exception ex)
             {

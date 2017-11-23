@@ -480,6 +480,14 @@ namespace Pruebas
             Assert.IsTrue(materiaAux.Codigo == materia.Codigo);
         }
 
+        [TestMethod]
+        public void ObtenerMateriaPorCodigoNoExistenteTestRam()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(repositorio);
+            Materia materiaAux = modulo.ObtenerMateriaPorCodigo(10);
+            Assert.IsTrue(materiaAux == null);
+        }
     }
 }
 
