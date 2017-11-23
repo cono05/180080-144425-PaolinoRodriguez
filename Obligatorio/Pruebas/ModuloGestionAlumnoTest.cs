@@ -553,7 +553,7 @@ namespace Pruebas
             Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Pablo", "Lopez", "3569658-9");
             Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("ActividadPruebaOriginal", new DateTime(2017, 12, 24), 100);
             Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Diseño", 15);
-            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 9999, 10);
+            Camioneta camioneta = UtilidadesPruebas.CrearCamionetaDePrueba("Ford", "AAA1515", 25, 10);
             moduloAlumnos.Alta(alumno);
             moduloDocente.Alta(docente);
             moduloActividad.Alta(actividad);

@@ -220,7 +220,11 @@ namespace Persistencia
 
         public void VaciarTablas()
         {
-            throw new NotImplementedException();
+            Alumnos.Clear();
+            Docentes.Clear();
+            Materias.Clear();
+            Camionetas.Clear();
+            Actividades.Clear();
         }
     }
 }
