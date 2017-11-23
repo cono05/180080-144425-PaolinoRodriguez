@@ -210,7 +210,7 @@ namespace Persistencia
 
         public void EliminarTodosParticipantesDeActividad(Actividad unaActividad)
         {
-            throw new NotImplementedException();
+            unaActividad.Participantes.Clear();
         }
     }
 }

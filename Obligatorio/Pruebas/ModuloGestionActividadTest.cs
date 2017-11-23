@@ -76,6 +76,18 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void EliminarActividadTestRam()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            DateTime fecha = new DateTime(2017, 12, 24);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Actividad1", fecha, 100);
+            modulo.Alta(actividad);
+            modulo.Baja(actividad);
+            Assert.IsTrue(modulo.ObtenerActividades().Count == 0);
+        }
+
+        [TestMethod]
         public void ObtenerActividadesTest()
         {
             UtilidadesPruebas.VaciarTablas();
@@ -149,6 +161,21 @@ namespace Pruebas
             bool seElimino = (moduloAct.ObtenerActividadPorId(actividad.Id).Participantes.Count == 0) ? true : false;
 
             Assert.IsTrue(seAgrego && seElimino);
+        }
+
+        [TestMethod]
+        public void EliminarParticipanteEnActividadTestRam()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionActividad moduloAct = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            ModuloGestionAlumno moduloAlu = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("ActividadAgregarParticipante", new DateTime(2018, 1, 1), 2000);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Carlitos", "Prueba", "1298637-8", "prueba@prueb.com", 78);
+            moduloAct.Alta(actividad);
+            moduloAlu.Alta(alumno);
+            moduloAct.AgregarParticipanteEnActividad(actividad, alumno);
+            moduloAct.EliminarParticipanteEnActividad(actividad, alumno);
+            Assert.IsTrue(actividad.Participantes.Count == 0);
         }
 
         [TestMethod]
