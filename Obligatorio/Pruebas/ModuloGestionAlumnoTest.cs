@@ -493,6 +493,18 @@ namespace Pruebas
             Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "mail.com", 1);
             Assert.IsFalse(modulo.EsValidoMailAlumno(alumno1.Mail));
         }
+
+        [TestMethod]
+        public void ObtenerAlumnoPorIdTest()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "mail@ail.com", 1);
+            modulo.Alta(alumno1);
+            Alumno alumnoAux = modulo.ObtenerAlumnoPorId(alumno1.Id);
+            Assert.IsTrue(alumnoAux.Cedula.Equals(alumno1.Cedula));
+        }
     }
 }
 

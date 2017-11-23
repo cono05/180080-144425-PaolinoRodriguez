@@ -8,7 +8,7 @@ namespace Excepciones
 {
     public class ExcepcionActividadFechaInvalida : Exception
     {
-        public ExcepcionActividadFechaInvalida() : base("ERROR: La actividad no tiene una fecha asociada.") { }
+        public ExcepcionActividadFechaInvalida() : base("ERROR: La actividad no tiene una fecha asociada (Fecha > fecha actual).") { }
     }
 
 }

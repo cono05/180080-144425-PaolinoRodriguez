@@ -56,6 +56,9 @@ namespace Obligatorio.VentanasDeDocente
                         string datosAntesCambio = string.Format("Datos previos: {0} {1} CI {2}",
                         docenteSeleccionado.Nombre, docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
                         moduloDocentes.ModificarDocente(ref docenteSeleccionado, aux);
+
+                        docenteSeleccionado = moduloDocentes.ObtenerDocentePorID(docenteSeleccionado.Id);
+
                         string datosDespuesCambio = string.Format("Datos actuales: {0} {1} CI {2}",
                             docenteSeleccionado.Nombre, docenteSeleccionado.Apellido, docenteSeleccionado.Cedula);
                         string mensaje = string.Format("¡Modificación exitosa! \n" + datosAntesCambio + "\n" + datosDespuesCambio);

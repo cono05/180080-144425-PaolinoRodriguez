@@ -35,7 +35,7 @@ namespace Dominio
 
         public override string ToString()
         {
-            return "Actividad: " + Nombre + " Fecha: " + Fecha + " Costo: " + Costo;
+            return "Actividad: " + Nombre + " Fecha: " + Fecha.ToShortDateString() + " Costo: " + Costo;
         }
     }
 }

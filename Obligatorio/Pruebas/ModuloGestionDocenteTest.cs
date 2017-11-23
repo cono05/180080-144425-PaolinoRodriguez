@@ -331,5 +331,18 @@ namespace Pruebas
             modulo.ValidarBaja(docente1);
         }
 
+        [TestMethod]
+        public void ObtenerDocentePorIdTest()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionDocente modulo = UtilidadesPruebas.CrearModuloGestionDocentesDePrueba(repositorio);
+            Docente docente = UtilidadesPruebas.CrearDocenteDePrueba("Carlitos", "Roxlo", "9898947-3");
+            modulo.Alta(docente);
+            Docente docenteAux = modulo.ObtenerDocentePorID(docente.Id);
+            
+            Assert.IsTrue(docenteAux.Cedula.Equals(docente.Cedula));
+        }
+
     }
 }

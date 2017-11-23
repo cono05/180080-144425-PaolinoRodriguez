@@ -82,7 +82,7 @@ namespace Logica
 
         public bool EsActividadCostoInvalido(Actividad actividad)
         {
-            return actividad.Costo > 0;
+            return !(actividad.Costo > 0);
         }
 
 

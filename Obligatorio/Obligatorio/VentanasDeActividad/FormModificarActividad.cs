@@ -64,9 +64,7 @@ namespace Obligatorio.VentanasDeActividad
                 {
                     Actividad aux = Actividad.CrearActividad();
                     aux.Nombre = textBoxNombre.Text;
-                    decimal salida;
-                    decimal.TryParse(textBoxCosto.Text, out salida);
-                    aux.Costo = salida;
+                    aux.Costo = numericCosto.Value;
                     aux.Fecha = fechaPicker.Value;
 
                     if(!SonIguales(actividadSeleccionada, aux))
@@ -75,8 +73,9 @@ namespace Obligatorio.VentanasDeActividad
                             actividadSeleccionada.Nombre, actividadSeleccionada.Costo.ToString(), actividadSeleccionada.Fecha.ToString());
 
                         moduloActividades.ModificarActividad(ref actividadSeleccionada, aux);
+                        actividadSeleccionada = moduloActividades.ObtenerActividadPorId(actividadSeleccionada.Id);
 
-                        string datosDespuesCambio = string.Format("Datos previos: {0} costo {1} fecha {2}",
+                        string datosDespuesCambio = string.Format("Datos actuales: {0} costo {1} fecha {2}",
                             actividadSeleccionada.Nombre, actividadSeleccionada.Costo.ToString(), actividadSeleccionada.Fecha.ToString());
 
                         string mensaje = string.Format("¡Modificación exitosa!\n" + datosAntesCambio + "\n" + datosDespuesCambio);

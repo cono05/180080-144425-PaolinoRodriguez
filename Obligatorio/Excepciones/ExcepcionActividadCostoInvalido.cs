@@ -8,6 +8,6 @@ namespace Excepciones
 {
     public class ExcepcionActividadCostoInvalido : Exception
     {
-        public ExcepcionActividadCostoInvalido() : base("ERROR: La actividad no tiene un costo asociado.") { }
+        public ExcepcionActividadCostoInvalido() : base("ERROR: La actividad no tiene un costo valido (Costo > 0).") { }
     }
 }

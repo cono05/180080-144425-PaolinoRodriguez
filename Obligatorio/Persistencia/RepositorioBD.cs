@@ -361,7 +361,6 @@ namespace Persistencia
             }
         }
 
-
         public Alumno ObtenerAlumnoPorID(int id)
         {
             using (Contexto contexto = new Contexto())
@@ -371,6 +370,7 @@ namespace Persistencia
                 return alumno;
             }
         }
+
         public void AgregarActividad(Actividad actividad)
         {
             using (Contexto contexto = new Contexto())
@@ -400,11 +400,12 @@ namespace Persistencia
                             select actividad;
 
                 miActividad = query.FirstOrDefault();
-
                 contexto.Actividades.Attach(miActividad);
-                miActividad.Nombre = nuevosDatos.Nombre;
-                miActividad.Fecha = nuevosDatos.Fecha;
-                miActividad.Costo = nuevosDatos.Costo;
+
+                miActividad.Nombre  = nuevosDatos.Nombre;
+                miActividad.Fecha   = nuevosDatos.Fecha;
+                miActividad.Costo   = nuevosDatos.Costo;
+
                 contexto.SaveChanges();
             }
         }

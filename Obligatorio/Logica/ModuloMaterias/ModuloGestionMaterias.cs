@@ -70,6 +70,11 @@ namespace Logica
             return repositorio.ObtenerMaterias();
         }
 
+        public Materia ObtenerMateriaPorCodigo(int codigo)
+        {
+            return repositorio.ObtenerMateriaPorCodigo(codigo);
+        }
+
         public bool EsMateriaSinNombre(Materia materia)
         {
             return string.IsNullOrEmpty(materia.Nombre);

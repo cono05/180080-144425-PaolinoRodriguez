@@ -49,10 +49,7 @@ namespace Obligatorio.VentanasDeActividad
             {
                 Actividad actividad = Actividad.CrearActividad();
                 actividad.Nombre = nombreTextBox.Text;
-
-                decimal costo;
-                Decimal.TryParse(costoTextBox.Text, out costo);
-                actividad.Costo = costo;
+                actividad.Costo = numericCosto.Value;
                 actividad.Fecha = fechaPicker.Value;
                 moduloActividades.Alta(actividad);
 

@@ -97,6 +97,11 @@ namespace Logica
             return repositorio.ObtenerAlumnos();
         }
 
+        public Alumno ObtenerAlumnoPorId(int id)
+        {
+            return repositorio.ObtenerAlumnoPorID(id);
+        }
+
         #region Control de atributos
         public bool ExisteAlumnoConMismoNumeroEstudiante(Alumno alumno1)
         {

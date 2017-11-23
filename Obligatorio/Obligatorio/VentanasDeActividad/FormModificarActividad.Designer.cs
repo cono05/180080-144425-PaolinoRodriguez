@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SalirBtn = new System.Windows.Forms.Button();
             this.ModificarActividadBtn = new System.Windows.Forms.Button();
-            this.textBoxCosto = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,6 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBoxActividad = new System.Windows.Forms.ListBox();
             this.fechaPicker = new System.Windows.Forms.DateTimePicker();
+            this.numericCosto = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCosto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,19 +72,13 @@
             this.ModificarActividadBtn.UseVisualStyleBackColor = true;
             this.ModificarActividadBtn.Click += new System.EventHandler(this.ModificarActividadBtn_Click);
             // 
-            // textBoxCosto
-            // 
-            this.textBoxCosto.Location = new System.Drawing.Point(396, 117);
-            this.textBoxCosto.Name = "textBoxCosto";
-            this.textBoxCosto.Size = new System.Drawing.Size(201, 20);
-            this.textBoxCosto.TabIndex = 57;
-            // 
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(396, 70);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(201, 20);
             this.textBoxNombre.TabIndex = 54;
+            this.textBoxNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -140,16 +135,30 @@
             this.fechaPicker.Size = new System.Drawing.Size(201, 20);
             this.fechaPicker.TabIndex = 61;
             // 
+            // numericCosto
+            // 
+            this.numericCosto.DecimalPlaces = 2;
+            this.numericCosto.Location = new System.Drawing.Point(396, 114);
+            this.numericCosto.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericCosto.Name = "numericCosto";
+            this.numericCosto.Size = new System.Drawing.Size(201, 20);
+            this.numericCosto.TabIndex = 62;
+            this.numericCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FormModificarActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 347);
+            this.Controls.Add(this.numericCosto);
             this.Controls.Add(this.fechaPicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SalirBtn);
             this.Controls.Add(this.ModificarActividadBtn);
-            this.Controls.Add(this.textBoxCosto);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -158,6 +167,7 @@
             this.Controls.Add(this.listBoxActividad);
             this.Name = "FormModificarActividad";
             this.Text = "FormModificarActividad";
+            ((System.ComponentModel.ISupportInitialize)(this.numericCosto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,7 +178,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SalirBtn;
         private System.Windows.Forms.Button ModificarActividadBtn;
-        private System.Windows.Forms.TextBox textBoxCosto;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -176,5 +185,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBoxActividad;
         private System.Windows.Forms.DateTimePicker fechaPicker;
+        private System.Windows.Forms.NumericUpDown numericCosto;
     }
 }
