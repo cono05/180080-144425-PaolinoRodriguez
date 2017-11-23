@@ -332,7 +332,6 @@ namespace Pruebas
         }
 
         [TestMethod]
-<<<<<<< HEAD
         public void ObtenerDocentePorIDTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
@@ -345,7 +344,7 @@ namespace Pruebas
             Docente obtenido = repositorio.ObtenerDocentePorID(id);
             Assert.IsTrue(obtenido.Nombre.Equals("Nombre2"));
         }
-=======
+
         public void ObtenerDocentePorIdTest()
         {
             UtilidadesPruebas.VaciarTablas();
@@ -358,6 +357,6 @@ namespace Pruebas
             Assert.IsTrue(docenteAux.Cedula.Equals(docente.Cedula));
         }
 
->>>>>>> 8266ec3054cc3e2bdf508216cf0354ca23b1578c
+
     }
 }
