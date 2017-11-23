@@ -469,6 +469,17 @@ namespace Pruebas
             Assert.IsTrue(materiaAux.Codigo == materia.Codigo);
         }
 
+        [TestMethod]
+        public void ObtenerMateriaPorCodigoTestRam()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(repositorio);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Algebra", 98);
+            modulo.Alta(materia);
+            Materia materiaAux = modulo.ObtenerMateriaPorCodigo(materia.Codigo);
+            Assert.IsTrue(materiaAux.Codigo == materia.Codigo);
+        }
+
     }
 }
 
