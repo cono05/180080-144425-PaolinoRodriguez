@@ -30,7 +30,7 @@ namespace Obligatorio
             return instancia;
         }
 
-        public MenuGestionDocente(ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
+        private MenuGestionDocente(ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
              ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();

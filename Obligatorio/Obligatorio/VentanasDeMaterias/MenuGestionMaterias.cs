@@ -28,7 +28,7 @@ namespace Obligatorio
             return instancia;
         }
 
-        public MenuGestionMaterias(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+        private MenuGestionMaterias(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
              ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();

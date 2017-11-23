@@ -294,7 +294,7 @@ namespace Obligatorio
         }
 
         private void gestionarActividadesBtn_Click(object sender, EventArgs e)
-        {   // moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, 
+        {   
             Obligatorio.VentanasDeActividad.MenuGestionActividad menuActividades = VentanasDeActividad.MenuGestionActividad.ObtenerInstancia(moduloActividades);
             CargarPanelPrincipal(menuActividades);
 
@@ -303,6 +303,7 @@ namespace Obligatorio
         private void vaciarTablasBtn_Click(object sender, EventArgs e)
         {
             this.repositorio.VaciarTablas();
+            MessageBox.Show("Las tablas de la base de datos se han vaciado correctamente.", MessageBoxButtons.OK.ToString());
         }
     }
 }

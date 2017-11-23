@@ -11,22 +11,14 @@ namespace Logica
         private IRepositorio repositorio;
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        //private static ModuloGestionMaterias instancia;
+       
         public ModuloGestionMaterias(IRepositorio repositorio)
         {
             this.repositorio = repositorio;
             Nombre = "ModuloMaterias";
         }
 
-        //public static ModuloGestionMaterias ObtenerInstancia(ref RepositorioRam repositorio)
-        //{
-        //    if (instancia == null)
-        //    {
-        //        instancia = new ModuloGestionMaterias(ref repositorio);
-        //    }
-        //    return instancia;
-        //}
-
+        
         public void Alta(object obj)
         {
             ValidarAltaMateria((Materia)obj);

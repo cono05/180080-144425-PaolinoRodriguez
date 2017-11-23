@@ -55,12 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BajaDeCamioneta.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BajaDeCamioneta.Designer.cs">
-      <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAltaDeCamioneta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,23 +127,11 @@
     <Compile Include="VentanasDeDocente\FormModificacionDocente.Designer.cs">
       <DependentUpon>FormModificacionDocente.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanasDeMaterias\AltaDeCamioneta.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeMaterias\AltaDeCamioneta.Designer.cs">
-      <DependentUpon>AltaDeCamioneta.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuGestionCamionetas.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MenuGestionCamionetas.Designer.cs">
       <DependentUpon>MenuGestionCamionetas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.Designer.cs">
-      <DependentUpon>AltaBajaDocenteEnMateria.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanasDeDocente\MenuGestionDocente.cs">
       <SubType>UserControl</SubType>
@@ -187,12 +169,6 @@
     <Compile Include="VentanasDeMaterias\MenuGestionMaterias.Designer.cs">
       <DependentUpon>MenuGestionMaterias.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanasDeMaterias\ModificacionMateria.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VentanasDeMaterias\ModificacionMateria.Designer.cs">
-      <DependentUpon>ModificacionMateria.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VentanasDeAlumno\MenuGestionAlumno.cs">
@@ -204,9 +180,6 @@
     <Compile Include="VPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="BajaDeCamioneta.resx">
-      <DependentUpon>BajaDeCamioneta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormAltaDeCamioneta.resx">
       <DependentUpon>FormAltaDeCamioneta.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,14 +216,8 @@
     <EmbeddedResource Include="VentanasDeDocente\FormModificacionDocente.resx">
       <DependentUpon>FormModificacionDocente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeMaterias\AltaDeCamioneta.resx">
-      <DependentUpon>AltaDeCamioneta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MenuGestionCamionetas.resx">
       <DependentUpon>MenuGestionCamionetas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeMaterias\AltaBajaDocenteEnMateria.resx">
-      <DependentUpon>AltaBajaDocenteEnMateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeDocente\MenuGestionDocente.resx">
       <DependentUpon>MenuGestionDocente.cs</DependentUpon>
@@ -269,9 +236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasDeMaterias\MenuGestionMaterias.resx">
       <DependentUpon>MenuGestionMaterias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanasDeMaterias\ModificacionMateria.resx">
-      <DependentUpon>ModificacionMateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
