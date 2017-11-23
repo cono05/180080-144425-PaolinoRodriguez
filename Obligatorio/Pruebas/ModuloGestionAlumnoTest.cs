@@ -519,6 +519,17 @@ namespace Pruebas
             Assert.IsTrue(alumnoAux.Cedula.Equals(alumno1.Cedula));
 
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionAlumnoMailFormatoIncorrecto))]
+        public void AltaAlumnoMailIncorrectoTest()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Alumno alumno = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre", "Apellido", "0000000-3", "gmail.com", 1);
+            modulo.Alta(alumno);
+            Assert.IsTrue(modulo.EsValidoMailAlumno(alumno.Mail));
+        }
     }
 }
 

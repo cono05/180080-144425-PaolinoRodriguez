@@ -2,9 +2,10 @@ namespace Persistencia.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
-    
+    using System.Diagnostics.CodeAnalysis;
     public partial class consumoyrendimiendocamionetas : DbMigration
     {
+        [ExcludeFromCodeCoverage]
         public override void Up()
         {
             AddColumn("dbo.Camionetas", "ConsumoCada100Km", c => c.Int(nullable: false));

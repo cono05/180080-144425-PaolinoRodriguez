@@ -18,6 +18,17 @@ namespace Pruebas
         }
 
         [TestMethod]
+        public void AgregarActividadTestRam()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            DateTime fecha = new DateTime(2017, 12, 24);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Actividad1", fecha, 100);
+            modulo.Alta(actividad);
+            Assert.IsTrue(modulo.ObtenerActividades().Count == 1);
+        }
+
+        [TestMethod]
         public void GetNombreModuloGestionActividadTest()
         {
             UtilidadesPruebas.VaciarTablas();
