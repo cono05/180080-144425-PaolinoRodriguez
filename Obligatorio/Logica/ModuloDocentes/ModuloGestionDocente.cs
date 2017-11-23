@@ -158,6 +158,11 @@ namespace Logica
             return repositorio.ObtenerDocentes();
         }
 
+        public Docente ObtenerDocentePorID(int id)
+        {
+            return repositorio.ObtenerDocentePorID(id);
+        }
+
         public bool HayDocentesRegistrados()
         {
             return ObtenerDocentes().Count > 0;

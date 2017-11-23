@@ -41,7 +41,7 @@
             this.listBoxActividad.FormattingEnabled = true;
             this.listBoxActividad.Location = new System.Drawing.Point(432, 79);
             this.listBoxActividad.Name = "listBoxActividad";
-            this.listBoxActividad.Size = new System.Drawing.Size(223, 186);
+            this.listBoxActividad.Size = new System.Drawing.Size(335, 186);
             this.listBoxActividad.TabIndex = 16;
             // 
             // label2

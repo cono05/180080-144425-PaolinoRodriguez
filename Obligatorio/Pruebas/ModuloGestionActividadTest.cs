@@ -155,7 +155,7 @@ namespace Pruebas
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(1, 1, 1), 10);
-            Assert.IsTrue(modulo.EsActividadSinFecha(actividad));
+            Assert.IsTrue(modulo.EsActividadFechaInvalida(actividad));
         }
 
         [TestMethod]
@@ -164,7 +164,7 @@ namespace Pruebas
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
             Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Nombre", new DateTime(2017, 1, 1), 0);
-            Assert.IsTrue(modulo.EsActividadSinCosto(actividad));
+            Assert.IsTrue(modulo.EsActividadCostoInvalido(actividad));
         }
 
         [TestMethod]
@@ -223,5 +223,40 @@ namespace Pruebas
 
             Assert.IsTrue(seAgregaron && seEliminaron);
         }
+
+        #region Validaciones
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionActividadSinNombre))]
+        public void ValidarActividadSinNombreErrorTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("", DateTime.Now, 1);
+
+            modulo.ValidarActividad(actividad);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionActividadCostoInvalido))]
+        public void ValidarActividadCostoInvalidoErrorTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("NombrePrueba", DateTime.MinValue, 1);
+
+            modulo.ValidarActividad(actividad);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ExcepcionActividadFechaInvalida))]
+        public void ValidarActividadFechaInvalidaErrorTest()
+        {
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("NombrePrueba", DateTime.MinValue, 0);
+
+            modulo.ValidarActividad(actividad);
+        }
+        #endregion
     }
 }

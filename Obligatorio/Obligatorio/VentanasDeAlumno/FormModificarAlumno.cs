@@ -49,6 +49,8 @@ namespace Obligatorio.VentanasDeAlumno
                             alumnoSeleccionado.Nombre, alumnoSeleccionado.Apellido, alumnoSeleccionado.Cedula, alumnoSeleccionado.Mail);
 
                         moduloAlumnos.ModificarAlumno(ref alumnoSeleccionado, aux);
+                        alumnoSeleccionado = moduloAlumnos.ObtenerAlumnoPorId(alumnoSeleccionado.Id);
+
                         string datosDespuesCambio = string.Format("Datos actuales: {0} {1} CI {2} email {3}",
                             alumnoSeleccionado.Nombre, alumnoSeleccionado.Apellido, alumnoSeleccionado.Cedula, alumnoSeleccionado.Mail);
 

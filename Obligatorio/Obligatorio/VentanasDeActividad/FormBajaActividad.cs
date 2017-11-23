@@ -19,15 +19,15 @@ namespace Obligatorio.VentanasDeActividad
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
         private ModuloGestionActividad moduloActividades;
-
-        public FormBajaActividad(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta, ModuloGestionActividad moduloActividad)
+        /*ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta, */
+        public FormBajaActividad(ModuloGestionActividad moduloActividad)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            //moduloAlumnos = moduloAlumno;
+            //moduloDocentes = moduloDocente;
+            //moduloMaterias = moduloMateria;
+            //moduloCamionetas = moduloCamioneta;
             moduloActividades = moduloActividad;
 
             listBoxActividades.DataSource = null;
@@ -67,7 +67,7 @@ namespace Obligatorio.VentanasDeActividad
         }
         private void ActualizarListaActividadesEnMenuGestionActividades()
         {
-            MenuGestionActividad menuActividad = MenuGestionActividad.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, moduloActividades);
+            MenuGestionActividad menuActividad = MenuGestionActividad.ObtenerInstancia(moduloActividades);
             menuActividad.CargarListBoxActividadesPublico();
         }
 

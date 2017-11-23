@@ -20,15 +20,15 @@ namespace Obligatorio.VentanasDeActividad
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
         private ModuloGestionActividad moduloActividades;
-
-        public FormAltaActividad(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta, ModuloGestionActividad moduloActividad)
+        /*ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
+             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta,*/
+        public FormAltaActividad(ModuloGestionActividad moduloActividad)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            //moduloAlumnos = moduloAlumno;
+            //moduloDocentes = moduloDocente;
+            //moduloMaterias = moduloMateria;
+            //moduloCamionetas = moduloCamioneta;
             moduloActividades = moduloActividad;
 
             listBoxActividades.DataSource = null;
@@ -49,10 +49,7 @@ namespace Obligatorio.VentanasDeActividad
             {
                 Actividad actividad = Actividad.CrearActividad();
                 actividad.Nombre = nombreTextBox.Text;
-
-                decimal costo;
-                Decimal.TryParse(costoTextBox.Text, out costo);
-                actividad.Costo = costo;
+                actividad.Costo = numericCosto.Value;
                 actividad.Fecha = fechaPicker.Value;
                 moduloActividades.Alta(actividad);
 
@@ -78,7 +75,7 @@ namespace Obligatorio.VentanasDeActividad
 
         private void ActualizarListaActividadesEnMenuGestionActividades()
         {
-            MenuGestionActividad menuActividad = MenuGestionActividad.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas, moduloActividades);
+            MenuGestionActividad menuActividad = MenuGestionActividad.ObtenerInstancia(moduloActividades);
             menuActividad.CargarListBoxActividadesPublico();
         }
 

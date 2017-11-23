@@ -456,8 +456,19 @@ namespace Pruebas
             Assert.IsTrue(moduloMaterias.ObtenerDocentesDeUnaMateria(materia).Count == 2);
         }
 
-        
-        
+        [TestMethod]
+        public void ObtenerMateriaPorCodigoTest()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionMaterias modulo = UtilidadesPruebas.CrearModuloGestionMateriasDePrueba(repositorio);
+            Materia materia = UtilidadesPruebas.CrearMateriaDePueba("Algebra", 98);
+            modulo.Alta(materia);
+            Materia materiaAux = modulo.ObtenerMateriaPorCodigo(materia.Codigo);
+            
+            Assert.IsTrue(materiaAux.Codigo == materia.Codigo);
+        }
+
     }
 }
 

@@ -495,6 +495,7 @@ namespace Pruebas
         }
 
         [TestMethod]
+<<<<<<< HEAD
         public void ObtenerAlumnoPorIDTest()
         {
             RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
@@ -506,6 +507,17 @@ namespace Pruebas
             int id = alumno2.Id;
             Alumno obtenido = repositorio.ObtenerAlumnoPorID(id);
             Assert.IsTrue(obtenido.Nombre.Equals("Nombre2"));
+=======
+        public void ObtenerAlumnoPorIdTest()
+        {
+            UtilidadesPruebas.VaciarTablas();
+            RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
+            ModuloGestionAlumno modulo = UtilidadesPruebas.CrearModuloGestionAlumnosDePrueba(repositorio);
+            Alumno alumno1 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre1", "Apellido1", "0000000-1", "mail@ail.com", 1);
+            modulo.Alta(alumno1);
+            Alumno alumnoAux = modulo.ObtenerAlumnoPorId(alumno1.Id);
+            Assert.IsTrue(alumnoAux.Cedula.Equals(alumno1.Cedula));
+>>>>>>> 8266ec3054cc3e2bdf508216cf0354ca23b1578c
         }
     }
 }

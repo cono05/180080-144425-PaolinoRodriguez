@@ -33,13 +33,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.listBoxActividades = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.costoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fechaPicker = new System.Windows.Forms.DateTimePicker();
+            this.numericCosto = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCosto)).BeginInit();
             this.SuspendLayout();
             // 
             // salirBtn
@@ -76,7 +77,7 @@
             this.listBoxActividades.FormattingEnabled = true;
             this.listBoxActividades.Location = new System.Drawing.Point(376, 74);
             this.listBoxActividades.Name = "listBoxActividades";
-            this.listBoxActividades.Size = new System.Drawing.Size(181, 225);
+            this.listBoxActividades.Size = new System.Drawing.Size(230, 225);
             this.listBoxActividades.TabIndex = 27;
             // 
             // label6
@@ -88,15 +89,6 @@
             this.label6.Size = new System.Drawing.Size(176, 25);
             this.label6.TabIndex = 26;
             this.label6.Text = "Alta De Actividad";
-            // 
-            // costoTextBox
-            // 
-            this.costoTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.costoTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.costoTextBox.Location = new System.Drawing.Point(120, 127);
-            this.costoTextBox.Name = "costoTextBox";
-            this.costoTextBox.Size = new System.Drawing.Size(195, 20);
-            this.costoTextBox.TabIndex = 22;
             // 
             // nombreTextBox
             // 
@@ -150,18 +142,32 @@
             this.fechaPicker.TabIndex = 31;
             this.fechaPicker.Value = new System.DateTime(2017, 12, 1, 0, 0, 0, 0);
             // 
+            // numericCosto
+            // 
+            this.numericCosto.DecimalPlaces = 2;
+            this.numericCosto.Location = new System.Drawing.Point(120, 129);
+            this.numericCosto.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericCosto.Name = "numericCosto";
+            this.numericCosto.Size = new System.Drawing.Size(195, 20);
+            this.numericCosto.TabIndex = 63;
+            this.numericCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FormAltaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 417);
+            this.ClientSize = new System.Drawing.Size(653, 349);
+            this.Controls.Add(this.numericCosto);
             this.Controls.Add(this.fechaPicker);
             this.Controls.Add(this.salirBtn);
             this.Controls.Add(this.altaDeActividadBtn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.listBoxActividades);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.costoTextBox);
             this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -169,6 +175,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormAltaActividad";
             this.Text = "FormAltaActividad";
+            ((System.ComponentModel.ISupportInitialize)(this.numericCosto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,12 +188,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBoxActividades;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox costoTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker fechaPicker;
+        private System.Windows.Forms.NumericUpDown numericCosto;
     }
 }

@@ -20,7 +20,7 @@ namespace Logica
 
         public void Alta(object obj)
         {
-            //Validar campos
+            ValidarActividad((Actividad)obj);
             repositorio.AgregarActividad((Actividad)obj);
         }
 
@@ -42,7 +42,7 @@ namespace Logica
 
         public void ModificarActividad(ref Actividad actividadOriginal, Actividad actividadNuevosDatos)
         {
-            //Validar
+            ValidarActividad(actividadNuevosDatos);
             repositorio.ModificarActividad(actividadOriginal, actividadNuevosDatos);
         }
 
@@ -75,14 +75,14 @@ namespace Logica
             return string.IsNullOrEmpty(actividad.Nombre);
         }
 
-        public bool EsActividadSinFecha(Actividad actividad)
+        public bool EsActividadFechaInvalida(Actividad actividad)
         {
-            return actividad.Fecha.CompareTo(DateTime.MinValue) == 0;
+            return actividad.Fecha.CompareTo(DateTime.Now) < 0;
         }
 
-        public bool EsActividadSinCosto(Actividad actividad)
+        public bool EsActividadCostoInvalido(Actividad actividad)
         {
-            return actividad.Costo == 0;
+            return !(actividad.Costo > 0);
         }
 
 
@@ -101,6 +101,16 @@ namespace Logica
         public void EliminarTodosParticipantesDeActividad(Actividad actividad)
         {
             repositorio.EliminarTodosParticipantesDeActividad(actividad);
+        }
+
+        public void ValidarActividad(Actividad actividad)
+        {
+            if (EsActividadSinNombre(actividad))
+                throw new ExcepcionActividadSinNombre();
+            if (EsActividadCostoInvalido(actividad))
+                throw new ExcepcionActividadCostoInvalido();
+            if (EsActividadFechaInvalida(actividad))
+                throw new ExcepcionActividadFechaInvalida();
         }
     }
 }
