@@ -205,7 +205,12 @@ namespace Persistencia
 
         public Materia ObtenerMateriaPorCodigo(int codigo)
         {
-            throw new NotImplementedException();
+            foreach (Materia materia in Materias)
+            {
+                if (materia.Codigo == codigo)
+                    return materia;
+            }
+            return null;
         }
 
         public void EliminarTodosParticipantesDeActividad(Actividad unaActividad)
