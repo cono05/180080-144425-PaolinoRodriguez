@@ -310,5 +310,22 @@ namespace Pruebas
             Assert.IsTrue((moduloAct.ObtenerActividadPorId(actividad.Id).Participantes.Count > 0));
         }
         #endregion
+        [TestMethod]
+        public void ModificarActividadTestRam()
+        {
+            RepositorioRam repositorio = UtilidadesPruebas.CrearRepositorioRamDePrueba();
+            ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
+            Actividad actividadOriginal = UtilidadesPruebas.CrearActividadDePrueba("ActividadPruebaOriginal", new DateTime(2017, 12, 24), 100);
+            Actividad actividadNuevosDatos = UtilidadesPruebas.CrearActividadDePrueba("ActividadPruebaNuevosDatos", new DateTime(2018, 02, 20), 200);
+            modulo.Alta(actividadOriginal);
+            string nombreOriginal = actividadOriginal.Nombre;
+            DateTime fechaOriginal = actividadOriginal.Fecha;
+            modulo.ModificarActividad(ref actividadOriginal, actividadNuevosDatos);
+            string nombreActualizado = modulo.ObtenerActividadPorId(actividadOriginal.Id).Nombre;
+            DateTime fechaActualizado = modulo.ObtenerActividadPorId(actividadOriginal.Id).Fecha;
+
+            Assert.IsTrue(!(nombreOriginal.Equals(nombreActualizado)) && (fechaOriginal.CompareTo(fechaActualizado) != 0));
+
+        }
     }
 }
