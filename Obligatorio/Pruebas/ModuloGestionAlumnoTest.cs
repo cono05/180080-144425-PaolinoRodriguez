@@ -503,8 +503,9 @@ namespace Pruebas
             Alumno alumno2 = UtilidadesPruebas.CrearAlumnoDePrueba("Nombre2", "Apellido2", "0002200-1", "mail2@g.com", 2);
             modulo.Alta(alumno1);
             modulo.Alta(alumno2);
-            Alumno obtenido = repositorio.ObtenerAlumnoPorID(alumno2.Id);
-            Assert.IsTrue(obtenido.Id == 2);
+            int id = alumno2.Id;
+            Alumno obtenido = repositorio.ObtenerAlumnoPorID(id);
+            Assert.IsTrue(obtenido.Nombre.Equals("Nombre2"));
         }
     }
 }

@@ -22,13 +22,14 @@ namespace Obligatorio
         private ModuloGestionMaterias moduloMaterias;
         private Button gestionarActividadesBtn;
         private ModuloGestionCamioneta moduloCamionetas;
+        private Button vaciarTablasBtn;
         private ModuloGestionActividad moduloActividades;
-        
+        private RepositorioBD repositorio;
 
         public VPrincipal()
         {
             InitializeComponent();
-            RepositorioBD repositorio = new RepositorioBD();
+            repositorio = new RepositorioBD();
             moduloAlumnos = new ModuloGestionAlumno(repositorio);
             moduloDocentes = new ModuloGestionDocente(repositorio);
             moduloMaterias = new ModuloGestionMaterias(repositorio);
@@ -60,6 +61,7 @@ namespace Obligatorio
             this.button5 = new System.Windows.Forms.Button();
             this.CargarDatosBtn = new System.Windows.Forms.Button();
             this.gestionarActividadesBtn = new System.Windows.Forms.Button();
+            this.vaciarTablasBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PanelPrincipal
@@ -73,7 +75,7 @@ namespace Obligatorio
             // 
             // GestionarAlumnosBtn
             // 
-            this.GestionarAlumnosBtn.Location = new System.Drawing.Point(49, 12);
+            this.GestionarAlumnosBtn.Location = new System.Drawing.Point(12, 12);
             this.GestionarAlumnosBtn.Name = "GestionarAlumnosBtn";
             this.GestionarAlumnosBtn.Size = new System.Drawing.Size(96, 55);
             this.GestionarAlumnosBtn.TabIndex = 1;
@@ -83,7 +85,7 @@ namespace Obligatorio
             // 
             // GestionarDocentesBtn
             // 
-            this.GestionarDocentesBtn.Location = new System.Drawing.Point(161, 12);
+            this.GestionarDocentesBtn.Location = new System.Drawing.Point(114, 12);
             this.GestionarDocentesBtn.Name = "GestionarDocentesBtn";
             this.GestionarDocentesBtn.Size = new System.Drawing.Size(98, 55);
             this.GestionarDocentesBtn.TabIndex = 2;
@@ -93,7 +95,7 @@ namespace Obligatorio
             // 
             // GestionarMateriasBtn
             // 
-            this.GestionarMateriasBtn.Location = new System.Drawing.Point(274, 12);
+            this.GestionarMateriasBtn.Location = new System.Drawing.Point(218, 12);
             this.GestionarMateriasBtn.Name = "GestionarMateriasBtn";
             this.GestionarMateriasBtn.Size = new System.Drawing.Size(98, 55);
             this.GestionarMateriasBtn.TabIndex = 3;
@@ -103,7 +105,7 @@ namespace Obligatorio
             // 
             // GestionarCamionetasBtn
             // 
-            this.GestionarCamionetasBtn.Location = new System.Drawing.Point(388, 12);
+            this.GestionarCamionetasBtn.Location = new System.Drawing.Point(322, 12);
             this.GestionarCamionetasBtn.Name = "GestionarCamionetasBtn";
             this.GestionarCamionetasBtn.Size = new System.Drawing.Size(98, 55);
             this.GestionarCamionetasBtn.TabIndex = 4;
@@ -113,7 +115,7 @@ namespace Obligatorio
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(614, 12);
+            this.button5.Location = new System.Drawing.Point(530, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(98, 55);
             this.button5.TabIndex = 5;
@@ -122,7 +124,7 @@ namespace Obligatorio
             // 
             // CargarDatosBtn
             // 
-            this.CargarDatosBtn.Location = new System.Drawing.Point(765, 12);
+            this.CargarDatosBtn.Location = new System.Drawing.Point(634, 12);
             this.CargarDatosBtn.Name = "CargarDatosBtn";
             this.CargarDatosBtn.Size = new System.Drawing.Size(98, 55);
             this.CargarDatosBtn.TabIndex = 6;
@@ -132,7 +134,7 @@ namespace Obligatorio
             // 
             // gestionarActividadesBtn
             // 
-            this.gestionarActividadesBtn.Location = new System.Drawing.Point(501, 12);
+            this.gestionarActividadesBtn.Location = new System.Drawing.Point(426, 12);
             this.gestionarActividadesBtn.Name = "gestionarActividadesBtn";
             this.gestionarActividadesBtn.Size = new System.Drawing.Size(98, 55);
             this.gestionarActividadesBtn.TabIndex = 7;
@@ -140,9 +142,20 @@ namespace Obligatorio
             this.gestionarActividadesBtn.UseVisualStyleBackColor = true;
             this.gestionarActividadesBtn.Click += new System.EventHandler(this.gestionarActividadesBtn_Click);
             // 
+            // vaciarTablasBtn
+            // 
+            this.vaciarTablasBtn.Location = new System.Drawing.Point(738, 12);
+            this.vaciarTablasBtn.Name = "vaciarTablasBtn";
+            this.vaciarTablasBtn.Size = new System.Drawing.Size(98, 55);
+            this.vaciarTablasBtn.TabIndex = 8;
+            this.vaciarTablasBtn.Text = "Vaciar tablas";
+            this.vaciarTablasBtn.UseVisualStyleBackColor = true;
+            this.vaciarTablasBtn.Click += new System.EventHandler(this.vaciarTablasBtn_Click);
+            // 
             // VPrincipal
             // 
             this.ClientSize = new System.Drawing.Size(875, 406);
+            this.Controls.Add(this.vaciarTablasBtn);
             this.Controls.Add(this.gestionarActividadesBtn);
             this.Controls.Add(this.CargarDatosBtn);
             this.Controls.Add(this.button5);
@@ -286,7 +299,9 @@ namespace Obligatorio
 
         }
 
-       
-        
+        private void vaciarTablasBtn_Click(object sender, EventArgs e)
+        {
+            this.repositorio.VaciarTablas();
+        }
     }
 }
