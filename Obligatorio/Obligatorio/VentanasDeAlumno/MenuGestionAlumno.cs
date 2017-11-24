@@ -14,56 +14,44 @@ namespace Obligatorio.VentanasDeAlumno
 {
     public partial class MenuGestionAlumno : UserControl
     {
-        private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        private ContenedorModulos contenedorModulos;
-        private static MenuGestionAlumno instancia;
+       private ModuloGestionAlumno moduloAlumnos;
+       private static MenuGestionAlumno instancia;
 
-        public static MenuGestionAlumno ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        public static MenuGestionAlumno ObtenerInstancia(ModuloGestionAlumno moduloAlumno)
         {
             if (instancia == null)
-                instancia = new MenuGestionAlumno(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
+                instancia = new MenuGestionAlumno(moduloAlumno);
             return instancia;
         }
 
-        private MenuGestionAlumno(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        private MenuGestionAlumno(ModuloGestionAlumno moduloAlumno)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
 
         private void VolverBtn_Click(object sender, EventArgs e)
         {
-            //panel1.Controls.Clear();
-            //panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
+        
         }
 
         private void AltaAlumnoBtn_Click(object sender, EventArgs e)
         {
-            FormAltaAlumno altaAlumno = new FormAltaAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormAltaAlumno altaAlumno = new FormAltaAlumno(moduloAlumnos);
         altaAlumno.Show();
         }
 
         private void ModificarAlumnoBtn_Click(object sender, EventArgs e)
         {
-            FormModificarAlumno modificarAlumno = new FormModificarAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormModificarAlumno modificarAlumno = new FormModificarAlumno(moduloAlumnos);
             modificarAlumno.Show();
         }
 
         private void BajaAlumnoBtn_Click(object sender, EventArgs e)
         {
-            FormBajaAlumno bajaAlumno = new FormBajaAlumno(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormBajaAlumno bajaAlumno = new FormBajaAlumno(moduloAlumnos);
             bajaAlumno.Show();
-            //panel1.Controls.Clear();
-            //panel1.Controls.Add(new BajaDeAlumno(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -75,8 +63,6 @@ namespace Obligatorio.VentanasDeAlumno
         {
             listBoxAlumnos.DataSource = null;
             ICollection<Alumno> lista = moduloAlumnos.ObtenerAlumnos();
-            //ModuloGestionAlumno modulo = ObtenerModuloAlumno();
-            //ICollection<Alumno> lista = modulo.ObtenerAlumnos();
             return lista;
         }
         public void CargarListBoxAlumnosPublico()
@@ -84,12 +70,5 @@ namespace Obligatorio.VentanasDeAlumno
             listBoxAlumnos.DataSource = null;
             listBoxAlumnos.DataSource = CargarListBoxAlumnos();
         }
-
-        //private ModuloGestionAlumno ObtenerModuloAlumno()
-        //{
-        //    ModuloGestionAlumno modulo = (ModuloGestionAlumno)contenedorModulos.ObtenerModulo("ModuloAlumnos");
-        //    return modulo;
-        //}
-
     }
 }

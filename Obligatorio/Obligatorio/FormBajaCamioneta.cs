@@ -13,19 +13,11 @@ using Logica;
 namespace Obligatorio
 {
     public partial class FormBajaCamioneta : Form
-    {
-
-        private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
+    {        
         private ModuloGestionCamioneta moduloCamionetas;
-        public FormBajaCamioneta(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        public FormBajaCamioneta(ModuloGestionCamioneta moduloCamioneta)
         {
-            InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
+            InitializeComponent();            
             moduloCamionetas = moduloCamioneta;
             CargarListBoxCamionetas();
         }
@@ -63,7 +55,7 @@ namespace Obligatorio
 
         private void ActualizarListaCamionetasEnMenuGestionCamionetas()
         {
-            MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloCamionetas);
             menuCamionetas.CargarListBoxCamionetasPublico();
         }
     }

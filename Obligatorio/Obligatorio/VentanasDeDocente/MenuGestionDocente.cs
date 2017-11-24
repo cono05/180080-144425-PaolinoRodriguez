@@ -15,56 +15,43 @@ using Obligatorio.VentanasDeDocente;
 namespace Obligatorio
 {
     public partial class MenuGestionDocente : UserControl
-    {
-        private ModuloGestionAlumno moduloAlumnos;
+    {        
         private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
         private static MenuGestionDocente instancia;
 
-        public static MenuGestionDocente ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        public static MenuGestionDocente ObtenerInstancia(ModuloGestionDocente moduloDocente)
         {
             if (instancia == null)
-                instancia = new MenuGestionDocente(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
+                instancia = new MenuGestionDocente(moduloDocente);
             return instancia;
         }
 
-        private MenuGestionDocente(ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        private MenuGestionDocente(ModuloGestionDocente moduloDocente)
         {
-            InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
-            
-            
+            InitializeComponent();            
+            moduloDocentes = moduloDocente;  
             CargarListBoxDocentes();
         }
 
         private void VolverBtn_Click(object sender, EventArgs e)
         {
-            //panel1.Controls.Clear();
-            //panel1.Controls.Add(new MenuPrincipal(ref moduloAlumnos, ref moduloDocentes, ref moduloMaterias, ref moduloCamionetas));
         }
 
         private void AltaDocenteBtn_Click(object sender, EventArgs e)
         {
-            FormAltaDocente altaDocente = new FormAltaDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormAltaDocente altaDocente = new FormAltaDocente(moduloDocentes);
             altaDocente.Show();
         }
 
         private void ModificarDocenteBtn_Click(object sender, EventArgs e)
         {
-            FormModificacionDocente modificarDocente = new FormModificacionDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormModificacionDocente modificarDocente = new FormModificacionDocente(moduloDocentes);
             modificarDocente.Show();
         }
 
         private void BajaDocenteBtn_Click(object sender, EventArgs e)
         {
-            //FormBajaDocente bajaDocente = new FormBajaDocente(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
-            //bajaDocente.Show();
+            
         }
 
         private void CargarListBoxDocentes()

@@ -14,28 +14,22 @@ namespace Obligatorio
 {
     public partial class MenuGestionMaterias : UserControl
     {
-        private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
+        private ModuloGestionDocente moduloDocentes;
         private static MenuGestionMaterias instancia;
 
-        public static MenuGestionMaterias ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        public static MenuGestionMaterias ObtenerInstancia(ModuloGestionDocente moduloDocente, ModuloGestionMaterias moduloMateria)
         {
             if (instancia == null)
-                instancia = new MenuGestionMaterias(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
+                instancia = new MenuGestionMaterias(moduloDocente, moduloMateria);
             return instancia;
         }
 
-        private MenuGestionMaterias(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        private MenuGestionMaterias(ModuloGestionDocente moduloDocente, ModuloGestionMaterias moduloMateria)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            moduloDocentes=moduloDocente;
             CargarListBoxMaterias();
         }
 
@@ -46,7 +40,7 @@ namespace Obligatorio
 
         private void AltaBajaDeMateriaBtn_Click(object sender, EventArgs e)
         {
-            FormAltaBajaDeMateria altaBajaMateria = new FormAltaBajaDeMateria(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormAltaBajaDeMateria altaBajaMateria = new FormAltaBajaDeMateria(moduloDocentes, moduloMaterias);
             altaBajaMateria.Show();
         }
 
@@ -59,13 +53,13 @@ namespace Obligatorio
 
         private void AgregarAlumnoEnMateria_Click(object sender, EventArgs e)
         {
-            FormAltaBajaDeAlumnoEnMateria altaBajaAlumnoEnMateria = new FormAltaBajaDeAlumnoEnMateria(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormAltaBajaDeAlumnoEnMateria altaBajaAlumnoEnMateria = new FormAltaBajaDeAlumnoEnMateria(moduloMaterias);
             altaBajaAlumnoEnMateria.Show();
         }
 
         private void ModificarMateriaBtn_Click(object sender, EventArgs e)
         {
-            FormModificacionMateria modificacionMateria = new FormModificacionMateria(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormModificacionMateria modificacionMateria = new FormModificacionMateria(moduloMaterias);
             modificacionMateria.Show();
         }
 
@@ -73,7 +67,7 @@ namespace Obligatorio
         {
             if (moduloDocentes.HayDocentesRegistrados())
             {
-                FormAltaBajaDocenteEnMateria altaBajaDocenteEnMateria = new FormAltaBajaDocenteEnMateria(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+                FormAltaBajaDocenteEnMateria altaBajaDocenteEnMateria = new FormAltaBajaDocenteEnMateria(moduloDocentes,moduloMaterias);
                 altaBajaDocenteEnMateria.Show();
             }
             else

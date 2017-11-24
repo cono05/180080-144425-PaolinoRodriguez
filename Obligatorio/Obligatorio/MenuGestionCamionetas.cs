@@ -13,27 +13,19 @@ namespace Obligatorio
 {
     public partial class MenuGestionCamionetas : UserControl
     {
-        private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
         private static MenuGestionCamionetas instancia;
 
 
-        public static MenuGestionCamionetas ObtenerInstancia(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        public static MenuGestionCamionetas ObtenerInstancia(ModuloGestionCamioneta moduloCamioneta)
         {
             if (instancia == null)
-                instancia = new MenuGestionCamionetas(moduloAlumno, moduloDocente, moduloMateria, moduloCamioneta);
+                instancia = new MenuGestionCamionetas(moduloCamioneta);
             return instancia;
         }
-        public MenuGestionCamionetas( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+        public MenuGestionCamionetas(ModuloGestionCamioneta moduloCamioneta)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
             moduloCamionetas = moduloCamioneta;
             CargarListBoxCamionetas();
         }
@@ -45,7 +37,7 @@ namespace Obligatorio
 
         private void RegistrarCamionetaBtn_Click(object sender, EventArgs e)
         {
-            FormAltaDeCamioneta altaCamioneta = new FormAltaDeCamioneta(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            FormAltaDeCamioneta altaCamioneta = new FormAltaDeCamioneta(moduloCamionetas);
             altaCamioneta.Show();
         }
 
@@ -53,7 +45,7 @@ namespace Obligatorio
         {
             if (moduloCamionetas.ObtenerCamionetas().Count > 0)
             {
-                FormBajaCamioneta bajaCamioneta = new FormBajaCamioneta(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+                FormBajaCamioneta bajaCamioneta = new FormBajaCamioneta(moduloCamionetas);
                 bajaCamioneta.Show();
             }
             else

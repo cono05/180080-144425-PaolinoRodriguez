@@ -247,36 +247,26 @@ namespace Obligatorio
 
         private void GestionarAlumnosBtn_Click(object sender, System.EventArgs e)
         {
-            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos);
             CargarPanelPrincipal(menuAlumnos);
-            menuAlumnos.CargarListBoxAlumnosPublico();
-            //if (!PanelPrincipal.Controls.Contains(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas)))
-            //{
-            //    PanelPrincipal.Controls.Add(MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas));
-            //    MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).Dock = DockStyle.Fill;
-            //    MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).BringToFront();
-            //}
-            //else
-            //{
-            //    MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas).BringToFront();
-            //}
+            menuAlumnos.CargarListBoxAlumnosPublico();            
         }
 
         private void GestionarDocentesBtn_Click(object sender, System.EventArgs e)
         {
-            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia( moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloDocentes);
             CargarPanelPrincipal(menuDocentes);
         }
 
         private void GestionarMateriasBtn_Click(object sender, System.EventArgs e)
         {
-            MenuGestionMaterias menuMaterias = MenuGestionMaterias.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionMaterias menuMaterias = MenuGestionMaterias.ObtenerInstancia(moduloDocentes, moduloMaterias);
             CargarPanelPrincipal(menuMaterias);
         }
 
         private void GestionarCamionetasBtn_Click(object sender, System.EventArgs e)
         {
-            MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloCamionetas);
             CargarPanelPrincipal(menuCamionetas);
         }
 

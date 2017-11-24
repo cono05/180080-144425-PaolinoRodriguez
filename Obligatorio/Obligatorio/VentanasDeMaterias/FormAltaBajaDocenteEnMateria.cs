@@ -15,18 +15,14 @@ namespace Obligatorio.VentanasDeMaterias
 {
     public partial class FormAltaBajaDocenteEnMateria : Form
     {
-        private ModuloGestionAlumno moduloAlumnos;
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        public FormAltaBajaDocenteEnMateria(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        
+        public FormAltaBajaDocenteEnMateria(ModuloGestionDocente moduloDocente, ModuloGestionMaterias moduloMateria)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
             moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
             CargarListBoxMaterias();
         }
 
@@ -79,27 +75,14 @@ namespace Obligatorio.VentanasDeMaterias
             ICollection<Docente> docentesDeLaMateria = moduloMaterias.ObtenerDocentesDeUnaMateria(materia);
             foreach (Docente d in docentesDeLaMateria)
             {
-                lista.Remove(d);
-                //if (!moduloMaterias.ObtenerDocentesDeUnaMateria(materia).Contains(d)/*!moduloDocentes.EstaInscritoEnLaMateria(d, materia)*/)
-                //{
-                //    lista.Add(d);
-                //}
+                lista.Remove(d);                
             }
             docentesNoDictanListBox.DataSource = lista;
         }
-        public void /*ICollection<Docente>*/ CargarListBoxDocentesDictanMateria(Materia materia)
+        public void CargarListBoxDocentesDictanMateria(Materia materia)
         {
             docentesDictanListBox.DataSource = null;
             docentesDictanListBox.DataSource = moduloMaterias.ObtenerDocentesDeUnaMateria(materia);
-            //ICollection<Docente> lista = new List<Docente>();
-            //foreach (Docente d in moduloDocentes.ObtenerDocentes())
-            //{
-            //    if (moduloDocentes.EstaInscritoEnLaMateria(d, materia))
-            //    {
-            //        lista.Add(d);
-            //    }
-            //}
-            //return lista;
         }
 
         private void VolverAlMenuBtn_Click(object sender, EventArgs e)
@@ -116,8 +99,6 @@ namespace Obligatorio.VentanasDeMaterias
                 if (DocenteADesinscribir != null)
                 {
                     moduloDocentes.DesinscribirDocenteEnMateria(DocenteADesinscribir, materia);
-                    //docentesDictanListBox.DataSource = null;
-                    //docentesNoDictanListBox.DataSource = null;
                     CargarListBoxDocentesNoDictan(materia);
                     CargarListBoxDocentesDictanMateria(materia);
                     MessageBox.Show("El docente " + DocenteADesinscribir.ToString() + " se ha eliminado correctamente de " + materia.ToString(), MessageBoxButtons.OK.ToString());

@@ -19,14 +19,10 @@ namespace Obligatorio.VentanasDeMaterias
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        public FormAltaBajaDeAlumnoEnMateria(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        public FormAltaBajaDeAlumnoEnMateria(ModuloGestionMaterias moduloMateria)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
             CargarListBoxMaterias();
         }
         private void CargarListBoxMaterias()

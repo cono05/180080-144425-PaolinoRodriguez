@@ -15,18 +15,13 @@ namespace Obligatorio.VentanasDeMaterias
 {
     public partial class FormAltaBajaDeMateria : Form
     {
-        private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        public FormAltaBajaDeMateria(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        private ModuloGestionDocente moduloDocentes;
+        public FormAltaBajaDeMateria(ModuloGestionDocente moduloDocente, ModuloGestionMaterias moduloMateria)
         {
-            InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
+            InitializeComponent();            
             moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            moduloDocentes = moduloDocente;        
             CargarListBoxMaterias();           
         }
 
@@ -70,7 +65,7 @@ namespace Obligatorio.VentanasDeMaterias
         }
         private void ActualizarListBoxMateriasEnModuloGestionMaterias()
         {
-            MenuGestionMaterias moduloMateria = MenuGestionMaterias.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionMaterias moduloMateria = MenuGestionMaterias.ObtenerInstancia(moduloDocentes, moduloMaterias);
             moduloMateria.CargarListBoxMateriasPublico();
         }
 

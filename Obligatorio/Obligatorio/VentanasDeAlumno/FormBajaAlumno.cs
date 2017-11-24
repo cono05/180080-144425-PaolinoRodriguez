@@ -15,17 +15,12 @@ namespace Obligatorio.VentanasDeAlumno
     public partial class FormBajaAlumno : Form
     {
         private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        public FormBajaAlumno(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-                                                                 ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+       
+        public FormBajaAlumno(ModuloGestionAlumno moduloAlumno)
         {
             InitializeComponent();
             moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            
             CargarListBoxAlumnos();
         }
 
@@ -64,7 +59,7 @@ namespace Obligatorio.VentanasDeAlumno
         }
         private void ActualizarListaAlumnosEnMenuGestionAlumnos()
         {
-            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionAlumno menuAlumnos = MenuGestionAlumno.ObtenerInstancia(moduloAlumnos);
             menuAlumnos.CargarListBoxAlumnosPublico();
         }
     }

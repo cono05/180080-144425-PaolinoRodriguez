@@ -14,21 +14,12 @@ using Logica;
 namespace Obligatorio.VentanasDeDocente
 {
     public partial class FormAltaDocente : Form
-    {
-        private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
-        private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        ContenedorModulos contenedorModulos;
-
-        public FormAltaDocente( ModuloGestionAlumno moduloAlumno,  ModuloGestionDocente moduloDocente,
-             ModuloGestionMaterias moduloMateria,  ModuloGestionCamioneta moduloCamioneta)
+    {        
+        private ModuloGestionDocente moduloDocentes;    
+        public FormAltaDocente(   ModuloGestionDocente moduloDocente)
         {
-            InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
+            InitializeComponent();           
+            moduloDocentes = moduloDocente;            
             listBoxDocentes.DataSource = CargarListBoxDocentes();
         }
 
@@ -92,7 +83,7 @@ namespace Obligatorio.VentanasDeDocente
 
         private void ActualizarListaDocentesEnMenuGestionDocentes()
         {
-            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionDocente menuDocentes = MenuGestionDocente.ObtenerInstancia(moduloDocentes);
             menuDocentes.CargarListBoxDocentesPublico();
         }
 

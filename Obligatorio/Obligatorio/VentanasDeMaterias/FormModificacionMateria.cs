@@ -15,18 +15,12 @@ namespace Obligatorio.VentanasDeMaterias
 {
     public partial class FormModificacionMateria : Form
     {
-        private ModuloGestionAlumno moduloAlumnos;
-        private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
-        private ModuloGestionCamioneta moduloCamionetas;
-        public FormModificacionMateria(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        
+        public FormModificacionMateria(ModuloGestionMaterias moduloMateria)
         {
             InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
             moduloMaterias = moduloMateria;
-            moduloCamionetas = moduloCamioneta;
             CargarListBoxMaterias();
         }
 

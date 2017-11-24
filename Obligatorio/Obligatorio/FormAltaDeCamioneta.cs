@@ -19,13 +19,9 @@ namespace Obligatorio
         private ModuloGestionDocente moduloDocentes;
         private ModuloGestionMaterias moduloMaterias;
         private ModuloGestionCamioneta moduloCamionetas;
-        public FormAltaDeCamioneta(ModuloGestionAlumno moduloAlumno, ModuloGestionDocente moduloDocente,
-            ModuloGestionMaterias moduloMateria, ModuloGestionCamioneta moduloCamioneta)
+        public FormAltaDeCamioneta(ModuloGestionCamioneta moduloCamioneta)
         {
-            InitializeComponent();
-            moduloAlumnos = moduloAlumno;
-            moduloDocentes = moduloDocente;
-            moduloMaterias = moduloMateria;
+            InitializeComponent();            
             moduloCamionetas = moduloCamioneta;
         }
 
@@ -80,7 +76,7 @@ namespace Obligatorio
         }
         private void ActualizarListaCamionetasEnMenuGestionCamionetas()
         {
-            MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloAlumnos, moduloDocentes, moduloMaterias, moduloCamionetas);
+            MenuGestionCamionetas menuCamionetas = MenuGestionCamionetas.ObtenerInstancia(moduloCamionetas);
             menuCamionetas.CargarListBoxCamionetasPublico();
         }
     }
