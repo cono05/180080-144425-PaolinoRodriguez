@@ -289,7 +289,7 @@ namespace Pruebas
         {
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
-            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("NombrePrueba", DateTime.MinValue, 1);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("NombrePrueba", DateTime.MinValue, 0);
 
             modulo.ValidarActividad(actividad);
         }
@@ -300,7 +300,7 @@ namespace Pruebas
         {
             RepositorioBD repositorio = UtilidadesPruebas.CrearRepositorioBDPrueba();
             ModuloGestionActividad modulo = UtilidadesPruebas.CrearModuloGestionActividadDePrueba(repositorio);
-            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("NombrePrueba", DateTime.MinValue, 0);
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("NombrePrueba", DateTime.MinValue, 10);
 
             modulo.ValidarActividad(actividad);
         }

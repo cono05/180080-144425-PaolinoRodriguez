@@ -27,8 +27,8 @@ namespace Pruebas
         [TestMethod]
         public void ToStringTest()
         {
-            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Evento1", DateTime.Now, 0);
-            string esperado = "Actividad: Evento1" + " Fecha: " + DateTime.Now;
+            Actividad actividad = UtilidadesPruebas.CrearActividadDePrueba("Evento1", new DateTime(2020, 1, 1), 10);
+            string esperado = "Actividad: " + actividad.Nombre + " Fecha: " + actividad.Fecha.ToShortDateString() + " Costo: " + actividad.Costo;
             Assert.AreEqual(esperado, actividad.ToString());
         }
     }
